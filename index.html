@@ -100,16 +100,16 @@
 
             font-family: 'Quinta-light','roboto', sans-serif;
             font-style: normal;
-            font-size: 1em;
+            font-size: 1.3rem;
         }
 
 
-        
         /* Contenedor principal */
         .page {
             height: 100%;
             min-height: var(--altoPage);
             width: 100%;
+            padding: 10px;
         }
         
         /* Layout a dos columnas, las que a su vez están divididas por otras 2 columnas */
@@ -187,6 +187,7 @@
 
 
         /* special text and fonts */
+
         .extraEspace {
             margin-top: 5px;
         }
@@ -225,6 +226,12 @@
         /* special decoration */
         #social p, .rating span {font-size: .83em; line-height: .83em;}
 
+        ul, li {
+        list-style-type: none;
+        background-color: initial;
+        cursor: grab;
+        }
+        
         #cursos ul {
             font-size: .83em;
         }
@@ -314,7 +321,18 @@
         .rtngIcoStar.checked {
             fill:var(--progress-color);
         }
-            
+
+        /* Centrando todo el contenido -ancho y alto */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: var(--bg-color);
+            border: 3px dotted orange;
+        }
     </style>
 
     <style id="myList"> /* SIN COLOR O BACKGROUND DECLARADOS*/
@@ -352,11 +370,15 @@
             padding-top: 5px;
             font-family: "Quinta-regular";
             font-size: .83em;
+            
+            
         }
-
-            /* Roles or responsibilities, hidden detail */
-            /* click expand details */
-            .myList ~ li.expand ul {
+        
+        /* Roles or responsibilities, hidden detail */
+        /* click expand details */
+        .myList ~ li.expand ul {
+                text-decoration: underline;
+                text-decoration-color: var(--alert);
                 font-family: "Quinta-light";
                 cursor: zoom-in;
                 margin-left: .5em;
@@ -783,6 +805,150 @@ nav {
   display: block;
 }
 </style>
+
+<style id="acercaDe">
+        .callout {
+        position: fixed;
+        font-family: 'Quinta-regular';
+        width: 80%;
+        height: 80%;
+        max-width: 80%;
+        max-height: 80%;
+        text-align: left !important;
+        display: none;
+        z-index: 1000;
+        }
+
+        .callout-header {
+        padding: 25px 15px 15px;
+        background: #555;
+        font-size: 1.5em;
+        color: white;
+        }
+
+        .callout-container {
+            display: block;
+            height: 90%;
+            width: 100%;
+            padding: 15px 10px;
+            background-color: #ccc;
+            color: black;
+            overflow: scroll;
+
+            }
+            .callout-container p { padding-bottom: 5px;}
+
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: white;
+            width: 1em;
+            height: 1em;
+            line-height: 1em;
+            font-size: 2em;
+            text-align: center;
+            cursor: pointer;
+            }
+
+            .closebtn:hover {
+                color: lightgrey;
+                background-color: var(--alert);
+            }
+    </style>
+<style id="prueba">
+    .educacion, .hobbies-Contacto {
+        display: contents;
+    }
+
+
+</style>
+<style id="print">
+/* Revisar Flexbox o CSS Grid. En este caso quizá necesite ser cambiados a display:block; */
+/* para los contenedores flotados -> main { float:none; } */
+/* #sidebar { display:none;} */
+    @media print {
+        /* Aquí irían tus reglas CSS específicas para imprimir */
+        @page {
+            margin: 10.205px 6.803px 7.181px 6.803px;
+            }
+
+        body { 
+            font-size: 10pt;
+            height: 100%;
+        }
+        
+        .page {
+            margin: 0%;
+            padding: 0%;
+        }
+        nav, .callout, .none, .special, .extended, .educacion .detalle p {
+            display: none;
+        }
+        .extraEspace {
+            margin-top: 0px;
+        }
+
+        #personal, .nombre { display: inline-flex;}
+
+        .tag {
+            margin: 0px;
+        }
+
+        .rating { 
+            font-weight: normal;
+            font-size: 10pt;
+            line-height: 10pt;
+            margin: 0%;
+            padding: 0%;
+        }
+        svg.w24  { 
+            width: 16px;
+            height: 16px;
+        }
+
+        .rtngEnd {display: block;}
+
+        .icon.light {
+                fill: black;
+                
+            }
+            .icon.dark {
+                fill: black;
+            }
+
+            .icon.border {
+                margin: 0% .25em;
+                border-radius: 25%;
+                border: 2px solid black;
+            }
+            /* .donut-chart {
+              margin: 0%;
+              font-size: 0.83rem;}
+
+            .donut-chart .center-label, .center-chart span {
+                color: black;}
+            .donut-chart .center-chart {
+                background: white;
+            } */
+
+            .hobbies-Contacto { 
+                display: flex;
+            }
+            .hobbies-Contacto .tag { 
+                text-align: right;
+                margin: auto;
+                padding: 0%;
+            }
+            .hobbies-Contacto .detalle { 
+                text-align: center;
+                margin: auto;
+                padding: 0%;
+            }
+
+    } 
+</style>
+
 </head>
 <body>
     <svg class="icons-lib" xmlns="http://www.w3.org/2000/svg" style="display: none !important; ">
@@ -893,12 +1059,34 @@ nav {
                     <a href="#" onclick='compactExtended("extended")'>CV Completo</a>
                     <a href="#" value="selected" onclick='modeDarkLight("light")'>Modo claro</a>
                     <a href="#" onclick='modeDarkLight("dark")'>Modo oscuro</a>
+                    <a href="#" onclick="acercaDe()">Acerca de</a>
                 </div>
             </div>
         </div>
-
-        
     </nav>
+
+    
+    <div class="centered callout">
+        <div class="callout-header">Acerca de</div>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+        <div class="callout-container">
+            <ul>
+                <li><h3>Desarrollado sólo con CSS3, JS y HTML.</h3></li>
+                <li class="special"><hr> </li><br>
+                <h4>Características de diseño y codificación:</h4><br>
+                <li><b>Modo responsivo y Modo Dark/Light</b> en testing (este último requiere que el OS tenga activado el modo oscuro).</li>
+                <li><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.</li>
+                <li><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>.</li><br>
+                <li>Gracias a <b><em>w3s</em></b> no necesité dedicar mucho tiempo para el navBar, ni para el diseño de este "Acerca de".</li>
+                <li class="special"><hr> </li><br>
+                <li class="BwQ-light-italic"><b>Pendientes</b></li>
+                <li> 1. Diseñar el estilo especifico para las salidas de impresora @media print {...}.</li>
+                <li> 2. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) tomando los datos de una base de datos en MySQL para que genere este código (proyecto iniciado pero aún sin publicar).</li>
+                <li> 3. Mejorar el Modo Dark/Light mediante clases de CSS y así sumar un modo personalizado.</li>
+                <li> 4. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puesta en la línea del html, etc.</li>
+            </ul>
+        </div>
+    </div>
 
     <div class="grid-container" onclick="menuClose()">
         <div class="page">
@@ -1269,6 +1457,7 @@ nav {
 
         <div class="page">
             <div class="split derecha">
+                <div class="educacion">
                 <div class="tag">
                     <p class="smallCaps">Formación Académica</p>
                 </div>
@@ -1294,6 +1483,7 @@ nav {
                       </ul>
 
                 </div>
+            </div>
                 <!-- Fin mis estudios -->
 
                 <div class="tag extended">
@@ -1559,7 +1749,7 @@ nav {
 
 
 
-
+                <div class="hobbies-Contacto">
                 <div class="tag">
                     <p class="smallCaps">Hobbies y Preferencias</p>
                 </div>
@@ -1584,6 +1774,7 @@ nav {
                      Argentina, BsAs., Bernal</a>
                 </div>
                 <!-- Fin contacto -->
+            </div> <!-- fin hobbies-contacto-->
 
             </div>
         </div>
@@ -1795,7 +1986,14 @@ function updateSlider(element) {
         };
         menuClose();
     }
-
 </script>  <!-- compactExtended -->
 
+<script id="acercaDe">
+    function acercaDe() {
+        element = document.querySelector('.callout');
+        console.log(element)
+        element.style.display='block'
+        menuClose();
+    };
+</script>  <!-- acercaDe -->
 </html>

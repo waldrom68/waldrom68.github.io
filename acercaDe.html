@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            /* DE LONGITUD */
+            /* layout general */
+            --altoPage: 1122.519685px;
+            --anchoPage:1224px;
+            /* en Donuts */
+            --scale: 100%; /* min: 30%, max:100%*/
+            --grosor: 8%; /* min: 1%,  max:50% */
+
+            /* PALETA DE COLORES */
+            --color-dark: Canvas;  /* black */
+            --color-light: CanvasText;  /* white */ 
+
+            --bg-dark: GrayText;  /* Gris oscuro */
+            
+            /* sin usar */
+            --bg-light: ButtonFace; /* Gris claro */ 
+            /* fin sin usar */
+
+            --progress-color: rgb(0, 255, 0);  /* Rating  y Donuts*/
+            --no-progress-color: var(--bg-dark);  /* Donuts*/
+
+            /* SETEAR EN @MEDIA -> Background margenes */
+            --center-color: var(--canvasBG);  /* Donuts*/
+            --alert: rgba(231, 8, 8, 1); 
+        }
+
+        html,
+        * { margin: 0; padding:0; box-sizing: border-box;
+            /* background-color: ActiveText ; */
+        }
+        
+        body {
+            height: var(--altoPage) ;
+            margin: 10.205px 6.803px 7.181px 6.803px;
+            width: var(--anchoPage);
+            width: 100%;
+            /* max-width: 1024px; */
+            overflow: scroll;
+
+            font-style: normal;
+            font-size: 1em;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+        }
+            .icon.w16 {
+                width: 16px;
+                height: 16px;
+                line-height: 16px;
+            }
+            .icon.w50 {
+                width:50px;
+                height:50px;
+                line-height:50px;
+            }
+
+            .icon.light {
+                fill: var(--color-dark);
+                
+            }
+            .icon.dark {
+                fill: var(--color-light);
+            }
+            .icon .link:hover {
+                fill: var(--progress-color);
+            }
+            .icon.border {
+                margin: 0% .25em;
+                border-radius: 25%;
+                border: 2px solid var(--color-dark);
+                
+            }
+
+    </style>
+    <style id="menu">
+        /* Barra de navegación */
+        nav {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    text-align: left;
+                    height: 24px;
+                    width: 100%;
+                    background-color: var(--color-light);
+                    opacity: .9;
+                    max-width: var(--anchoPage);
+                    color: var(--color-dark);
+        
+                    z-index: 1000;
+                    }
+                    nav svg:link, nav a:visited, nav a:active  {
+                        text-decoration: none;
+                    }
+        
+            /* Links inside the navbar */
+        .navbar a {
+          float: left;
+          text-align: center;
+            text-decoration: none;
+        }
+            /* The dropdown container */
+        .dropdown {
+          float: left;
+          overflow: hidden;
+        }
+        
+        /* Dropdown button */
+        .dropdown .dropbtn {
+          font-size: 16px;
+          border: none;
+          outline: none;
+          color: white;
+            background-color: inherit;
+          font-family: inherit; /* Important for vertical align on mobile phones */
+          margin: 0; /* Important for vertical align on mobile phones */
+        }
+        
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+          background-color: var(--alert);
+        }
+        
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px black;
+          z-index: 1;
+        }
+        
+        /* Links inside the dropdown */
+        .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+        
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+          background-color: var(--bg-dark);
+        }
+        
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    </style>
+        
+    <style>
+        .callout {
+        position: fixed;
+        font-family: 'Quinta-regular';
+        width: 80%;
+        height: 80%;
+        max-width: 80%;
+        max-height: 80%;
+        text-align: left !important;
+        z-index: 1000;
+        }
+
+        .callout-header {
+        padding: 25px 15px 15px;
+        background: #555;
+        font-size: 1.5em;
+        color: white;
+        }
+
+        .callout-container {
+            display: block;
+            height: 90%;
+            width: 100%;
+            padding: 15px 10px;
+            background-color: #ccc;
+            color: black;
+            overflow: auto;
+            }
+            .callout-container p { padding-bottom: 5px;}
+
+        .closebtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: white;
+            width: 1em;
+            height: 1em;
+            line-height: 1em;
+            font-size: 2em;
+            text-align: center;
+            cursor: pointer;
+            }
+
+            .closebtn:hover {
+                color: lightgrey;
+                background-color: var(--alert);
+            }
+        </style>
+
+    <style>
+        ul, li {
+        list-style-type: none;
+        background-color: initial;
+        cursor: grab;
+        }
+
+        /* Centrando todo el contenido -ancho y alto */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background-color: var(--bg-color);
+            border: 3px dotted orange;
+        }
+    </style>
+
+</head>
+<body>
+    <svg class="icons-lib" xmlns="http://www.w3.org/2000/svg" style="display: none !important; ">
+        <symbol id="ico-battery"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+          <path fill="none" stroke="none" d="M0 0h24v24H0z"/>
+          <path opacity=".3" d="M9 6h6v14H9z"/>
+          <path d="M17 5v16c0 .55-.45 1-1 1H8c-.55 0-1-.45-1-1V5c0-.55.45-1 1-1h2V2h4v2h2c.55 0 1 .45 1 1zm-2 1H9v14h6V6z"/>
+        </symbol>
+        <symbol id="ico-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="">
+        <path id="svg_1" stroke="none" fill="none"  d="m0,0l24,0l0,24l-24,0l0,-24z"/>
+        <path id="svg_2" stroke="" stroke-width="1" d="m12,17.27l6.18,3.73l-1.64,-7.03l5.46,-4.73l-7.19,-0.61l-2.81,-6.63l-2.81,6.63l-7.19,0.61l5.46,4.73l-1.64,7.03l6.18,-3.73z"/>
+        </symbol>
+        <symbol id="ico-email"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path id="svg_1" stroke="none" fill="none" d="m0,0l24,0l0,24l-24,0l0,-24z"/>
+        <path id="svg_2" stroke="" d="m20,4l-16,0c-1.1,0 -1.99,0.9 -1.99,2l-0.01,12c0,1.1 0.9,2 2,2l16,0c1.1,0 2,-0.9 2,-2l0,-12c0,-1.1 -0.9,-2 -2,-2zm0,14l-16,0l0,-10l8,5l8,-5l0,10zm-8,-7l-8,-5l16,0l-8,5z"/>
+        </symbol>
+        <symbol id="ico-manXl"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="m12,0.51322c1.4769,0 2.68527,1.03381 2.68527,2.29736s-1.20837,2.29736 -2.68527,2.29736s-2.68527,-1.03381 -2.68527,-2.29736s1.20837,-2.29736 2.68527,-2.29736zm12.0837,8.04075l-8.0558,0l0,14.93282l-2.68527,0l0,-6.89207l-2.68527,0l0,6.89207l-2.68527,0l0,-14.93282l-8.0558,0l0,-2.29736l24.1674,0l0,2.29736z"/>
+        </symbol>
+        <symbol id="ico-chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <path d="M0 0h24v24H0z" fill="none" stroke="none"/>
+        <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/>
+        </symbol>
+        <symbol id="ico-place" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="">
+        <path d="M0 0h24v24H0z" fill="none" stroke="none"/>
+        <path fill="" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </symbol>
+        <symbol id="ico-link"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path id="svg_1" fill="none"  stroke="none" d="m0,0l24,0l0,24l-24,0l0,-24z"/>
+        <path id="svg_2" d="m17,7l-4,0l0,2l4,0c1.65,0 3,1.35 3,3s-1.35,3 -3,3l-4,0l0,2l4,0c2.76,0 5,-2.24 5,-5s-2.24,-5 -5,-5zm-6,8l-4,0c-1.65,0 -3,-1.35 -3,-3s1.35,-3 3,-3l4,0l0,-2l-4,0c-2.76,0 -5,2.24 -5,5s2.24,5 5,5l4,0l0,-2zm-3,-4l8,0l0,2l-8,0l0,-2z"/>
+        </symbol>
+        <symbol id="ico-menu" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="">
+                <path id="svg_1" fill="none" d="m0,0l24,0l0,24l-24,0l0,-24z"/>
+                <path id="svg_2" fill="" d="m3,18l18,0l0,-2l-18,0l0,2zm0,-5l18,0l0,-2l-18,0l0,2zm0,-7l0,2l18,0l0,-2l-18,0z"/>
+         </symbol>
+         <symbol id="ico-whatsapp" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path fill="" id="svg_1" d="m19.05,4.91c-1.87,-1.88 -4.36,-2.91 -7.01,-2.91c-5.46,0 -9.91,4.45 -9.91,9.91c0,1.75 0.46,3.45 1.32,4.95l-1.4,5.14l5.25,-1.38c1.45,0.79 3.08,1.21 4.74,1.21l0,0c0,0 0,0 0,0c5.46,0 9.91,-4.45 9.91,-9.91c0,-2.65 -1.03,-5.14 -2.9,-7.01zm-7.01,15.24l0,0c-1.48,0 -2.93,-0.4 -4.2,-1.15l-0.3,-0.18l-3.12,0.82l0.83,-3.04l-0.2,-0.31c-0.82,-1.31 -1.26,-2.83 -1.26,-4.38c0,-4.54 3.7,-8.24 8.24,-8.24c2.2,0 4.27,0.86 5.82,2.42c1.56,1.56 2.41,3.63 2.41,5.83c0.02,4.54 -3.68,8.23 -8.22,8.23zm4.52,-6.16c-0.25,-0.12 -1.47,-0.72 -1.69,-0.81c-0.23,-0.08 -0.39,-0.12 -0.56,0.12c-0.17,0.25 -0.64,0.81 -0.78,0.97c-0.14,0.17 -0.29,0.19 -0.54,0.06c-0.25,-0.12 -1.05,-0.39 -1.99,-1.23c-0.74,-0.66 -1.23,-1.47 -1.38,-1.72c-0.14,-0.25 -0.02,-0.38 0.11,-0.51c0.11,-0.11 0.25,-0.29 0.37,-0.43c0.12,-0.14 0.17,-0.25 0.25,-0.41c0.08,-0.17 0.04,-0.31 -0.02,-0.43c-0.06,-0.12 -0.56,-1.34 -0.76,-1.84c-0.2,-0.48 -0.41,-0.42 -0.56,-0.43c-0.15,0 -0.31,0 -0.48,0c-0.17,0 -0.43,0.06 -0.66,0.31c-0.22,0.25 -0.86,0.85 -0.86,2.07c0,1.22 0.89,2.4 1.01,2.56c0.12,0.17 1.75,2.67 4.23,3.74c0.59,0.26 1.05,0.41 1.41,0.52c0.59,0.19 1.13,0.16 1.56,0.1c0.48,-0.07 1.47,-0.6 1.67,-1.18c0.21,-0.58 0.21,-1.07 0.14,-1.18s-0.22,-0.16 -0.47,-0.28z"/>
+        </symbol>
+        <symbol id="ico-grill" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <rect fill="none" height="24" width="24"/>
+                <path fill="" d="M17,22c1.66,0,3-1.34,3-3s-1.34-3-3-3c-1.3,0-2.4,0.84-2.82,2H9.14l1.99-3.06C11.42,14.98,11.71,15,12,15 s0.58-0.02,0.87-0.06l1.02,1.57c0.42-0.53,0.96-0.95,1.6-1.21l-0.6-0.93C17.31,13.27,19,10.84,19,8H5c0,2.84,1.69,5.27,4.12,6.37 l-3.95,6.08c-0.3,0.46-0.17,1.08,0.29,1.38h0c0.46,0.3,1.08,0.17,1.38-0.29l1-1.55h6.34C14.6,21.16,15.7,22,17,22z M17,18 c0.55,0,1,0.45,1,1c0,0.55-0.45,1-1,1s-1-0.45-1-1C16,18.45,16.45,18,17,18z"/>
+                <path d="M9.41,7h1c0.15-1.15,0.23-1.64-0.89-2.96C9.1,3.54,8.84,3.27,9.06,2H8.07C7.86,3.11,8.1,4.05,8.96,4.96 C9.18,5.2,9.75,5.63,9.41,7z"/>
+                <path d="M11.89,7h1c0.15-1.15,0.23-1.64-0.89-2.96c-0.42-0.5-0.68-0.78-0.46-2.04h-0.99c-0.21,1.11,0.03,2.05,0.89,2.96 C11.67,5.2,12.24,5.63,11.89,7z"/>
+                <path d="M14.41,7h1c0.15-1.15,0.23-1.64-0.89-2.96C14.1,3.54,13.84,3.27,14.06,2h-0.99c-0.21,1.11,0.03,2.05,0.89,2.96 C14.18,5.2,14.75,5.63,14.41,7z"/>
+        </symbol>
+        <symbol id="ico-flight" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"  fill=""
+        ><rect fill="none"/>
+            <path fill="" d="M2.5,19h19v2h-19V19z M22.07,9.64c-0.21-0.8-1.04-1.28-1.84-1.06L14.92,10l-6.9-6.43L6.09,4.08l4.14,7.17l-4.97,1.33 l-1.97-1.54l-1.45,0.39l2.59,4.49c0,0,7.12-1.9,16.57-4.43C21.81,11.26,22.28,10.44,22.07,9.64z"/>
+        </symbol>
+        <symbol id="ico-construction" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"  fill="">
+            <rect fill="none" height="24" width="24"/>
+            <rect height="8.48" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.8717 17.6255)" width="3" x="16.34" y="12.87"/>
+            <path d="M17.5,10c1.93,0,3.5-1.57,3.5-3.5c0-0.58-0.16-1.12-0.41-1.6l-2.7,2.7L16.4,6.11l2.7-2.7C18.62,3.16,18.08,3,17.5,3 C15.57,3,14,4.57,14,6.5c0,0.41,0.08,0.8,0.21,1.16l-1.85,1.85l-1.78-1.78l0.71-0.71L9.88,5.61L12,3.49 c-1.17-1.17-3.07-1.17-4.24,0L4.22,7.03l1.41,1.41H2.81L2.1,9.15l3.54,3.54l0.71-0.71V9.15l1.41,1.41l0.71-0.71l1.78,1.78 l-7.41,7.41l2.12,2.12L16.34,9.79C16.7,9.92,17.09,10,17.5,10z"/>
+        </symbol>
+        <symbol id="ico-tennis" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24"  fill="">
+            <rect fill="none" height="24" width="24"/>
+            <path fill="" d="M19.52,2.49c-2.34-2.34-6.62-1.87-9.55,1.06c-1.6,1.6-2.52,3.87-2.54,5.46c-0.02,1.58,0.26,3.89-1.35,5.5l-4.24,4.24 l1.42,1.42l4.24-4.24c1.61-1.61,3.92-1.33,5.5-1.35s3.86-0.94,5.46-2.54C21.38,9.11,21.86,4.83,19.52,2.49z M10.32,11.68 c-1.53-1.53-1.05-4.61,1.06-6.72s5.18-2.59,6.72-1.06c1.53,1.53,1.05,4.61-1.06,6.72S11.86,13.21,10.32,11.68z"/>
+            <path fill="" d="M18,17c0.53,0,1.04,0.21,1.41,0.59c0.78,0.78,0.78,2.05,0,2.83C19.04,20.79,18.53,21,18,21s-1.04-0.21-1.41-0.59 c-0.78-0.78-0.78-2.05,0-2.83C16.96,17.21,17.47,17,18,17 M18,15c-1.02,0-2.05,0.39-2.83,1.17c-1.56,1.56-1.56,4.09,0,5.66 C15.95,22.61,16.98,23,18,23s2.05-0.39,2.83-1.17c1.56-1.56,1.56-4.09,0-5.66C20.05,15.39,19.02,15,18,15L18,15z"/>>
+
+        </symbol>
+        <symbol id="ico-padel" xmlns="http://www.w3.org/2000/svg" fill="" enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+            <rect x="-0.04507" y="-0.09013" id="svg_2" fill=""/>
+            <path fill="" id="svg_4" d="m19.22414,2.71189c-2.34,-2.34 -6.62,-1.87 -9.55,1.06c-1.6,1.6 -2.52,3.87 -2.54,5.46c-0.02,1.58 0.26,3.89 -1.35,5.5l-4.24,4.24l1.42,1.42l4.24,-4.24c1.61,-1.61 3.92,-1.33 5.5,-1.35s3.86,-0.94 5.46,-2.54c2.92,-2.93 3.4,-7.21 1.06,-9.55zm-9.2,9.19c-1.53,-1.53 -1.05,-4.61 1.06,-6.72s5.18,-2.59 6.72,-1.06c1.53,1.53 1.05,4.61 -1.06,6.72s-5.18,2.59 -6.72,1.06z"/>
+            <path fill="" id="svg_5" d="m17.70414,17.22189c0.53,0 1.04,0.21 1.41,0.59c0.78,0.78 0.78,2.05 0,2.83c-0.37,0.37 -0.88,0.58 -1.41,0.58s-1.04,-0.21 -1.41,-0.59c-0.78,-0.78 -0.78,-2.05 0,-2.83c0.37,-0.37 0.88,-0.58 1.41,-0.58m0,-2c-1.02,0 -2.05,0.39 -2.83,1.17c-1.56,1.56 -1.56,4.09 0,5.66c0.78,0.78 1.81,1.17 2.83,1.17s2.05,-0.39 2.83,-1.17c1.56,-1.56 1.56,-4.09 0,-5.66c-0.78,-0.78 -1.81,-1.17 -2.83,-1.17l0,0z"/>
+            <ellipse ry="0.5" rx="0.5" id="svg_6" cy="7" cx="16" stroke="" fill=""/>
+            <ellipse ry="0.5" rx="0.5" id="svg_7" cy="5.976629" cx="15" stroke="" fill=""/>
+            <ellipse ry="0.5" rx="0.5" id="svg_8" cy="6.42722" cx="13.37449" stroke="" fill=""/>
+            <ellipse ry="0.5" rx="0.5" id="svg_9" cy="7.61" cx="14.411" stroke="" fill=""/>
+            <ellipse ry="0.5" rx="0.5" id="svg_10" cy="8.6" cx="15.45065" stroke="" fill=""/>
+            <ellipse ry="0.5" rx="0.5" id="svg_11" cy="9.4" cx="13.8" stroke="" fill=""/>
+            <ellipse ry="0.5" rx="0.5" id="svg_12" cy="8" cx="12.5" stroke="" fill="rd"/>
+        </symbol>
+        <symbol id="ico-help" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path fill="" d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/>
+        </symbol>
+        <symbol id="ico-rememberme" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="">
+            <path d="M0,0h24v24H0V0z" fill="none"/>
+            <path fill="" d="M17,1H7C5.9,1,5,1.9,5,3v18c0,1.1,0.9,2,2,2h10c1.1,0,2-0.9,2-2V3C19,1.9,18.1,1,17,1z M17,21H7v-1h10V21z M17,18H7v-0.48 C8.47,16.53,10.22,16,12,16s3.53,0.53,5,1.52V18z M17,15.21C15.5,14.44,13.8,14,12,14s-3.5,0.44-5,1.21V6h10V15.21z M17,4H7V3h10 V4z"/>
+            <path fill="" d="M12,13c1.66,0,3-1.34,3-3s-1.34-3-3-3s-3,1.34-3,3S10.34,13,12,13z M12,9c0.55,0,1,0.45,1,1s-0.45,1-1,1s-1-0.45-1-1 S11.45,9,12,9z"/>>
+        </symbol>
+        <symbol id="ico-handshake" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="">
+            <rect fill="none" height="24" width="24"/>
+            <path fill="" d="M12.22,19.85c-0.18,0.18-0.5,0.21-0.71,0c-0.18-0.18-0.21-0.5,0-0.71l3.39-3.39l-1.41-1.41l-3.39,3.39 c-0.19,0.2-0.51,0.19-0.71,0c-0.21-0.21-0.18-0.53,0-0.71l3.39-3.39l-1.41-1.41l-3.39,3.39c-0.18,0.18-0.5,0.21-0.71,0 c-0.19-0.19-0.19-0.51,0-0.71l3.39-3.39L9.24,10.1l-3.39,3.39c-0.18,0.18-0.5,0.21-0.71,0c-0.19-0.2-0.19-0.51,0-0.71L9.52,8.4 l1.87,1.86c0.95,0.95,2.59,0.94,3.54,0c0.98-0.98,0.98-2.56,0-3.54l-1.86-1.86l0.28-0.28c0.78-0.78,2.05-0.78,2.83,0l4.24,4.24 c0.78,0.78,0.78,2.05,0,2.83L12.22,19.85z M21.83,13.07c1.56-1.56,1.56-4.09,0-5.66l-4.24-4.24c-1.56-1.56-4.09-1.56-5.66,0 l-0.28,0.28l-0.28-0.28c-1.56-1.56-4.09-1.56-5.66,0L2.17,6.71c-1.42,1.42-1.55,3.63-0.4,5.19l1.45-1.45 C2.83,9.7,2.96,8.75,3.59,8.12l3.54-3.54c0.78-0.78,2.05-0.78,2.83,0l3.56,3.56c0.18,0.18,0.21,0.5,0,0.71 c-0.21,0.21-0.53,0.18-0.71,0L9.52,5.57l-5.8,5.79c-0.98,0.97-0.98,2.56,0,3.54c0.39,0.39,0.89,0.63,1.42,0.7 c0.07,0.52,0.3,1.02,0.7,1.42c0.4,0.4,0.9,0.63,1.42,0.7c0.07,0.52,0.3,1.02,0.7,1.42c0.4,0.4,0.9,0.63,1.42,0.7 c0.07,0.54,0.31,1.03,0.7,1.42c0.47,0.47,1.1,0.73,1.77,0.73c0.67,0,1.3-0.26,1.77-0.73L21.83,13.07z"/>
+
+        </symbol>
+
+        <!-- Hay que reemplazarl por uno viewport 0 0 24 24 -->
+        <symbol id="ico-linkedin" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" >
+            <path stroke-width="10" d="M480.4 11.463H29.488c-11 0-20 9-20 20v450.913c0 11 9 20 20 20H480.4c11 0 20-9 20-20V31.463c0-11-9-20-20-20zm-312.775 400.53H99.487V192.338h68.137v219.655zm-33.518-243.974c-21.517 0-35.413-15.241-35.413-34.069 0-19.275 14.344-34.068 36.31-34.068s35.414 14.793 35.862 34.068c0 18.827-13.897 34.069-36.759 34.069zm286.199 243.999h-68.137v-117.38c0-28.241-9.862-47.517-34.517-47.517-18.828 0-30.034 13-34.966 25.551-1.793 4.483-2.241 10.759-2.241 17.034v122.278h-68.137v-145.14c0-27.345-.896-54.782-1.793-74.506h59.172l8.138 35.059h2.345c8.965-14.345 24.931-35.414 61.688-35.414 44.827 0 78.447 30.034 78.447 94.585v125.45zM650.85 131.95c0 18.828-13.896 34.069-36.759 34.069-21.517 0-35.413-15.241-35.413-34.069 0-19.275 14.344-34.068 36.31-34.068s35.412 14.792 35.862 34.068zm-70.379 280.168V192.915h68.137v219.204h-68.137zM690.292 262.845c0-27.345-.896-50.206-1.793-69.93h59.172l3.138 30.482h1.345c8.965-14.345 30.931-35.414 67.688-35.414 44.827 0 78.447 30.034 78.447 94.585v129.55h-68.137v-121.48c0-28.241-9.862-47.517-34.517-47.517-18.828 0-30.034 13-34.966 25.551-1.793 4.483-2.241 10.759-2.241 17.034v126.412h-68.137V262.845z"/>
+        </symbol>
+        <!-- Hay que reemplazarlo por uno viewport 0 0 24 24 -->
+        <symbol id="ico-github" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path stroke-width="10" d="M218.7 445.5c-6.6.7-12.2 1.4-17.8 2-29.1 2.9-54.5-5-73.7-27.7-6-7.1-9.4-16.3-14.5-24.2-7.9-12.4-16-24.7-24.7-36.6-3-4.1-8.2-6.5-12.2-10-1.3-1.1-1.7-3.2-2.6-4.9 1.8-.7 3.5-1.9 5.3-2.1 23-2.1 39.2 8.5 50.5 27.6 14.1 23.8 34.5 36.8 62.2 36.8 8 0 16-2.7 23.9-4.5 1.5-.4 3.3-2.7 3.5-4.4 1.4-10.4 2.7-20.8 7.5-30.3 1.8-3.5 3.9-6.8 6-10.4-8.1-1.6-15.9-2.8-23.6-4.7-35.5-9-64.8-26.8-81.8-60.6-6.6-13.2-10.3-27.4-10.8-42.2-.8-22.8-.5-45.7 4.1-68.2 3.3-15.8 9.3-30.5 21.3-41.9 2.6-2.5 3.1-4.7 1.7-8.5-6.7-18.7-7.4-37.7-1.7-56.8 1.2-4.1 2.3-8.2 3.5-12.5 27.4 5.2 43.7 23.7 59 44.2 15.8-11.7 34.5-12.7 52.7-13.9 21.6-1.4 43.3-1.1 64.8 2.4 11.2 1.8 18.1 4.1 29 10.6 9.4-9.7 18.2-19.5 27.9-28.4 7.7-7.1 17.3-11.6 27.7-14 2.9-.7 4.4-.4 5.6 2.8 8.1 22.1 9.3 44.1.4 66.2-1.2 3-1.1 5.1 1.4 7.5 14.4 13.7 21 31.4 23.2 50.5 2 17.7 3.1 35.5 3.1 53.3 0 25.3-7.5 48.5-23.4 68.4-11.2 14.1-25.7 24.2-42.1 31.8-15.9 7.3-32.5 11.5-49.7 13.7-.4.1-.8.4-1.5.7 11.8 16.9 13.7 35.9 13.5 55.6-.3 28.7-.2 57.3 0 86 0 4.5-1.3 5.6-5.7 5.6-35.5-.2-71-.2-106.5 0-4.4 0-5.8-1.4-5.8-5.7.2-15.5.1-31 .1-46.5.2-2.3.2-4.3.2-6.7z"/>
+        </symbol>
+    </svg>
+    <nav>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon light"><use href="#ico-menu"/></svg></a>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a>
+                    <a href="#" onclick='compactExtended("extended")'>CV Completo</a>
+                    <a href="#" value="selected" onclick='modeDarkLight("light")'>Modo claro</a>
+                    <a href="#" onclick='modeDarkLight("dark")'>Modo oscuro</a>
+                    <a href="#" onclick="acercaDe()">Acerca de</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <div class="centered callout">
+        <div class="callout-header">Acerca de</div>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+        <div class="callout-container">
+            <ul>
+                <li><h3>Desarrollado sólo con CSS3, JS y HTML.</h3></li>
+                <li class="special"><hr> </li><br>
+                <h4>Características de diseño y codificación:</h4><br>
+                <li><b>Modo responsivo y Modo Dark/Light</b> en testing (este último requiere que el OS tenga activado el modo oscuro).</li>
+                <li><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.</li>
+                <li><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>.</li><br>
+                <li>Gracias a <b><em>w3s</em></b> no necesité dedicar mucho tiempo para el navBar, ni para el diseño de este "Acerca de".</li>
+                <li class="special"><hr> </li><br>
+                <li class="BwQ-light-italic"><b>Pendientes</b></li>
+                <li> 1. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) tomando los datos de una base de datos en MySQL para que genere este código (proyecto iniciado pero aún sin publicar).</li>
+                <li> 2. Mejorar el Modo Dark/Light mediante clases de CSS y así sumar un modo personalizado.</li>
+                <li> 3. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puesta en la línea del html, etc.</li>
+            </ul>
+            
+        </div>
+    </div>
+    
+</body>
+
+<script id="menuNav">
+    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+    function myFunction() {
+        var x = document.querySelector(".dropdown-content");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+    function menuClose() {
+        var x = document.querySelector(".dropdown-content");
+        x.style.display = "none";
+    }
+</script> <!-- menuNav -->
+<script>
+    function acercaDe() {
+        element = document.querySelector('.callout');
+        console.log(element)
+        element.style.display='block'
+        menuClose();
+    }
+</script>
+
+</html>
+
