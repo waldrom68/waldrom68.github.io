@@ -4,39 +4,130 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+    <title>CV - WR</title>
 
-        html { margin: 0%; padding: 0%; box-sizing: border-box;}
-        
+    <style id="import">
+        /* fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,700&display=swap');
+
+        @font-face {
+        font-family: 'Quinta-light';
+        font-style: normal;  /* light */
+        src: local('BwQuintaPro light'), local('BwQuintaPro-light'), url(static/fuentes/bw_quinta/BwQuintaPro-Light.woff2 )  format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+        @font-face {
+        font-family: 'Quinta-light';
+        font-style: italic;  /* light */
+        src: local('BwQuintaPro light Italic'), local('BwQuintaPro-light-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-LightItalic.woff2)  format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+        @font-face {
+        font-family: 'Quinta-regular';
+        font-style: normal;
+        src: local('BwQuintaPro Regular'), local('BwQuintaPro-Regular'), url(static/fuentes/bw_quinta/BwQuintaPro-Regular.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+        @font-face {
+        font-family: 'Quinta-regular';
+        font-style: italic;
+        src: local('BwQuintaPro Regular Italic'), local('BwQuintaPro-Regular-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-RegularItalic.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+        @font-face {
+        font-family: 'Quinta-bold';
+        font-style: normal;
+        src: local('BwQuintaPro Bold'), local('BwQuintaPro-Bold'), url(static/fuentes/bw_quinta/BwQuintaPro-Bold.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+        @font-face {
+        font-family: 'Quinta-bold';
+        font-style: italic;
+        src: local('BwQuintaPro Bold Italic'), local('BwQuintaPro-Bold-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-BoldItalic.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+        }
+
+    </style>
+
+    <style id=":root">
+        :root {
+            /* DE LONGITUD */
+            /* layout general */
+            --altoPage: 1122.519685px;
+            --anchoPage:1224px; 
+
+            /* en Donuts */
+            --scale: 100%; /* min: 30%, max:100%*/
+            --grosor: 8%; /* min: 1%,  max:50% */
+
+            /* PALETA DE COLORES */
+            --color-dark: Canvas;  /* black */
+            --color-light: CanvasText;  /* white */ 
+
+            --bg-dark: GrayText;  /* Gris oscuro */
+            
+            /* sin usar */
+            --bg-light: ButtonFace; /* Gris claro */ 
+            /* fin sin usar */
+
+            --progress-color: rgb(0, 255, 0);  /* Rating  y Donuts*/
+            --no-progress-color: var(--bg-dark);  /* Donuts*/
+
+            /* SETEAR EN @MEDIA -> Background margenes */
+            --center-color: var(--canvasBG);  /* Donuts*/
+            --alert: rgba(231, 8, 8, 1);
+        }
+    </style>
+
+    <style id="base">
+        html,
+        * { margin: 0; padding:0; box-sizing: border-box;
+            /* background-color: ActiveText ; */
+        }
         body {
+            /* height: var(--altoPage) ; */
+            margin: 10.205px 6.803px 7.181px 6.803px;
+            width: var(--anchoPage);
+            width: 100%;
+            /* max-width: 1024px; */
+            overflow: scroll;
+
+            color: var(--color-light);
+            background-color: var(--color-dark);
+
+            font-family: 'Quinta-light','roboto', sans-serif;
+            font-style: normal;
             font-size: 100%;
         }
-        div#pareto {
-            width: 1123px;
-            height: 20px;
-            border: 2px dotted orange;
-        }
 
-        div.base {
-            position: sticky;
-            display: block;
-            right: 0%;
-            top: 0%;
-            width: auto;
-            height: auto;
-            margin: auto;
-        }
+        /* SPECIAL STYLE's */
+        .special {
+           color: currentColor; }
+            .special hr {
+                margin: 1em 0;
+                height: 2px; /* 5px */
+                background-color: currentColor;
+                opacity: .5;
+                width: 100%;
+            }
+            .special hr.p75 {width: 75%;}
+            .special hr.p33 {width: 33%;}
+
+    </style>
+
+
+    <style id="Layout">
+
         #page {
             display: inline-flex;
-            width: 80%; /* 100% */
+            width: auto;
             height: 100%;
             margin: 2px;
             border: 2px solid red;
         }
 
         section {
-            display: inline-flex;
+            display: flex;
             width: 100%;
         }
 
@@ -51,66 +142,67 @@
         .left {
             width: 70%;
             height: 100%;
-
         }
-            /* 161px */
-            .left .A { 
-                width: 21%;
-                min-width: 161px;
-                /* max-width: 161px; */
-                background-color: aqua;
-            }
-            /* 619px */
-            .left .B {
-                width: auto;
-                min-width: 619px;
-                /* max-width: 619px; */
-                background-color: white;
-            }
-        
         /* 343px */
         .right {
             width: 30%;
             min-width: 343px;
             background-color: aqua;
-        }
-            /* 88px */
-            .right .A { 
-                width: 25%;
-                min-width: 88px;
-                /* max-width: 88px; */
-             }
-            /* 255px */
-            .right .B { 
-                width: auto;
-                min-width: 255px;
-                /* max-width: 255px; */
             }
 
-
-
-        .A {
-            /* display: block; */
-            margin: auto;
-            padding: auto;
-            height: auto;
+            /* 161px */
+            .left .captionVertical { 
+                width: 21%;
+                min-width: 6em;
+                max-width: 6em;
+                background-color: aqua;
+            }
+            /* 619px */
+            .left .detalle {
+                display: block;
+                width: auto;
+                min-width: 50%;
+                overflow-wrap: break-word;
+                background-color: white;
+            }
+            /* 88px */
+            .right .captionVertical { 
+                width: 25%;
+                min-width: 4em;
+                max-width: 4em;
+             }
+            /* 255px */
+            .right .detalle { 
+                width: auto;
+                min-width: 50%;
+                /* max-width: 255px; */
+            }
+        /* Es el TAG, se muestra el texto en vertical */
+        .captionVertical {
+            margin: initial;
             writing-mode: vertical-rl;
             transform: rotateZ(180deg);
-            background-color: aqua;
-        }
-        .A.reset {
+        } 
+        /* Es la funcionalidad para revertir el Texto del TAG en vertical */
+        .captionVertical.reset {
             writing-mode: unset;
-            transform: none;
+            transform: initial;
         }
 
-        .col-container {
-            display: table;
-            width: 100%;
+        /* Ajustando el contenido del TAG -ancho y alto */
+        .tagCenter {
+            position: relative;
+            left: -1em;
+            text-align: end;
+            padding: 15px;
         }
-        .col {
-            display: table-cell;
-            padding: 16px;
+        /* Ajustando el contenido del TAG, pero en formato slim */
+        .tagCenter.slim {
+            left: 0em;
         }
+
+
+
         /* // Medium devices (tablets, vertical, less than 992px) */
         
         /* aparentemente breackpoint son: a los 686 y a 343 */
@@ -119,8 +211,11 @@
                 @media (max-width: 5299.98px) { .testin::after {content: "portrait - width: >=1199.98"; }}
                 @media (max-width: 1199.98px) { .testin::after {content: "portrait - width: 991.98 a 1199.98"; }}
                 @media (max-width: 991.98px) { .testin::after {content: "portrait - width: 767.98 a 991.98"; }}
-                @media (max-width: 767.98px) { .testin::after {content: "portrait - width: 575.98 a 767.98"; }}
-                @media (max-width: 575.98px) { .testin::after {content: "portrait - width: 320.00 a 575.98"; }}
+                @media (max-width: 767.98px) { 
+                    .testin::after {content: "portrait - width: 575.98 a 767.98;"}; 
+                    body {background-color:"red"};
+                }
+                @media (max-width: 575.98px) { .testin::after {content: "portrait - width: 320.00 a 575.98";  }}
                 @media (max-width: 319.98px) { .testin::after {content: "portrait - width: <=319.98"; }}
             }
             @media (orientation: landscape) {
@@ -134,6 +229,11 @@
         }
 
 
+        @media print  { 
+            body {font-family: Arial, Helvetica, sans-serif; font-size: 10pt;}
+            .testin::after {content: "SALIDA IMPRESION";} 
+            .base {font-size: 200%; text-align: center; background-color: red;}
+        }
         /* @media handheld and (orientation: landscape)  {
         
             @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
@@ -143,74 +243,55 @@
         @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - portrait"; } }
          */
 
+
+        /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
+        /* div#pareto { width: 1123px; height: 20px; border: 2px dotted orange;} */
+
+        div.base {position: sticky; display: block; right: 0%; top: 0%; width: 1123px; height: auto; border: 2px dotted orange;}
+
     </style>
+
 </head>
 <body>
-    <div class="base">
-        <h4 class="testin">Testing :</h4>
+    <div class="base" id="pareto">ESTO SERÍA LA MEDIDA DE UNA HOJA H4
+            <h4 class="testin">Testing :</h4>
     </div>
-    <div id="pareto"></div>
+    
     <main id="page">
         <div class="left">
             <section id="personal">
-                <div class="A">
-                    personal
+                <div class="captionVertical">
+                    <p class="tagCenter">personal</p>
                 </div>
-                <div class="B">
+                <div class="detalle">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure debitis harum earum nostrum a assumenda nemo sunt! Sunt in numquam consequuntur corporis non officia, nam cupiditate saepe at deleniti. Sequi!
                 </div>
             </section>
             <section id="profile">
-                <div class="A">
-                    profile
+                <div class="captionVertical">
+                    <p class="tagCenter">Profile</p>
                 </div>
-                <div class="B">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quaerat sit nemo cum itaque dicta ducimus magnam aspernatur eos quae laboriosam ad error, saepe, dolorem suscipit quidem doloribus quisquam! Doloremque.
-                    Culpa adipisci dolores necessitatibus ipsa ducimus non officia ea aut, sint dolore hic quas repudiandae ad qui vero et distinctio excepturi. Voluptate nihil reiciendis voluptatem voluptates magni deleniti quae consequatur?
+                <div class="detalle">
+                    <p>Luego de mi carrera laboral en una prestigiosa universidad en la cual aporté mis habilidades humanas y técnicas, hoy me encuentro muy motivado por haber vuelto a mi esencia, a la <em> “innovación, creatividad, sistemas y tecnología”</em>.</p>
+                    <p>Formalmente ocupé posiciones en áreas de RRHH, pero gracias a que mi formación de grado es <em>Analista de Sistemas</em>, siempre pude dar soporte especializado para mejorar procesos, generar reportes o cuadros con informaciones departamentales e incluso llegué a ser <em>una especie de analista funcional</em>,  sirviendo de enlace entre las áreas de negocio y de tecnología.</p>
+                    <p>Puedo asegurar que mi experiencia laboral junto con mi formación en el MBA y mi reciente especialización, sin duda alguna contribuyen al éxito de cualquier proyecto, esto es gracias a mi criterio empresarial y mis conocimientos como Desarrollador Web Full stack.</p>
+                    <p>Quienes me conocen destacan mi alto compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                 </div>
             </section>
         </div>
         
         <div class="right">
             <section id="educacion">
-                    <div class="A">
-                        educacion
+                    <div class="captionVertical">
+                        <p class="tagCenter slim">educacion</p>
                     </div>
-                    <div class="B">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione non a, necessitatibus maiores voluptates dignissimos expedita eum quasi quas, consectetur nulla ullam, quam exercitationem ea natus dolores? Blanditiis, praesentium adipisci?
+                    <div class="detalle">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ut optio necessitatibus soluta! Cupiditate aut ea consectetur beatae eos voluptates odit qui asperiores eius, architecto similique illo veniam. Repellendus, iste?
+                        Repellendus quo doloribus deleniti dicta in illum pariatur iure exercitationem? Odio optio libero ipsa natus! A eos fugit ipsum voluptatibus, quaerat quod, dicta iste, ex soluta alias enim odio nihil?</p>
                     </div>
             </section>
         </div>
     </main>
-    
-    <br>
-        
-    <div class="left">
-        <div class="col-container">
-            <div class="col" style="background:orange">
-                <div class="A col">
-                    personal
-                </div>
-                <div class="col" style="background:yellow">
-                    <div class="B col">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure debitis harum earum nostrum a assumenda nemo sunt! Sunt in numquam consequuntur corporis non officia, nam cupiditate saepe at deleniti. Sequi!
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-container">
-            <div class="col" style="background:orange">
-                <div class="A col">
-                    personal
-                </div>
-                <div class="col" style="background:yellow">
-                    <div class="B col">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure debitis harum earum nostrum a assumenda nemo sunt! Sunt in numquam consequuntur corporis non officia, nam cupiditate saepe at deleniti. Sequi!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- fin left-->
-            
+
 </body>
 </html>

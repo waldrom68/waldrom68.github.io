@@ -348,7 +348,7 @@
         }
         
         /* The main elements*/
-        .myList ul, li {
+        .myList li {
             list-style-type: none;
             background-color: initial;
             /* user-select: none; */
@@ -374,15 +374,13 @@
             margin-left: 2em ;
             padding-top: 5px;
             font-family: "Quinta-regular";
-            font-size: .83em;
-            
-            
+            /* font-size: .83em; */
         }
         
         /* Roles or responsibilities, hidden detail */
         /* click expand details */
         .myList ~ li.expand ul {
-                text-decoration: underline;
+                /* text-decoration: underline; */
                 text-decoration-color: var(--alert);
                 font-family: "Quinta-light";
                 cursor: zoom-in;
@@ -392,7 +390,7 @@
 
                 .myList ~ li.expand ul:hover {
                     color: ( /* Sin estilo especificado */);
-                    background-color: ( /* Sin estilo especificado */);
+                    background-color: var(--bg-light);
                 }
 
                 /* Character '+' to indicate that it can be expanded */
@@ -411,6 +409,7 @@
                 .myList ~ li.expand > ul > li {
                     list-style: square;
                     margin-left: 1.5em;
+                    cursor: grab;
                 }
 
             li.myList:nth-child(odd) {
@@ -614,7 +613,7 @@
             min-height: auto;
             margin-top: 2em;
             background-color: var(--canvasBG);
-            background-color: pink;
+            /* background-color: pink; */
         }
 
             .grid-container {
@@ -679,7 +678,7 @@
             min-height: auto;
             margin-top: 2em;
             background-color: var(--canvasBG);
-            background-color: red;
+            /* background-color: red; */
         }
 
             .grid-container {
@@ -717,6 +716,17 @@
             display: block;
         }
 
+        #personal, #hobbies, #contacto {
+            text-align: center;
+            justify-content: center;
+        }
+        #personal {
+            display: block;
+        }
+
+        #iniciales {
+            display: none;
+        }
         .nombre { display: inline-block };
 
     }
@@ -774,7 +784,7 @@ nav {
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 16px;
+  font-size: 1em;
   border: none;
   outline: none;
   color: white;
@@ -987,7 +997,7 @@ nav {
 
     <nav>
         <div class="navbar">
-            <h5 id="status" class="alingC">@Media testing :</h5>
+            <!-- <h5 id="status" class="alingC">@Media testing :</h5> -->
             <div class="dropdown">
                 <button class="dropbtn">
                     <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon light"><use href="#ico-menu"/></svg></a>
@@ -1057,9 +1067,9 @@ nav {
                     <p class="smallCaps">Perfil</p>
                 </div>
                 <div id="profile" class="detalle">
-                    <p>Luego de mi carrera laboral en una prestigiosa universidad en la cual aporté mis habilidades humanas y técnicas, hoy me encuentro muy motivado por haber vuelto a mi esencia, a la <em> “innovación, creatividad, sistemas y tecnología”</em>.</p>
+                    <p>Luego de mi carrera laboral en una prestigiosa universidad en la cual aporté mis habilidades humanas y técnicas, hoy me encuentro muy motivado por haber vuelto a mi esencia: <em> “innovación, creatividad, sistemas y tecnología”</em>.</p>
                     <br>
-                    <p></p>Formalmente ocupé posiciones en áreas de RRHH, pero gracias a que mi formación de grado es <em>Analista de Sistemas</em>, siempre pude dar soporte especializado para mejorar procesos, generar reportes o cuadros con informaciones departamentales e incluso llegué a ser <em>una especie de analista funcional</em>,  sirviendo de enlace entre las áreas de negocio y de tecnología.</p>
+                    <p></p>Formalmente ocupé posiciones en áreas de RRHH, pero gracias a que mi formación de grado es <em>Analista de Sistemas</em>, siempre pude dar soporte especializado para mejorar procesos, generar reportes o cuadros con informaciones departamentales, e incluso llegué a ser <em>una especie de analista funcional</em>,  sirviendo de enlace entre las áreas de negocio y de tecnología.</p>
                     <br>
                     <p>Puedo asegurar que mi experiencia laboral junto con mi formación en el MBA y mi reciente especialización, sin duda alguna contribuyen al éxito de cualquier proyecto, esto es gracias a mi criterio empresarial y mis conocimientos como Desarrollador Web Full stack.</p>
                     <br>
