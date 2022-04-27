@@ -12,7 +12,11 @@
         body {
             font-size: 100%;
         }
-
+        div#pareto {
+            width: 1123px;
+            height: 20px;
+            border: 2px dotted orange;
+        }
 
         div.base {
             position: sticky;
@@ -24,24 +28,92 @@
             margin: auto;
         }
         #page {
-            display: flex;
-            width: 100%;
+            display: inline-flex;
+            width: 80%; /* 100% */
             height: 100%;
             margin: 2px;
             border: 2px solid red;
         }
 
-        .split {
-            display: inline-block;
+        section {
+            display: inline-flex;
+            width: 100%;
         }
 
-        .izquierda {
+        /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
+            Las columnas 1, 3 y 4 usan el mismo background 
+            Hoja A4, en unidades: Total 1123px (leftA:172px, leftB:619px, rightA:88px:, rightB:255px)
+                Left: 70% (donde LeftA 21% de Left )
+                Right: 30% (donde RightA 25% de Right )
+            */
+
+        /* 791px */
+        .left {
             width: 70%;
+            height: 100%;
+
         }
-        .derecha {}
+            /* 161px */
+            .left .A { 
+                width: 21%;
+                min-width: 161px;
+                /* max-width: 161px; */
+                background-color: aqua;
+            }
+            /* 619px */
+            .left .B {
+                width: auto;
+                min-width: 619px;
+                /* max-width: 619px; */
+                background-color: white;
+            }
+        
+        /* 343px */
+        .right {
+            width: 30%;
+            min-width: 343px;
+            background-color: aqua;
+        }
+            /* 88px */
+            .right .A { 
+                width: 25%;
+                min-width: 88px;
+                /* max-width: 88px; */
+             }
+            /* 255px */
+            .right .B { 
+                width: auto;
+                min-width: 255px;
+                /* max-width: 255px; */
+            }
 
+
+
+        .A {
+            /* display: block; */
+            margin: auto;
+            padding: auto;
+            height: auto;
+            writing-mode: vertical-rl;
+            transform: rotateZ(180deg);
+            background-color: aqua;
+        }
+        .A.reset {
+            writing-mode: unset;
+            transform: none;
+        }
+
+        .col-container {
+            display: table;
+            width: 100%;
+        }
+        .col {
+            display: table-cell;
+            padding: 16px;
+        }
         /* // Medium devices (tablets, vertical, less than 992px) */
-
+        
+        /* aparentemente breackpoint son: a los 686 y a 343 */
         @media screen  { 
             @media (orientation: portrait) {
                 @media (max-width: 5299.98px) { .testin::after {content: "portrait - width: >=1199.98"; }}
@@ -74,12 +146,71 @@
     </style>
 </head>
 <body>
-    
-    <div id="page">
-        <div class="base">
-            <h4 class="testin">Testing :</h4>
+    <div class="base">
+        <h4 class="testin">Testing :</h4>
+    </div>
+    <div id="pareto"></div>
+    <main id="page">
+        <div class="left">
+            <section id="personal">
+                <div class="A">
+                    personal
+                </div>
+                <div class="B">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure debitis harum earum nostrum a assumenda nemo sunt! Sunt in numquam consequuntur corporis non officia, nam cupiditate saepe at deleniti. Sequi!
+                </div>
+            </section>
+            <section id="profile">
+                <div class="A">
+                    profile
+                </div>
+                <div class="B">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quaerat sit nemo cum itaque dicta ducimus magnam aspernatur eos quae laboriosam ad error, saepe, dolorem suscipit quidem doloribus quisquam! Doloremque.
+                    Culpa adipisci dolores necessitatibus ipsa ducimus non officia ea aut, sint dolore hic quas repudiandae ad qui vero et distinctio excepturi. Voluptate nihil reiciendis voluptatem voluptates magni deleniti quae consequatur?
+                </div>
+            </section>
         </div>
         
-    </div>
+        <div class="right">
+            <section id="educacion">
+                    <div class="A">
+                        educacion
+                    </div>
+                    <div class="B">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione non a, necessitatibus maiores voluptates dignissimos expedita eum quasi quas, consectetur nulla ullam, quam exercitationem ea natus dolores? Blanditiis, praesentium adipisci?
+                    </div>
+            </section>
+        </div>
+    </main>
+    
+    <br>
+        
+    <div class="left">
+        <div class="col-container">
+            <div class="col" style="background:orange">
+                <div class="A col">
+                    personal
+                </div>
+                <div class="col" style="background:yellow">
+                    <div class="B col">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure debitis harum earum nostrum a assumenda nemo sunt! Sunt in numquam consequuntur corporis non officia, nam cupiditate saepe at deleniti. Sequi!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-container">
+            <div class="col" style="background:orange">
+                <div class="A col">
+                    personal
+                </div>
+                <div class="col" style="background:yellow">
+                    <div class="B col">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure debitis harum earum nostrum a assumenda nemo sunt! Sunt in numquam consequuntur corporis non officia, nam cupiditate saepe at deleniti. Sequi!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- fin left-->
+            
 </body>
 </html>
