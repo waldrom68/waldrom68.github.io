@@ -100,7 +100,7 @@
 
             font-family: 'Quinta-light','roboto', sans-serif;
             font-style: normal;
-            font-size: 1.3rem;
+            font-size: 1rem;
         }
 
 
@@ -161,7 +161,7 @@
                     /* Margenes izquierdos, titulos verticales */
                     .tag {
                         margin: auto;
-                        margin-top: 2em;
+                        padding: auto;
                         writing-mode: vertical-rl;
                         transform: rotateZ(180deg);
                     }
@@ -225,6 +225,11 @@
         
         /* special decoration */
         #social p, .rating span {font-size: .83em; line-height: .83em;}
+
+        #social {
+            display: initial;
+            /* margin: auto; */
+        }
 
         ul, li {
         list-style-type: none;
@@ -593,8 +598,10 @@
     </style>
 
     <style id="responsive">
+        
+
     /* Responsive layout - make the columns stack on top of each other instead of next to each other */
-    @media (max-width: 800px), handheld and (orientation: landscape)  { 
+    @media (max-width: 840px), handheld and (orientation: landscape)  { 
         /* General layout */
         body {
             width: 100%;
@@ -607,6 +614,7 @@
             min-height: auto;
             margin-top: 2em;
             background-color: var(--canvasBG);
+            background-color: pink;
         }
 
             .grid-container {
@@ -646,12 +654,15 @@
         #personal, #hobbies, #contacto {
             text-align: center;
             justify-content: center;
-            
         }
+        #personal {
+            display: block;
+        }
+
         #iniciales {
             display: none;
         }
-        
+
         .nombre { display: inline-flex };
     }
     /* Responsive layout - make the columns stack on top of each other instead of next to each other */
@@ -668,6 +679,7 @@
             min-height: auto;
             margin-top: 2em;
             background-color: var(--canvasBG);
+            background-color: red;
         }
 
             .grid-container {
@@ -708,6 +720,7 @@
         .nombre { display: inline-block };
 
     }
+
 
     </style>
 
@@ -857,96 +870,20 @@ nav {
             }
     </style>
 <style id="prueba">
-    .educacion, .hobbies-Contacto {
+    .educacion, .hobbies-Contacto, .perfil, .experiencia, .habilidades  {
         display: contents;
     }
+    .personal {
+        display: contents;
+    }
+    #personal {
+    justify-content: center;
+    }
+    #social {
+        display: block;
+        margin-top: auto;
+    }
 
-
-</style>
-<style id="print">
-/* Revisar Flexbox o CSS Grid. En este caso quizá necesite ser cambiados a display:block; */
-/* para los contenedores flotados -> main { float:none; } */
-/* #sidebar { display:none;} */
-    @media print {
-        /* Aquí irían tus reglas CSS específicas para imprimir */
-        @page {
-            margin: 10.205px 6.803px 7.181px 6.803px;
-            }
-
-        body { 
-            font-size: 10pt;
-            height: 100%;
-        }
-        
-        .page {
-            margin: 0%;
-            padding: 0%;
-        }
-        nav, .callout, .none, .special, .extended, .educacion .detalle p {
-            display: none;
-        }
-        .extraEspace {
-            margin-top: 0px;
-        }
-
-        #personal, .nombre { display: inline-flex;}
-
-        .tag {
-            margin: 0px;
-        }
-
-        .rating { 
-            font-weight: normal;
-            font-size: 10pt;
-            line-height: 10pt;
-            margin: 0%;
-            padding: 0%;
-        }
-        svg.w24  { 
-            width: 16px;
-            height: 16px;
-        }
-
-        .rtngEnd {display: block;}
-
-        .icon.light {
-                fill: black;
-                
-            }
-            .icon.dark {
-                fill: black;
-            }
-
-            .icon.border {
-                margin: 0% .25em;
-                border-radius: 25%;
-                border: 2px solid black;
-            }
-            /* .donut-chart {
-              margin: 0%;
-              font-size: 0.83rem;}
-
-            .donut-chart .center-label, .center-chart span {
-                color: black;}
-            .donut-chart .center-chart {
-                background: white;
-            } */
-
-            .hobbies-Contacto { 
-                display: flex;
-            }
-            .hobbies-Contacto .tag { 
-                text-align: right;
-                margin: auto;
-                padding: 0%;
-            }
-            .hobbies-Contacto .detalle { 
-                text-align: center;
-                margin: auto;
-                padding: 0%;
-            }
-
-    } 
 </style>
 
 </head>
@@ -1050,89 +987,299 @@ nav {
 
     <nav>
         <div class="navbar">
+            <h5 id="status" class="alingC">@Media testing :</h5>
             <div class="dropdown">
                 <button class="dropbtn">
                     <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon light"><use href="#ico-menu"/></svg></a>
                 </button>
-                <div class="dropdown-content">
-                    <a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a>
-                    <a href="#" onclick='compactExtended("extended")'>CV Completo</a>
-                    <a href="#" value="selected" onclick='modeDarkLight("light")'>Modo claro</a>
-                    <a href="#" onclick='modeDarkLight("dark")'>Modo oscuro</a>
-                    <a href="#" onclick="acercaDe()">Acerca de</a>
-                </div>
+                <ul class="dropdown-content">
+                    <li><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
+                    <li><a href="#" onclick='compactExtended("extended")'>CV Completo</a></li>
+                    <li><a href="#" value="selected" onclick='modeDarkLight("light")'>Modo claro</a></li>
+                    <li><a href="#" onclick='modeDarkLight("dark")'>Modo oscuro</a></li>
+                    <li><a href="#" onclick="acercaDe()">Acerca de</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="centered callout">
+            <div class="callout-header">Acerca de</div>
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+            <div class="callout-container">
+                <ul>
+                    <li><h3>Desarrollado sólo con CSS3, JS y HTML.</h3></li>
+                    <li class="special"><hr> </li><br>
+                    <h4>Características de diseño y codificación:</h4><br>
+                    <li><b>Modo responsivo y Modo Dark/Light</b> en testing (este último requiere que el OS tenga activado el modo oscuro).</li>
+                    <li><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.</li>
+                    <li><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>.</li><br>
+                    <li>Gracias a <b><em>w3s</em></b> no necesité dedicar mucho tiempo para el navBar, ni para el diseño de este "Acerca de".</li>
+                    <li class="special"><hr> </li><br>
+                    <li class="BwQ-light-italic"><b>Pendientes</b></li>
+                    <li> 1. Diseñar el estilo especifico para las salidas de impresora @media print {...}.</li>
+                    <li> 2. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) tomando los datos de una base de datos en MySQL para que genere este código (proyecto iniciado pero aún sin publicar).</li>
+                    <li> 3. Mejorar el Modo Dark/Light mediante clases de CSS y así sumar un modo personalizado.</li>
+                    <li> 4. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puesta en la línea del html, etc.</li>
+                </ul>
             </div>
         </div>
     </nav>
-
-    
-    <div class="centered callout">
-        <div class="callout-header">Acerca de</div>
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
-        <div class="callout-container">
-            <ul>
-                <li><h3>Desarrollado sólo con CSS3, JS y HTML.</h3></li>
-                <li class="special"><hr> </li><br>
-                <h4>Características de diseño y codificación:</h4><br>
-                <li><b>Modo responsivo y Modo Dark/Light</b> en testing (este último requiere que el OS tenga activado el modo oscuro).</li>
-                <li><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.</li>
-                <li><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>.</li><br>
-                <li>Gracias a <b><em>w3s</em></b> no necesité dedicar mucho tiempo para el navBar, ni para el diseño de este "Acerca de".</li>
-                <li class="special"><hr> </li><br>
-                <li class="BwQ-light-italic"><b>Pendientes</b></li>
-                <li> 1. Diseñar el estilo especifico para las salidas de impresora @media print {...}.</li>
-                <li> 2. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) tomando los datos de una base de datos en MySQL para que genere este código (proyecto iniciado pero aún sin publicar).</li>
-                <li> 3. Mejorar el Modo Dark/Light mediante clases de CSS y así sumar un modo personalizado.</li>
-                <li> 4. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puesta en la línea del html, etc.</li>
-            </ul>
-        </div>
-    </div>
 
     <div class="grid-container" onclick="menuClose()">
         <div class="page">
 
             <div class="split izquierda">
-
+            <div class="personal">
                 <div id="iniciales" class="tag horizontal">
                     WR
                 </div>
-                <div id="personal" class="detalle inline">
+                <div id="personal" class="detalle inline alingC">
                     <div id="foto"  ><img src="static/images/yo.png" alt="" class="Foto sonriente"></div>
                     <div class="alingC">
                         <h5>PYTHON Web Developer</h5>
                         <div class="nombre">
                         <h1>WALTER </h1><h1 class="comprimir"> R O M E R O</h1></div>
                         <h4>(nacido en 1968)</h4>
-                        <div id="social" class="BwQ-light-italic">
-                        <p class="comprimir"><svg class="icon w16 dark"><use href="#ico-linkedin"/></svg> / i n / w a l t e r - r o m e r o 1 9 6 8</p>
-                        <p><svg class="icon w16 dark"><use href="#ico-github"/> </svg>waldrom68.github.io</p>
-                        </div>
-                        <div class="special"><hr></div>
                     </div>
+                    <!-- <div class="special"><hr></div> -->
+                    <br>
+                    <div id="social" class="BwQ-light-italic">
+                        <h4 class="comprimir"><svg class="icon w16 dark"><use href="#ico-linkedin"/></svg> / i n / w a l t e r - r o m e r o 1 9 6 8</h4> 
+                        <h4><svg class="icon w16 dark"><use href="#ico-github"/> </svg> w a l d r o m 6 8 . g i t h u b . i o</h4>
+                        <br>
+                    </div>
+                    
                 </div>
+            
             <!-- Fin personal -->
-                
+            </div>
+            <div class="perfil">
                 <div class="tag">
-                    <p class="smallCaps">Profile</p>
+                    <p class="smallCaps">Perfil</p>
                 </div>
                 <div id="profile" class="detalle">
-                    <p>Quinta ipsum dolor sit amet consectetur adipisicing elit. Dignissimos sit corrupti assumenda aperiam illum magnam, optio, nihil cumque asperiores libero deserunt incidunt quod consequatur amet a? Aliquam modi officiis dicta!. Distinctio quia necessitatibus aliquam vitae, ratione nesciunt consequuntur voluptatum! Doloribus nam, quia earum, quam architecto ullam ea recusandae asperiores perspiciatis adipisci rem omnis dicta quidem hic ipsam iusto possimus! Eaque?</p>
+                    <p>Luego de mi carrera laboral en una prestigiosa universidad en la cual aporté mis habilidades humanas y técnicas, hoy me encuentro muy motivado por haber vuelto a mi esencia, a la <em> “innovación, creatividad, sistemas y tecnología”</em>.</p>
+                    <br>
+                    <p></p>Formalmente ocupé posiciones en áreas de RRHH, pero gracias a que mi formación de grado es <em>Analista de Sistemas</em>, siempre pude dar soporte especializado para mejorar procesos, generar reportes o cuadros con informaciones departamentales e incluso llegué a ser <em>una especie de analista funcional</em>,  sirviendo de enlace entre las áreas de negocio y de tecnología.</p>
+                    <br>
+                    <p>Puedo asegurar que mi experiencia laboral junto con mi formación en el MBA y mi reciente especialización, sin duda alguna contribuyen al éxito de cualquier proyecto, esto es gracias a mi criterio empresarial y mis conocimientos como Desarrollador Web Full stack.</p>
+                    <br>
+                    <p>Quienes me conocen destacan mi alto compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
+                    <div class="special"><hr></div>
                 </div>
-            <!-- Fin profile -->
-
-                <div class="tag">
-                    <p class="smallCaps">Objetive</p>
-                </div>
-                <div id="objetive" class="detalle">
-                    <p>Quinta Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
-                </div>
-            <!-- Fin objetive -->
+                <!-- Fin profile -->
             
                 <div class="tag">
+                    <p class="smallCaps">Objetivo</p>
+                </div>
+                <div id="objetive" class="detalle">
+                    <p>Me atraen los desafíos profesionales y nuevas aventuras en las que pueda seguir aprendiendo. Y para ser coherente con mi proyecto personal, quiero adquirir la capacidad de comunicarme en el idioma inglés.</p>
+                    <br>
+                    <p>Podés contactarme si tenés alguna idea o propuesta y será un plus que sea divertida o amena</p>
+                </div>
+                <!-- Fin objetive -->
+            </div>
+            
+            <div class="experiencia">
+                <div class="tag">
+                    <p class="smallCaps">Trayectoria Laboral</p>
+                </div>
+                <div id="workExperience" class="detalle">
+                    <div class="special"><hr></div>
+                    <ul>  <!-- ITBA -->
+                        <li class="myList">1993-2018 (24 años) ITBA, Universidad Privada
+                            <li class="Head">
+                                <ul class="carrera">
+                                    <li>2004-2018: Ejecutivo de RR.HH</li>
+                                    <li>Compensaciones, Gestión de nóminas y Relaciones laborales</li>
+                                    <li>1993-2004: Analista Senior, Secretaría Administrativa</li>
+                                    <li>Liquidación de sueldos, facturación de servicios</li>
+                                </ul>
+                            </li>
+                            <li class="expand"> Resolución de problemas y relaciones humanas
+                                <ul><span>Creación de procedimientos, trabajo en equipo y negociación</span>
+                                    <li>Procesos: Alta laboral - Licencias - Búsqueda y selección de Personal - Gestión de desvinculaciones".</li> 
+                                    <li>Propuesta de mejora e implementación del proceso “Personal mayor de 59 años.”</li>
+                                    <li>Participación activa en la implementación del control de acceso.</li>
+                                    <li>Gestión exitosa en acuerdos y entrevistas de desvinculaciones.</li>
+                                </ul>
+                            </li>
+                            <li class="expand extraEspace">Otras funciones, relacionadas con IT
+                                <ul><span>Desarrollo de software con <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a></span>
+                                    <li>Gestión y almacenamiento digital de datos históricos (salarios del personal entre 1959-1989).</li>
+                                    <li>Facturación por Servicios.</li>
+                                    <li>Confección de contratos laborales automáticos.</li>
+                                </ul>
+                                <ul><span>Elaboración de dashboard, reporting y fases iniciales de Data mining con aproximación a un modelo de minería (SQL, Excel o Power Bi)</span>
+                                    <li>Indicadores de presentismo y presencialidad.</li>
+                                    <li>Matriz salarial general y organigrama.</li>
+                                    <li>Validación de consistencia en las liquidaciones antes de liberar pagos.</li>
+                                    <li>Generación de tableros de control y reportes gerenciales.</li>
+                                    <li>Analisis de evoluciones salariales desde el 2005-2017.</li>
+                                </ul>
+                                <ul><span>Implementaciones y testing de sistemas de terceros</span>
+                                    <li>Sueldos UNITECH S.A., incluida la codificación de algoritmos para los conceptos.</li>
+                                    <li>Adecuación de nuevas políticas salariales.</li>
+                                    <li>Sueldos BEJERMAN.</li>
+                                    <li>Estructuras salariales según "Evaluación de puestos con Mercer".</li>
+                                </ul>
+                            </li>
+
+                        </li>
+                    </ul>  <!-- fin ITBA  -->
+
+                    <ul> <!-- Freelance -->
+            
+                        <li class="myList extraEspace">1991-1994 (3 años) Freelance
+                            <li class="Head">
+                                <ul class="carrera">
+                                    <li>Analista de sistemas y desarrollo de Sistemas de informáticos</li>
+                                </ul>
+                            </li>
+                            <li class="expand">Funciones y responsabilidades
+                                <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)</span>
+                                    <li>Gestión de Ventas y control de stock.</li>
+                                    <li>Liquidación de Sueldos para gremios de UOCRA y UOYPE.</li>
+                                    <li>Generador y Administrador de documentos para escribanías.</li>
+                                </ul>
+                                <ul><span>Algoritmos desafiantes y adaptación de Sistemas</span>
+                                    <li>De búsqueda: separar en silabas palabras en castellano.</li>
+                                    <li>De simulación: para toma de decisiones en tiempo real.</li>
+                                    <li>Mantenimiento y adaptación de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
+                                </ul>
+                            </li>
+                        </li>  
+
+                    </ul>  <!-- fin Freelance -->
+        
+                    <ul>  <!-- Sistemax -->
+                            <li class="myList extraEspace">1990-1992 (2 años) SISTEMAX</b></i>
+                                <li class="Head">
+                                    <ul class="carrera">
+                                        <li>Desarrollo de software de gestión y dictado de cursos</li>
+                                        <!-- <li>Desarrollo de sistemas de informáticos</li>
+                                        <li>Instructor, profesor</li>
+                                        <li>Dictado de cursos</li> -->
+                                    </ul>
+                                </li>
+                                <li class="expand" >
+                                    <ul> <span>Sistemas de gestión</span>
+                                        <li>Gestión de Ventas</li>
+                                        <li>Administración de historias clínicas en geriátricos.</li>
+                                        <li>Generador y administrador de documentos notariales.</li>
+                                    </ul>
+                                    <ul><span>Dictado de Cursos</span> 
+                                        <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3" target="_blank">Lotus 123 ,
+                                            <a href="https://es.wikipedia.org/wiki/WordStar" target="_blank">WordStar</a> y otros</b>.</li>
+                                    </ul>
+                                </li>
+                                    
+                                </li>
+                            </li>  
+                    </ul> <!-- fin SISTEMAX -->
+        
+                    <ul class="extended"> <!--Banco de la Nacion Argentina -->
+            
+                            <li class="myList extraEspace">1989-1990 (1 año) Banco de la Nación Argentina 
+                                <li class="Head">
+                                    <ul class="carrera">
+                                        <li>Auxiliar contable</li>
+                                    </ul>
+                                </li>
+                                <li class="expand">Comunicación y relaciones humanas
+                                    <ul><span>Sector cuenta corriente y sector Inversiones</span>
+                                        <li>Atención al público durante pleno Bonex '89</li>
+                                        <li>Sector cuenta corriente y sector Inversiones</li>
+                                    </ul>
+                                </li>
+                            </li>  
+                    </ul> <!-- fin BNA -->
+                    
+                    <ul class="extended"> <!--Amato -->
+
+                        <li class="myList extraEspace">1987-1989 (2 años) Reguladores Amato
+                            <li class="Head">
+                                <ul class="carrera">
+                                    <li>Operario metalúrgico Junior</li>
+                                </ul>
+                            </li>
+                            <li class="None">Comunicación y relaciones humanas
+                                <ul>
+                                </ul>
+                            </li>
+                        </li>  
+                    </ul> <!-- fin Amato -->
+                
+
+
+                </div>
+            <!-- Fin workExperience -->
+            </div> 
+            </div>  <!-- split izquierda-->
+
+        </div>  <!-- page -->
+
+        <div class="page">
+            <div class="split derecha">
+                <div class="educacion">
+                    <div class="tag">
+                        <p class="smallCaps">Formación Académica</p>
+                    </div>
+                    <div class="detalle">
+                        <ul>
+                            <p class="BwQ-regular alingR smallCaps">Especializaciones</p> 
+                            <p class="special"><hr></p>
+                            <li class="BwQ-bold-italic extraEspace extended" >2022-2023 Min. de Desarrollo Productivo y CESSI</li>
+                            <li  class="extended">Programador Web full stack JS</li>
+                            
+                            <li class="BwQ-bold-italic extraEspace">2021–2022 EducaciónIT</li>
+                            <li>Full stack Python developer</li>
+                            
+                            <p class="BwQ-regular alingR extraEspace smallCaps">Posgrado</p> 
+                            <p class="special"><hr></p>
+                            <li class="BwQ-bold-italic extraEspace">2007–2012 UP</li>
+                            <li>Maestría en Dirección de Empresas</li>
+                            
+                            <p class="BwQ-regular alingR extraEspace smallCaps">Grado</p> 
+                            <p class="special"><hr></p>
+                            <li class="BwQ-bold-italic extraEspace">1996–2000 UCALP</li>
+                            <li>Analista Universitario de Sistemas</li>
+                        </ul>
+
+                        <div class="special extended"><hr></div>
+                    </div>
+
+                <!-- Fin mis estudios -->
+                <div class="tag extended">
+                    <p class="smallCaps">Cursos y Seminarios</p>
+                </div>
+                <div id="cursos" class="detalle alingR extended">
+                    <ul class="BwQ-regular-italic alingL">
+                        <li><b>sep-21</b>: Webinar Gestión de Proyectos con Scrum</li>
+                        <li><b>ago-21</b>: Webinar Gnu/Linux</li>
+                        <li><b>ago-21</b>: Webinar Empleos 4.0. La economía del conocimiento</li>
+                        <li><b>jul-21</b>: Webinar Android</li>
+                        <li><b>jun-21</b>: Evento BeAgile 21</li>
+                        <li><b>jul-20</b>: Seminario de Seguridad Informática </li>
+                        <li><b>mar-19</b>: Seminario de Internet of Things</li>
+                        <li><b>feb-13</b>: La gestión del conocimiento desde una mirada clínica de la organización</li>
+                        <li><b>sep-12</b>: Negociación orientada a la búsqueda de empleo</li>
+                        <li><b>sep-11</b>: Indicadores de gestión para el área de RRHH.</li>
+                        <li><b>nov-09</b>: II Foro de Benchmarking y Mejores Prácticas en Monitoreo y Gestión del Área de RRHH</li>
+                        <li><b>sep-09</b>: Competencias clave en las crisis</li>
+                        <li><b>feb-08</b>: Protocolo ejecutivo y marketing personal</li>
+                        <li><b>oct-07</b>: Equilibrio personal en entornos corporativos - Manejo del estrés</li>
+                    </ul>
+
+                </div>
+                <!-- Fin cursos -->
+            </div> <!-- Fin educacion -->
+            <div class="habilidades">
+                <div class="tag">
+                    
+                    <div class="special"><hr></div>
                     <p class="smallCaps">Habilidades Personales</p>
                 </div>
                 <div id="softskill" class="detalle softskills">
-                        
                     <div class="rating" id="rtng1" mylabel="Adaptación al cambio" myvalue="3">
                         <div class="rtngSide">
                             <span>hability</span>
@@ -1316,205 +1463,18 @@ nav {
                     </div>  <!-- rating -->
 
                 </div> 
-            <!-- Fin softskills -->
+            </div><!-- Fin softskills -->
+
+
+
+
 
                 <div class="tag">
-                    <p class="smallCaps">Trayectoria Laboral</p>
-                </div>
-                <div id="workExperience" class="detalle">
-                    <ul>  <!-- ITBA -->
-                        <li class="myList">1993-2018 (24 años) ITBA, Universidad Privada
-                            <li class="Head">
-                                <ul class="carrera">
-                                    <li>2004-2018: Ejecutivo de RR.HH</li>
-                                    <li>Compensaciones, Gestión de nóminas y Relaciones laborales</li>
-                                    <li>1993-2004: Analista Senior, Secretaría Administrativa</li>
-                                    <li>Liquidación de sueldos, facturación de servicios</li>
-                                </ul>
-                            </li>
-                            <li class="expand"> Resolución de problemas y relaciones humanas
-                                <ul><span>Creación de procedimientos, trabajo en equipo y negociación</span>
-                                    <li>Procesos: Alta laboral - Licencias - Búsqueda y selección de Personal - Gestión de desvinculaciones".</li> 
-                                    <li>Propuesta de mejora e implementación del proceso “Personal mayor de 59 años.”</li>
-                                    <li>Participación activa en la implementación del control de acceso.</li>
-                                    <li>Gestión exitosa en acuerdos y entrevistas de desvinculaciones.</li>
-                                </ul>
-                            </li>
-                            <li class="expand extraEspace">Otras funciones, relacionadas con IT
-                                <ul><span>Desarrollo de software con <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a></span>
-                                    <li>Gestión y almacenamiento digital de datos históricos (salarios del personal entre 1959-1989).</li>
-                                    <li>Facturación por Servicios.</li>
-                                    <li>Confección de contratos laborales automáticos.</li>
-                                </ul>
-                                <ul><span>Elaboración de dashboard, reporting y fases iniciales de Data mining con aproximación a un modelo de minería (SQL, Excel o Power Bi)</span>
-                                    <li>Indicadores de presentismo y presencialidad.</li>
-                                    <li>Matriz salarial general y organigrama.</li>
-                                    <li>Validación de consistencia en las liquidaciones antes de liberar pagos.</li>
-                                    <li>Generación de tableros de control y reportes gerenciales.</li>
-                                    <li>Analisis de evoluciones salariales desde el 2005-2017.</li>
-                                </ul>
-                                <ul><span>Implementaciones y testing de sistemas de terceros</span>
-                                    <li>Sueldos UNITECH S.A., incluida la codificación de algoritmos para los conceptos.</li>
-                                    <li>Adecuación de nuevas políticas salariales.</li>
-                                    <li>Sueldos BEJERMAN.</li>
-                                    <li>Estructuras salariales según "Evaluación de puestos según Mercer".</li>
-                                </ul>
-                            </li>
-
-                        </li>
-                    </ul>  <!-- fin ITBA  -->
-
-                    <ul> <!-- Freelance -->
-            
-                        <li class="myList extraEspace">1991-1994 (3 años) Freelance
-                            <li class="Head">
-                                <ul class="carrera">
-                                    <li>Analista de sistemas y desarrollo de Sistemas de informáticos</li>
-                                </ul>
-                            </li>
-                            <li class="expand">Funciones y responsabilidades
-                                <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)</span>
-                                    <li>Gestión de Ventas y control de stock.</li>
-                                    <li>Liquidación de Sueldos para gremios de UOCRA y UOYPE.</li>
-                                    <li>Generador y Administrador de documentos para escribanías.</li>
-                                </ul>
-                                <ul><span>Algoritmos desafiantes y adaptación de Sistemas</span>
-                                    <li>De búsqueda: separar en silabas palabras en castellano.</li>
-                                    <li>De simulación: para toma de decisiones en tiempo real.</li>
-                                    <li>Mantenimiento y adaptacion de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
-                                </ul>
-                            </li>
-                        </li>  
-
-                    </ul>  <!-- fin Freelance -->
-        
-                    <ul>  <!-- Sistemax -->
-                            <li class="myList extraEspace">1990-1992 (2 años) SISTEMAX</b></i>
-                                <li class="Head">
-                                    <ul class="carrera">
-                                        <li>Desarrollo de software de gestión y dictado de cursos</li>
-                                        <!-- <li>Desarrollo de sistemas de informáticos</li>
-                                        <li>Instructor, profesor</li>
-                                        <li>Dictado de cursos</li> -->
-                                    </ul>
-                                </li>
-                                <li class="expand" >
-                                    <ul> <span>Sistemas de gestión</span>
-                                        <li>Gestión de Ventas</li>
-                                        <li>Administración de historias clínicas en geriátricos.</li>
-                                        <li>Generador y administrador de documentos notariales.</li>
-                                    </ul>
-                                    <ul><span>Dictado de Cursos</span> 
-                                        <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3" target="_blank">Lotus 123 y
-                                            <a href="https://es.wikipedia.org/wiki/WordStar" target="_blank">WordStar</a> y otros</b>.</li>
-                                    </ul>
-                                </li>
-                                    
-                                </li>
-                            </li>  
-                    </ul> <!-- fin SISTEMAX -->
-        
-                    <ul class="extended"> <!--Banco de la Nacion Argentina -->
-            
-                            <li class="myList extraEspace">1989-1990 (1 año) Banco de la Nacion Argentina 
-                                <li class="Head">
-                                    <ul class="carrera">
-                                        <li>Auxiliar contable</li>
-                                    </ul>
-                                </li>
-                                <li class="expand">Comunicación y relaciones humanas
-                                    <ul><span>Sector cuenta corriente y sector Inversiones</span>
-                                        <li>Atención al público durante pleno Bonex '89</li>
-                                        <li>Sector cuenta corriente y sector Inversiones</li>
-                                    </ul>
-                                </li>
-                            </li>  
-                    </ul> <!-- fin BNA -->
-                    
-                    <ul class="extended"> <!--Amato -->
-
-                        <li class="myList extraEspace">1987-1989 (2 año2) Reguladores Amato
-                            <li class="Head">
-                                <ul class="carrera">
-                                    <li>Operario metalúrgico Junior</li>
-                                </ul>
-                            </li>
-                            <li class="None">Comunicación y relaciones humanas
-                                <ul>
-                                </ul>
-                            </li>
-                        </li>  
-                    </ul> <!-- fin Amato -->
-                
-
-
-                </div>
-            <!-- Fin workExperience -->
-
-            </div>  <!-- split izquierda-->
-
-        </div>  <!-- page -->
-
-        <div class="page">
-            <div class="split derecha">
-                <div class="educacion">
-                <div class="tag">
-                    <p class="smallCaps">Formación Académica</p>
-                </div>
-                <div class="detalle">
-                    <ul>
-                        <p class="BwQ-regular alingR smallCaps">Especializaciones</p> 
-                        <p class="special"><hr></p>
-                        <li class="BwQ-bold-italic extraEspace extended" >2022-2023 Min. de Desarrollo Productivo y CESSI</li>
-                        <li  class="extended">Programador Web full stack JS</li>
-                        
-                        <li class="BwQ-bold-italic extraEspace">2021–2022 EducaciónIT</li>
-                        <li>Full stack Python developer</li>
-                        
-                        <p class="BwQ-regular alingR extraEspace smallCaps">Posgrado</p> 
-                        <p class="special"><hr></p>
-                        <li class="BwQ-bold-italic extraEspace">2007–2012 UP</li>
-                        <li>Maestría en Dirección de Empresas</li>
-                        
-                        <p class="BwQ-regular alingR extraEspace smallCaps">Grado</p> 
-                        <p class="special"><hr></p>
-                        <li class="BwQ-bold-italic extraEspace">1996–2000 UCALP</li>
-                        <li>Analista Universitario de Sistemas</li>
-                      </ul>
-
-                </div>
-            </div>
-                <!-- Fin mis estudios -->
-
-                <div class="tag extended">
-                    <p class="smallCaps">Cursos y Seminarios</p>
-                </div>
-                <div id="cursos" class="detalle alingR extended">
-                    <div class="special extended"><hr></div>
-                    <ul class="BwQ-regular-italic alingL">
-                        <li><b>sep-21</b>: Webinar Gestión de Proyectos con Scrum</li>
-                        <li><b>ago-21</b>: Webinar Gnu/Linux</li>
-                        <li><b>ago-21</b>: Webinar Empleos 4.0. La economía del conocimiento</li>
-                        <li><b>jul-21</b>: Webinar Android</li>
-                        <li><b>jun-21</b>: Evento BeAgile 21</li>
-                        <li><b>jul-20</b>: Seminario de Seguridad Informática </li>
-                        <li><b>mar-19</b>: Seminario de Internet of Things</li>
-                        <li><b>feb-13</b>: La gestión del conocimiento desde una mirada clínica de la organización</li>
-                        <li><b>sep-12</b>: Negociación orientada a la búsqueda de empleo</li>
-                        <li><b>sep-11</b>: Indicadores de gestión para el área de RRHH.</li>
-                        <li><b>nov-09</b>: II Foro de Benchmarking y Mejores Prácticas en Monitoreo y Gestión del Área de RRHH</li>
-                        <li><b>sep-09</b>: Competencias clave en las crisis</li>
-                        <li><b>feb-08</b>: Protocolo ejecutivo y marketing personal</li>
-                        <li><b>oct-07</b>: Equilibrio personal en entornos corporativos - Manejo del estrés</li>
-                    </ul>
-                </div>
-                <!-- Fin cursos -->
-
-                <div class="tag">
+                    <div class="special"><hr></div>
                     <p class="smallCaps">Habilidades Técnicas</p>
                 </div>
                 <div class="detalle hardskill">
-
+                    
                 <div class="container-chart" id="CSS" aria-label="CSS" aria-value="60">
                       
                     <div class="donut-chart-block block-chart">
@@ -1711,7 +1671,6 @@ nav {
 
 
                 <div class="container-chart" id="python" aria-label="Python" aria-value="80">
-                    
                     <div class="donut-chart-block block-chart">
                     <div class="donut-chart">
           
@@ -1744,13 +1703,14 @@ nav {
                 
                 </div>  <!-- container-chart -->
 
-                </div>
-                <!-- Fin hard Skills -->
-
-
-
-                <div class="hobbies-Contacto">
+            </div>
+            <!-- Fin hard Skills -->
+            
+            
+            
+            <div class="hobbies-Contacto">
                 <div class="tag">
+                    <div class="special"><hr></div>
                     <p class="smallCaps">Hobbies y Preferencias</p>
                 </div>
                 <div id="hobbies" class="detalle alingR">
@@ -1763,6 +1723,7 @@ nav {
                 <!-- Fin hobbies -->
 
                 <div class="tag">
+                    <div class="special"><hr></div>
                     <p class="smallCaps">Contacto</p>
                 </div>
                 <div id="contacto" class="detalle alingR">
@@ -1782,6 +1743,7 @@ nav {
 
 
 </body>
+
 <script id="menuNav">
     /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
     function myFunction() {
@@ -1996,4 +1958,102 @@ function updateSlider(element) {
         menuClose();
     };
 </script>  <!-- acercaDe -->
+
 </html>
+
+<!--
+    <style id="prueba">
+    .educacion, .hobbies-Contacto {
+        display: contents;
+    }
+
+
+</style>
+
+
+<style id="print">
+/* Revisar Flexbox o CSS Grid. En este caso quizá necesite ser cambiados a display:block; */
+/* para los contenedores flotados -> main { float:none; } */
+/* #sidebar { display:none;} */
+    @media print {
+        /* Aquí irían tus reglas CSS específicas para imprimir */
+        @page {
+            margin: 10.205px 6.803px 7.181px 6.803px;
+            }
+
+        body { 
+            font-size: 10pt;
+            height: 100%;
+        }
+        
+        .page {
+            margin: 0%;
+            padding: 0%;
+        }
+        nav, .callout, .none, .special, .extended, .educacion .detalle p {
+            display: none;
+        }
+        .extraEspace {
+            margin-top: 0px;
+        }
+
+        #personal, .nombre { display: inline-flex;}
+
+        .tag {
+            margin: 0px;
+        }
+
+        .rating { 
+            font-weight: normal;
+            font-size: 10pt;
+            line-height: 10pt;
+            margin: 0%;
+            padding: 0%;
+        }
+        svg.w24  { 
+            width: 16px;
+            height: 16px;
+        }
+
+        .rtngEnd {display: block;}
+
+        .icon.light {
+                fill: black;
+                
+            }
+            .icon.dark {
+                fill: black;
+            }
+
+            .icon.border {
+                margin: 0% .25em;
+                border-radius: 25%;
+                border: 2px solid black;
+            }
+            /* .donut-chart {
+              margin: 0%;
+              font-size: 0.83rem;}
+
+            .donut-chart .center-label, .center-chart span {
+                color: black;}
+            .donut-chart .center-chart {
+                background: white;
+            } */
+
+            .hobbies-Contacto { 
+                display: flex;
+            }
+            .hobbies-Contacto .tag { 
+                text-align: right;
+                margin: auto;
+                padding: 0%;
+            }
+            .hobbies-Contacto .detalle { 
+                text-align: center;
+                margin: auto;
+                padding: 0%;
+            }
+
+    } 
+</style>
+-->

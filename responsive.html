@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        html { margin: 0%; padding: 0%; box-sizing: border-box;}
+        
+        body {
+            font-size: 100%;
+        }
+
+
+        div.base {
+            position: sticky;
+            display: block;
+            right: 0%;
+            top: 0%;
+            width: auto;
+            height: auto;
+            margin: auto;
+        }
+        #page {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            margin: 2px;
+            border: 2px solid red;
+        }
+
+        .split {
+            display: inline-block;
+        }
+
+        .izquierda {
+            width: 70%;
+        }
+        .derecha {}
+
+        /* // Medium devices (tablets, vertical, less than 992px) */
+
+        @media screen  { 
+            @media (orientation: portrait) {
+                @media (max-width: 5299.98px) { .testin::after {content: "portrait - width: >=1199.98"; }}
+                @media (max-width: 1199.98px) { .testin::after {content: "portrait - width: 991.98 a 1199.98"; }}
+                @media (max-width: 991.98px) { .testin::after {content: "portrait - width: 767.98 a 991.98"; }}
+                @media (max-width: 767.98px) { .testin::after {content: "portrait - width: 575.98 a 767.98"; }}
+                @media (max-width: 575.98px) { .testin::after {content: "portrait - width: 320.00 a 575.98"; }}
+                @media (max-width: 319.98px) { .testin::after {content: "portrait - width: <=319.98"; }}
+            }
+            @media (orientation: landscape) {
+                @media (max-width: 5299.98px) { .testin::after {content: "landscape width: >=1199.98"; }}
+                @media (max-width: 1199.98px) { .testin::after {content: "landscape width: 991.98 a 1199.98"; }}
+                @media (max-width: 991.98px) { .testin::after {content: "landscape width: 767.98 a 991.98"; }}
+                @media (max-width: 767.98px) { .testin::after {content: "landscape width: 575.98 a 767.98"; }}
+                @media (max-width: 575.98px) { .testin::after {content: "landscape width: 320.00 a 575.98"; }}
+                @media (max-width: 319.98px) { .testin::after {content: "landscape width: <=319.98"; }}
+            }
+        }
+
+
+        /* @media handheld and (orientation: landscape)  {
+        
+            @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
+            }
+        }
+
+        @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - portrait"; } }
+         */
+
+    </style>
+</head>
+<body>
+    
+    <div id="page">
+        <div class="base">
+            <h4 class="testin">Testing :</h4>
+        </div>
+        
+    </div>
+</body>
+</html>
