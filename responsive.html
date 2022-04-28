@@ -86,7 +86,7 @@
         }
         body {
             /* height: var(--altoPage) ; */
-            margin: 10.205px 6.803px 7.181px 6.803px;
+            /* margin: 10.205px 6.803px 7.181px 6.803px; */
             width: var(--anchoPage);
             width: 100%;
             /* max-width: 1024px; */
@@ -97,7 +97,7 @@
 
             font-family: 'Quinta-light','roboto', sans-serif;
             font-style: normal;
-            font-size: 100%;
+            /* font-size: 100%; */
         }
 
         /* SPECIAL STYLE's */
@@ -119,12 +119,13 @@
         /* Contenedor principal */
         #page {
             display: inline-flex;
-            width: auto;
+            width: 100%;
+            max-width: 100%;
             height: 100%;
-            margin: 2px;
-            border: 2px solid red;
+            /* margin: 2px; */
+            /* padding: .5em; */
+            /* border: 2px solid red; */
         }
-
         section {
             display: flex;
             width: 100%;
@@ -138,15 +139,15 @@
         /* 791px */
         .left {
             width: 70%;
-            height: 100%;
+            max-width: 70%;
+            background-color: inherit;
         }
         /* 343px */
         .right {
             width: 30%;
-            min-width: 343px;
+            max-width: 30%;
             background-color: aqua;
             }
-
             /* 161px */
             .left .captionVertical { 
                 width: 21%;
@@ -154,27 +155,26 @@
                 max-width: 6em;
                 background-color: aqua;
             }
-            /* 619px */
-            .left .detalle {
-                display: block;
-                width: auto;
-                min-width: 50%;
-                overflow-wrap: break-word;
-                background-color: white;
-            }
             /* 88px */
             .right .captionVertical { 
                 width: 25%;
                 min-width: 4em;
                 max-width: 4em;
              }
-            /* 255px */
-            .right .detalle { 
+             .detalle {
+                display: block;
                 width: auto;
                 min-width: 50%;
-                display: inline-block;
-                /* max-width: 255px; */
+             }
+            /* 619px */
+            .left .detalle {
+                background-color: white;
             }
+            /* 255px */
+            .right .detalle { 
+                background-color: inherit;
+            }
+
         /* Es el TAG, se muestra el texto en vertical */
         .captionVertical {
             margin: initial;
@@ -186,13 +186,12 @@
             writing-mode: unset;
             transform: initial;
         }
-
         /* Ajustando el contenido del TAG -ancho y alto */
         .tagCenter {
             position: relative;
             left: -1em;
             text-align: end;
-            padding: 15px;
+            padding: 1em;
         }
         /* Ajustando el contenido del TAG, pero en formato slim */
         .tagCenter.slim {
@@ -202,7 +201,7 @@
 
         /* special text and fonts */
         .extraEspace {
-            margin-top: 5px;
+            margin-top: .5em;
         }
         
         .tagCenter {
@@ -218,7 +217,7 @@
         }
         h1.comprimir {
             padding-left: .5em;
-            letter-spacing: -4px;
+            letter-spacing: .25em;
         }
         h4.comprimir {
             letter-spacing: -1px;
@@ -240,26 +239,26 @@
 
         /* Manejo de imagenes, icos, media */
         #foto img {
-            width: 100px;
-            height: 100px;
+            width: 6.25em;
+            height: 6.25em;
             border-radius: 50%;
-            border: 5px double black;
+            border: .35em double black;
             clip-path: circle(100% at 50% 50%);
         }
         .icon {
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
+            width: 1.5em;
+            height: 1.5em;
+            line-height: 1.5em;
         }
             .icon.w16 {
-                width: 16px;
-                height: 16px;
-                line-height: 16px;
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
             }
             .icon.w50 {
-                width:50px;
-                height:50px;
-                line-height:50px;
+                width:3.15em;
+                height:3.15em;
+                line-height:3.15em;
             }
             .icon.light {fill: var(--color-dark);}
             .icon.dark {fill: var(--color-light);}
@@ -272,55 +271,112 @@
             }
 
 
-        /* // Medium devices (tablets, vertical, less than 992px) */
-        
-        /* aparentemente breackpoint son: a los 686 y a 343 */
-        @media screen  { 
-            @media (orientation: portrait) {
-                @media (max-width: 5299.98px) { .testin::after {content: "portrait - width: >=1199.98"; }}
-                @media (max-width: 1199.98px) { .testin::after {content: "portrait - width: 991.98 a 1199.98"; }}
-                @media (max-width: 991.98px) { .testin::after {content: "portrait - width: 767.98 a 991.98"; }}
-                @media (max-width: 767.98px) { 
-                    .testin::after {content: "portrait - width: 575.98 a 767.98;"}; 
-                    body {background-color:"red"};
-                }
-                @media (max-width: 575.98px) { .testin::after {content: "portrait - width: 320.00 a 575.98";  }}
-                @media (max-width: 319.98px) { .testin::after {content: "portrait - width: <=319.98"; }}
-            }
-            @media (orientation: landscape) {
-                @media (max-width: 5299.98px) { .testin::after {content: "landscape width: >=1199.98"; }}
-                @media (max-width: 1199.98px) { .testin::after {content: "landscape width: 991.98 a 1199.98"; }}
-                @media (max-width: 991.98px) { .testin::after {content: "landscape width: 767.98 a 991.98"; }}
-                @media (max-width: 767.98px) { .testin::after {content: "landscape width: 575.98 a 767.98"; }}
-                @media (max-width: 575.98px) { .testin::after {content: "landscape width: 320.00 a 575.98"; }}
-                @media (max-width: 319.98px) { .testin::after {content: "landscape width: <=319.98"; }}
-            }
-        }
+        /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
+        /* div#pareto { width: 1123px; height: 20px; border: 2px dotted orange;} */
+        div.base {position: sticky; display: block; right: 0%; top: 0%;  height: auto; border: 2px dotted orange;background-color: white; z-index: 1000;}
 
+        /* Para evaluar su percistencia o incorporacion a algun style ya definido */
+        #persona {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
 
         @media print  { 
-            body {font-family: Arial, Helvetica, sans-serif; font-size: 10pt;}
             .testin::after {content: "SALIDA IMPRESION";} 
-            .base {font-size: 200%; text-align: center; background-color: red;}
+            #pareto {font-size: 200%; text-align: center; background-color: black; color: azure;}
+            
+            body {font-family: Arial, Helvetica, sans-serif; font-size: 10pt }
+            
+            
+            
+            .captionVertical.reset { display: none}
+            
         }
+        /* // Medium devices (tablets, vertical, less than 992px) */
+        /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
+        /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
+            NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
+            CITARLO. Por ejemplo: no es lo mismo poner .left .right {tal cosa}, que ponerlo como dos reglas 
+            diferentes una debajo de la otra -¡ es raro eso !-
+        */
+        /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo comporamiento que otras prestigiosas web */
+        @media screen  { 
+            
+                @media (min-width: 1200.00px) { 
+                        .testin::after {content: "width: >=1200.00" }
+                        #pareto {background-color: pink}
+
+                        
+                }
+                @media (max-width: 1199.98px) { 
+                    #pareto {background-color: azure}
+                    .testin::after {content: "width: 991.98 a 1199.98" }
+                }
+                @media (max-width: 991.98px) { 
+                    #pareto {background-color: yellow}
+                    .testin::after {content: "width: 767.98 a 991.98" }
+
+                    #page, section {display: inline-flex }
+                    .left {width: 70%;}
+                    .right {width: 30%;}
+                    .left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
+                    .right .detalle {background-color: inherit}
+                    .captionVertical.reset { display: initial}
+                }
+                @media (max-width: 767.98px)  { 
+                    #pareto {background-color: red}
+                    .testin::after {content: "width: 767.98 y 991.98;"}
+
+                    #page, section {display: inline-flex }
+                    .left {width: 60%; max-width:none; min-width:none}
+                    .right {width: 40%; max-width:none; min-width:none}
+                    .left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
+                    .right .detalle {background-color: inherit}
+                    .captionVertical.reset { display: initial}
+                }
+                @media (max-width: 575.98px) { 
+                    #pareto {background-color: orange}
+                    .testin::after {content: "width: 320.00 a 575.98 ESTOY AQUI" }
+                    
+                    .captionVertical.reset { display: none}
+                    #page, section {display: block; width: 100% }
+                    .left {width: 100%;max-width:none; min-width:none}
+                    .right {width: 100%;max-width:none; min-width:none}
+                    .right .detalle {background-color: white}
+                    .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:none}
+                    .captionVertical.reset { display: none}
+                }
+
+                @media (max-width: 319.98px) { 
+                    .testin::after {content: "width: <=319.98" }
+                    #pareto {background-color: green}
+                    
+                    #page, section {display: block; width: 100% }
+                    .left {width: 100%;max-width:none; min-width:none}
+                    .right {width: 100%;max-width:none; min-width:none}
+                    .right .detalle {background-color: white}
+                    .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: left; width: 100%; max-width:none; min-width:none}
+                    .captionVertical.reset { display: none}
+                }
+
+
+        } 
+    
+
+
+
         /* @media handheld and (orientation: landscape)  {
         
             @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
             }
         }
 
-        @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - portrait"; } }
+        @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
          */
 
 
-        /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
-        /* div#pareto { width: 1123px; height: 20px; border: 2px dotted orange;} */
-        div.base {position: sticky; display: block; right: 0%; top: 0%; width: 1123px; height: auto; border: 2px dotted orange;}
 
-        /* Para evaluar su percistencia o incorporacion a algun style ya definido */
-        #persona {
-            display: flex;
-        }
 
     </style>
 
@@ -427,7 +483,7 @@
     <main id="page">
         <div class="left">
             <section id="personal">
-                <div class="captionVertical">
+                <div class="captionVertical reset">
                     <p class="tagCenter"><span>WR</span></p>
                 </div>
                 <div id="persona" class="detalle">
@@ -442,32 +498,211 @@
                         </div>
                 </div>
             </section>
+
             <section id="profile">
                 <div class="captionVertical">
                     <p class="tagCenter"><span>Profile</span></p>
                 </div>
                 <div class="detalle">
-                    <p>Formalmente ocupé cargos en RRHH, y siempre disfrutaba al mejorar procesos, al generar reportes o cuadros para la toma de decisiones, e incluso cuando tenía que hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. Y es claro, era un <em>Analista de Sistemas Universitario</em> en un área de recursos humanos.</p>
-                    <p>Luego de esos 24 años trabajando en la universidad, hoy estoy motivado al volver a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. Y quienes me conocen, destacan mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
+                    <p>Formalmente ocupé cargos en RRHH, y siempre disfrutaba mejorar procesos, generar reportes o cuadros para la toma de decisiones, e incluso cuando tenía que hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. Ciertamente era un <em>Analista de Sistemas Universitario</em> en un área de recursos humanos.</p>
+                    <p>Luego de esos 24 años trabajando en la universidad, ahora estoy motivado al volver a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
                     <p>Mi perfil, además de contar con criterio empresarial tiene conocimientos técnicos en áreas de IT. Por ello puedo decir, que mi experiencia laboral junto con los conocimientos del postgrado y mi reciente especialización como desarrollador web full stack, agregan valor a cualquier proyecto.</p>
+                    <p>Y quienes me conocen, destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <br>
                     <div class="special"><hr></div>
                 </div>
             </section>
-        </div>
+
+            <section id="objetive">
+                <div class="captionVertical">
+                    <p class="tagCenter"><span>objetivo</span></p>
+                </div>
+                <div class="detalle">
+                    <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, creciendo, innovando, mejorando . . .</em></p>
+                    <p>Podés contactarme si tenés alguna idea o propuesta y será un plus si es divertida o amena, pero tené presente que aún no tengo la habilidad para hablar en inglés.</p>
+                    <div class="special"><hr></div>
+                </div>
+            </section>
+
+            <section id="workExperience">
+                <div class="captionVertical">
+                    <p class="tagCenter"><span>Trayectoria Laboral</span></p>
+                </div>
+                <div class="detalle">
+                    <ul>  <!-- ITBA -->
+                        <li class="myList">1993-2018 (24 años) ITBA, Universidad Privada
+                            <li class="Head">
+                                <ul class="carrera">
+                                    <li>2004-2018: Ejecutivo de RR.HH</li>
+                                    <li>Compensaciones, Gestión de nóminas y Relaciones laborales</li>
+                                    <li>1993-2004: Analista Senior, Secretaría Administrativa</li>
+                                    <li>Liquidación de sueldos, facturación de servicios</li>
+                                </ul>
+                            </li>
+                            <li class="expand"> Resolución de problemas y relaciones humanas
+                                <ul><span>Creación de procedimientos, trabajo en equipo y negociación</span>
+                                    <li>Procesos: Alta laboral - Licencias - Búsqueda y selección de Personal - Gestión de desvinculaciones".</li> 
+                                    <li>Propuesta de mejora e implementación del proceso “Personal mayor de 59 años.”</li>
+                                    <li>Participación activa en la implementación del control de acceso.</li>
+                                    <li>Gestión exitosa en acuerdos y entrevistas de desvinculaciones.</li>
+                                </ul>
+                            </li>
+                            <li class="expand extraEspace">Otras funciones, relacionadas con IT
+                                <ul><span>Desarrollo de software con <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a></span>
+                                    <li>Gestión y almacenamiento digital de datos históricos (salarios del personal entre 1959-1989).</li>
+                                    <li>Facturación por Servicios.</li>
+                                    <li>Confección de contratos laborales automáticos.</li>
+                                </ul>
+                                <ul><span>Elaboración de dashboard, reporting y fases iniciales de Data mining con aproximación a un modelo de minería (SQL, Excel o Power Bi)</span>
+                                    <li>Indicadores de presentismo y presencialidad.</li>
+                                    <li>Matriz salarial general y organigrama.</li>
+                                    <li>Validación de consistencia en las liquidaciones antes de liberar pagos.</li>
+                                    <li>Generación de tableros de control y reportes gerenciales.</li>
+                                    <li>Analisis de evoluciones salariales desde el 2005-2017.</li>
+                                </ul>
+                                <ul><span>Implementaciones y testing de sistemas de terceros</span>
+                                    <li>Sueldos UNITECH S.A., incluida la codificación de algoritmos para los conceptos.</li>
+                                    <li>Adecuación de nuevas políticas salariales.</li>
+                                    <li>Sueldos BEJERMAN.</li>
+                                    <li>Estructuras salariales según "Evaluación de puestos con Mercer".</li>
+                                </ul>
+                            </li>
+
+                        </li>
+                    </ul>  <!-- fin ITBA  -->
+                    <ul> <!-- Freelance -->
+            
+                        <li class="myList extraEspace">1991-1994 (3 años) Freelance
+                            <li class="Head">
+                                <ul class="carrera">
+                                    <li>Analista de sistemas y desarrollo de Sistemas de informáticos</li>
+                                </ul>
+                            </li>
+                            <li class="expand">Funciones y responsabilidades
+                                <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)</span>
+                                    <li>Gestión de Ventas y control de stock.</li>
+                                    <li>Liquidación de Sueldos para gremios de UOCRA y UOYPE.</li>
+                                    <li>Generador y Administrador de documentos para escribanías.</li>
+                                </ul>
+                                <ul><span>Algoritmos desafiantes y adaptación de Sistemas</span>
+                                    <li>De búsqueda: separar en silabas palabras en castellano.</li>
+                                    <li>De simulación: para toma de decisiones en tiempo real.</li>
+                                    <li>Mantenimiento y adaptación de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
+                                </ul>
+                            </li>
+                        </li>  
+
+                    </ul>  <!-- fin Freelance -->
+        
+                    <ul>  <!-- Sistemax -->
+                            <li class="myList extraEspace">1990-1992 (2 años) SISTEMAX</b></i>
+                                <li class="Head">
+                                    <ul class="carrera">
+                                        <li>Desarrollo de software de gestión y dictado de cursos</li>
+                                        <!-- <li>Desarrollo de sistemas de informáticos</li>
+                                        <li>Instructor, profesor</li>
+                                        <li>Dictado de cursos</li> -->
+                                    </ul>
+                                </li>
+                                <li class="expand" >
+                                    <ul> <span>Sistemas de gestión</span>
+                                        <li>Gestión de Ventas</li>
+                                        <li>Administración de historias clínicas en geriátricos.</li>
+                                        <li>Generador y administrador de documentos notariales.</li>
+                                    </ul>
+                                    <ul><span>Dictado de Cursos</span> 
+                                        <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3" target="_blank">Lotus 123 ,
+                                            <a href="https://es.wikipedia.org/wiki/WordStar" target="_blank">WordStar</a> y otros</b>.</li>
+                                    </ul>
+                                </li>
+                                    
+                                </li>
+                            </li>  
+                    </ul> <!-- fin SISTEMAX -->
+        
+                    <ul class="extended"> <!--Banco de la Nacion Argentina -->
+            
+                            <li class="myList extraEspace">1989-1990 (1 año) Banco de la Nación Argentina 
+                                <li class="Head">
+                                    <ul class="carrera">
+                                        <li>Auxiliar contable</li>
+                                    </ul>
+                                </li>
+                                <li class="expand">Comunicación y relaciones humanas
+                                    <ul><span>Sector cuenta corriente y sector Inversiones</span>
+                                        <li>Atención al público durante pleno Bonex '89</li>
+                                        <li>Sector cuenta corriente y sector Inversiones</li>
+                                    </ul>
+                                </li>
+                            </li>  
+                    </ul> <!-- fin BNA -->
+                    
+                    <ul class="extended"> <!--Amato -->
+
+                        <li class="myList extraEspace">1987-1989 (2 años) Reguladores Amato
+                            <li class="Head">
+                                <ul class="carrera">
+                                    <li>Operario metalúrgico Junior</li>
+                                </ul>
+                            </li>
+                            <li class="None">Comunicación y relaciones humanas
+                                <ul>
+                                </ul>
+                            </li>
+                        </li>  
+                    </ul> <!-- fin Amato -->
+                    <div class="special"><hr></div>
+                </div>
+            </section> <!-- Fin workExperience -->
+        
+        </div> <!-- Fin left -->
         
         <div class="right">
-            <section id="educacion">
+            <section id="education">
                     <div class="captionVertical">
-                        <p class="tagCenter slim">educacion</p>
+                        <p class="tagCenter slim">Formación Académica</p>
                     </div>
                     <div class="detalle">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ut optio necessitatibus soluta! Cupiditate aut ea consectetur beatae eos voluptates odit qui asperiores eius, architecto similique illo veniam. Repellendus, iste?
-                        Repellendus quo doloribus deleniti dicta in illum pariatur iure exercitationem? Odio optio libero ipsa natus! A eos fugit ipsum voluptatibus, quaerat quod, dicta iste, ex soluta alias enim odio nihil?</p>
-                    </div>
-            </section>
-        </div>
-    </main>
+                        <ul>
+                            <p class="BwQ-regular alingR smallCaps">Especializaciones</p> 
+                            <p class="special"><hr></p>
+                            <li class="BwQ-bold-italic extraEspace extended" >2022-2023 Min. de Desarrollo Productivo y CESSI</li>
+                            <li  class="extended">Programador Web full stack JS</li>
+                            
+                            <li class="BwQ-bold-italic extraEspace">2021–2022 EducaciónIT</li>
+                            <li>Full stack Python developer</li>
+                            
+                            <p class="BwQ-regular alingR extraEspace smallCaps">Posgrado</p> 
+                            <p class="special"><hr></p>
+                            <li class="BwQ-bold-italic extraEspace">2007–2012 UP</li>
+                            <li>Maestría en Dirección de Empresas</li>
+                            
+                            <p class="BwQ-regular alingR extraEspace smallCaps">Grado</p> 
+                            <p class="special"><hr></p>
+                            <li class="BwQ-bold-italic extraEspace">1996–2000 UCALP</li>
+                            <li>Analista Universitario de Sistemas</li>
+                        </ul> <!-- Fin formales -->
+                        <ul class="BwQ-regular-italic alingL">
+                            <li><b>sep-21</b>: Webinar Gestión de Proyectos con Scrum</li>
+                            <li><b>ago-21</b>: Webinar Gnu/Linux</li>
+                            <li><b>ago-21</b>: Webinar Empleos 4.0. La economía del conocimiento</li>
+                            <li><b>jul-21</b>: Webinar Android</li>
+                            <li><b>jun-21</b>: Evento BeAgile 21</li>
+                            <li><b>jul-20</b>: Seminario de Seguridad Informática </li>
+                            <li><b>mar-19</b>: Seminario de Internet of Things</li>
+                            <li><b>feb-13</b>: La gestión del conocimiento desde una mirada clínica de la organización</li>
+                            <li><b>sep-12</b>: Negociación orientada a la búsqueda de empleo</li>
+                            <li><b>sep-11</b>: Indicadores de gestión para el área de RRHH.</li>
+                            <li><b>nov-09</b>: II Foro de Benchmarking y Mejores Prácticas en Monitoreo y Gestión del Área de RRHH</li>
+                            <li><b>sep-09</b>: Competencias clave en las crisis</li>
+                            <li><b>feb-08</b>: Protocolo ejecutivo y marketing personal</li>
+                            <li><b>oct-07</b>: Equilibrio personal en entornos corporativos - Manejo del estrés</li>
+                        </ul> <!-- Fin cursos -->
+                    </div> <!-- Fin detalle -->
+            </section>  <!-- Fin educacion -->
+
+        </div>  <!-- Fin right -->
+    </main>  <!-- Fin page -->
 
 </body>
 </html>
