@@ -249,7 +249,7 @@
         .special {
             color: currentColor; }
             .special hr {
-                margin: 1em 0;
+                margin: .5em 0;
                 height: 2px; /* 5px */
                 background-color: currentColor;
                 opacity: .5;
@@ -326,6 +326,8 @@
         .rtngIcoStar.checked {
             fill:var(--progress-color);
         }
+        p {text-indent: 1.5em; margin-bottom: 0;}
+        p + p {margin-top: 0.5em;} 
 
         /* Centrando todo el contenido -ancho y alto */
         .centered {
@@ -1047,33 +1049,25 @@ nav {
                     <div class="alingC">
                         <h5>PYTHON Web Developer</h5>
                         <div class="nombre">
-                        <h1>WALTER </h1><h1 class="comprimir"> R O M E R O</h1></div>
-                        <h4>(nacido en 1968)</h4>
-                    </div>
-                    <!-- <div class="special"><hr></div> -->
-                    <br>
-                    <div id="social" class="BwQ-light-italic">
-                        <h4 class="comprimir"><svg class="icon w16 dark"><use href="#ico-linkedin"/></svg> / i n / w a l t e r - r o m e r o 1 9 6 8</h4> 
-                        <h4><svg class="icon w16 dark"><use href="#ico-github"/> </svg> w a l d r o m 6 8 . g i t h u b . i o</h4>
-                        <br>
-                    </div>
-                    
-                </div>
-            
-            <!-- Fin personal -->
-            </div>
+                            <h1>WALTER ROMERO</h1></div>
+                            <h4>(nacido en 1968)</h4>
+                            <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon dark"><use href="#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
+                            <div class="special"><hr></div>
+                        </div>
+                    </div>  <!-- Fin alingC -->
+            </div>  <!-- Fin personal -->
+
             <div class="perfil">
                 <div class="tag">
                     <p class="smallCaps">Perfil</p>
                 </div>
                 <div id="profile" class="detalle">
-                    <p>Luego de mi carrera laboral en una prestigiosa universidad en la cual aporté mis habilidades humanas y técnicas, hoy me encuentro muy motivado por haber vuelto a mi esencia: <em> “innovación, creatividad, sistemas y tecnología”</em>.</p>
+                    
+                    <p>Formalmente ocupé cargos en RRHH, y siempre disfrutaba mejorar procesos, generar reportes o cuadros para la toma de decisiones, e incluso cuando tenía que hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. Ciertamente era un <em>Analista de Sistemas Universitario</em> en un área de recursos humanos.</p>
+                    <p>Luego de esos 24 años trabajando en la universidad, ahora estoy motivado al volver a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
+                    <p>Mi perfil, además de contar con criterio empresarial tiene conocimientos técnicos en áreas de IT. Por ello puedo decir, que mi experiencia laboral junto con los conocimientos del postgrado y mi reciente especialización como desarrollador web full stack, agregan valor a cualquier proyecto.</p>
+                    <p>Y quienes me conocen, destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <br>
-                    <p></p>Formalmente ocupé posiciones en áreas de RRHH, pero gracias a que mi formación de grado es <em>Analista de Sistemas</em>, siempre pude dar soporte especializado para mejorar procesos, generar reportes o cuadros con informaciones departamentales, e incluso llegué a ser <em>una especie de analista funcional</em>,  sirviendo de enlace entre las áreas de negocio y de tecnología.</p>
-                    <br>
-                    <p>Puedo asegurar que mi experiencia laboral junto con mi formación en el MBA y mi reciente especialización, sin duda alguna contribuyen al éxito de cualquier proyecto, esto es gracias a mi criterio empresarial y mis conocimientos como Desarrollador Web Full stack.</p>
-                    <br>
-                    <p>Quienes me conocen destacan mi alto compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <div class="special"><hr></div>
                 </div>
                 <!-- Fin profile -->
@@ -1082,9 +1076,8 @@ nav {
                     <p class="smallCaps">Objetivo</p>
                 </div>
                 <div id="objetive" class="detalle">
-                    <p>Me atraen los desafíos profesionales y nuevas aventuras en las que pueda seguir aprendiendo. Y para ser coherente con mi proyecto personal, quiero adquirir la capacidad de comunicarme en el idioma inglés.</p>
-                    <br>
-                    <p>Podés contactarme si tenés alguna idea o propuesta y será un plus que sea divertida o amena</p>
+                    <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, creciendo, innovando, mejorando . . .</em></p>
+                    <p>Podés contactarme si tenés alguna idea o propuesta y será un plus si es divertida o amena, pero tené presente que aún no tengo la habilidad para hablar en inglés.</p>
                 </div>
                 <!-- Fin objetive -->
             </div>
@@ -1517,7 +1510,7 @@ nav {
           
                 </div>  <!-- container-chart -->
 
-                <div class="container-chart" id="django" aria-label="Django" aria-value="20">
+                <div class="container-chart" id="django" aria-label="Django" aria-value="40">
                     
                     <div class="donut-chart-block block-chart">
                     <div class="donut-chart">
@@ -1737,12 +1730,14 @@ nav {
                     <p class="smallCaps">Contacto</p>
                 </div>
                 <div id="contacto" class="detalle alingR">
-                    <p><svg id="whatsapp" class="icon light"><use href="#ico-whatsapp"/> </svg> 054 11 6352 2413</p>
+                    <li><svg id="whatsapp" class="icon light"><use href="#ico-whatsapp"/> </svg> 054 11 6352 2413</li>
                         
-                    <p><svg id="email" class="icon light"><use href="#ico-email"/> </svg>
-                     waldrom68@gmail.com</p>
-                    <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon light"><use href="#ico-place"/> </svg>
-                     Argentina, BsAs., Bernal</a>
+                    <li><svg id="email" class="icon light"><use href="#ico-email"/> </svg>
+                     waldrom68@gmail.com</li>
+                    <li class="comprimir BwQ-light-italic"><svg class="icon light"><use href="#ico-linkedin"/></svg> /in/walter-romero1968</li> 
+                    <li class="comprimir BwQ-light-italic"><svg class="icon light"><use href="#ico-github"/> </svg> waldrom68.github.io</li>
+                    <!-- <br> -->
+                </div>
                 </div>
                 <!-- Fin contacto -->
             </div> <!-- fin hobbies-contacto-->
