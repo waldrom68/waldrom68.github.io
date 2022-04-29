@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="prefers-color-scheme" content="light">
+    <meta name="prefers-color-scheme" content="">
     <title>CV - WR</title>
 
     <style id="import">
@@ -50,6 +50,30 @@
 
     </style>
 
+    <style id="darkLight">
+        /* Ajusto preferencia de colores */
+        @media (prefers-color-scheme: light ) {
+            :root {
+                --canvasBG: rgba(101,195,186,1);  /* Background margenes */
+                --color-light: CanvasText;  /* black */
+                --color-dark: Canvas;  /* white */ 
+            }
+            /* footer {background-color: red} */
+            .testin::before {content:  "Dark: ";} 
+            
+        }
+        @media (prefers-color-scheme: dark ) {
+            :root {
+                --canvasBG: rgba(0,150,136,1) ;  /* Background margenes */
+                --color-dark: Canvas;  /* white */
+                --color-light: CanvasText;  /* black */ 
+            }
+            /* footer {background-color: red} */
+            .testin::before {content:  "Light: ";} 
+        }
+
+    </style>
+
     <style id="root">
         :root {
             /* DE LONGITUD */
@@ -76,30 +100,10 @@
             --no-progress-color: var(--bg-dark);  /* Donuts*/
 
             /* SETEAR EN @MEDIA y en JS -> mismo Background que los margenes */
-            --canvasBG: rgba(119,171,89,1);  /* Background margenes */
+            --canvasBG: rgba(101,195,186,1);  /* Background margenes */
 
             --center-color: var(--canvasBG);  /* Donuts*/
         }
-    </style>
-
-    <style id="darkLight">
-        /* Ajusto preferencia de colores */
-        @media (prefers-color-scheme: light ) {
-            :root {
-                --canvasBG: rgba(119,171,89,1);  /* Background margenes */
-                --color-light: CanvasText;  /* black */
-                --color-dark: Canvas;  /* white */ 
-            }
-            
-        }
-        @media (prefers-color-scheme: dark ) {
-            :root {
-                --canvasBG: rgba(48, 112, 51,1) ;  /* Background margenes */
-                --color-dark: Canvas;  /* white */
-                --color-light: CanvasText;  /* black */ 
-            }
-        }
-
     </style>
 
     <style id="base">
@@ -409,12 +413,13 @@
                 top: 0;
                 left: 0;
                 text-align: left;
-                height: 24px;
+                height: 2em;
+                line-height: 2em;
                 width: 100%;
-                background-color: var(--color-light);
-                opacity: .9;
+                background-color: var(--color-dark);
+                opacity: .8;
                 /* max-width: var(--anchoPage); */
-                color: var(--color-dark);
+                color: var(--color-light);
     
                 z-index: 1000;
                 }
@@ -440,7 +445,7 @@
       border: none;
       outline: none;
       color: white;
-        background-color: inherit;
+      background-color: inherit;
       font-family: inherit; /* Important for vertical align on mobile phones */
       margin: 0; /* Important for vertical align on mobile phones */
     }
@@ -456,7 +461,7 @@
       position: absolute;
       background-color: white;
       min-width: 160px;
-      box-shadow: 0px 8px 16px 0px black;
+      box-shadow: 0px .5em 1em 0px black;
       z-index: 1;
     }
     
@@ -464,7 +469,7 @@
     .dropdown-content a {
       float: none;
       color: black;
-      padding: 12px 16px;
+      padding: .75em 1em;
       text-decoration: none;
       display: block;
       text-align: left;
@@ -588,6 +593,7 @@
                 display: block;
                 width: 100%;
                 min-width: 50%;
+                padding: 0em 0.25em;
             }
             /* 619px */
             .left .detalle {
@@ -596,6 +602,7 @@
             /* 255px */
             .right .detalle { 
                 background-color: inherit;
+                /* padding-right: .5em; */
             }
 
         /* Es el TAG, se muestra el texto en vertical */
@@ -642,7 +649,7 @@
             letter-spacing: .25em;
         }
         h4.comprimir {
-            letter-spacing: -1px;
+            letter-spacing: -0.0625;
         }
         .nombre {
             display: flex;
@@ -689,7 +696,7 @@
             .icon.border {
                 margin: 0% .25em;
                 border-radius: 25%;
-                border: 2px solid var(--color-light);
+                border: 0.125em solid var(--color-dark);
             }
 
             .extended {
@@ -706,11 +713,14 @@
             p {text-indent: 1.5em; margin-bottom: 0;}
             p + p {margin-top: 0.5em;} 
 
-            footer {
+            #contact {
                 display: block;
                 width: 100%;
-                padding: 20px 15px;
-                border: 3px solid var(--canvasBG);
+                height: auto;
+                padding: 1.25em 1em;
+                border-width: .19em ;
+                border-color: var(--canvasBG);
+                border-style: solid;
                 font-family: 'Roboto';
                 font-weight: 900;
                 font-variant: small-caps;
@@ -719,8 +729,9 @@
             #contacto > div {
                 font-size: initial;
                 display:inline-flex;
-                margin: 10px 0px;
-               }
+                margin: .625em 0px;
+                font-size: 110%;
+            }
             #contacto > div > svg { margin-left: 3em}
 
             ul, li {
@@ -732,9 +743,18 @@
             #cursos ul {
                 font-size: .83em;
             }
+
+            #notas {
+                display: flex;
+                width: 100%;
+                height: auto;
+                border: 1px dotted;
+                margin: auto;
+            }
+            
         /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
         /* div#pareto { width: 1123px; height: 20px; border: 2px dotted orange;} */
-        div.base {position: sticky; display: block; right: 0%; top: 0%;  height: auto; border: 2px dotted orange;background-color: white; z-index: 1000;}
+        div.base {position: sticky; display: block; right: 0%; top: 0%;  height: auto; border: 0.125em dotted orange;background-color: white; z-index: 1000;}
 
         /* Para evaluar su persistencia o incorporacion a algun style ya definido */
         #persona {
@@ -761,6 +781,9 @@
             .hardskill, .hobbies { display: block; }
             /* .captionVertical.reset { display: none} */
             #hobbies, nav { display: none;}
+            .compact { display: contents;}
+            #education2.compact {display: flex;}
+            #notas {display: flex;}
             
             
         }
@@ -777,16 +800,16 @@
                 @media (min-width: 1200.00px) { 
                         .testin::after {content: "width: >=1200.00" }
                         #pareto {background-color: pink}
-                        /* .left {width: 70%;max-width:none; min-width:none} */
-                        /* .right {width: 30%;max-width:none; min-width:none} */
+                        /* .left {width: 70%;max-width:none; min-width:auto} */
+                        /* .right {width: 30%;max-width:none; min-width:auto} */
                         .right > .detalle {width: 100%;}
                         /* .rtngEnd { display: none;} */
                 }
                 @media (max-width: 1199.98px) { 
                     #pareto {background-color: azure}
                     .testin::after {content: "width: 991.98 a 1199.98" }
-                    /* .left {width: 70%;max-width:none; min-width:none}
-                    .right {width: 30%;max-width:none; min-width:none} */
+                    /* .left {width: 70%;max-width:none; min-width:auto}
+                    .right {width: 30%;max-width:none; min-width:auto} */
                     .rtngEnd { display: none;}
                 }
                 @media (max-width: 991.98px) { 
@@ -810,12 +833,13 @@
                     .testin::after {content: "width: 767.98 y 991.98;"}
 
                     #page, section {display: inline-flex }
-                    .left {width: 60%; max-width:none; min-width:none}
-                    .right {width: 40%; max-width:none; min-width:none}
+                    .left {width: 60%; max-width:none; min-width:auto}
+                    .right {width: 40%; max-width:none; min-width:auto}
                     .left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
                     .right > .detalle {background-color: inherit}
                     .captionVertical.reset { display: initial}
                     .container-chart {width: auto; display: contents;}
+                    
                 }
                 @media (max-width: 575.98px) { 
                     #pareto {background-color: orange}
@@ -823,14 +847,18 @@
                     
                     .captionVertical.reset { display: none}
                     #page, section {display: block; width: 100% }
-                    .left {width: 100%;max-width:none; min-width:none}
-                    .right {width: 100%;max-width:none; min-width:none}
-                    .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:none}
+                    .left {width: 100%;max-width:none; min-width:auto}
+                    .right {width: 100%;max-width:none; min-width:auto}
+                    .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
                     .captionVertical.reset { display: none}
                     .right > .detalle {background-color: white}
                     div.rating {display: flex}
                     .rtngEnd { display: inherit;}
                     .container-chart {width: auto; display: inline-block;}
+                    #contacto > div { display:grid; margin: 0px;}
+                    #notes {display: none;}
+                    #education2.compact {display: block;}
+
                 }
 
                 @media (max-width: 319.98px) { 
@@ -838,12 +866,14 @@
                     #pareto {background-color: green}
                     
                     #page, section {display: block; width: 100% }
-                    .left {width: 100%;max-width:none; min-width:none}
-                    .right {width: 100%;max-width:none; min-width:none}
+                    .left {width: 100%;max-width:none; min-width:auto}
+                    .right {width: 100%;max-width:none; min-width:auto}
                     .right > .detalle {background-color: white}
-                    .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: left; width: 100%; max-width:none; min-width:none}
+                    .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: left; width: 100%; max-width:none; min-width:auto}
                     .captionVertical.reset { display: none}
                     .container-chart {width: auto; display: inline-block;}
+                    #notes {display: none;}
+                    #education2.compact {display: block;}
                 }
 
 
@@ -960,7 +990,7 @@
             <path stroke-width="10" d="M218.7 445.5c-6.6.7-12.2 1.4-17.8 2-29.1 2.9-54.5-5-73.7-27.7-6-7.1-9.4-16.3-14.5-24.2-7.9-12.4-16-24.7-24.7-36.6-3-4.1-8.2-6.5-12.2-10-1.3-1.1-1.7-3.2-2.6-4.9 1.8-.7 3.5-1.9 5.3-2.1 23-2.1 39.2 8.5 50.5 27.6 14.1 23.8 34.5 36.8 62.2 36.8 8 0 16-2.7 23.9-4.5 1.5-.4 3.3-2.7 3.5-4.4 1.4-10.4 2.7-20.8 7.5-30.3 1.8-3.5 3.9-6.8 6-10.4-8.1-1.6-15.9-2.8-23.6-4.7-35.5-9-64.8-26.8-81.8-60.6-6.6-13.2-10.3-27.4-10.8-42.2-.8-22.8-.5-45.7 4.1-68.2 3.3-15.8 9.3-30.5 21.3-41.9 2.6-2.5 3.1-4.7 1.7-8.5-6.7-18.7-7.4-37.7-1.7-56.8 1.2-4.1 2.3-8.2 3.5-12.5 27.4 5.2 43.7 23.7 59 44.2 15.8-11.7 34.5-12.7 52.7-13.9 21.6-1.4 43.3-1.1 64.8 2.4 11.2 1.8 18.1 4.1 29 10.6 9.4-9.7 18.2-19.5 27.9-28.4 7.7-7.1 17.3-11.6 27.7-14 2.9-.7 4.4-.4 5.6 2.8 8.1 22.1 9.3 44.1.4 66.2-1.2 3-1.1 5.1 1.4 7.5 14.4 13.7 21 31.4 23.2 50.5 2 17.7 3.1 35.5 3.1 53.3 0 25.3-7.5 48.5-23.4 68.4-11.2 14.1-25.7 24.2-42.1 31.8-15.9 7.3-32.5 11.5-49.7 13.7-.4.1-.8.4-1.5.7 11.8 16.9 13.7 35.9 13.5 55.6-.3 28.7-.2 57.3 0 86 0 4.5-1.3 5.6-5.7 5.6-35.5-.2-71-.2-106.5 0-4.4 0-5.8-1.4-5.8-5.7.2-15.5.1-31 .1-46.5.2-2.3.2-4.3.2-6.7z"/>
         </symbol>
     </svg>
-
+<!-- style="display: none !important; " -->
     <div class="base" id="pareto" style="display: none !important; ">ESTO SERÍA LA MEDIDA DE UNA HOJA A4
             <h4 class="testin">Testing :</h4>
     </div>
@@ -971,7 +1001,7 @@
             <!-- <h5 id="status" class="alingC">@Media testing :</h5> -->
             <div class="dropdown">
                 <button class="dropbtn">
-                    <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon dark"><use href="#ico-menu"/></svg></a>
+                    <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon light"><use href="#ico-menu"/></svg></a>
                 </button>
                 <ul class="dropdown-content">
                     <a><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
@@ -1013,13 +1043,13 @@
                     <p class="tagCenter"><span>WR</span></p>
                 </div>
                 <div id="persona" class="detalle">
-                    <div id="foto"  ><img src="static/images/yo.png" alt="" class="Walter sonriente"></div>
+                    <div id="foto" aria-label="se muestra foto de Walter sonriendo" ><img src="static/images/yo.png" alt="" class="Walter sonriente"></div>
                     <div class="alingC">
                         <h5>PYTHON Web Developer</h5>
                         <div class="nombre">
                             <h1>WALTER ROMERO</h1></div>
                             <h4>(nacido en 1968)</h4>
-                            <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon light"><use href="#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
+                            <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon dark"><use href="#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
                             <div class="special"><hr></div>
                     </div>
                 </div>
@@ -1027,13 +1057,13 @@
 
             <section id="profile">
                 <div class="captionVertical">
-                    <p class="tagCenter"><span>Profile</span></p>
+                    <p class="tagCenter"><span>Perfil</span></p>
                 </div>
                 <div class="detalle">
-                    <p>Formalmente ocupé cargos en RRHH, y siempre disfrutaba mejorar procesos, generar reportes o cuadros para la toma de decisiones, e incluso cuando tenía que hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. Ciertamente era un <em>Analista de Sistemas Universitario</em> en un área de recursos humanos.</p>
+                    <p>Formalmente ocupé cargos de RRHH, y siempre disfruté mejorar procesos, generar reportes o cuadros para la toma de decisiones, e incluso cuando tenía que hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. Ciertamente era un <em>Analista Universitario de Sistemas</em> en un área de recursos humanos.</p>
                     <p>Luego de esos 24 años trabajando en la universidad, ahora estoy motivado al volver a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
-                    <p>Mi perfil, además de contar con criterio empresarial tiene conocimientos técnicos en áreas de IT. Por ello puedo decir, que mi experiencia laboral junto con los conocimientos del postgrado y mi reciente especialización como desarrollador web full stack, agregan valor a cualquier proyecto.</p>
-                    <p>Y quienes me conocen, destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
+                    <p>Mi perfil, además de contar con criterio empresarial, tiene conocimientos técnicos en áreas de IT. Por ello puedo decir, que mi experiencia laboral junto con los conocimientos del postgrado y mi reciente especialización como desarrollador web full stack, agregan valor a cualquier proyecto.</p>
+                    <p>Quienes me conocen, destacarán sin dudar, mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <br>
                     <div class="special"><hr></div>
                 </div>
@@ -1067,7 +1097,7 @@
                             </li>
                             <li class="expand"> Resolución de problemas y relaciones humanas
                                 <ul><span>Creación de procedimientos, trabajo en equipo y negociación</span>
-                                    <li>Procesos: Alta laboral - Licencias - Búsqueda y selección de Personal - Gestión de desvinculaciones".</li> 
+                                    <li>Procesos: Alta laboral - Licencias - Búsqueda y selección de Personal - Gestión de desvinculaciones.</li> 
                                     <li>Propuesta de mejora e implementación del proceso “Personal mayor de 59 años.”</li>
                                     <li>Participación activa en la implementación del control de acceso.</li>
                                     <li>Gestión exitosa en acuerdos y entrevistas de desvinculaciones.</li>
@@ -1084,7 +1114,7 @@
                                     <li>Matriz salarial general y organigrama.</li>
                                     <li>Validación de consistencia en las liquidaciones antes de liberar pagos.</li>
                                     <li>Generación de tableros de control y reportes gerenciales.</li>
-                                    <li>Analisis de evoluciones salariales desde el 2005-2017.</li>
+                                    <li>Análisis de evoluciones salariales desde el 2005-2017.</li>
                                 </ul>
                                 <ul><span>Implementaciones y testing de sistemas de terceros</span>
                                     <li>Sueldos UNITECH S.A., incluida la codificación de algoritmos para los conceptos.</li>
@@ -1101,7 +1131,7 @@
                         <li class="myList extraEspace">1991-1994 (3 años) Freelance
                             <li class="Head">
                                 <ul class="carrera">
-                                    <li>Analista de sistemas y desarrollo de Sistemas de informáticos</li>
+                                    <li>Analista de sistemas y desarrollo de sistemas informáticos</li>
                                 </ul>
                             </li>
                             <li class="expand">Funciones y responsabilidades
@@ -1111,8 +1141,8 @@
                                     <li>Generador y Administrador de documentos para escribanías.</li>
                                 </ul>
                                 <ul><span>Algoritmos desafiantes y adaptación de Sistemas</span>
-                                    <li>De búsqueda: separar en silabas palabras en castellano.</li>
-                                    <li>De simulación: para toma de decisiones en tiempo real.</li>
+                                    <li>De búsqueda: separar en sílabas palabras en castellano.</li>
+                                    <li>De simulación: toma de decisiones en tiempo real.</li>
                                     <li>Mantenimiento y adaptación de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
                                 </ul>
                             </li>
@@ -1181,7 +1211,11 @@
                 </div>
             </section> <!-- Fin workExperience -->
         
-        </div> <!-- Fin left -->
+            
+        <div id="notes" class="captionVertical">
+            <p class="tagCenter"><span>Notas / observaciones</span></p>
+        </div>
+    </div> <!-- Fin left -->
         
         <div class="right">
 
@@ -1644,37 +1678,34 @@
                 <div class="detalle">
                     <div class="hobbies">
                         <div class="special"><hr></div>
-                        <svg class="icon light w50 border"> <use href="#ico-padel"></svg>
-                        <svg class="icon light w50 border"> <use href="#ico-construction"></svg>
-                            <svg class="icon light w50 border"> <use href="#ico-flight"></svg>
-                        <svg class="icon light w50 border"> <use href="#ico-help"></svg>
-                        <svg class="icon light w50 border"> <use href="#ico-grill"></svg>
+                        <svg class="icon dark w50 border" aria-label="Padel"> <use href="#ico-padel"></svg>
+                        <svg class="icon dark w50 border " aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
+                            <svg class="icon dark w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
+                        <svg class="icon dark w50 border" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
+                        <svg class="icon dark w50 border" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
                     </div>
                 </div> <!-- Fin detalle -->
             </section>  <!-- Fin hobbies -->
         </div>  <!-- Fin right -->
 
     </main>  <!-- Fin page -->
-
-    <footer  id="contact">
-            <div class="alingC">
-                <h2>Contacto</h2>
+    
+    <section  id="contact">
+        <div class="alingC">
+            <h2>Contacto</h2>
+        </div>
+        <div id="contacto" class="BwQ-bold-italic extraEspace alingC">
+            
+            <div>
+                <svg id="whatsapp" class="icon dark"><use href="#ico-whatsapp"/> </svg><span>054 11 6352 2413</span>
+                <svg id="email" class="icon dark"><use href="#ico-email"/> </svg><span>
+                waldrom68@gmail.com</span>
             </div>
-            <div id="contacto" class="BwQ-bold-italic extraEspace alingC">
-                
-                <div>
-                    <svg id="whatsapp" class="icon light"><use href="#ico-whatsapp"/> </svg><span>054 11 6352 2413</span>
-                    <svg id="email" class="icon light"><use href="#ico-email"/> </svg><span>
-                    waldrom68@gmail.com</span>
-                </div>
-                <div>
-                    <svg class="icon light"><use href="#ico-linkedin"/></svg><span> /in/walter-romero1968</span>
-                    <svg class="icon light"><use href="#ico-github"/> </svg><span> waldrom68.github.io</span>
-                </div>
-
-
-    </footer> <!-- Fin contact -->
-
+            <div>
+                <svg class="icon dark"><use href="#ico-linkedin"/></svg><span> /in/walter-romero1968</span>
+                <svg class="icon dark"><use href="#ico-github"/> </svg><span> waldrom68.github.io</span>
+            </div>
+    </section> <!-- Fin contact -->
 </body>
 
 
@@ -1696,8 +1727,10 @@
 
 <script id="myListAction">
     (function() {
+
         function initNone() {  
             // oculto el listado que inicialmente va colapsado
+
             [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
                 e.classList.add("None");
             }) };
@@ -1834,13 +1867,13 @@
         console.log(theme)
         if (theme=="dark") {
             console.log("clikeo en dark")
-            document.body.style.setProperty("--canvasBG", "rgba(48, 112, 51,1)");
-            document.body.style.setProperty("--center-color", "rgba(48, 112, 51,1)");
+            document.body.style.setProperty("--canvasBG", "rgba(0,150,136,1) ");
+            document.body.style.setProperty("--center-color", "rgba(0,150,136,1) ");
 
 
         } else {
-            document.body.style.setProperty("--canvasBG", "rgba(119,171,89,1)");
-            document.body.style.setProperty("--center-color", "rgba(119,171,89,1)");
+            document.body.style.setProperty("--canvasBG", "rgba(101,195,186,1)");
+            document.body.style.setProperty("--center-color", "rgba(101,195,186,1)");
 
         }
         menuClose();
@@ -1868,16 +1901,30 @@
 </script>  <!-- darkLight -->
 
 <script id="compactExtended">
+        function initNone() {  
+        // oculto el listado que inicialmente va colapsado
+        [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
+            e.classList.add("None");
+        }) };
+        function delNone() {
+        [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
+            e.classList.remove("None");
+        }) 
+    };
+
     function compactExtended(version) {
         if (version=="extended") {
             [].forEach.call(document.querySelectorAll(".extended"), function(e) {
             e.classList.add("compact")
             e.classList.remove("extended")
+            delNone()
+            
         })
-        } else {
-            [].forEach.call(document.querySelectorAll(".compact"), function(e) {
+    } else {
+        [].forEach.call(document.querySelectorAll(".compact"), function(e) {
                 e.classList.add("extended")
                 e.classList.remove("compact")
+                initNone()
             })
         };
         menuClose();
