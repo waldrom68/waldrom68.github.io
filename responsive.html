@@ -54,22 +54,24 @@
         /* Ajusto preferencia de colores */
         @media (prefers-color-scheme: light ) {
             :root {
-                --canvasBG: rgba(101,195,186,1);  /* Background margenes */
+                --bgStyle-light: rgba(1, 124, 173,1);  /* Background margenes */
+                --bgStyle-dark: rgba(47, 64, 80,1) ;  /* Background margenes */
                 --color-light: CanvasText;  /* black */
                 --color-dark: Canvas;  /* white */ 
             }
             /* footer {background-color: red} */
-            .testin::before {content:  "Dark: ";} 
+            .testin::before {content:  "Light: ";} 
             
         }
         @media (prefers-color-scheme: dark ) {
             :root {
-                --canvasBG: rgba(0,150,136,1) ;  /* Background margenes */
+                --bgStyle-light: rgba(1, 124, 173,1);  /* Background margenes */
+                --bgStyle-dark: #2f4050 ;  /* Background margenes */
                 --color-dark: Canvas;  /* white */
                 --color-light: CanvasText;  /* black */ 
             }
             /* footer {background-color: red} */
-            .testin::before {content:  "Light: ";} 
+            .testin::before {content:  "Dark: ";} 
         }
 
     </style>
@@ -97,11 +99,11 @@
             /* fin sin usar */
 
             --progress-color: rgb(0, 255, 0);  /* Rating  y Donuts*/
+            --progress-color: rgba(246, 164, 82,1);  /* Rating  y Donuts*/
             --no-progress-color: var(--bg-dark);  /* Donuts*/
 
-            /* SETEAR EN @MEDIA y en JS -> mismo Background que los margenes */
-            --canvasBG: rgba(101,195,186,1);  /* Background margenes */
-
+            /* SETEAR EN @MEDIA -> mismo Background que los margenes 
+            --canvasBG:red ; Background margenes*/
             --center-color: var(--canvasBG);  /* Donuts*/
         }
     </style>
@@ -417,7 +419,7 @@
                 line-height: 2em;
                 width: 100%;
                 background-color: var(--color-dark);
-                opacity: .8;
+                opacity: .9;
                 /* max-width: var(--anchoPage); */
                 color: var(--color-light);
     
@@ -722,7 +724,7 @@
                 border-color: var(--canvasBG);
                 border-style: solid;
                 font-family: 'Roboto';
-                font-weight: 900;
+                font-weight: 400;
                 font-variant: small-caps;
                 font-size: 110%;
             }
@@ -766,7 +768,24 @@
         @media print  { 
             .testin::after {content: "SALIDA IMPRESION";} 
             #pareto {font-size: 200%; text-align: center; background-color: black; color: azure;}
-            
+
+
+            /* body, .page, .page div, .page section {background-color: azure;} */
+            /* ESTE KILOMBO ES MANEJO DE COLOR EN LA IMPRESION */
+            /* aqui hay un problema de base en los estilos de cada objeto -ver las variables */
+        /* html, body, * {background-color: white;color: black;}
+        .left .captionVertical , .right {background-color: white;color: black;}
+        .donut-chart .center-chart {background-color: white;color: black;}
+        #section1-chart .item-chart {background-color: rgba(246, 164, 82,1);}
+        #section2-chart .item-chart {background-color: white;}
+        .rtngIcoStar.checked {fill:rgba(246, 164, 82,1);}
+        #contact {border-color: black}
+        body {border: .125em solid lightgray;}
+        .left .captionVertical , .right {border-width: 0px .125em; border-color: lightgray; border-style: solid;}
+        .captionVertical.reset > {border:0 .125em solid lightgray; }
+        .icon.dark, .icon.light { fill:black} */
+            /* FIN MANEJO DEL COLOR EN LA IMPRESION */
+
             body {
                 font-family: Arial, Helvetica, sans-serif; 
                 height: var(--altoPage) ;
@@ -779,8 +798,8 @@
             }
 
             .hardskill, .hobbies { display: block; }
-            /* .captionVertical.reset { display: none} */
-            #hobbies, nav { display: none;}
+            /* #hobbies, , .captionVertical.reset { display: none} */
+            nav { display: none;}
             .compact { display: contents;}
             #education2.compact {display: flex;}
             #notas {display: flex;}
@@ -1863,17 +1882,21 @@
 </script>  <!-- donuts -->
 
 <script id="darkLight">
+    // Estos colores deben ser definidos en el @media del style.id=darkLight //
     function setcolor(theme) {
         console.log(theme)
+        let BGStyle = getComputedStyle(document.documentElement);
         if (theme=="dark") {
             console.log("clikeo en dark")
-            document.body.style.setProperty("--canvasBG", "rgba(0,150,136,1) ");
-            document.body.style.setProperty("--center-color", "rgba(0,150,136,1) ");
-
-
+            
+            let bg = BGStyle.getPropertyValue('--bgStyle-dark');
+            document.body.style.setProperty("--canvasBG", bg);
+            document.body.style.setProperty("--center-color", bg);
+            
         } else {
-            document.body.style.setProperty("--canvasBG", "rgba(101,195,186,1)");
-            document.body.style.setProperty("--center-color", "rgba(101,195,186,1)");
+            let bg = BGStyle.getPropertyValue('--bgStyle-light');
+            document.body.style.setProperty("--canvasBG", bg);
+            document.body.style.setProperty("--center-color", bg);
 
         }
         menuClose();
