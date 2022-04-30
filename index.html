@@ -54,7 +54,7 @@
         /* Ajusto preferencia de colores */
         @media (prefers-color-scheme: light ) {
             :root {
-                --bgStyle-light: rgba(1, 124, 173,1);  /* Background margenes */
+                --bgStyle-light: rgba(26,179,148,1);  /* Background margenes */
                 --bgStyle-dark: rgba(47, 64, 80,1) ;  /* Background margenes */
                 --color-light: CanvasText;  /* black */
                 --color-dark: Canvas;  /* white */ 
@@ -65,7 +65,7 @@
         }
         @media (prefers-color-scheme: dark ) {
             :root {
-                --bgStyle-light: rgba(1, 124, 173,1);  /* Background margenes */
+                --bgStyle-light: rgba(26,179,148,1);  /* Background margenes */
                 --bgStyle-dark: #2f4050 ;  /* Background margenes */
                 --color-dark: Canvas;  /* white */
                 --color-light: CanvasText;  /* black */ 
@@ -785,7 +785,7 @@
         .captionVertical.reset > {border:0 .125em solid lightgray; }
         .icon.dark, .icon.light { fill:black} */
             /* FIN MANEJO DEL COLOR EN LA IMPRESION */
-
+            html, body { height: 98%; }
             body {
                 font-family: Arial, Helvetica, sans-serif; 
                 height: var(--altoPage) ;
@@ -797,12 +797,29 @@
                 font-size: 12pt;
             }
 
-            .hardskill, .hobbies { display: block; }
             /* #hobbies, , .captionVertical.reset { display: none} */
             nav { display: none;}
-            .compact { display: contents;}
+            .compact { display: block;}
+            .hardskill { display: block; }
             #education2.compact {display: flex;}
-            #notas {display: flex;}
+            #notas {display: inline-flex;}
+            
+
+            @page {
+            size: 210mm 297mm;
+            margin: 5mm 5mm 5mm 5mm;
+            orphans: 1;
+            widows: 0;
+            }
+
+            #hobbies .captionVertical {display: none;}
+            #salto { 
+                page-break-inside: avoid !important;
+                break-after: avoid-page !important;
+                /* display: inline-block !important; */
+                /* page-break-after: always; */
+            }
+            svg.icon.dark.w50 { fill:red !important; border-color: red;}
             
             
         }
@@ -1169,7 +1186,7 @@
 
                     </ul>  <!-- fin Freelance -->
         
-                    <ul>  <!-- Sistemax -->
+                    <ul  id="salto">  <!-- Sistemax -->
                             <li class="myList extraEspace">1990-1992 (2 años) Sistemax</b></i>
                                 <li class="Head">
                                     <ul class="carrera">
@@ -1695,15 +1712,16 @@
                     <p class="tagCenter slim">Hobbies</p>
                 </div>
                 <div class="detalle">
-                    <div class="hobbies">
-                        <div class="special"><hr></div>
+                    <div class="hobbies special"><hr>
+                        <!-- <div class="special"><hr></div> -->
                         <svg class="icon dark w50 border" aria-label="Padel"> <use href="#ico-padel"></svg>
-                        <svg class="icon dark w50 border " aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
-                            <svg class="icon dark w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
+                        <svg class="icon dark w50 border" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
+                        <svg class="icon dark w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
                         <svg class="icon dark w50 border" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
                         <svg class="icon dark w50 border" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
                     </div>
                 </div> <!-- Fin detalle -->
+
             </section>  <!-- Fin hobbies -->
         </div>  <!-- Fin right -->
 
