@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="prefers-color-scheme" content=""> -->
+    <title>Document</title>
+    <style>
+        :root {
+        --bs-blue: #0d6efd;
+        --bs-indigo: #6610f2;
+        --bs-purple: #6f42c1;
+        --bs-pink: #d63384;
+        --bs-red: #dc3545;
+        --bs-orange: #fd7e14;
+        --bs-yellow: #ffc107;
+        --bs-green: #198754;
+        --bs-teal: #20c997;
+        --bs-cyan: #0dcaf0;
+        --bs-white: #fff;
+        --bs-gray: #6c757d;
+        --bs-gray-dark: #343a40;
+        --bs-gray-100: #f8f9fa;
+        --bs-gray-200: #e9ecef;
+        --bs-gray-300: #dee2e6;
+        --bs-gray-400: #ced4da;
+        --bs-gray-500: #adb5bd;
+        --bs-gray-600: #6c757d;
+        --bs-gray-700: #495057;
+        --bs-gray-800: #343a40;
+        --bs-gray-900: #212529;
+        --bs-primary: #0d6efd;
+        --bs-secondary: #6c757d;
+        --bs-success: #198754;
+        --bs-info: #0dcaf0;
+        --bs-warning: #ffc107;
+        --bs-danger: #dc3545;
+        --bs-light: #f8f9fa;
+        --bs-dark: #212529;
+        --bs-primary-rgb: 13, 110, 253;
+        --bs-secondary-rgb: 108, 117, 125;
+        --bs-success-rgb: 25, 135, 84;
+        --bs-info-rgb: 13, 202, 240;
+        --bs-warning-rgb: 255, 193, 7;
+        --bs-danger-rgb: 220, 53, 69;
+        --bs-light-rgb: 248, 249, 250;
+        --bs-dark-rgb: 33, 37, 41;
+        --bs-white-rgb: 255, 255, 255;
+        --bs-black-rgb: 0, 0, 0;
+        --bs-body-color-rgb: 33, 37, 41;
+        --bs-body-bg-rgb: 255, 255, 255;
+        
+    }
+    </style>
+    <style>
+        :root {
+            --font-sans-serif: 'Quinta-light','roboto', system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --body-font-family: var(--font-sans-serif);
+            --body-font-size: 1rem;
+            --body-font-weight: 100;
+            --body-line-height: 1.5;
+            
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            
+            --destacado: rgb(255, 0, 77);
+            --alert: rgba(231, 8, 8, 1);
+
+            --body-color: #212529;
+            --body-bg: #fff;
+            
+            --active-color: black;
+            --active-bg: transparent;
+            
+            --disable-color: gray;
+            --disable-bg: transparent;
+            
+            --hover-color: white;
+            --hover-bg: transparent;
+        }
+    
+        /* Identifico si el usuario tiene un modo de preferencia en el OS o el navegador*/
+        :root { --SETEO: "Personal";}
+        @media (prefers-color-scheme: light ) {
+            :root {--SETEO: "Light";}
+            .testin::after {content:  "Light";} 
+        }
+        @media (prefers-color-scheme: dark ) {
+            :root {--SETEO: "Dark";}
+            .testin::after {content:  "Dark";} 
+        }
+    </style>
+
+    <style id="Paleta">
+        :root {
+            --themes: 'Dark', 'Light', 'Personal'; 
+        }
+
+        .Dark {
+            --primary-bg: blue;
+            --primary-color: rgb(210, 210, 210);
+
+            --primary-active-color: white;
+            --primary-active-bg: transparent;
+            
+            --primary-disable-color: gray;
+            --primary-disable-bg: transparent;
+            
+            --primary-hover-color: orange;
+            --primary-hover-bg: transparent;
+            
+            
+            --secondary-bg: skyblue;
+            --secondary-color: #212529;
+            
+            --secondary-active-color: black;
+            --secondary-active-bg: transparent;
+            
+            --secondary-disable-color: gray;
+            --secondary-disable-bg: transparent;
+            
+            --secondary-hover-color: #ffffff;
+            --secondary-hover-bg: transparent;
+            /* ... */
+        }
+
+        .Light {
+            --primary-bg: rgb(192, 178, 131);
+            --primary-color: #212529;
+            
+            --primary-active-color: orange;
+            --primary-active-bg: transparent;
+            
+            --primary-disable-color: gray;
+            --primary-disable-bg: transparent;
+            
+            --primary-hover-color: #ffffff;
+            --primary-hover-bg: transparent;
+
+            
+            --secondary-bg: rgb(220, 208, 192);
+            --secondary-color: #212529;
+
+            --secondary-active-color: black;
+            --secondary-active-bg: transparent;
+            
+            --secondary-disable-color: gray;
+            --secondary-disable-bg: transparent;
+            
+            --secondary-hover-color: #ffffff;
+            --secondary-hover-bg: transparent;
+            
+        /* ... */
+        }
+        .Personal {
+            --primary-bg: rgb(255, 115, 179);
+            --primary-color: #212529;
+            
+            --primary-active-color: orange;
+            --primary-active-bg: transparent;
+            
+            --primary-disable-color: gray;
+            --primary-disable-bg: transparent;
+            
+            --primary-hover-color: #ffffff;
+            --primary-hover-bg: transparent;
+            
+            
+            --secondary-bg: rgb(111, 114, 185);
+            --secondary-color: #212529;
+            
+            --secondary-active-color: black;
+            --secondary-active-bg: transparent;
+            
+            --secondary-disable-color: gray;
+            --secondary-disable-bg: transparent;
+            
+            --secondary-hover-color: #ffffff;
+            --secondary-hover-bg: transparent;
+        }
+        </style>
+
+<style>
+    .base {
+            display: inline-flex;
+            width: 1500px;
+            height: 500px;
+            border: 2px solid;
+            margin: auto;
+            font-size: larger;
+        }
+        .left {
+            width: 33.33%;
+            height: 500px;
+            border: 2px dotted red;
+            background-color: var(--primary-bg);
+            color: var(--primary-color);
+
+        }
+        .middle {
+            width: 33.33%;
+            height: 500px;
+            border: 2px dotted red;
+            background-color: var(--secondary-bg);
+            color: var(--secondary-color);
+        }
+        .right {
+            width: 33.33%;
+            height: 500px;
+            border: 2px dotted red;
+            background-color: var(--primary-bg);
+            color: var(--primary-color);
+        }
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        nav a {
+            width: 200px;
+            text-align: center;
+            background-color: var(--primary-disable-color);
+            color: var(--primary-active-color);
+        }
+        nav a:hover {
+            width: 200px;
+            text-align: center;
+            color: var(--primary-hover-color);
+        }
+
+    </style>
+</head>
+
+<body class="Hola" >
+    <nav>
+        <a onclick="setColor('body','Dark')">dark</a>
+        <a onclick="setColor('body','Light')">light</a>
+        <a onclick="setColor('body','Personal')">personal</a>
+    </nav>
+    <br>
+    <div class="base">
+        <div class="left">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consequuntur minima sapiente explicabo? Eaque quaerat impedit quos inventore. Blanditiis, amet.
+        </div>
+        <div class="middle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consequuntur minima sapiente explicabo? Eaque quaerat impedit quos inventore. Blanditiis, amet.
+        </div>
+        <div class="right">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consequuntur minima sapiente explicabo? Eaque quaerat impedit quos inventore. Blanditiis, amet.
+        </div>
+
+    </div>
+
+    <h1 class="testin">Configuración por default:</h1>
+
+
+
+</body>
+<script id="darkLight">
+
+    function getPaletMode() {
+    // Toma el valor que tenga por default el OS o el Nav, <style> debe tener el @media
+        // :root { --SETEO: "Personal";}
+        //     @media (prefers-color-scheme: light ) {:root {--SETEO: "Light";}}
+        //     @media (prefers-color-scheme: dark ) {:root {--SETEO: "Dark";}}
+
+    // Si el OS o el Nav no tiene nada configurado, la variable --SETEO conserva su valor "Personal"
+        let page = getComputedStyle(document.documentElement);
+        let theme = page.getPropertyValue('--SETEO').replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+        console.log("El modo configurado en el OS o en el Navegador es ->", theme)
+        return (theme);
+    };
+
+    function getThemes() {
+        // Obtiene la variable :root que tiene el array de modos definidos y retorna un array con dichos nombre de clases
+        let page = getComputedStyle(document.documentElement);
+        let themes = page.getPropertyValue('--themes').split(" ");
+        let clases = new Array()
+
+        for (let index = 0; index < themes.length; index++) {
+            const element = themes[index];
+            if (element) {
+                clases.push(element.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '') )
+            }
+        }
+        console.log("estas son las clases definidas", clases)
+        return clases
+    }
+
+    function resetClass(identificador, clases) {
+    // Elimina las clase recibidas como parametro en un array, del elemento cuyo selector coincida con el identificador pasado
+        for (const iterator of clases) {
+            document.querySelector(identificador).classList.remove(iterator);
+        }
+        console.log("elimino del selector '", identificador, "' las clases ", clases)
+    }
+
+    function setColor(identificador, clase) {
+        // Agrego en el elemento pasado como identificador, la clase recibida
+        resetClass("body", getThemes())
+        document.querySelector(identificador).classList.add(clase);
+        console.log("Agrego en '", identificador, "' la clase ",clase);
+    } 
+
+theme = getPaletMode()
+setColor("body", theme.trim())
+
+
+</script>
+</html>
