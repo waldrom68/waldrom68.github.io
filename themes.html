@@ -14,8 +14,8 @@
             width: 100%;
             overflow: scroll;
 
-            /* color: var(--color-dark);
-            background-color: var(--color-light); */
+            color: var(--body-color);
+            background-color: var(--body-bg);
 
             font-family: 'Quinta-light','roboto', sans-serif;
             font-style: normal;
@@ -60,7 +60,7 @@
             line-height: 2em;
             width: 100%;
             background-color: inherit;
-            opacity: .8;
+            opacity: .9;
             /* max-width: var(--anchoPage); */
             color: currentColor;
 
@@ -96,14 +96,14 @@
         
         /* Add a red background color to navbar links on hover */
         .navbar a:hover, .dropdown:hover .dropbtn {
-          background-color: unset;
+          background-color: var(--alert);
         }
         
         /* Dropdown content (hidden by default) */
         .dropdown-content {
           display: none;
           position: absolute;
-          /* background-color: red; */
+          background-color: inherit;
           min-width: 10em;
           box-shadow: 0px .5em 1em 0px currentColor;
           z-index: 1;
@@ -130,56 +130,56 @@
         }
         </style>
         
-        <style id="acercaDe">
-                .callout {
-                position: fixed;
-                font-family: 'Quinta-regular';
-                width: 80%;
-                height: 80%;
-                max-width: 80%;
-                max-height: 80%;
-                text-align: left !important;
-                display: none;
-                z-index: 1000;
+    <style id="acercaDe">
+            .callout {
+            position: fixed;
+            font-family: 'Quinta-regular';
+            width: 80%;
+            height: 80%;
+            max-width: 80%;
+            max-height: 80%;
+            text-align: left !important;
+            display: none;
+            background: inherit;
+            z-index: 1000;
+            }
+    
+            .callout-header {
+            padding: 25px 15px 15px;
+            font-size: 1.5em;
+            /* color: var(--bg-100); */
+            }
+    
+            .callout-container {
+                display: block;
+                height: 90%;
+                width: 100%;
+                padding: 15px 10px;
+                /* background-color: var(--acento); */
+                /* color: var(--color-text); */
+                overflow: scroll;
+    
                 }
-        
-                .callout-header {
-                padding: 25px 15px 15px;
-                /* background: var(--bg-70); */
-                font-size: 1.5em;
-                /* color: var(--bg-100); */
+                .callout-container p { padding-bottom: 5px;}
+    
+            .closebtn {
+                position: absolute;
+                top: 0;
+                right: 0;
+                /* color: var(--acento); */
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+                font-size: 2em;
+                text-align: center;
+                cursor: pointer;
                 }
-        
-                .callout-container {
-                    display: block;
-                    height: 90%;
-                    width: 100%;
-                    padding: 15px 10px;
-                    /* background-color: var(--acento); */
-                    /* color: var(--color-text); */
-                    overflow: scroll;
-        
-                    }
-                    .callout-container p { padding-bottom: 5px;}
-        
-                .closebtn {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    /* color: var(--acento); */
-                    width: 1em;
-                    height: 1em;
-                    line-height: 1em;
-                    font-size: 2em;
-                    text-align: center;
-                    cursor: pointer;
-                    }
-        
-                    .closebtn:hover {
-                        /* color: lightgrey; */
-                        background-color: var(--alert);
-                    }
-        </style>
+    
+                .closebtn:hover {
+                    /* color: lightgrey; */
+                    background-color: var(--alert);
+                }
+    </style>
 
         <style>
             /* Centrando todo el contenido -ancho y alto */
@@ -253,13 +253,13 @@
 
         .Dark {
             --primary-bg: #34585c; --primary-color: rgb(220, 220, 220);
-            --primary-active: orange; --primary-active-bg: transparent;
-            --primary-disable: black; --primary-disable-bg: transparent;
+            --primary-active: orange; --primary-active-bg: var(--primary-bg);
+            --primary-disable: black; --primary-disable-bg: var(--primary-bg);
             --primary-hover: white; --primary-hover-bg: var(--gray-800);
 
             --secondary-bg: var(--black); --secondary-color: rgb(242, 242, 230);
-            --secondary-active: orange; --secondary-active-bg: transparent;
-            --secondary-disable: gray; --secondary-disable-bg: transparent;
+            --secondary-active: orange; --secondary-active-bg: var(--secondary-bg);
+            --secondary-disable: gray; --secondary-disable-bg: var(--secondary-bg);
             --secondary-hover: white; --secondary-hover-bg: var(--gray-800);
 
             --acento: #34585c; --acento-bg: rgba(255,255,255,.7);
@@ -303,12 +303,16 @@
 
         /* LINK's */
         .Dark a.primary, .Dark.primary a, .Dark .primary a {
-            color:var(--primary-active);
+            color:var(--primary-color);
         }
         .Dark a.primary:hover, .Dark.primary a:hover, .Dark .primary a:hover {
-            color:var(--primary-hover);
+            color:var(--primary-active);
         }
         /* SVG's */
+        .Dark.primary svg, .Dark .primary svg {
+            fill: var(--primary-color);
+            stroke: var(--primary-color);
+        }
         .Dark.primary svg.disable, .Dark .primary svg.disable {
             fill: var(--primary-disable);
             stroke: var(--primary-disable);
@@ -324,6 +328,7 @@
             opacity: .8;
         }
         /*  */
+
 
         .Dark.secondary, .Dark .secondary {
             background-color: var(--secondary-bg);
@@ -363,12 +368,16 @@
 
         /* LINK's */
         .Dark a.secondary, .Dark.secondary a, .Dark .secondary a {
-            color:var(--secondary-active);
+            color:var(--secondary-color);
         }
         .Dark a.secondary:hover, .Dark.secondary a:hover, .Dark .secondary a:hover {
-            color:var(--secondary-hover);
+            color:var(--secondary-active);
         }
         /* SVG's */
+        .Dark.secondary svg, .Dark .secondary svg {
+            fill: var(--secondary-color);
+            stroke: var(--secondary-color);
+        }
         .Dark.secondary svg.disable, .Dark .secondary svg.disable {
             fill: var(--secondary-disable);
             stroke: var(--secondary-disable);
@@ -384,6 +393,7 @@
             opacity: .8;
         }
         /*  */
+
 
         .Light {
             --primary-bg:  #6AA9B0; --primary-color: var(--black);
@@ -438,12 +448,16 @@
 
         /* LINK's */
         .Light a.primary, .Light.primary a, .Light .primary a {
-            color:var(--primary-active);
+            color:var(--primary-color);
         }
         .Light a.primary:hover, .Light.primary a:hover, .Light .primary a:hover {
-            color:var(--primary-hover);
+            color:var(--primary-active);
         }
         /* SVG's */
+        .Light.primary svg, .Light .primary svg {
+            fill: var(--primary-color);
+            stroke: var(--primary-color);
+        }
         .Light.primary svg.disable, .Light .primary svg.disable {
             fill: var(--primary-disable);
             stroke: var(--primary-disable);
@@ -493,12 +507,16 @@
 
         /* LINK's */
         .Light a.secondary, .Light.secondary a, .Light .secondary a {
-            color:var(--secondary-active);
+            color:var(--secondary-color);
         }
         .Light a.secondary:hover, .Light.secondary a:hover, .Light .secondary a:hover {
-            color:var(--secondary-hover);
+            color:var(--secondary-active);
         }
         /* SVG's */
+        .Light.secondary svg, .Light .secondary svg {
+            fill: var(--secondary-color);
+            stroke: var(--secondary-color);
+        }
         .Light.secondary svg.disable, .Light .secondary svg.disable {
             fill: var(--secondary-disable);
             stroke: var(--secondary-disable);
@@ -567,12 +585,16 @@
         
         /* LINK's */
         .Personal a.primary, .Personal.primary a, .Personal .primary a {
-            color:var(--primary-active);
+            color:var(--primary-color);
         }
         .Personal a.primary:hover, .Personal.primary a:hover, .Personal .primary a:hover {
-            color:var(--primary-hover);
+            color:var(--primary-active);
         }
         /* SVG's */
+        .Personal.primary svg, .Personal .primary svg {
+            fill: var(--primary-color);
+            stroke: var(--primary-color);
+        }
         .Personal.primary svg.disable, .Personal .primary svg.disable {
             fill: var(--primary-disable);
             stroke: var(--primary-disable);
@@ -691,14 +713,14 @@
  </symbol>
     </svg>
 
-    <nav class="invert">
-        <div class="navbar">
+    <nav class="">
+        <div class="navbar secondary">
             <!-- <h5 id="status" class="alingC">@Media testing :</h5> -->
             <div class="dropdown">
                 <button class="dropbtn">
                     <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon w24"><use href="#ico-menu"/></svg></a>
                 </button>
-                <ul class="dropdown-content secondary">
+                <ul class="dropdown-content">
                     <li><a href="#" value="selected" onclick='setColor("body","Light")'>Modo claro</a></li>
                     <li><a href="#" onclick='setColor("body","Dark")'>Modo oscuro</a></li>
                     <li><a href="#" onclick="acercaDe()">Acerca de</a></li>
@@ -706,10 +728,10 @@
             </div>
         </div>
 
-        <div class="centered callout">
+        <div class="centered callout secondary">
             <div class="callout-header">Acerca de</div>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
-            <div class="callout-container">
+            <div class="callout-container invert">
                 <ul>
                     <li><h3>Desarrollado sólo con CSS3, JS y HTML.</h3></li>
                     <li class="special"><hr> </li>
@@ -722,7 +744,7 @@
                     <li class="special"><hr> </li>
                     <li class="BwQ-light-italic"><b>Pendientes</b></li>
                     <li> 1. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) tomando los datos de una base de datos en MySQL para que genere este código (proyecto iniciado pero aún sin publicar).</li>
-                    <li> 2. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puesta en la línea del html, etc.</li>
+                    <li> 2. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puestas en la línea del html, etc.</li>
                 </ul>
             </div>
         </div>
