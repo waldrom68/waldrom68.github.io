@@ -6,9 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <meta name="prefers-color-scheme" content=""> -->
     <title>Document</title>
+    
+    <style>
+        /* Centrando todo el contenido -ancho y alto */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            /* background-color: var(--bg-color); */
+            border: 3px dotted orange;
+            z-index: 1100;
+        }
+    </style>
     <style id="base">
         html,
-        * { margin: 0; padding:0; box-sizing: border-box;
+        * { margin: 0; box-sizing: border-box;
         }
         body {
             width: 100%;
@@ -48,6 +64,7 @@
         }
         /* .hardskill, .hobbies, .contact { display: block; } */
     </style>
+
     <style id="menu">
         /* Barra de navegación */
         .navbar {
@@ -128,7 +145,7 @@
         .dropdown:hover .dropdown-content {
           display: block;
         }
-        </style>
+    </style>
         
     <style id="acercaDe">
             .callout {
@@ -181,22 +198,6 @@
                 }
     </style>
 
-        <style>
-            /* Centrando todo el contenido -ancho y alto */
-            .centered {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                height: auto;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                /* background-color: var(--bg-color); */
-                border: 3px dotted orange;
-                z-index: 1100;
-            }
-    </style>
-
     <style id="@media">
         :root {
             --body-font-family: 'Quinta-light','roboto', system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -218,19 +219,19 @@
         }
     </style>
 
-<style id="Paletas">
+    <style id="Paletas">
         :root {
-            --themes: 'Dark', 'Light', 'Personal';
+            --themes: 'Dark', 'Light', 'Personal', 'Personal2';
 
-            --body-color: #212529;
             --body-bg: #fff;
+            --body-color: #212529;
 
-            --destacado: rgb(255, 0, 77);
             --alert: rgba(231, 8, 8, 1);
+            --destacado: rgb(254, 225, 61);
+
             --white: rgba(230, 230, 230);
-            --black: rgba( 50, 50, 50);
             --gray: #6c757d;
-            --gray-dark: #343a40;
+            
             --gray-100: #f8f9fa;
             --gray-200: #e9ecef;
             --gray-300: #dee2e6;
@@ -240,207 +241,298 @@
             --gray-700: #495057;
             --gray-800: #343a40;
             --gray-900: #212529;
+            
+            --gray-dark: #343a40;
+            --black: rgba( 50, 50, 50);
         }
 
         .invert {
             background-color: var(--body-color);
             color: var(--body-bg);
         }
-        svg.destacado, .destacado svg  {
+
+        svg.icon.destacado {
             fill: var(--destacado);
             stroke: var(--destacado);
+            background-color: transparent;
         }
+        svg.icon.alert {
+            fill: var(--alert);
+            stroke: var(--alert);
+            background-color: transparent;
+        }
+        .palettas {
+            /* Paleta 1 - Dark */
+            /* del mas oscuro al mas claro */
+            color: #022011; /* 1  Fondo */ 
+            color: #3a5048; /* 2  Disable */
+            color: #236e23; /* 3 atnecion 1*/
+            /* del menos llamativo al mas llamativo */
+            color: #03faf6; /* 4 atencion 2*/
+            color: #00ff00; /* 5 Acento */
+            color: white; color: black;
 
+            /* Paleta 1 - Light */
+            /* del mas claro al mas oscuro */
+            color: #236e23; /* 1 */ 
+            color: #3a5048; /* 2 */
+            color: #022011; /* 3 */
+            /* del menos llamativo al mas llamativo */
+            color: #03faf6; /* 4 */
+            color: #00ff00; /* 5 Acento */
+            color: white; color: black;
+
+            /* paleta 2  Dark */
+            /* del mas oscuro al mas claro */
+            color: #190207; /* 1 */
+            color: #5a082d; /* 2 */
+            color: #9d0b28; /* 3 */ 
+            /* del menos llamativo al mas llamativo */
+            color: #ffa800; /* 4 */ 
+            color: #ff004d; /* 5 Acento */  
+            color: white; color: black;
+
+               /* paleta 2  Light */
+            /* del mas claro al mas oscuro */
+            color: #9d0b28; /* 1 */ 
+            color: #5a082d; /* 2 */
+            color: #190207; /* 3 */
+            /* del menos llamativo al mas llamativo */
+            color: #ffa800; /* 4 */ 
+            color: #ff7700; /* 5 Acento */  
+            color: white; color: black;
+        }
         .Dark {
-            --primary-bg: #34585c; --primary-color: rgb(220, 220, 220);
-            --primary-active: orange; --primary-active-bg: var(--primary-bg);
-            --primary-disable: black; --primary-disable-bg: var(--primary-bg);
-            --primary-hover: white; --primary-hover-bg: var(--gray-800);
+            --primary-bg: #022011 ; --primary-color: var(--gray-300); /* color 1 */
+            --primary-disable-bg: var(--primary-bg); --primary-disable: #3a5048; /* color 2*/
+            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
+            --primary-active-bg: var(--primary-bg); --primary-active: #03faf6; /* color 4*/
+            --primary-hover-bg: var(--gray-700); --primary-hover: white;
 
-            --secondary-bg: var(--black); --secondary-color: rgb(242, 242, 230);
-            --secondary-active: orange; --secondary-active-bg: var(--secondary-bg);
-            --secondary-disable: gray; --secondary-disable-bg: var(--secondary-bg);
-            --secondary-hover: white; --secondary-hover-bg: var(--gray-800);
-            --acento: #34585c; --acento-bg: rgba(255,255,255,.7);
+            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #00ff00; --acento-bg: var(--primary-bg);  /* color 5 */
+
+            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
+            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
+            --secondary-link-bg: var(--secondary-bg); --secondary-link: #236e23; /* color 3 */
+            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
+            --secondary-hover-bg: var(--gray-300); --secondary-hover: black;
+
         }
-        .Light {
-            --primary-bg:  #6AA9B0; --primary-color: var(--black);
-            --primary-active: orange; --primary-active-bg: transparent;
-            --primary-disable: var(--gray-500); --primary-disable-bg: transparent;
-            --primary-hover: var(--acento); --primary-hover-bg: var(--acento-bg);
 
-            --secondary-bg: rgb(242, 242, 230); --secondary-color: #212529;
-            --secondary-active: orange; --secondary-active-bg: transparent;
-            --secondary-disable: var(--gray-700); --secondary-disable-bg: transparent;
-            --secondary-hover: var(--acento); --secondary-hover-bg: var(--acento-bg);
-            --acento: #34585c; --acento-bg: rgba(255,255,255,.7);
+        .Light {
+            --primary-bg: #236e23 ; --primary-color: var(--gray-300); /* color 1 */
+            --primary-disable-bg: var(--primary-bg); --primary-disable: #3a5048; /* color 2 */
+            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
+            --primary-active-bg: var(--primary-bg); --primary-active: #03faf6; /* color 4 */
+            --primary-hover-bg: var(--gray-700); --primary-hover: white;
+
+            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #00ff00; --acento-bg: var(--primary-bg);  /* 5 */
+
+            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
+            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
+            --secondary-link-bg: var(--secondary-bg); --secondary-link: #6c9586; /* color 3 */
+            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
+            --secondary-hover-bg: var(--primary-color); --secondary-hover: black;
         }
 
         .Personal {
-            --primary-bg: var(--gray-900); --primary-color: rgb(220, 220, 220);
-            --primary-active: white; --primary-active-bg: transparent;
-            --primary-disable: var(--gray-700); --primary-disable-bg: transparent;
-            --primary-hover: var(--gray-400); --primary-hover-bg: transparent;
+            --primary-bg: #190207 ; --primary-color: var(--gray-300); /* color 1 */
+            --primary-disable-bg: var(--primary-bg); --primary-disable: #5a082d; /* color 2 */
+            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
+            --primary-active-bg: var(--primary-bg); --primary-active: #ffa800; /* color 4 */
+            --primary-hover-bg: var(--gray-700); --primary-hover: white;
 
-            --secondary-bg: var(--gray-200); --secondary-color: var(--black);
-            --secondary-active: black; --secondary-active-bg: transparent;
-            --secondary-disable: gray; --secondary-disable-bg: transparent;
-            --secondary-hover: var(--gray-800); --secondary-hover-bg: var(--gray-100);
-            --acento: #34585c; --acento-bg: rgba(255,255,255,.7);
+            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #ff7700; --acento-bg: var(--primary-bg);  /* 5 */
+
+            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
+            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
+            --secondary-link-bg: var(--secondary-bg); --secondary-link: #9d5a0b; /* color 3 */
+            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
+            --secondary-hover-bg: var(--primary-color); --secondary-hover: black;
+        }
+        .Personal2 {
+            --primary-bg: #9d5a0b ; --primary-color: var(--gray-300); /* color 1 */
+            --primary-disable-bg: var(--primary-bg); --primary-disable: #5a082d; /* color 2 */
+            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
+            --primary-active-bg: var(--primary-bg); --primary-active: #ffa800; /* color 4 */
+            --primary-hover-bg: var(--gray-700); --primary-hover: white;
+
+            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #ff7700; --acento-bg: var(--primary-bg);  /* 5 */
+
+            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
+            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
+            --secondary-link-bg: var(--secondary-bg); --secondary-link: #190207; /* color 3 */
+            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
+            --secondary-hover-bg: var(--primary-color); --secondary-hover: black;
+
+
         }
 
         .primary {
             background-color: var(--primary-bg);
             color: var(--primary-color);
         }
+            .primary.invert,  .primary .invert {
+                background-color: var(--primary-color);
+                color: var(--primary-bg);
+            }
+            .primary.active, .primary .active {
+                background-color: var(--primary-active-bg);
+                color: var(--primary-active);
+            }
+            .primary.disable, .primary .disable {
+                background-color: var(--primary-disable-bg);
+                color: var(--primary-disable);
+            }
+            .primary.hover, .primary .hover {
+                background-color: var(--primary-hover-bg);
+                color: var(--primary-hover);
+            }
+            .primary.acento, .primary .acento {
+                background-color: var(--acento-bg);
+                color: var(--acento);
+            }
+            .primary.destacado, .primary .destacado {
+                background-color: var(--destacado-bg);
+                color: var(--destacado);
+            }
 
-        .primary.invert,  .primary .invert {
-            background-color: var(--primary-color);
-            color: var(--primary-bg);
-            border: 3px dotted red;
-        }
-        .primary.active, .primary .active {
-            background-color: var(--primary-active-bg);
-            color: var(--primary-active);
-        }
-        .primary.disable, .primary .disable {
-            background-color: var(--primary-disable-bg);
-            color: var(--primary-disable);
-        }
-        .primary.hover, .primary .hover {
-            background-color: var(--primary-hover-bg);
-            color: var(--primary-hover);
-        }
-        .primary.acento, .primary .acento {
-            background-color: var(--acento-bg);
-            color: var(--acento);
-        }
-        .primary.destacado, .primary .destacado {
-            background-color: var(--destacado-bg);
-            color: var(--destacado);
-        }
-
-        /* LINK's */
-         a.primary, .primary a {
-            color:var(--primary-color);
-        }
-         a.primary:hover, .primary a:hover {
-            color:var(--primary-active);
-        }
-        /* SVG's */
-        .primary svg,  .primary svg {
-            fill: var(--primary-color);
-            stroke: var(--primary-color);
-        }
-        .primary svg.disable,  .primary.disable svg {
-            fill: var(--primary-disable);
-            stroke: var(--primary-disable);
-        }
-        .primary svg.active,  .primary.active svg {
-            fill: var(--primary-active);
-            stroke: var(--primary-active);
-        }
-        /* UL LI */
-        .primary li:hover {
-            background-color: var(--primary-hover-bg);
-            color: var(--primary-hover);
-            opacity: .8;
-        }
-        /*  */
+            /* LINK's y HOVER's */
+            a.primary, .primary a {
+                color:var(--primary-link);
+            }
+            a.primary:hover, .primary a:hover {
+                background-color: var(--primary-hover-bg);
+                color:var(--primary-hover);
+            }
+            /* UL LI */
+            .primary li:hover {
+                background-color: var(--primary-hover-bg);
+                color: var(--primary-hover);
+            }
+            /* SVG's */
+            .primary svg,  .primary svg {
+                fill: var(--primary-color);
+                stroke: var(--primary-color);
+            }
+            .primary svg.disable,  .primary.disable svg {
+                fill: var(--primary-disable);
+                stroke: var(--primary-disable);
+            }
+            .primary svg.active,  .primary.active svg {
+                fill: var(--primary-active);
+                stroke: var(--primary-active);
+            }
+            .primary svg.acento,  .primary.acento svg {
+                fill: var(--acento);
+                stroke: var(--acento);
+                background-color: transparent;
+            }
+            /*  */
 
         .secondary {
             background-color: var(--secondary-bg);
             color: var(--secondary-color);
         }
-        .secondary.invert,  .secondary .invert {
-            background-color: var(--secondary-color);
-            color: var(--secondary-bg);
-            border: 3px dotted red;
-        }
-        .secondary.active,  .secondary .active {
-            background-color: var(--secondary-active-bg);
-            color: var(--secondary-active);
-        }
-        .secondary.disable,  .secondary .disable {
-            background-color: var(--secondary-disable-bg);
-            color: var(--secondary-disable);
-        }
-        .secondary.hover,  .secondary .hover {
-            background-color: var(--secondary-hover-bg);
-            color: var(--secondary-hover);
-        }
-        .secondary.acento,  .secondary .acento {
-            background-color: var(--acento-bg);
-            color: var(--acento);
-        }
-        .secondary.destacado,  .secondary .destacado {
-            background-color: var(--destacado-bg);
-            color: var(--destacado);
-        }
+            .secondary.invert,  .secondary .invert {
+                background-color: var(--secondary-color);
+                color: var(--secondary-bg);
+            }
+            .secondary.active,  .secondary .active {
+                background-color: var(--secondary-active-bg);
+                color: var(--secondary-active);
+            }
+            .secondary.disable,  .secondary .disable {
+                background-color: var(--secondary-disable-bg);
+                color: var(--secondary-disable);
+            }
+            .secondary.hover,  .secondary .hover {
+                background-color: var(--secondary-hover-bg);
+                color: var(--secondary-hover);
+            }
+            .secondary.acento,  .secondary .acento {
+                background-color: var(--acento-bg);
+                color: var(--acento);
+            }
+            .secondary.destacado,  .secondary .destacado {
+                background-color: var(--destacado-bg);
+                color: var(--destacado);
+            }
 
-        /* LINK's */
-        a.secondary, .secondary a {
-            color:var(--secondary-color);
-        }
-         a.secondary:hover, .secondary a:hover {
-            color:var(--secondary-active);
-        }
-        /* SVG's */
-        .secondary svg,  .secondary svg {
-            fill: var(--secondary-color);
-            stroke: var(--secondary-color);
-        }
-        .secondary svg.disable,  .secondary.disable svg {
-            fill: var(--secondary-disable);
-            stroke: var(--secondary-disable);
-        }
-        .secondary svg.active,  .secondary.active svg {
-            fill: var(--secondary-active);
-            stroke: var(--secondary-active);
-        }
-        /* UL LI */
-        .secondary li:hover {
-            background-color: var(--secondary-hover-bg);
-            color: var(--secondary-hover);
-            opacity: .8;
-        }
-        /*  */
+            /* LINK's */
+            a.secondary, .secondary a {
+                color:var(--secondary-link);
+            }
+            a.secondary:hover, .secondary a:hover {
+                background-color: var(--secondary-hover-bg);
+                color:var(--secondary-hover);
+            }
+            /* UL LI */
+            .secondary li:hover {
+                background-color: var(--secondary-hover-bg);
+                color: var(--secondary-hover);
+            }
+            /* SVG's */
+            .secondary svg,  .secondary svg {
+                fill: var(--secondary-color);
+                stroke: var(--secondary-color);
+            }
+            .secondary svg.disable,  .secondary.disable svg {
+                fill: var(--secondary-disable);
+                stroke: var(--secondary-disable);
+            }
+            .secondary svg.active,  .secondary.active svg {
+                fill: var(--secondary-active);
+                stroke: var(--secondary-active);
+            }
+            .secondary svg.acento,  .secondary.acento svg {
+                fill: var(--acento);
+                stroke: var(--acento);
+                background-color: transparent;
+            }
+            /*  */
+    </style>
 
-        </style>
+    <style id="layout">
+        .base {
+                display: inline-flex;
+                width: 1500px;
+                height: 750px;
+                border: 2px solid;
+                margin: auto;
+                font-size: larger;
+                padding-top: 2em;
+            }
+            .left {
+                width: 50%;
+                height: 100%;
+                border: 2px dotted red;
+            }
 
-<style id="layout">
-    .base {
-            display: inline-flex;
-            width: 1500px;
-            height: 650px;
-            border: 2px solid;
-            margin: auto;
-            font-size: larger;
-        }
-        .left {
-            width: 50%;
-            height: 650px;
-            border: 2px dotted red;
-        }
-
-        .right {
-            width: 50%;
-            height: 650px;
-            border: 2px dotted red;
-        }
-        .icon {
-            width: 2em;
-            height: 2em;
-            line-height: 1.5em;
-        }
-        .icon.w16 {
-            width: 1em;
-            height: 1em;
-            line-height: 1em;
-        }
-</style>
+            .right {
+                width: 50%;
+                height: 100%;
+                border: 2px dotted red;
+            }
+            .icon {
+                width: 2em;
+                height: 2em;
+                line-height: 1.5em;
+            }
+            .icon.w16 {
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+            }
+            h1 { text-align: right; color: #022011; opacity: 1;}
+    </style>
 
 </head>
+
 
 <body class="themes-test" >
     <svg class="icons-lib" xmlns="http://www.w3.org/2000/svg" style="display: none !important; ">
@@ -454,8 +546,8 @@
  </symbol>
     </svg>
 
-    <nav class="">
-        <div class="navbar secondary">
+    <nav class="primary">
+        <div class="navbar">
             <!-- <h5 id="status" class="alingC">@Media testing :</h5> -->
             <div class="dropdown">
                 <button class="dropbtn">
@@ -464,12 +556,14 @@
                 <ul class="dropdown-content">
                     <li><a href="#" value="selected" onclick='setColor("body","Light")'>Modo claro</a></li>
                     <li><a href="#" onclick='setColor("body","Dark")'>Modo oscuro</a></li>
+                    <li><a href="#" onclick='setColor("body","Personal")'>Personal</a></li>
+                    <li><a href="#" onclick='setColor("body","Personal2")'>Personal 2</a></li>
                     <li><a href="#" onclick="acercaDe()">Acerca de</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="centered callout secondary">
+        <div class="centered callout">
             <div class="callout-header">Acerca de</div>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
             <div class="callout-container invert">
@@ -489,21 +583,38 @@
                 </ul>
             </div>
         </div>
+        <h1 class="testin">Configuración por default:</h1>
     </nav>
 
     <div class="base" onclick="menuClose()">
         <div class="left primary">
-            <p>left primary</p>
-             <p>Lorem ipsum dolor <span class="icon destacado">ACTIVE </span> sit amet consectetur  Nemo consequuntur minima sapiente explicabo? <span class="disable"> DISABLE </span> Eaque quaerat impedit quos <a>LINK</a> inventore. Blanditiis, amet.</p>
-
+            <p class="invert">PRIMARY (en clase invert)</p>
+            <p>Lorem ipsum dolor<span class="acento"> ( ACENTO )</span> Lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor<span class="active"> ( ACTIVE )</span> Lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor <span class="icon destacado"> ( DESTACADO )</span> </p>   
+            <p>Lorem ipsum dolor<span class="hover"> ( HOVER PRIMARY )</span> Lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor<span class="disable"> ( DISABLE )</span>
+            <p>Lorem ipsum dolor ( LINK ) </span><a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a></p>
+             
+            <hr> 
+            <br>
             <p class="invert">INVERT Lorem ipsum dolor sit amet consectetur Nemo consequuntur minima sapiente explicabo?.</p>
-            <svg id="menu" class="icon w16 active" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 active" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <p><span class='hover'>HOVER</span> Lorem ipsum dolor sit <span class="acento">ACENTO</span>  amet consectetur  Nemo consequuntur minima sapiente explicabo? Eaque quaerat impedit <span class="destacado">DESTACADO</span> quos inventore. Blanditiis, amet.</p> 
+            <br>
+            <hr>
+            <svg id="menu" class="icon w16 acento" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16 acento" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            
+            <p>Amet consectetur  Nemo consequuntur minima sapiente explicabo? Eaque quaerat impedit <span class="alert">ALERT</span> quos inventore. Blanditiis, amet.</p> 
+            <p>Default <svg class="icon w16" ><use href="#ico-star"/></svg></p>
+            <p>DISABLE <svg class="icon w16 disable" ><use href="#ico-star"/></svg></p>
+            <p>ACTIVE <svg class="icon w16 active" ><use href="#ico-star"/></svg></p>
+            <p>ACENTO <svg class="icon w16 acento" ><use href="#ico-star"/></svg></p>
+            <p>DESTACADO <svg class="icon w16 destacado" ><use href="#ico-star"/></svg></p>
+            <p>ALERT <svg class="icon w16 alert" ><use href="#ico-star"/></svg></p>
             <ul> <!-- Freelance -->
             
                 <li>1991-1994 (3 años) Freelance
@@ -525,20 +636,42 @@
                 </li>  
 
             </ul>  <!-- fin Freelance -->
+            <hr><br>
+            <form action="">
+                <fieldset for="algo">Algo</fielset>
+                <input type="text" name="algo" id="">Ingrese
+                <input type="range" name="Brillo" id="">
+            </form>
+
         </div>
 
         <div class="right secondary">
-            <p>middle secondary</p>
-            <p>Lorem ipsum dolor <span class="icon destacado">ACTIVE </span> sit amet consectetur  Nemo consequuntur minima sapiente explicabo? <span class="disable"> DISABLE </span> Eaque quaerat impedit quos <a>LINK</a> inventore. Blanditiis, amet.</p>
-
+            <p class="invert">SECONDARY (en clase invert)</p>
+            <p>Lorem ipsum dolor<span class="acento"> ( ACENTO )</span> Lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor<span class="active"> ( ACTIVE )</span> Lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor <span class="icon destacado">( DESTACADO )</span> </p>   
+            <p>Lorem ipsum dolor<span class="hover"> ( HOVER SECONDARY )</span> Lorem ipsum dolor</p>
+            <p>Lorem ipsum dolor<span class="disable"> ( DISABLE )</span>
+            <p>Lorem ipsum dolor ( LINK ) </span><a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a></p>
+            <hr> 
+            <br>
             <p class="invert">INVERT Lorem ipsum dolor sit amet consectetur Nemo consequuntur minima sapiente explicabo?.</p>
-            <svg id="menu" class="icon w16 active" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 active" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <svg id="menu" class="icon w16 disable" ><use href="#ico-star"/></svg>
-            <p><span class='hover'>HOVER</span> Lorem ipsum dolor sit <span class="acento">ACENTO</span>  amet consectetur  Nemo consequuntur minima sapiente explicabo? Eaque quaerat impedit <span class="destacado">DESTACADO</span> quos inventore. Blanditiis, amet.</p> 
+            <br>
+            <hr>
+            <svg id="menu" class="icon w16 acento" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16 acento" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            <svg id="menu" class="icon w16" ><use href="#ico-star"/></svg>
+            
+            <p>Amet consectetur  Nemo consequuntur minima sapiente explicabo? Eaque quaerat impedit <span class="alert">ALERT</span> quos inventore. Blanditiis, amet.</p> 
+            <p>Default <svg class="icon w16" ><use href="#ico-star"/></svg></p>
+            <p>DISABLE <svg class="icon w16 disable" ><use href="#ico-star"/></svg></p>
+            <p>ACTIVE <svg class="icon w16 active" ><use href="#ico-star"/></svg></p>
+            <p>ACENTO <svg class="icon w16 acento" ><use href="#ico-star"/></svg></p>
+            <p>DESTACADO <svg class="icon w16 destacado" ><use href="#ico-star"/></svg></p>
+            <p>ALERT <svg class="icon w16 alert" ><use href="#ico-star"/></svg></p>
             <ul> <!-- Freelance -->
             
                 <li>1991-1994 (3 años) Freelance
@@ -560,14 +693,14 @@
                 </li>  
 
             </ul>  <!-- fin Freelance -->
-
-        </div>
+            <hr><br>
+            <form action="">
+                <fieldset for="algo">Algo</fielset>
+                <input type="text" name="algo" id="">Ingrese
+                <input type="range" name="Brillo" id="">
+            </form>
 
     </div>
-
-    <h1 class="testin">Configuración por default:</h1>
-
-
 
 </body>
 

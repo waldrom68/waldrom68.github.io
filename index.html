@@ -119,7 +119,7 @@
             --bg-light: ButtonFace; /* Gris claro */ 
             /* fin sin usar */
 
-            --oprogress-color: rgb(0, 255, 0);  /* Rating  y Donuts*/
+            --progress-color: rgb(0, 255, 0);  /* Rating  y Donuts*/
             --oprogress-color: rgba(246, 164, 82,1);  /* Rating  y Donuts*/
 
 
@@ -444,7 +444,7 @@
         }
     
         #section1-chart .item-chart {
-        background-color: var(--acento);
+        background-color: var(--progress-color);
         transform: rotate(180deg);
         }
     
@@ -747,7 +747,7 @@
             }
             .icon.light {fill: var(--color-text);}
             .icon.dark {fill: var(--color-text);}
-            .icon .link:hover {fill: var(--acento);}
+            .icon .link:hover {fill: var(--progerss-color);}
             
             .icon.border {
                 margin: 0% .25em;
@@ -764,7 +764,7 @@
             #education2.compact {display: flex;}
 
             .rtngIcoStar.checked {
-                fill:var(--acento);
+                fill:var(--progress-color);
             }
             p {text-indent: 1.5em; margin-bottom: 0;}
             p + p {margin-top: 1em;} 
@@ -1882,7 +1882,7 @@
         /* obtengo valor de los colores desde JS: */
         let donutStyle = getComputedStyle(document.documentElement);
         let noProgressColor = donutStyle.getPropertyValue('--bg-70');
-        let progressColor = donutStyle.getPropertyValue('--acento');
+        let progressColor = donutStyle.getPropertyValue('--progress-color');
         
         if (!progressColor) {
             progressColor = 'red';
