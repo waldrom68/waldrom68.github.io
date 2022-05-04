@@ -199,7 +199,7 @@
         .None {
             display: none;
         }
-        /* .hardskill, .hobbies, .contact { display: block; } */
+        .hardskill, .hobbies, .contact { display: block; }
     </style>
 
     <!-- Place work Experience and Education -->
@@ -617,6 +617,7 @@
                 Left: 70% (donde LeftA 21% de Left )
                 Right: 30% (donde RightA 25% de Right )*/
         /* 791px */
+        .left, .right {display: grid;}
         .left {
             width: 70%;
             max-width: 70%;
@@ -659,6 +660,7 @@
             .right .detalle { 
                 background-color: var(--bg-70);
                 color: var(--bg-100);
+                display: flex;
                 /* padding-right: .5em; */
             }
 
@@ -713,6 +715,7 @@
             display: flex;
         }
     
+
         .BwQ-light {font-family: 'Quinta-light';font-style: normal;}
         .BwQ-light-italic {font-family: 'Quinta-light'; font-style: italic;}
         .BwQ-regular {font-family: 'Quinta-regular';font-style: normal;}
@@ -747,14 +750,14 @@
                 height:3.15em;
                 line-height:3.15em;
             }
-            .icon.light {fill: var(--color-text);}
+            .icon.light {fill: var(--bg-100)}
             .icon.dark {fill: var(--color-text);}
-            .icon .link:hover {fill: var(--progerss-color);}
+            .icon .link:hover {fill: var(--progress-color);}
             
             .icon.border {
                 margin: 0% .25em;
                 border-radius: 25%;
-                border: 0.125em solid var(--color-text);
+                border: 0.125em solid var(--bg-100);
             }
 
             .extended {
@@ -771,7 +774,8 @@
             p {text-indent: 1.5em; margin-bottom: 0;}
             p + p {margin-top: 1em;} 
 
-            #contact, #hobbies {
+            /* #contact, #hobbies { */
+            #contact {
                 display: block;
                 padding: 1.25em 1em;
                 border-width: .19em ;
@@ -791,7 +795,7 @@
                 margin: .625em 0px;
                 font-size: 110%;
             }
-            #contacto > div > svg { margin-left: 3em}
+            /* #contacto > div > svg { margin-left: 1em} */
 
             /* .detalle .hobbies {display: inline-flex;} */
             ul, li {
@@ -803,7 +807,7 @@
             #cursos ul {
                 font-size: .83em;
             }
-            
+
             #footer { display: inline-flex;}
 
             /* Centrando todo el contenido -ancho y alto */
@@ -853,16 +857,17 @@
             html, body { height: 98%; }
             body {
                 font-family: Arial, Helvetica, sans-serif; 
-                height: var(--altoPage) ;
                 height: auto ;
                 max-width: 100%;
                 /* margin: 10.205px 6.803px 7.181px 6.803px; */
-                max-width: 1123px; 
                 width: var(--anchoPage);
+                max-width: 1123px; 
+
             }
             
             body, * {font-size: 12pt; line-height: 12pt;}
 
+            
             /* #hobbies, , .captionVertical.reset { display: none} */
             nav { display: none;}
             .compact { display: block;}
@@ -870,12 +875,12 @@
             #education2.compact {display: flex;}
             #footer {display: inline-flex;}
 
-            @page {
+            /* @page {
             size: 210mm 297mm;
             margin: 5mm 5mm 5mm 5mm;
             orphans: 1;
             widows: 0;
-            }
+            } */
 
             .salto { 
                 page-break-inside: avoid !important;
@@ -1342,8 +1347,8 @@
                     <p class="tagCenter slim">Cursos y Seminarios</p>
                 </div>
                 <div class="detalle">
-                    <div class="special"><hr></div>
                     <ul class="BwQ-regular-italic alingL">
+                        <div class="special"><hr></div>
                             <li><b>sep-21</b>: Webinar Gestión de Proyectos con Scrum</li>
                             <li><b>ago-21</b>: Webinar Gnu/Linux</li>
                             <li><b>ago-21</b>: Webinar Empleos 4.0. La economía del conocimiento</li>
@@ -1359,202 +1364,10 @@
                             <li><b>feb-08</b>: Protocolo ejecutivo y marketing personal</li>
                             <li><b>oct-07</b>: Equilibrio personal en entornos corporativos - Manejo del estrés</li>
                     </ul> <!-- Fin cursos -->
+
+
                 </div> <!-- Fin detalle -->
             </section>  <!-- Fin educacion2 -->
-
-            <section id="softskill">
-                <div class="captionVertical">
-                    <p class="tagCenter slim">Habilidades Personales</p>
-                </div>
-                <div class="detalle">
-                    <div class="special"><hr></div>
-                    <div class="softskill">
-
-                        <div class="rating" id="rtng1" mylabel="Adaptación al cambio" myvalue="3">
-                            <div class="rtngSide">
-                                <span>hability</span>
-                            </div>
-                            
-                            <div class="rtngMiddle">
-                                <div class="star-container">
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                </div>
-                            </div>
-                            
-                            
-                            <div class="rtngSide rtngEnd">
-                                <span>0</span>
-                            </div>
-                        </div>  <!-- rating -->
-                                            
-                        <div class="rating" id="rtng2" mylabel="Capacidad analítica" myvalue="4">
-                            <div class="rtngSide">
-                                <span>hability</span>
-                            </div>
-                        
-                            <div class="rtngMiddle">
-                                <div class="star-container">
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                </div>
-                            </div>
-                        
-                            <div class="rtngSide rtngEnd">
-                                <span>0</span>
-                            </div>
-                        </div>  <!-- rating -->
-                        
-                        <div class="rating" id="rtng3" mylabel="Gestión del tiempo" myvalue="4">
-                        <div class="rtngSide">
-                            <span>hability</span>
-                        </div>
-
-                        <div class="rtngMiddle">
-                            <div class="star-container">
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            </div>
-                        </div>
-
-                        <div class="rtngSide rtngEnd">
-                            <span>0</span>
-                        </div>
-                        </div>  <!-- rating -->
-                        
-                        <div class="rating" id="rtng4" mylabel="Inteligencia emocional y social" myvalue="4">
-                            <div class="rtngSide">
-                                <span>hability</span>
-                            </div>
-                        
-                            <div class="rtngMiddle">
-                                <div class="star-container">
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                                </span>
-                                </div>
-                            </div>
-                        
-                            <div class="rtngSide rtngEnd">
-                                <span>0</span>
-                            </div>
-                        </div>  <!-- rating -->
-
-                        <div class="rating" id="rtng5" mylabel="Seguridad personal" myvalue="3">
-                        <div class="rtngSide">
-                            <span>hability</span>
-                        </div>
-
-                        <div class="rtngMiddle">
-                            <div class="star-container">
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            </div>
-                        </div>
-
-                        <div class="rtngSide rtngEnd">
-                            <span>0</span>
-                        </div>
-                        </div>  <!-- rating -->
-
-                        <div class="rating" id="rtng6" mylabel="Trabajo en equipo" myvalue="3">
-                        <div class="rtngSide">
-                            <span>hability</span>
-                        </div>
-                    
-                        <div class="rtngMiddle">
-                            <div class="star-container">
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
-                            </span>
-                            </div>
-                        </div>
-                    
-                        <div class="rtngSide rtngEnd">
-                            <span>0</span>
-                        </div>
-                        </div>  <!-- rating -->
-
-                    </div> <!-- Fin softskill-->
-
-                </div> <!-- Fin detalle -->
-            </section> <!-- Fin softskill -->
 
             <section id="hardskill">
                 <div class="captionVertical">
@@ -1759,29 +1572,222 @@
         
                     </div> <!-- Fin hard Skills -->
                 </div> <!-- Fin detalle -->
-                <!-- <div class="special"><hr></div> -->
             </section>  <!-- Fin hardskill -->
+            
+            <section id="softskill">
+                <div class="captionVertical">
+                    <p class="tagCenter slim">Habilidades Personales</p>
+                </div>
+                <div class="detalle">
+                    
+                    <div class="softskill">
+                        <div class="special"><hr></div>
 
-        </div>  <!-- Fin right -->
+                        <div class="rating" id="rtng1" mylabel="Adaptación al cambio" myvalue="3">
+                            <div class="rtngSide">
+                                <span>hability</span>
+                            </div>
+                            
+                            <div class="rtngMiddle">
+                                <div class="star-container">
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="rtngSide rtngEnd">
+                                <span>0</span>
+                            </div>
+                        </div>  <!-- rating -->
+                                            
+                        <div class="rating" id="rtng2" mylabel="Capacidad analítica" myvalue="4">
+                            <div class="rtngSide">
+                                <span>hability</span>
+                            </div>
+                        
+                            <div class="rtngMiddle">
+                                <div class="star-container">
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                </div>
+                            </div>
+                        
+                            <div class="rtngSide rtngEnd">
+                                <span>0</span>
+                            </div>
+                        </div>  <!-- rating -->
+                        
+                        <div class="rating" id="rtng3" mylabel="Gestión del tiempo" myvalue="4">
+                        <div class="rtngSide">
+                            <span>hability</span>
+                        </div>
 
-    </main>  <!-- Fin page -->
-    
-    <section  id="footer" class="salto">
-        <section id="hobbies">
-                <div class="alingC">
-                    <h2>Hobbies</h2>
+                        <div class="rtngMiddle">
+                            <div class="star-container">
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            </div>
+                        </div>
+
+                        <div class="rtngSide rtngEnd">
+                            <span>0</span>
+                        </div>
+                        </div>  <!-- rating -->
+                        
+                        <div class="rating" id="rtng4" mylabel="Inteligencia emocional y social" myvalue="4">
+                            <div class="rtngSide">
+                                <span>hability</span>
+                            </div>
+                        
+                            <div class="rtngMiddle">
+                                <div class="star-container">
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                <span class="rtngIcoStar" >
+                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                </span>
+                                </div>
+                            </div>
+                        
+                            <div class="rtngSide rtngEnd">
+                                <span>0</span>
+                            </div>
+                        </div>  <!-- rating -->
+
+                        <div class="rating" id="rtng5" mylabel="Seguridad personal" myvalue="3">
+                        <div class="rtngSide">
+                            <span>hability</span>
+                        </div>
+
+                        <div class="rtngMiddle">
+                            <div class="star-container">
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            </div>
+                        </div>
+
+                        <div class="rtngSide rtngEnd">
+                            <span>0</span>
+                        </div>
+                        </div>  <!-- rating -->
+
+                        <div class="rating" id="rtng6" mylabel="Trabajo en equipo" myvalue="3">
+                        <div class="rtngSide">
+                            <span>hability</span>
+                        </div>
+                    
+                        <div class="rtngMiddle">
+                            <div class="star-container">
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            <span class="rtngIcoStar" >
+                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                            </span>
+                            </div>
+                        </div>
+                    
+                        <div class="rtngSide rtngEnd">
+                            <span>0</span>
+                        </div>
+                        </div>  <!-- rating -->
+
+                    </div> <!-- Fin softskill-->
+
+                </div> <!-- Fin detalle -->
+            </section> <!-- Fin softskill -->
+
+            <section id="hobbies">
+                <div class="captionVertical">
+                    <p class="tagCenter slim">Hobbies</p>
                 </div>
             <div class="detalle">
                 <div class="hobbies">
                     <div class="special"><hr></div>
-                    <svg class="icon dark w50 border" aria-label="Padel"> <use href="#ico-padel"></svg>
-                    <svg class="icon dark w50 border" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
-                    <svg class="icon dark w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
-                    <svg class="icon dark w50 border" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
-                    <svg class="icon dark w50 border" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
+                    <svg class="icon light w50 border" aria-label="Padel"> <use href="#ico-padel"></svg>
+                    <svg class="icon light w50 border" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
+                    <svg class="icon light w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
+                    <svg class="icon light w50 border" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
+                    <svg class="icon light w50 border" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
                 </div>
             </div> <!-- Fin detalle -->
         </section>  <!-- Fin hobbies -->
+        </div>  <!-- Fin right -->
+    </main>  <!-- Fin page -->
+
+    <section  id="footer" class="salto">
 
         <section id="contact">
             <div class="alingC">
@@ -1793,7 +1799,7 @@
                 <div>
                     <svg id="whatsapp" class="icon dark"><use href="#ico-whatsapp"/> </svg><span> 054 11 6352 2413</span>
                     <svg id="email" class="icon dark"><use href="#ico-email"/> </svg><span>
-                     waldrom68@gmail.com</span>
+                    waldrom68@gmail.com</span>
                 </div>
                 <div>
                     <svg class="icon dark"><use href="#ico-linkedin"/></svg><span> /in/walter-romero1968</span>
