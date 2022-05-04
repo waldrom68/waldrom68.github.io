@@ -55,7 +55,7 @@
         @media (prefers-color-scheme: light ) {
             :root {
                 --bg-70-light: #6AA9B0;
-                --bg-70-dark: #34585c;
+                --bg-70-dark: #6AA9B0;
 
                 --color-text-70:#1F1301;
                 --color-text-30:#F2F2E6;
@@ -72,7 +72,7 @@
         @media (prefers-color-scheme: dark ) {
             :root {
                 --bg-70-light: #6AA9B0;
-                --bg-70-dark: #34585c;
+                --bg-70-dark: #6AA9B0;
                 --bg-100: #1F1301;
 
                 --color-text-70:#F2F2E6;
@@ -119,16 +119,17 @@
             --bg-light: ButtonFace; /* Gris claro */ 
             /* fin sin usar */
 
+            /* Esto hay que seguir dandole vueltas para que tome el color BG que corresponda */
             --progress-color: rgb(0, 255, 0);  /* Rating  y Donuts*/
-            --oprogress-color: rgba(246, 164, 82,1);  /* Rating  y Donuts*/
+            --progress-bg: #6aa9b0;  /* Rating  y Donuts*/
 
 
             /* SETEAR EN @MEDIA -> mismo Background que los margenes 
             --canvasBG:red ; Background margenes*/
-            --ocenter-color: var(--canvasBG);  /* Donuts*/
+            --OOcenter-color: var(--canvasBG);  /* Donuts*/
 
             --bg-70-light: #6AA9B0;
-            --bg-70-dark: #34585c;
+            --bg-70-dark: #6AA9B0;
             --bg-100: #F2F2E6;
             --color-text-100:#1F1301;
             --color-text-70:#F2F2E6;
@@ -326,7 +327,7 @@
           }
   
           .rtngIcoStar {
-              fill:var(--no-progress-color);
+              fill:var(--progress-bg);
           }
         /* Place text to the right */
         .rtngEnd {
@@ -371,10 +372,11 @@
         .container-chart {
           display: inline-flex;
           width: auto;
+          background: inherit;
         }
         
         .block-chart {
-          background: transparent;
+          background: inherit;
           float: left;
           height: 100px;
           margin: auto;
@@ -396,7 +398,7 @@
           font-size: 1em;
         }
           .donut-chart .center-chart {
-            background: var(--bg-70);
+            background: var(--progress-bg);
             border-radius: 50%;
             height: calc(100% - (var(--grosor)*2));
             left: calc(100% - (100% - var(--grosor)));
@@ -1152,9 +1154,10 @@
                     <p class="tagCenter"><span>Perfil</span></p>
                 </div>
                 <div class="detalle">
-                    <p>Ocupé cargos de RRHH y disfruté mejorar procesos, generar tableros de control para la toma de decisiones, e incluso cuando hacia de <em>"una especie de analista funcional"</em> siendo enlace entre áreas de negocio y de tecnología. <em>Ciertamente era un Analista Universitario de Sistemas</em> en un área de recursos humanos.</p>
+                    <p>Ocupé cargos de RRHH y disfruté mejorar procesos, generar tableros de control para la toma de decisiones, y hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. <em>Ciertamente era un Analista Universitario de Sistemas</em> en un área de recursos humanos.</p>
+                    <p>Sigo postergando mis estudios de inglés, por tal motivo sólo tengo la habilidad para leerlo.</p>
                     <p>Luego de 24 años trabajando en la universidad, ahora he vuelto a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
-                    <p>Además de contar con criterio empresarial tengo conocimientos y experiencia para agregar valor en cualquier proyecto. Quienes me conocen, también destacarán sin dudar, mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
+                    <p>En resumen, además de contar con criterio empresarial tengo conocimientos y experiencia para agregar valor a cualquier proyecto, y quienes me conocen destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <br>
                     <div class="special"><hr></div>
                 </div>
@@ -1165,7 +1168,8 @@
                     <p class="tagCenter"><span>objetivo</span></p>
                 </div>
                 <div class="detalle">
-                    <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, creciendo, innovando, mejorando . . .</em>podés contactarme si tenés alguna idea o propuesta y será un plus si es divertida, pero tené presente que aún solo tengo la habilidad para leer en inglés.</p>
+                    <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, innovando, mejorando . . .</em></p>
+                    <p>Si tenés alguna idea o propuesta, podés contactarme (será un plus si es divertida).</p>
                     <div class="special"><hr></div>
                 </div>
             </section>
@@ -1221,7 +1225,7 @@
                         <li class="myList extraEspace">1991-1994 (3 años) Freelance
                             <li class="Head">
                                 <ul class="carrera">
-                                    <li>Analista de sistemas y desarrollo de sistemas informáticos</li>
+                                    <li>Analista de sistemas y programador</li>
                                 </ul>
                             </li>
                             <li class="expand">Funciones y responsabilidades
@@ -1787,9 +1791,9 @@
 
             <div id="contacto" class="BwQ-bold-italic extraEspace alingC">
                 <div>
-                    <svg id="whatsapp" class="icon dark"><use href="#ico-whatsapp"/> </svg><span>054 11 6352 2413</span>
+                    <svg id="whatsapp" class="icon dark"><use href="#ico-whatsapp"/> </svg><span> 054 11 6352 2413</span>
                     <svg id="email" class="icon dark"><use href="#ico-email"/> </svg><span>
-                    waldrom68@gmail.com</span>
+                     waldrom68@gmail.com</span>
                 </div>
                 <div>
                     <svg class="icon dark"><use href="#ico-linkedin"/></svg><span> /in/walter-romero1968</span>
@@ -1881,7 +1885,7 @@
     function updateDonut(percent, element){
         /* obtengo valor de los colores desde JS: */
         let donutStyle = getComputedStyle(document.documentElement);
-        let noProgressColor = donutStyle.getPropertyValue('--bg-70');
+        let noProgressColor = donutStyle.getPropertyValue('--progress-bg');
         let progressColor = donutStyle.getPropertyValue('--progress-color');
         
         if (!progressColor) {
@@ -1893,10 +1897,11 @@
         };
         
         if (!noProgressColor) {
-        noProgressColor = 'transparent';
-        [].forEach.call(document.querySelectorAll("#section2-chart .item-chart"), function(el) {
-            el.style.setProperty('background-color',noProgressColor)
-        });
+            noProgressColor = 'initial';
+            [].forEach.call(document.querySelectorAll("#section2-chart .item-chart"), function(el) 
+            {
+                el.style.setProperty('background-color',noProgressColor)
+            });
         };
         
         //var percent = 45;
