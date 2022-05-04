@@ -282,95 +282,61 @@
             color: #00ff00; /* 5 Acento */
             color: white; color: black;
 
-            /* paleta 2  Dark */
-            /* del mas oscuro al mas claro */
-            color: #190207; /* 1 */
-            color: #5a082d; /* 2 */
-            color: #9d0b28; /* 3 */ 
-            /* del menos llamativo al mas llamativo */
-            color: #ffa800; /* 4 */ 
-            color: #ff004d; /* 5 Acento */  
-            color: white; color: black;
+            /* Paleta 2 Dark */
+            color: #072f33; /* dark */
+            color: #34585c; /* principal -el del cv COLOR 1 */
+            color: #608589; /* light */
+            color: #585c34; /* principal  */
+            color: #2e330d; /* dark */
+            color: #85895e; /* light * /
+            
+            /* Paleta 2 Light */
+            color: #9bdbe2; /* light */
+            color: #6aa9b0; /* principal -el del cv */
+            color: #3a7a81; /* dark */
+            color: #a9b06a; /* principal */
+            color: #79813e; /* dark */
+            color: #dbe299; /* light */
+            
 
-               /* paleta 2  Light */
-            /* del mas claro al mas oscuro */
-            color: #9d0b28; /* 1 */ 
-            color: #5a082d; /* 2 */
-            color: #190207; /* 3 */
-            /* del menos llamativo al mas llamativo */
-            color: #ffa800; /* 4 */ 
-            color: #ff7700; /* 5 Acento */  
-            color: white; color: black;
+
         }
         .Dark {
-            --primary-bg: #022011 ; --primary-color: var(--gray-300); /* color 1 */
-            --primary-disable-bg: var(--primary-bg); --primary-disable: #3a5048; /* color 2*/
-            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
-            --primary-active-bg: var(--primary-bg); --primary-active: #03faf6; /* color 4*/
-            --primary-hover-bg: var(--gray-700); --primary-hover: white;
+            --primary-bg: #34585c ; --primary-color: var(--gray-400); /* color 1 */
+            --primary-disable-bg: transparent; --primary-disable: #072f33; /* color 2*/
+            --primary-link-bg: transparent; --primary-link: #a9b06a;
+            --primary-active-bg: transparent; --primary-active: #dbe299; /* color 4*/
+            --primary-hover-bg: transparent; --primary-hover: white;
 
             /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
             --acento: #00ff00; --acento-bg: var(--primary-bg);  /* color 5 */
 
-            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
-            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
-            --secondary-link-bg: var(--secondary-bg); --secondary-link: #236e23; /* color 3 */
-            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
-            --secondary-hover-bg: var(--gray-300); --secondary-hover: black;
+            --secondary-bg: var(--gray-900); --secondary-color: var(--gray-400);
+            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable-bg);
+            --secondary-link-bg: transparent; --secondary-link: #9bdbe2; /* color 3 */
+            --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
+            --secondary-hover-bg: transparent; --secondary-hover: white;
 
         }
 
         .Light {
-            --primary-bg: #236e23 ; --primary-color: var(--gray-300); /* color 1 */
-            --primary-disable-bg: var(--primary-bg); --primary-disable: #3a5048; /* color 2 */
-            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
-            --primary-active-bg: var(--primary-bg); --primary-active: #03faf6; /* color 4 */
-            --primary-hover-bg: var(--gray-700); --primary-hover: white;
+            --primary-bg: #6aa9b0 ; --primary-color: var(--gray-900); /* color 1 */
+            --primary-disable-bg: transparent; --primary-disable: #9bdbe2; /* color 2 */
+            --primary-link-bg: transparent; --primary-link: white;
+            --primary-active-bg: transparent; --primary-active: #85895e; /* color 4 */
+            --primary-hover-bg: transparent; --primary-hover: #585c34;
 
             /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
             --acento: #00ff00; --acento-bg: var(--primary-bg);  /* 5 */
 
-            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
-            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
-            --secondary-link-bg: var(--secondary-bg); --secondary-link: #6c9586; /* color 3 */
-            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
-            --secondary-hover-bg: var(--primary-color); --secondary-hover: black;
+            --secondary-bg: var(--gray-400); --secondary-color: var(--gray-900);
+            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
+            --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
+            --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
+            --secondary-hover-bg: transparent; --secondary-hover: #3a7a81;
         }
 
-        .Personal {
-            --primary-bg: #190207 ; --primary-color: var(--gray-300); /* color 1 */
-            --primary-disable-bg: var(--primary-bg); --primary-disable: #5a082d; /* color 2 */
-            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
-            --primary-active-bg: var(--primary-bg); --primary-active: #ffa800; /* color 4 */
-            --primary-hover-bg: var(--gray-700); --primary-hover: white;
 
-            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
-            --acento: #ff7700; --acento-bg: var(--primary-bg);  /* 5 */
-
-            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
-            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
-            --secondary-link-bg: var(--secondary-bg); --secondary-link: #9d5a0b; /* color 3 */
-            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
-            --secondary-hover-bg: var(--primary-color); --secondary-hover: black;
-        }
-        .Personal2 {
-            --primary-bg: #9d5a0b ; --primary-color: var(--gray-300); /* color 1 */
-            --primary-disable-bg: var(--primary-bg); --primary-disable: #5a082d; /* color 2 */
-            --primary-link-bg: var(--primary-bg); --primary-link: var(--primary-color);
-            --primary-active-bg: var(--primary-bg); --primary-active: #ffa800; /* color 4 */
-            --primary-hover-bg: var(--gray-700); --primary-hover: white;
-
-            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
-            --acento: #ff7700; --acento-bg: var(--primary-bg);  /* 5 */
-
-            --secondary-bg: var(--gray-400); --secondary-color: var(--primary-hover-bg);
-            --secondary-disable-bg: var(--secondary-bg); --secondary-disable: var(--primary-disable);
-            --secondary-link-bg: var(--secondary-bg); --secondary-link: #190207; /* color 3 */
-            --secondary-active-bg: var(--secondary-bg); --secondary-active: var(--primary-active);
-            --secondary-hover-bg: var(--primary-color); --secondary-hover: black;
-
-
-        }
 
         .primary {
             background-color: var(--primary-bg);
@@ -547,7 +513,7 @@
     </svg>
 
     <nav class="primary">
-        <div class="navbar">
+        <div class="navbar secondary">
             <!-- <h5 id="status" class="alingC">@Media testing :</h5> -->
             <div class="dropdown">
                 <button class="dropbtn">
