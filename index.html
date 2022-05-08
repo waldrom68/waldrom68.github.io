@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="prefers-color-scheme" content="">
+    
+    <link rel="stylesheet" href="static\css\menuNav.css">
+    <link rel="stylesheet" href="static\css\widget.css">
+    
+
     <title>CV - WR</title>
 
-    <style id="import">
+    <style id="fonts">
         /* fonts */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,700&display=swap');
 
@@ -50,7 +55,7 @@
 
     </style>
 
-    <style id="darkLight">
+    <style id="@media-prefers-color">
         /* Ajusto preferencia de colores */
         @media (prefers-color-scheme: light ) {
             :root {
@@ -140,9 +145,9 @@
 
             --destacado: #ff004d;
             --alert: rgba(231, 8, 8, 1);
-            }
-        
+        }
     </style>
+
     <style id="paleta">
         :rootin {
             --bg-70: #6AA9B0;
@@ -202,403 +207,13 @@
         .hardskill, .hobbies, .contact { display: block; }
     </style>
 
-    <!-- Place work Experience and Education -->
-    <style id="myList"> 
-        /* The actual canvas */
-        .myList {
-            background: ( /* Sin estilo especificado */ ); 
-            color:  ( /* Sin estilo especificado */ );
-        }
-        
-        /* The main elements*/
-        .myList li {
-            list-style-type: none;
-            background-color: initial;
-            /* user-select: none; */
-        }
-
-        /* the institutions */
-        .myList:nth-child(1) {
-            border-style: solid;
-            border-width: 0 0 1px 0;
-        }
-
-        /* the career plan or position */
-        .myList + .Head ul.carrera {
-            margin-left: 1em;
-        }
-        
-        ul.carrera li:nth-child(odd) {
-        font-family: "Quinta-regular";
-        }
-        /* Roles or responsibilities, summary */
-        /* Titulo. 2º nivel  */
-        .myList ~ li.expand {
-            margin-left: 2em ;
-            padding-top: 5px;
-            font-family: "Quinta-regular";
-            /* font-size: .83em; */
-        }
-        
-        /* Roles or responsibilities, hidden detail */
-        /* click expand details */
-        .myList ~ li.expand ul {
-                /* text-decoration: underline; */
-                /* text-decoration-color: var(--alert); */
-                font-family: "Quinta-light";
-                cursor: zoom-in;
-                margin-left: .5em;
-                position: relative;
-            }
-
-                .myList ~ li.expand ul:hover {
-                    color: var(--acento);
-                    background-color: var(--acento-bg);
-                }
-
-                /* Character '+' to indicate that it can be expanded */
-                .myList ~ li.expand ul:after {
-                    border-width: .5em;
-                    border-style: solid;
-                    border-color: transparent;
-                    content: '+';
-                    left: -1.5em;
-                    position: absolute;
-                    top: -.5em;
-                }
-
-                /* Detail of participations or achievements */
-                /* Hidden detail, last level */
-                .myList ~ li.expand > ul > li {
-                    list-style: square;
-                    margin-left: 1.5em;
-                    cursor: grab;
-                }
-
-            li.myList:nth-child(odd) {
-            font-family: "Quinta-regular";
-            font-style: italic;
-            }
-
-    </style>
-
-    <!-- Place soft skill content -->
-    <style id="rating">
-        /* Three column layout*/
-        .rating {
-          background-color: (color /* browser's internal value */);
-          border-bottom : 2px groove transparent;
-          color: currentColor;
-          display: flex;
-          font-weight: bolder;
-          width: 100%;
-          height: auto;
-        }
-        
-        /* Place title text for ratings */
-        .rtngHeading{
-          display: flex;
-          align-content: center;
-          justify-content: center;
-          display: none;
-        }
-        
-        /* alphanumeric block -start and end- */
-        .rtngSide {
-          width: 100%;
-          float: left;
-          word-wrap: break-word;
-          text-align: center;
-        }
-  
-        /* icons block -middle- */
-        .rtngMiddle {
-          float: left;
-          width: 100%;
-        }
-  
-          /* The star container */
-          .star-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 10px;
-          }
-  
-          .rtngIcoStar {
-              fill:var(--progress-bg);
-          }
-        /* Place text to the right */
-        .rtngEnd {
-          float: left;
-          width: auto;
-          margin: 0 5px;
-        }
-      
-          /* Place number to the right */
-          .rtngSide.rtngEnd span{
-            text-align: right;
-          }
-          .rtngSide.rtngEnd span::after{
-            content: "/5";
-          }
-    </style>
-
-    <!-- Hard skill content -->
-    <style id="donuts">
-        /* Requiere tener declaradas las siguientes variables: 
-        --progress-color = progress line color, default: red color
-        --no-progress-color = no progress line color donuts, default: blue color
-
-        --lienzo-color = background donuts center, default: no progress line -pie chart
-        --grosor = progress line thickness, default: pie chart
-            Example:
-            :root {
-                --progress-color: #36e617;
-                --no-progress-color: gray;
-                --center-color: azure;
-                --grosor: 8%; (min: 1%,  max:50%) 
-              } 
-        /*
-
-        /* Place title text for ratings */
-        .donuttHeading {
-          margin: auto;
-          word-wrap: break-word;
-        }
-    
-        /* input-range, donut and labels content */
-        .container-chart {
-          display: inline-flex;
-          width: auto;
-          background: inherit;
-        }
-        
-        .block-chart {
-          background: inherit;
-          float: left;
-          height: 100px;
-          margin: auto;
-          width: 100px;
-        }
-        
-        .donut-chart-block {
-          overflow: hidden;
-        }
-        
-        /* The DONUT chart */
-        .donut-chart {
-          height: 50%;
-          margin: 10px auto;
-          position: relative;
-          width: 50%;
-          font-family: 'Quinta-regular' ;
-          font-style: italic;
-          font-size: 1em;
-        }
-          .donut-chart .center-chart {
-            background: var(--progress-bg);
-            border-radius: 50%;
-            height: calc(100% - (var(--grosor)*2));
-            left: calc(100% - (100% - var(--grosor)));
-            position: absolute;
-            top: calc(100% - (100% - var(--grosor)));
-            width: calc(100% - (var(--grosor)*2));
-          }
-          /* hardskill label */
-          .donut-chart .center-label {
-            color: currentColor;
-            display: block;
-            left: 50%;
-            position: absolute;
-            text-align: center;
-            transform: translate(-50%,-50%);
-            top: 140%;
-          }
-          /*  hardskill % label */
-          .center-chart span {
-          color: currentColor;
-          display: block;
-          left: 50%;
-          position: absolute;
-          top: 50%;
-          transform: translate(-50%,-50%);
-          }
-    
-        /* graph gear - shows the degree of progress- */
-        .clip-chart, .item-chart {
-        border-radius: 50%;
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        }
-        .clip-chart {
-        clip-path: polygon(50% 0%, 50% 100%, 100% 100%, 100% 0%);
-        }
-    
-        .item-chart {
-        clip-path: polygon(50% 0%, 50% 100%, 0% 100%, 0 0);
-        }
-    
-        #section1-chart {
-        transform: rotate(0deg);
-        }
-    
-        #section1-chart .item-chart {
-        background-color: var(--progress-color);
-        transform: rotate(180deg);
-        }
-    
-        #section2-chart {
-        transform: rotate(180deg);
-        }
-    
-        #section2-chart .item-chart {
-        background-color:transparent;
-        transform: rotate(180deg);
-        }
-    </style>
-
-    <style id="menu">
-    /* Barra de navegación */
-    nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                text-align: left;
-                height: 2em;
-                line-height: 2em;
-                width: 100%;
-                background-color: var(--bg-70);
-                opacity: .9;
-                /* max-width: var(--anchoPage); */
-                color: var(--bg70);
-    
-                z-index: 1000;
-                }
-                nav svg:link, nav a:visited, nav a:active  {
-                    text-decoration: none;
-                }
-    
-        /* Links inside the navbar */
-    .navbar a {
-      float: left;
-      text-align: center;
-        text-decoration: none;
-    }
-        /* The dropdown container */
-    .dropdown {
-      float: left;
-      overflow: hidden;
-    }
-    
-    /* Dropdown button */
-    .dropdown .dropbtn {
-      font-size: 1em;
-      border: none;
-      outline: none;
-      color: var(--bg-100);
-      background-color: inherit;
-      font-family: inherit; /* Important for vertical align on mobile phones */
-      margin: 0; /* Important for vertical align on mobile phones */
-    }
-    
-    /* Add a red background color to navbar links on hover */
-    .navbar a:hover, .dropdown:hover .dropbtn {
-      background-color: var(--alert);
-    }
-    
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: var(--bg-100);
-      min-width: 10em;
-      box-shadow: 0px .5em 1em 0px var(--color-text);
-      z-index: 1;
-    }
-    
-    /* Links inside the dropdown */
-    .dropdown-content a {
-      float: none;
-      color: var(--color-text);
-      padding: .75em 1em;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-    }
-    
-    /* Add a grey background color to dropdown links on hover */
-    .dropdown-content a:hover {
-      background-color: var(--bg-70);
-    }
-    
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    </style>
-    
-    <style id="acercaDe">
-            .callout {
-            position: fixed;
-            font-family: 'Quinta-regular';
-            width: 80%;
-            height: 80%;
-            max-width: 80%;
-            max-height: 80%;
-            text-align: left !important;
-            /* display: none; */
-            z-index: 1000;
-        }
-        
-        .callout-header {
-            padding: 25px 15px 15px;
-            background: var(--bg-70);
-            font-size: 1.5em;
-            color: var(--bg-100);
-            background-color: var(--acento);
-            color: #fff;
-        }
-        
-        .callout-container {
-            display: block;
-            box-shadow: 0px .5em 1em 0px var(--color-text);
-                height: 90%;
-                width: 100%;
-                padding: 15px 10px;
-                background-color: var(--bg-100);
-                color: var(--color-text);
-                overflow: auto;
-                
-            }
-            .callout-container p { 
-                padding-bottom: 5px;
-                overflow: scroll;
-                }
-    
-            .closebtn {
-                position: absolute;
-                top: 0;
-                right: 0;
-                color: inherit;
-                width: 2em;
-                height: 2em;
-                line-height: 2em;
-                font-size: 2em;
-                text-align: center;
-                cursor: pointer;
-                }
-    
-                .closebtn:hover {
-                    color: lightgrey;
-                    background-color: var(--alert);
-                }
-    </style>
-
     <style id="Layout">
         /* Contenedor principal */
+        section {
+            display: flex;
+            width: 100%;
+        }
+        
         #page {
             display: inline-flex;
             width: 100%;
@@ -611,10 +226,6 @@
             font-size: 110%;
             line-height: 110%;
             padding: 2em 0em;
-        }
-        section {
-            display: flex;
-            width: 100%;
         }
 
         /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
@@ -1095,7 +706,8 @@
             <path stroke-width="10" d="M218.7 445.5c-6.6.7-12.2 1.4-17.8 2-29.1 2.9-54.5-5-73.7-27.7-6-7.1-9.4-16.3-14.5-24.2-7.9-12.4-16-24.7-24.7-36.6-3-4.1-8.2-6.5-12.2-10-1.3-1.1-1.7-3.2-2.6-4.9 1.8-.7 3.5-1.9 5.3-2.1 23-2.1 39.2 8.5 50.5 27.6 14.1 23.8 34.5 36.8 62.2 36.8 8 0 16-2.7 23.9-4.5 1.5-.4 3.3-2.7 3.5-4.4 1.4-10.4 2.7-20.8 7.5-30.3 1.8-3.5 3.9-6.8 6-10.4-8.1-1.6-15.9-2.8-23.6-4.7-35.5-9-64.8-26.8-81.8-60.6-6.6-13.2-10.3-27.4-10.8-42.2-.8-22.8-.5-45.7 4.1-68.2 3.3-15.8 9.3-30.5 21.3-41.9 2.6-2.5 3.1-4.7 1.7-8.5-6.7-18.7-7.4-37.7-1.7-56.8 1.2-4.1 2.3-8.2 3.5-12.5 27.4 5.2 43.7 23.7 59 44.2 15.8-11.7 34.5-12.7 52.7-13.9 21.6-1.4 43.3-1.1 64.8 2.4 11.2 1.8 18.1 4.1 29 10.6 9.4-9.7 18.2-19.5 27.9-28.4 7.7-7.1 17.3-11.6 27.7-14 2.9-.7 4.4-.4 5.6 2.8 8.1 22.1 9.3 44.1.4 66.2-1.2 3-1.1 5.1 1.4 7.5 14.4 13.7 21 31.4 23.2 50.5 2 17.7 3.1 35.5 3.1 53.3 0 25.3-7.5 48.5-23.4 68.4-11.2 14.1-25.7 24.2-42.1 31.8-15.9 7.3-32.5 11.5-49.7 13.7-.4.1-.8.4-1.5.7 11.8 16.9 13.7 35.9 13.5 55.6-.3 28.7-.2 57.3 0 86 0 4.5-1.3 5.6-5.7 5.6-35.5-.2-71-.2-106.5 0-4.4 0-5.8-1.4-5.8-5.7.2-15.5.1-31 .1-46.5.2-2.3.2-4.3.2-6.7z"/>
         </symbol>
     </svg>
-<!-- style="display: none !important; " -->
+
+
     <div class="base" id="pareto" style="display: none !important; ">ESTO SERÍA LA MEDIDA DE UNA HOJA A4
             <h4 class="testin">Testing :</h4>
     </div>
@@ -1118,7 +730,7 @@
             </div>
         </div>
 
-        <div class="callout">
+        <div id="AcercaDe" class="callout">
             <div class="callout-header">Acerca de</div>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
             <div class="callout-container">
@@ -1819,160 +1431,13 @@
 
 </body>
 
+<!-- Obtengo el codigo para representar a los widget myList, Donuts y rating -->
+<script src="static\js\widget.js"></script> 
 
-<script id="menuNav">
-    /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-    function myFunction() {
-        var x = document.querySelector(".dropdown-content");
-        if (x.style.display === "block") {
-            x.style.display = "none";
-        } else {
-            x.style.display = "block";
-        }
-    }
-    function menuClose() {
-        var x = document.querySelector(".dropdown-content");
-        x.style.display = "none";
-    }
-</script> <!-- menuNav -->
-
-<script id="myListAction">
-    (function() {
-
-        function initNone() {  
-            // oculto el listado que inicialmente va colapsado
-
-            [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
-                e.classList.add("None");
-            }) };
-
-        function upLi(el) {
-
-            if (el.nextElementSibling.className == "") { 
-                // Hice click sobre uno visible, cierro todo
-                initNone();
-
-            } else {  
-                // Cierro todos y MUESTRO solo el elemento clickeado
-                initNone();
-
-                let list = el.parentElement.children
-                for (var i = 1; i < list.length; i++) {
-                    // Muestro el elemento a expandir
-                    list[i].classList.toggle("None");
-                }
-            }
-        }
-        initNone();
-        [].forEach.call(document.querySelectorAll(".myList ~ li.expand ul span"), function(e) {
-            e.addEventListener("click", function() {
-            upLi(e);
-            });
-        })
-    } ());
-</script>  <!-- treeListAction -->
-
-<script id="rating">
-    (function updateProgress() {
-    [].forEach.call(document.querySelectorAll(".rating"), function(el) {
-        let valor = el.getAttribute("myvalue");
-        el.querySelector(".rtngSide span").innerText = el.getAttribute("mylabel");
-        el.querySelector(".rtngSide.rtngEnd span").innerText = valor
+<!-- Obtengo el codigo para darle funcionalidad al menu y al acercaDe -->
+<script src="static\js\menuNav.js"></script> 
 
 
-        let icos = el.querySelectorAll(".star-container span");
-
-        let index = 0
-        icos.forEach( function(e) {
-        if (index < parseInt(valor))  {
-            e.classList.toggle('checked')
-        }
-        index ++
-        });
-    });
-    } ());
-</script>  <!-- rating -->
-
-<script id="donuts">
-    function updateDonut(percent, element){
-        /* obtengo valor de los colores desde JS: */
-        let donutStyle = getComputedStyle(document.documentElement);
-        let noProgressColor = donutStyle.getPropertyValue('--progress-bg');
-        let progressColor = donutStyle.getPropertyValue('--progress-color');
-        
-        if (!progressColor) {
-            progressColor = 'red';
-            
-            [].forEach.call(document.querySelectorAll("#section1-chart .item-chart"), function(el) {
-            el.style.setProperty('background-color', progressColor)
-            });
-        };
-        
-        if (!noProgressColor) {
-            noProgressColor = 'initial';
-            [].forEach.call(document.querySelectorAll("#section2-chart .item-chart"), function(el) 
-            {
-                el.style.setProperty('background-color',noProgressColor)
-            });
-        };
-        
-        //var percent = 45;
-        if (percent < 50){
-        offset = (360 / 100) * percent;
-        element.parentNode.querySelector("#section3-chart").style.webkitTransform = "rotate(" + offset + "deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.webkitTransform = "rotate(" + (180 - offset) + "deg)";
-        element.parentNode.querySelector("#section3-chart").style.msTransform = "rotate(" + offset + "deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.msTransform = "rotate(" + (180 - offset) + "deg)";
-        element.parentNode.querySelector("#section3-chart").style.MozTransform = "rotate(" + offset + "deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.MozTransform = "rotate(" + (180 - offset) + "deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.backgroundColor = noProgressColor;
-        
-    } else { 
-        offset = ((360 / 100) * percent) - 180;
-        element.parentNode.querySelector("#section3-chart").style.webkitTransform = "rotate(180deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.webkitTransform = "rotate(" +  offset + "deg)";
-        element.parentNode.querySelector("#section3-chart").style.msTransform = "rotate(180deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.msTransform = "rotate(" +  offset + "deg)";
-        element.parentNode.querySelector("#section3-chart").style.MozTransform = "rotate(180deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.MozTransform = "rotate(" +  offset + "deg)";   
-        element.parentNode.querySelector("#section3-chart .item-chart").style.backgroundColor = progressColor;
-    }
-    element.parentNode.querySelector("span").innerHTML = percent + "%";
-    }
-    
-    function updateSlider(element) {
-        if (element) {
-        var parent = element.parentElement;
-        var thumb = parent.querySelector('.range-slider__thumb'),
-            bar = parent.querySelector('.range-slider__bar'),
-            pct = element.value * ((parent.clientHeight - thumb.clientHeight) / parent.clientHeight);
-        thumb.style.bottom = pct + '%';
-        bar.style.height = 'calc(' + pct + '% + ' + thumb.clientHeight / 2 + 'px)';
-        thumb.textContent = element.value + '%';
-        }
-        updateDonut(element.value, element.parentNode);
-        }
-        (function initAndSetupTheSliders() {
-    
-        [].forEach.call(document.querySelectorAll(".container-chart"), function(el) {
-        let inputs = [].slice.call(el.querySelectorAll('.range-slider input'));
-        let leyend = document.querySelector("#" + el.id + " .center-label span");
-    
-        leyend.innerHTML  = el.getAttribute("aria-label")
-        
-        inputs.forEach(function (input) {
-            input.setAttribute('value', el.getAttribute("aria-value"));
-            updateSlider(input);
-            input.addEventListener('input', function (element) {
-                updateSlider(input);
-            });
-            input.addEventListener('change', function (element) {
-                updateSlider(input);
-            });
-        });
-        });
-    }());
-</script>  <!-- ts -->
 
 <script id="darkLight">
     // Estos colores deben ser definidos en el @media del style.id=darkLight //
@@ -2063,13 +1528,5 @@
     }
 </script>  <!-- compactExtended -->
 
-<script id="acercaDe">
-    function acercaDe() {
-        element = document.querySelector('.callout');
-        console.log(element)
-        element.style.display='block'
-        menuClose();
-    };
-</script>  <!-- acercaDe -->
 
 </html>

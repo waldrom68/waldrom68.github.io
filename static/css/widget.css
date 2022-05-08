@@ -1,0 +1,258 @@
+/* <!-- Place work Experience and Education --> */
+/* <style id="myList">  */
+    /* The actual canvas */
+    .myList {
+        background: ( /* Sin estilo especificado */ ); 
+        color:  ( /* Sin estilo especificado */ );
+    }
+    
+    /* The main elements*/
+    .myList li {
+        list-style-type: none;
+        background-color: initial;
+        /* user-select: none; */
+    }
+
+    /* the institutions */
+    .myList:nth-child(1) {
+        border-style: solid;
+        border-width: 0 0 1px 0;
+    }
+
+    /* the career plan or position */
+    .myList + .Head ul.carrera {
+        margin-left: 1em;
+    }
+    
+    ul.carrera li:nth-child(odd) {
+    font-family: "Quinta-regular";
+    }
+    /* Roles or responsibilities, summary */
+    /* Titulo. 2º nivel  */
+    .myList ~ li.expand {
+        margin-left: 2em ;
+        padding-top: 5px;
+        font-family: "Quinta-regular";
+        /* font-size: .83em; */
+    }
+    
+    /* Roles or responsibilities, hidden detail */
+    /* click expand details */
+    .myList ~ li.expand ul {
+            /* text-decoration: underline; */
+            /* text-decoration-color: var(--alert); */
+            font-family: "Quinta-light";
+            cursor: zoom-in;
+            margin-left: .5em;
+            position: relative;
+        }
+
+            .myList ~ li.expand ul:hover {
+                color: var(--acento);
+                background-color: var(--acento-bg);
+            }
+
+            /* Character '+' to indicate that it can be expanded */
+            .myList ~ li.expand ul:after {
+                border-width: .5em;
+                border-style: solid;
+                border-color: transparent;
+                content: '+';
+                left: -1.5em;
+                position: absolute;
+                top: -.5em;
+            }
+
+            /* Detail of participations or achievements */
+            /* Hidden detail, last level */
+            .myList ~ li.expand > ul > li {
+                list-style: square;
+                margin-left: 1.5em;
+                cursor: grab;
+            }
+
+        li.myList:nth-child(odd) {
+        font-family: "Quinta-regular";
+        font-style: italic;
+        }
+
+/* </style> */
+
+/* <!-- Place soft skill content --> */
+/* <style id="rating"> */
+
+    /* Three column layout*/
+    .rating {
+      background-color: (color /* browser's internal value */);
+      border-bottom : 2px groove transparent;
+      color: currentColor;
+      display: flex;
+      font-weight: bolder;
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Place title text for ratings */
+    .rtngHeading{
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      display: none;
+    }
+    
+    /* alphanumeric block -start and end- */
+    .rtngSide {
+      width: 100%;
+      float: left;
+      word-wrap: break-word;
+      text-align: center;
+    }
+
+    /* icons block -middle- */
+    .rtngMiddle {
+      float: left;
+      width: 100%;
+    }
+
+      /* The star container */
+      .star-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px;
+      }
+
+      .rtngIcoStar {
+          fill:var(--progress-bg);
+      }
+    /* Place text to the right */
+    .rtngEnd {
+      float: left;
+      width: auto;
+      margin: 0 5px;
+    }
+  
+      /* Place number to the right */
+      .rtngSide.rtngEnd span{
+        text-align: right;
+      }
+      .rtngSide.rtngEnd span::after{
+        content: "/5";
+      }
+/* </style> */
+
+/* <!-- Hard skill content --> */
+/* <style id="donuts"> */
+    /* Requiere tener declaradas las siguientes variables: 
+    --progress-color = progress line color, default: red color
+    --no-progress-color = no progress line color donuts, default: blue color
+
+    --lienzo-color = background donuts center, default: no progress line -pie chart
+    --grosor = progress line thickness, default: pie chart
+        Example:
+        :root {
+            --progress-color: #36e617;
+            --no-progress-color: gray;
+            --center-color: azure;
+            --grosor: 8%; (min: 1%,  max:50%) 
+          } 
+    /*
+
+    /* Place title text for ratings */
+    .donuttHeading {
+      margin: auto;
+      word-wrap: break-word;
+    }
+
+    /* input-range, donut and labels content */
+    .container-chart {
+      display: inline-flex;
+      width: auto;
+      background: inherit;
+    }
+    
+    .block-chart {
+      background: inherit;
+      float: left;
+      height: 100px;
+      margin: auto;
+      width: 100px;
+    }
+    
+    .donut-chart-block {
+      overflow: hidden;
+    }
+    
+    /* The DONUT chart */
+    .donut-chart {
+      height: 50%;
+      margin: 10px auto;
+      position: relative;
+      width: 50%;
+      font-family: 'Quinta-regular' ;
+      font-style: italic;
+      font-size: 1em;
+    }
+      .donut-chart .center-chart {
+        background: var(--progress-bg);
+        border-radius: 50%;
+        height: calc(100% - (var(--grosor)*2));
+        left: calc(100% - (100% - var(--grosor)));
+        position: absolute;
+        top: calc(100% - (100% - var(--grosor)));
+        width: calc(100% - (var(--grosor)*2));
+      }
+      /* hardskill label */
+      .donut-chart .center-label {
+        color: currentColor;
+        display: block;
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%,-50%);
+        top: 140%;
+      }
+      /*  hardskill % label */
+      .center-chart span {
+      color: currentColor;
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      }
+
+    /* graph gear - shows the degree of progress- */
+    .clip-chart, .item-chart {
+    border-radius: 50%;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    }
+    .clip-chart {
+    clip-path: polygon(50% 0%, 50% 100%, 100% 100%, 100% 0%);
+    }
+
+    .item-chart {
+    clip-path: polygon(50% 0%, 50% 100%, 0% 100%, 0 0);
+    }
+
+    #section1-chart {
+    transform: rotate(0deg);
+    }
+
+    #section1-chart .item-chart {
+    background-color: var(--progress-color);
+    transform: rotate(180deg);
+    }
+
+    #section2-chart {
+    transform: rotate(180deg);
+    }
+
+    #section2-chart .item-chart {
+    background-color:transparent;
+    transform: rotate(180deg);
+    }
+/* </style> */
