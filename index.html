@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="prefers-color-scheme" content="">
     
+    <!-- <link rel="stylesheet" href="static\css\mediaScreen.css"> -->
     <link rel="stylesheet" href="static\css\menuNav.css">
     <link rel="stylesheet" href="static\css\widget.css">
-    
-
     <title>CV - WR</title>
 
+    <!-- no existen declaraciones de color, ni de background-color -->
     <style id="fonts">
         /* fonts */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,700&display=swap');
@@ -55,10 +55,21 @@
 
     </style>
 
+    <!-- no existen declaraciones de color, ni de background-color -->
     <style id="@media-prefers-color">
         /* Ajusto preferencia de colores */
+        :root {
+            --body-font-family: 'Quinta-light','roboto', system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --body-font-size: 1rem;
+            --body-font-weight: 100;
+            --body-line-height: 1.5;
+            
+            --SETEO: "Personal";
+        }
+        
         @media (prefers-color-scheme: light ) {
             :root {
+                --SETEO: "Light";
                 --bg-70-light: #6AA9B0;
                 --bg-70-dark: #6AA9B0;
 
@@ -76,6 +87,7 @@
         }
         @media (prefers-color-scheme: dark ) {
             :root {
+                --SETEO: "Dark";
                 --bg-70-light: #6AA9B0;
                 --bg-70-dark: #6AA9B0;
                 --bg-100: #1F1301;
@@ -91,6 +103,68 @@
                 --alert: rgba(231, 8, 8, 1);
             }
             .testin::before {content:  "Dark: ";} 
+        }
+
+    </style>
+
+    <!-- no existen declaraciones de color, ni de background-color -->
+    <style id="base">
+        html,
+        * { margin: 0; padding:0; box-sizing: border-box;
+        }
+        body {
+            font-family: 'Quinta-light','roboto', sans-serif;
+            font-style: normal;
+            overflow: scroll;
+            width: 100%;
+        }
+        .alingL {text-align: left;}
+        .alingR {text-align: right;}
+        .alingC {text-align: center;}
+        /* Centrando todo el contenido -ancho y alto */
+        .centered {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+        }
+        
+        /* special text and fonts */
+        .extraEspace {margin-top: .5em;}
+        
+        /* SPECIAL STYLE's */
+        .special {color: currentColor; }
+            .special hr {
+                margin: 1em 0;
+                height: 2px; /* 5px */
+                background-color: currentColor;
+                opacity: .5;
+                width: 100%;
+            }
+            .special hr.p75 {width: 75%;}
+            .special hr.p33 {width: 33%;}
+        
+            /* Generales pero especiales */
+        .inline {display: inline-flex;}
+        .inlineBlock {display: inline-block;}
+        .None {display: none;}
+
+        /* fonts */
+        .BwQ-light {font-family: 'Quinta-light';font-style: normal;}
+        .BwQ-light-italic {font-family: 'Quinta-light'; font-style: italic;}
+        .BwQ-regular {font-family: 'Quinta-regular';font-style: normal;}
+        .BwQ-regular-italic {font-family: 'Quinta-regular'; font-style: italic;}
+        .BwQ-bold {font-family: 'Quinta-bold'; font-style: normal;}
+        .BwQ-bold-italic {font-family: 'Quinta-bold'; font-style: italic;}
+        
+        h1.comprimir {
+            padding-left: .3em;
+            letter-spacing: .1em;
+            overflow-block: visible;
         }
 
     </style>
@@ -148,73 +222,47 @@
         }
     </style>
 
-    <style id="paleta">
-        :rootin {
-            --bg-70: #6AA9B0;
-            --bg-30: #F2F2E6;
-
-            --color-text-70:#1F1301;
-            --color-text-30:#F2F2E6;
-
-            --acento: #34585c;
-            --acento-bg: white;
-
-            --destacado: rgb(255, 0, 77);
-            --alert: rgba(231, 8, 8, 1);
-        }
-    </style>
-
-    <style id="base">
-        html,
-        * { margin: 0; padding:0; box-sizing: border-box;
-        }
-        body {
-            width: 100%;
-            overflow: scroll;
-
-            /* color: var(--color-dark);
-            background-color: var(--color-light); */
-
-            font-family: 'Quinta-light','roboto', sans-serif;
-            font-style: normal;
-            /* font-size: 100%; */
-        }
-
-        /* SPECIAL STYLE's */
-        .special {
-           color: currentColor; }
-            .special hr {
-                margin: 1em 0;
-                height: 2px; /* 5px */
-                background-color: currentColor;
-                opacity: .5;
-                width: 100%;
-            }
-            .special hr.p75 {width: 75%;}
-            .special hr.p33 {width: 33%;}
-
-        /* Generales pero especiales */
-        .inline {
-            display: inline-flex;
-        }
-
-        .inlineBlock {
-            display: inline-block;
-        }
-        .None {
-            display: none;
-        }
-        .hardskill, .hobbies, .contact { display: block; }
-    </style>
-
     <style id="Layout">
-        /* Contenedor principal */
+        :root {
+            /*  Dependiendo donde meta Rating y Donuts */
+            /* Rating  y Donuts*/
+            /* --progress-color: rgb(0, 255, 0);  
+            --progress-bg: rgba(246, 164, 82,1);  */
+        }
+
+        a {color: var(--bg-70);font-family: 'Quinta-bold'; font-style: italic;}
+        h1 {
+            font-weight: bold;
+            font-style: italic;
+        }
+        p {text-indent: 1.5em; margin-bottom: 0;}
+        p + p {margin-top: 1em;} 
+
         section {
             display: flex;
             width: 100%;
         }
-        
+        ul, li {
+            list-style-type: none;
+            background-color: initial;
+            cursor: grab;
+        }
+
+        #foto img {
+            width: 6.25em;
+            height: 6.25em;
+            border-radius: 50%;
+            border: .35em double black;
+            clip-path: circle(100% at 50% 50%);
+        }
+        /* Contenedor principal */
+        /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
+            Las columnas 1, 3 y 4 usan el mismo background 
+            Hoja A4, en unidades: Total 1123px (leftA:172px, leftB:619px, rightA:88px:, rightB:255px)
+                Left: 70% (donde LeftA 21% de Left )
+                Right: 30% (donde RightA 25% de Right )*/
         #page {
+            background-color: inherit;
             display: inline-flex;
             width: 100%;
             max-width: 100%;
@@ -222,65 +270,58 @@
             height: auto;
             max-height: 100%;
             min-height: 100%;
-
             font-size: 110%;
             line-height: 110%;
             padding: 2em 0em;
         }
 
-        /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
-            Las columnas 1, 3 y 4 usan el mismo background 
-            Hoja A4, en unidades: Total 1123px (leftA:172px, leftB:619px, rightA:88px:, rightB:255px)
-                Left: 70% (donde LeftA 21% de Left )
-                Right: 30% (donde RightA 25% de Right )*/
         /* 791px */
-        .left, .right {display: grid;}
-        .left {
+        #left, #right {display: grid;}
+        #left {
             width: 70%;
             max-width: 70%;
             background-color: inherit;
         }
-        /* 343px */
-        .right {
-            width: 30%;
-            max-width: 30%;
-            background-color: var(--bg-70);
-            color: var(--color-text-70);
-            }
-            
             /* 161px */
-            .left .captionVertical { 
+            #left .captionVertical { 
                 width: 21%;
                 min-width: 6em;
                 max-width: 6em;
                 background-color: var(--bg-70);
                 color: var(--bg-100);
             }
+            /* 619px */
+            #left .detalle {
+                background-color: var(--bg-100);
+            }
+        /* 343px */
+        #right {
+            width: 30%;
+            /* max-width: 30%; */
+            background-color: var(--bg-70);
+            color: var(--color-text-70);
+        }
             /* 88px */
-            .right .captionVertical { 
+            #right .captionVertical { 
                 width: 25%;
                 min-width: 4em;
                 max-width: 4em;
                 color: var(--bg-100);
             }
-            .detalle {
-                display: block;
-                width: 100%;
-                min-width: 50%;
-                padding: 0em 0.25em;
-            }
-            /* 619px */
-            .left .detalle {
-                background-color: var(--bg-100);
-            }
             /* 255px */
-            .right .detalle { 
+            #right .detalle { 
                 background-color: var(--bg-70);
                 color: var(--bg-100);
                 display: flex;
                 /* padding-right: .5em; */
             }
-
+            
+        .detalle {
+            display: block;
+            width: 100%;
+            min-width: 50%;
+            padding: 0em 0.25em;
+        }
         /* Es el TAG, se muestra el texto en vertical */
         .captionVertical {
             font-family: 'Roboto';
@@ -293,6 +334,7 @@
         .captionVertical.reset {
             writing-mode: unset;
             transform: initial;
+            
         }
         /* Ajustando el contenido del TAG -ancho y alto */
         .tagCenter {
@@ -300,58 +342,64 @@
             left: -1em;
             text-align: end;
             padding: 1em;
+            text-transform: capitalize;
+            font-variant: small-caps;
         }
         /* Ajustando el contenido del TAG, pero en formato slim */
         .tagCenter.slim {
             left: 0em;
         }
 
-        /* special text and fonts */
-        .extraEspace {
-            margin-top: .5em;
+
+
+        /* Manejo de etiquetas ocultas o visibles*/
+        /* Detalle de trabajos, o cursos. Verion resumida/extendida */
+        .extended {
+            display: none;
         }
-        
-        .tagCenter {
-            text-transform: capitalize;
-            font-variant: small-caps;
+        .compact {
+            display: contents;
         }
 
-        a {color: var(--bg-70);font-family: 'Quinta-bold'; font-style: italic;}
-        h1 {
-            font-weight: bold;
-            font-style: italic;
-        }
-        h1.comprimir {
-            padding-left: .5em;
-            letter-spacing: .25em;
-        }
-        h4.comprimir {
-            letter-spacing: -0.0625;
-        }
-        .nombre {
+        .nombre {display: flex;}
+        #persona {
             display: flex;
+            justify-content: center;
+            width: 100%;
         }
-    
+        /* #objetive {
+            display: flex;
+            vertical-align: middle;
+        } */
+        .hardskill, .hobbies { display: block; }
+        #education1 .detalle, #contact {display: block;}
 
-        .BwQ-light {font-family: 'Quinta-light';font-style: normal;}
-        .BwQ-light-italic {font-family: 'Quinta-light'; font-style: italic;}
-        .BwQ-regular {font-family: 'Quinta-regular';font-style: normal;}
-        .BwQ-regular-italic {font-family: 'Quinta-regular'; font-style: italic;}
-        .BwQ-bold {font-family: 'Quinta-bold'; font-style: normal;}
-        .BwQ-bold-italic {font-family: 'Quinta-bold'; font-style: italic;}
-        
-        .alingL {text-align: left;}
-        .alingR {text-align: right;}
-        .alingC {text-align: center;}
+        #education2.compact {display: flex; }
+        #contact {
+            padding: 1.25em 1em;
+            border-width: .19em ;
+            border-color: var(--bg-70);
+            border-style: solid;
+            height: auto;
+            width: 100%;
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 400;
+            background-color: var(--bg-100);
+        }
+
+        #datosContacto ul {
+            font-size: initial;
+            display:flex;
+            justify-content: space-evenly;
+            vertical-align: middle;
+            margin: .625em 0px;
+            font-size: 110%;
+        }
+
+        #cursos ul {font-size: .83em;}
 
         /* Manejo de imagenes, icos, media */
-        #foto img {
-            width: 6.25em;
-            height: 6.25em;
-            border-radius: 50%;
-            border: .35em double black;
-            clip-path: circle(100% at 50% 50%);
-        }
         .icon {
             width: 1.5em;
             height: 1.5em;
@@ -376,140 +424,265 @@
                 border-radius: 25%;
                 border: 0.125em solid var(--bg-100);
             }
-
-            .extended {
-                display: none;
-            }
-            .compact {
-                display: contents;
-            }
-            #education2.compact {display: flex;}
-
             .rtngIcoStar.checked {
                 fill:var(--progress-color);
             }
-            p {text-indent: 1.5em; margin-bottom: 0;}
-            p + p {margin-top: 1em;} 
+    </style>
 
-            /* #contact, #hobbies { */
-            #contact {
-                display: block;
-                padding: 1.25em 1em;
-                border-width: .19em ;
-                border-color: var(--bg-70);
-                border-style: solid;
-                height: auto;
-                width: 100%;
-                text-align: center;
-                font-family: 'Roboto';
-                font-weight: 400;
-                background-color: var(--bg-100);
-            }
+<style id="paletColor">
+    :root {
+            --themes: 'Dark', 'Light', 'Personal', 'Personal2';
 
-            #contacto > div {
-                font-size: initial;
-                display:inline-flex;
-                margin: .625em 0px;
-                font-size: 110%;
-            }
-            /* #contacto > div > svg { margin-left: 1em} */
+            --body-bg: #fff;
+            --body-color: #212529;
 
-            /* .detalle .hobbies {display: inline-flex;} */
-            ul, li {
-            list-style-type: none;
-            background-color: initial;
-            cursor: grab;
-            }
+            --alert: rgba(231, 8, 8, 1);
+            --destacado: rgb(254, 225, 61);
+
+            --white: rgba(230, 230, 230);
+            --gray: #6c757d;
             
-            #cursos ul {
-                font-size: .83em;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-400: #ced4da;
+            --gray-500: #adb5bd;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            
+            --gray-dark: #343a40;
+            --black: rgba( 50, 50, 50);
+        }
+
+        .invert {
+            background-color: var(--body-color);
+            color: var(--body-bg);
+        }
+
+        svg.icon.destacado {
+            fill: var(--destacado);
+            stroke: var(--destacado);
+            background-color: transparent;
+        }
+        svg.icon.alert {
+            fill: var(--alert);
+            stroke: var(--alert);
+            background-color: transparent;
+        }
+        .palettas {
+            /* Paleta 1 - Dark */
+            /* del mas oscuro al mas claro */
+            color: #022011; /* 1  Fondo */ 
+            color: #3a5048; /* 2  Disable */
+            color: #236e23; /* 3 atnecion 1*/
+            /* del menos llamativo al mas llamativo */
+            color: #03faf6; /* 4 atencion 2*/
+            color: #00ff00; /* 5 Acento */
+            color: white; color: black;
+
+            /* Paleta 1 - Light */
+            /* del mas claro al mas oscuro */
+            color: #236e23; /* 1 */ 
+            color: #3a5048; /* 2 */
+            color: #022011; /* 3 */
+            /* del menos llamativo al mas llamativo */
+            color: #03faf6; /* 4 */
+            color: #00ff00; /* 5 Acento */
+            color: white; color: black;
+
+            /* Paleta 2 Dark */
+            color: #072f33; /* dark */
+            color: #34585c; /* principal -el del cv COLOR 1 */
+            color: #608589; /* light */
+            color: #585c34; /* principal  */
+            color: #2e330d; /* dark */
+            color: #85895e; /* light * /
+            
+            /* Paleta 2 Light */
+            color: #9bdbe2; /* light */
+            color: #6aa9b0; /* principal -el del cv */
+            color: #3a7a81; /* dark */
+            color: #a9b06a; /* principal */
+            color: #79813e; /* dark */
+            color: #dbe299; /* light */
+            
+            color: rgb(242, 242, 230); /* principal -el del cv */ 
+            color: #6aa9b0; /* principal -el del cv */
+            color: #34585c; /* principal -el del cv COLOR 1 */
+            color: #00ff00; /* principal -el del cv COLOR 1 */
+        }
+        .Dark {
+            --primary-bg: #34585c ; --primary-color: var(--gray-400); /* color 1 */
+            --primary-disable-bg: transparent; --primary-disable: #072f33; /* color 2*/
+            --primary-link-bg: transparent; --primary-link: #a9b06a;
+            --primary-active-bg: transparent; --primary-active: #dbe299; /* color 4*/
+            --primary-hover-bg: transparent; --primary-hover: white;
+
+            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #00ff00; --acento-bg: var(--primary-bg);  /* color 5 */
+
+            --secondary-bg: var(--gray-900); --secondary-color: var(--gray-400);
+            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable-bg);
+            --secondary-link-bg: transparent; --secondary-link: #9bdbe2; /* color 3 */
+            --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
+            --secondary-hover-bg: transparent; --secondary-hover: white;
+
+        }
+
+        .Light {
+            --primary-bg: #6aa9b0 ; --primary-color: var(--gray-900); /* color 1 */
+            --primary-disable-bg: transparent; --primary-disable: #9bdbe2; /* color 2 */
+            --primary-link-bg: transparent; --primary-link: white;
+            --primary-active-bg: transparent; --primary-active: #85895e; /* color 4 */
+            --primary-hover-bg: transparent; --primary-hover: #585c34;
+
+            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #00ff00; --acento-bg: var(--primary-bg);  /* 5 */
+
+            --secondary-bg: var(--gray-400); --secondary-color: var(--gray-900);
+            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
+            --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
+            --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
+            --secondary-hover-bg: transparent; --secondary-hover: #3a7a81;
+        }
+
+        .primary {
+            background-color: var(--primary-bg);
+            color: var(--primary-color);
+        }
+            .primary.invert,  .primary .invert {
+                background-color: var(--primary-color);
+                color: var(--primary-bg);
+            }
+            .primary.active, .primary .active {
+                background-color: var(--primary-active-bg);
+                color: var(--primary-active);
+            }
+            .primary.disable, .primary .disable {
+                background-color: var(--primary-disable-bg);
+                color: var(--primary-disable);
+            }
+            .primary.hover, .primary .hover {
+                background-color: var(--primary-hover-bg);
+                color: var(--primary-hover);
+            }
+            .primary.acento, .primary .acento {
+                background-color: var(--acento-bg);
+                color: var(--acento);
+            }
+            .primary.destacado, .primary .destacado {
+                background-color: var(--destacado-bg);
+                color: var(--destacado);
             }
 
-            #footer { display: inline-flex;}
-
-            /* Centrando todo el contenido -ancho y alto */
-            .centered {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                height: auto;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                /* background-color: var(--bg-color); */
-                /* border: 3px dotted orange; */
-                z-index: 1100;
+            /* LINK's y HOVER's */
+            a.primary, .primary a {
+                color:var(--primary-link);
             }
+            a.primary:hover, .primary a:hover {
+                background-color: var(--primary-hover-bg);
+                color:var(--primary-hover);
+            }
+            /* UL LI */
+            .primary li:hover {
+                background-color: var(--primary-hover-bg);
+                color: var(--primary-hover);
+            }
+            /* SVG's */
+            .primary svg,  .primary svg {
+                fill: var(--primary-color);
+                stroke: var(--primary-color);
+            }
+            .primary svg.disable,  .primary.disable svg {
+                fill: var(--primary-disable);
+                stroke: var(--primary-disable);
+            }
+            .primary svg.active,  .primary.active svg {
+                fill: var(--primary-active);
+                stroke: var(--primary-active);
+            }
+            .primary svg.acento,  .primary.acento svg {
+                fill: var(--acento);
+                stroke: var(--acento);
+                background-color: transparent;
+            }
+            /*  */
+
+        .secondary {
+            background-color: var(--secondary-bg);
+            color: var(--secondary-color);
+        }
+            .secondary.invert,  .secondary .invert {
+                background-color: var(--secondary-color);
+                color: var(--secondary-bg);
+            }
+            .secondary.active,  .secondary .active {
+                background-color: var(--secondary-active-bg);
+                color: var(--secondary-active);
+            }
+            .secondary.disable,  .secondary .disable {
+                background-color: var(--secondary-disable-bg);
+                color: var(--secondary-disable);
+            }
+            .secondary.hover,  .secondary .hover {
+                background-color: var(--secondary-hover-bg);
+                color: var(--secondary-hover);
+            }
+            .secondary.acento,  .secondary .acento {
+                background-color: var(--acento-bg);
+                color: var(--acento);
+            }
+            .secondary.destacado,  .secondary .destacado {
+                background-color: var(--destacado-bg);
+                color: var(--destacado);
+            }
+
+            /* LINK's */
+            a.secondary, .secondary a {
+                color:var(--secondary-link);
+            }
+            a.secondary:hover, .secondary a:hover {
+                background-color: var(--secondary-hover-bg);
+                color:var(--secondary-hover);
+            }
+            /* UL LI */
+            .secondary li:hover {
+                background-color: var(--secondary-hover-bg);
+                color: var(--secondary-hover);
+            }
+            /* SVG's */
+            .secondary svg,  .secondary svg {
+                fill: var(--secondary-color);
+                stroke: var(--secondary-color);
+            }
+            .secondary svg.disable,  .secondary.disable svg {
+                fill: var(--secondary-disable);
+                stroke: var(--secondary-disable);
+            }
+            .secondary svg.active,  .secondary.active svg {
+                fill: var(--secondary-active);
+                stroke: var(--secondary-active);
+            }
+            .secondary svg.acento,  .secondary.acento svg {
+                fill: var(--acento);
+                stroke: var(--acento);
+                background-color: transparent;
+            }
+            /*  */
+    </style>
+
+    <style id="media-screen-print">
         /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
-        /* div#pareto { width: 1123px; height: 20px; border: 2px dotted orange;} */
-        div.base {position: sticky; display: block; right: 0%; top: 0%;  height: auto; border: 0.125em dotted orange;background-color: white; z-index: 1000;}
+        /* Pareto-regla que muestra datos para los breakpoint */
+        div.base {position: sticky; display: block; right: 0%; top: 0%;  height: auto; z-index: 1000;}
 
-        /* Para evaluar su persistencia o incorporacion a algun style ya definido */
-        #persona {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        @media print  { 
-            .testin::after {content: "SALIDA IMPRESION";} 
-            #pareto {font-size: 200%; text-align: center; background-color: black; color: azure;}
-
-
-            /* body, .page, .page div, .page section {background-color: azure;} */
-            /* ESTE KILOMBO ES MANEJO DE COLOR EN LA IMPRESION */
-            /* aqui hay un problema de base en los estilos de cada objeto -ver las variables */
-        /* html, body, * {background-color: white;color: black;}
-        .left .captionVertical , .right {background-color: white;color: black;}
-        .donut-chart .center-chart {background-color: white;color: black;}
-        #section1-chart .item-chart {background-color: rgba(246, 164, 82,1);}
-        #section2-chart .item-chart {background-color: white;}
-        .rtngIcoStar.checked {fill:rgba(246, 164, 82,1);}
-        #contact {border-color: black}
-        body {border: .125em solid lightgray;}
-        .left .captionVertical , .right {border-width: 0px .125em; border-color: lightgray; border-style: solid;}
-        .captionVertical.reset > {border:0 .125em solid lightgray; }
-        .icon.dark, .icon.light { fill:black} */
-            /* FIN MANEJO DEL COLOR EN LA IMPRESION */
-            html, body { height: 98%; }
-            body {
-                font-family: Arial, Helvetica, sans-serif; 
-                height: auto ;
-                max-width: 100%;
-                /* margin: 10.205px 6.803px 7.181px 6.803px; */
-                width: var(--anchoPage);
-                max-width: 1123px; 
-
-            }
-            
-            body, * {font-size: 12pt; line-height: 12pt;}
-
-            
-            /* #hobbies, , .captionVertical.reset { display: none} */
-            nav { display: none;}
-            .compact { display: block;}
-            .hardskill { display: block; }
-            #education2.compact {display: flex;}
-            #footer {display: inline-flex;}
-
-            /* @page {
-            size: 210mm 297mm;
-            margin: 5mm 5mm 5mm 5mm;
-            orphans: 1;
-            widows: 0;
-            } */
-
-            .salto { 
-                page-break-inside: avoid !important;
-                break-after: avoid-page !important;
-            }
-
-        }
         /* // Medium devices (tablets, vertical, less than 992px) */
         /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
         /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
             NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
-            CITARLO. Por ejemplo: no es lo mismo poner .left .right {tal cosa}, que ponerlo como dos reglas 
+            CITARLO. Por ejemplo: no es lo mismo poner #left #right {tal cosa}, que ponerlo como dos reglas 
             diferentes una debajo de la otra -¡ es raro eso !-
         */
         /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo comporamiento que otras prestigiosas web */
@@ -517,16 +690,16 @@
             @media (min-width: 1200.00px) { 
                     .testin::after {content: "width: >=1200.00" }
                     #pareto {background-color: pink}
-                    /* .left {width: 70%;max-width:none; min-width:auto} */
-                    /* .right {width: 30%;max-width:none; min-width:auto} */
-                    .right > .detalle {width: 100%;}
+                    /* #left {width: 70%;max-width:none; min-width:auto} */
+                    /* #right {width: 30%;max-width:none; min-width:auto} */
+                    #right > .detalle {width: 100%;}
                     /* .rtngEnd { display: none;} */
             }
             @media (max-width: 1199.98px) { 
                 #pareto {background-color: azure}
                 .testin::after {content: "width: 991.98 a 1199.98" }
-                /* .left {width: 70%;max-width:none; min-width:auto}
-                .right {width: 30%;max-width:none; min-width:auto} */
+                /* #left {width: 70%;max-width:none; min-width:auto}
+                #right {width: 30%;max-width:none; min-width:auto} */
                 .rtngEnd { display: none;}
             }
             @media (max-width: 991.98px) { 
@@ -534,84 +707,143 @@
                 .testin::after {content: "width: 767.98 a 991.98" }
 
                 #page, section {display: inline-flex }
-                .left {width: 70%;}
-                .right {width: 30%;}
-                .left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
-                .right > .detalle {background-color: inherit}
-                .right > .detalle {width: 100%;}
+
                 .captionVertical.reset { display: initial}
-                div.rating {display: block}
                 .container-chart {width: auto; display: inline-block;}
-                .special {display: none;}
+                #left {width: 60%;}
+                #left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
+                #right {width: 40%;}
+                /* #right > .detalle {background-color: inherit} */
+                #right > .detalle {width: 100%;}
+                /* .special {display: none;} */
+
+                div.rating {display: block}
             }
             @media (max-width: 767.98px)  { 
                 #pareto {background-color: red}
                 .testin::after {content: "width: 767.98 y 991.98;"}
 
                 #page, section {display: inline-flex }
-                .left {width: 60%; max-width:none; min-width:auto}
-                .right {width: 40%; max-width:none; min-width:auto}
-                .left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
-                .right > .detalle {background-color: inherit}
+
                 .captionVertical.reset { display: initial}
                 .container-chart {width: auto; display: contents;}
+                #left {width: 60%; max-width:none; min-width:auto}
+                #left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
+                #right {width: 40%; max-width:none; min-width:auto}
+                /* #right > .detalle {background-color: inherit} */
                 .special {display: none;}
             }
             @media (max-width: 575.98px) { 
                 #pareto {background-color: orange}
-                .testin::after {content: "width: 320.00 a 575.98 ESTOY AQUI" }
+                .testin::after {content: "width: 320.00 a 575.98" }
                 
-                .captionVertical.reset { display: none}
-                #page, section {display: block; width: 100% }
-                .left {width: 100%;max-width:none; min-width:auto}
-                .right {width: 100%;max-width:none; min-width:auto}
-                .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
-                .captionVertical.reset { display: none}
-                .right > .detalle {background-color: var(--bg-100)}
-                div.rating {display: flex}
-                .rtngEnd { display: inherit;}
-                .container-chart {width: auto; display: inline-block;}
                 #contacto > div { display:grid; margin: 0px;}
-                #notes {display: none;}
                 #education2.compact {display: block;}
-                .special {display: none;}
+                #page, section {display: block; width: 100% }
+                #notes {display: none;}
 
+                .captionVertical.reset { display: none}
+                .container-chart {width: auto; display: inline-block;}
+                #left {width: 100%;max-width:none; min-width:auto}
+                #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
+                #right {width: 100%;max-width:none; min-width:auto}
+                /* #right > .detalle {background-color: var(--bg-100)} */
+                .rtngEnd { display: inherit;}
+                .special {display: none;}
+                
+                div.rating {display: flex}
             }
             @media (max-width: 319.98px) { 
                 .testin::after {content: "width: <=319.98" }
                 #pareto {background-color: green}
                 
-                #page, section {display: block; width: 100% }
-                .left {width: 100%;max-width:none; min-width:auto}
-                .right {width: 100%;max-width:none; min-width:auto}
-                .right > .detalle {background-color: var(--bg-100)}
-                .left .captionVertical, .right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: left; width: 100%; max-width:none; min-width:auto}
-                .captionVertical.reset { display: none}
-                .container-chart {width: auto; display: inline-block;}
-                #notes {display: none;}
                 #education2.compact {display: block;}
-                .special {display: none;}
+                #page, section {display: block; width: 100% }
+                #notes {display: none;}
                 #footer {display: block;}
+
+                .container-chart {width: auto; display: inline-block;}
+                #left {width: 100%;max-width:none; min-width:auto}
+                #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: left; width: 100%; max-width:none; min-width:auto}
+                .captionVertical.reset { display: none}
+                #right {width: 100%;max-width:none; min-width:auto}
+                /* #right > .detalle {background-color: var(--bg-100)} */
+                .special {display: none;}
             }
+            /* @media handheld and (orientation: landscape)  {
+            
+                @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
+                }
+            }
+            @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
+            */
         } 
 
 
-
-
-        /* @media handheld and (orientation: landscape)  {
+      @media print  { 
+        .testin::after {content: "SALIDA IMPRESION";} 
+        #pareto {font-size: 200%; text-align: center; background-color: black; color: azure;}
         
-            @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
-            }
+        /* body, .page, .page div, .page section {background-color: azure;} */
+        /* ESTE KILOMBO ES MANEJO DE COLOR EN LA IMPRESION */
+        /* aqui hay un problema de base en los estilos de cada objeto -ver las variables */
+        /* html, body, * {background-color: white;color: black;}
+        #left .captionVertical , #right {background-color: white;color: black;}
+        #section1-chart .item-chart {background-color: rgba(246, 164, 82,1);}
+        #section2-chart .item-chart {background-color: white;}
+        .rtngIcoStar.checked {fill:rgba(246, 164, 82,1);}
+        #contact {border-color: black}
+        body {border: .125em solid lightgray;}
+        #left .captionVertical , #right {border-width: 0px .125em; border-color: lightgray; border-style: solid;}
+        .donut-chart .center-chart {background-color: white;color: black;}
+        .captionVertical.reset > {border:0 .125em solid lightgray; }
+        .icon.dark, .icon.light { fill:black} */
+        /* FIN MANEJO DEL COLOR EN LA IMPRESION */
+        html, body { height: 98%; }
+        body, * {font-size: 12pt; line-height: 12pt;}
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif; 
+            height: auto ;
+            max-width: 100%;
+            /* margin: 10.205px 6.803px 7.181px 6.803px; */
+            width: var(--anchoPage);
+            max-width: 1123px; 
         }
+        
+        /* #hobbies, , .captionVertical.reset { display: none} */
+        nav { display: none;}
+        .compact { display: block;}
+        .hardskill { display: block; }
+        #education2.compact {display: flex;}
+        #footer {display: inline-flex; width: 100%;}
+        #footer #title {display: none;}
+        #footer #contact {padding: 0;}
+        #footer #datosContacto ul {display: inline-flex; width: auto;margin:0;}
+        #footer #datosContacto ul li {width: auto; padding-left: 2.5em;}
 
-        @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
-        */
+        .icon.dark, .icon.light { fill:black}
+
+        /* @page {
+        size: 210mm 297mm;
+        margin: 5mm 5mm 5mm 5mm;
+        orphans: 1;
+        widows: 0;
+        } */
+        
+        .salto { 
+            page-break-inside: avoid !important;
+            break-after: avoid-page !important;
+        }
+        
+        }
 
     </style>
 
 </head>
 
 <body>
+    <!-- Provisoriamente lo manejo así, debo investigar como poder tenelo fuera del html -->
     <svg class="icons-lib" xmlns="http://www.w3.org/2000/svg" style="display: none !important; ">
         <symbol id="ico-battery"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
           <path fill="none" stroke="none" d="M0 0h24v24H0z"/>
@@ -706,22 +938,20 @@
             <path stroke-width="10" d="M218.7 445.5c-6.6.7-12.2 1.4-17.8 2-29.1 2.9-54.5-5-73.7-27.7-6-7.1-9.4-16.3-14.5-24.2-7.9-12.4-16-24.7-24.7-36.6-3-4.1-8.2-6.5-12.2-10-1.3-1.1-1.7-3.2-2.6-4.9 1.8-.7 3.5-1.9 5.3-2.1 23-2.1 39.2 8.5 50.5 27.6 14.1 23.8 34.5 36.8 62.2 36.8 8 0 16-2.7 23.9-4.5 1.5-.4 3.3-2.7 3.5-4.4 1.4-10.4 2.7-20.8 7.5-30.3 1.8-3.5 3.9-6.8 6-10.4-8.1-1.6-15.9-2.8-23.6-4.7-35.5-9-64.8-26.8-81.8-60.6-6.6-13.2-10.3-27.4-10.8-42.2-.8-22.8-.5-45.7 4.1-68.2 3.3-15.8 9.3-30.5 21.3-41.9 2.6-2.5 3.1-4.7 1.7-8.5-6.7-18.7-7.4-37.7-1.7-56.8 1.2-4.1 2.3-8.2 3.5-12.5 27.4 5.2 43.7 23.7 59 44.2 15.8-11.7 34.5-12.7 52.7-13.9 21.6-1.4 43.3-1.1 64.8 2.4 11.2 1.8 18.1 4.1 29 10.6 9.4-9.7 18.2-19.5 27.9-28.4 7.7-7.1 17.3-11.6 27.7-14 2.9-.7 4.4-.4 5.6 2.8 8.1 22.1 9.3 44.1.4 66.2-1.2 3-1.1 5.1 1.4 7.5 14.4 13.7 21 31.4 23.2 50.5 2 17.7 3.1 35.5 3.1 53.3 0 25.3-7.5 48.5-23.4 68.4-11.2 14.1-25.7 24.2-42.1 31.8-15.9 7.3-32.5 11.5-49.7 13.7-.4.1-.8.4-1.5.7 11.8 16.9 13.7 35.9 13.5 55.6-.3 28.7-.2 57.3 0 86 0 4.5-1.3 5.6-5.7 5.6-35.5-.2-71-.2-106.5 0-4.4 0-5.8-1.4-5.8-5.7.2-15.5.1-31 .1-46.5.2-2.3.2-4.3.2-6.7z"/>
         </symbol>
     </svg>
-
-
+    <!-- Bloque que se utiliza en modo testing para evaluar manejo responsivo  -->
     <div class="base" id="pareto" style="display: none !important; ">ESTO SERÍA LA MEDIDA DE UNA HOJA A4
             <h4 class="testin">Testing :</h4>
     </div>
-    
+
 
     <nav>
         <div class="navbar">
-            <!-- <h5 id="status" class="alingC">@Media testing :</h5> -->
             <div class="dropdown">
                 <button class="dropbtn">
                     <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon dark"><use href="#ico-menu"/></svg></a>
                 </button>
                 <ul class="dropdown-content">
-                    <a><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
+                    <li><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
                     <li><a href="#" onclick='compactExtended("extended")'>CV Completo</a></li>
                     <li><a href="#" value="selected" onclick='modeDarkLight("light")'>Modo claro</a></li>
                     <li><a href="#" onclick='modeDarkLight("dark")'>Modo oscuro</a></li>
@@ -752,10 +982,11 @@
         </div>
     </nav>
 
-    <main id="page"  onclick="menuClose()">
+    <main id="page" onclick="menuClose()">
 
-        <div class="left">
-            <section id="personal">
+        <div id="left" class="left">
+
+            <section id="personalInfo">
                 <div class="captionVertical reset">
                     <p class="tagCenter"><span>WR</span></p>
                 </div>
@@ -764,10 +995,11 @@
                     <div class="alingC">
                         <h5>PYTHON Web Developer</h5>
                         <div class="nombre">
-                            <h1>WALTER ROMERO</h1></div>
-                            <h4>(nacido en 1968)</h4>
-                            <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon dark"><use href="#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
-                            <div class="special"><hr></div>
+                            <h1>Walter</h1> <h1 class="comprimir">Romero</h1>
+                        </div>
+                        <h4>(nacido en 1968)</h4>
+                        <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon dark"><use href="#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
+                        <div class="special"><hr></div>
                     </div>
                 </div>
             </section>
@@ -780,7 +1012,7 @@
                     <p>Ocupé cargos de RRHH y disfruté mejorar procesos, generar tableros de control para la toma de decisiones, y hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. <em>Ciertamente era un Analista Universitario de Sistemas</em> en un área de recursos humanos.</p>
                     <p>Sigo postergando mis estudios de inglés, por tal motivo sólo tengo la habilidad para leerlo.</p>
                     <p>Luego de 24 años trabajando en la universidad, ahora he vuelto a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
-                    <p>En resumen, además de contar con criterio empresarial tengo conocimientos y experiencia para agregar valor a cualquier proyecto, y quienes me conocen destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
+                    <p>En resumen, además de contar con criterio empresarial tengo conocimientos y experiencia para sumar valor a cualquier proyecto, y quienes me conocen destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <br>
                     <div class="special"><hr></div>
                 </div>
@@ -928,12 +1160,11 @@
                 </div>
             </section> <!-- Fin workExperience -->
 
-
         </div> <!-- Fin left -->
         
-        <div class="right">
+        <div id="right" class="right">
 
-            <section id="education1">
+            <section id="education1" class="extraEspace">
                 <div class="captionVertical">
                     <p class="tagCenter slim">Formación Académica</p>
                 </div>
@@ -1391,55 +1622,53 @@
                 <div class="captionVertical">
                     <p class="tagCenter slim">Hobbies</p>
                 </div>
-            <div class="detalle">
-                <div class="hobbies">
-                    <div class="special"><hr></div>
-                    <svg class="icon light w50 border" aria-label="Padel"> <use href="#ico-padel"></svg>
-                    <svg class="icon light w50 border" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
-                    <svg class="icon light w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
-                    <svg class="icon light w50 border" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
-                    <svg class="icon light w50 border" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
-                </div>
-            </div> <!-- Fin detalle -->
-        </section>  <!-- Fin hobbies -->
+                <div class="detalle">
+                    <div class="hobbies">
+                        <div class="special"><hr></div>
+                        <svg class="icon light w50 border" aria-label="Padel"> <use href="#ico-padel"></svg>
+                        <svg class="icon light w50 border" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
+                        <svg class="icon light w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
+                        <svg class="icon light w50 border" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
+                        <svg class="icon light w50 border" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
+                    </div>
+                </div> <!-- Fin detalle -->
+            </section>  <!-- Fin hobbies -->
+
         </div>  <!-- Fin right -->
+
     </main>  <!-- Fin page -->
 
-    <section  id="footer" class="salto">
-
+    <footer id="footer" class="salto">
         <section id="contact">
-            <div class="alingC">
+            <div id="title" class="alingC">
                 <h2>Contacto</h2>
                 <div class="special"><hr></div>
             </div>
 
-            <div id="contacto" class="BwQ-bold-italic extraEspace alingC">
-                <div>
-                    <svg id="whatsapp" class="icon dark"><use href="#ico-whatsapp"/> </svg><span> 054 11 6352 2413</span>
-                    <svg id="email" class="icon dark"><use href="#ico-email"/> </svg><span>
-                    waldrom68@gmail.com</span>
-                </div>
-                <div>
-                    <svg class="icon dark"><use href="#ico-linkedin"/></svg><span> /in/walter-romero1968</span>
-                    <svg class="icon dark"><use href="#ico-github"/> </svg><span> waldrom68.github.io</span>
-                </div>
+            <div id="datosContacto" class="BwQ-bold-italic extraEspace alingC">
+                <ul>
+                    <li><svg id="whatsapp" class="icon dark"><use href="#ico-whatsapp"/> </svg>
+                     054-11-xxxx-xxxx</li>
+                    <li><svg id="email" class="icon dark"><use href="#ico-email"/> </svg>
+                    waldrom68@gmail.com</li>
+                    </ul>
+                <ul>
+                    <li><svg class="icon dark"><use href="#ico-linkedin"/></svg> /in/walter-romero1968</li> 
+                    <li><svg class="icon dark"><use href="#ico-github"/> </svg> waldrom68.github.io</li> 
+                </ul>
             </div> <!-- Fin detalle -->
         </section> <!-- Fin contact -->
 
-    </section> <!-- Fin footer -->
-
+    </footer>
 
 </body>
 
 <!-- Obtengo el codigo para representar a los widget myList, Donuts y rating -->
 <script src="static\js\widget.js"></script> 
-
 <!-- Obtengo el codigo para darle funcionalidad al menu y al acercaDe -->
 <script src="static\js\menuNav.js"></script> 
 
-
-
-<script id="darkLight">
+<script id="darkLight_OLD">
     // Estos colores deben ser definidos en el @media del style.id=darkLight //
     function setcolor(theme) {
         console.log(theme)
@@ -1527,6 +1756,62 @@
         menuClose();
     }
 </script>  <!-- compactExtended -->
+
+
+<script id="NEWdarkLight">
+
+    function normaliceStr(text) {
+        return text.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '').trim()
+    }
+
+    function getPaletMode() {
+    // Toma el valor que tenga por default el OS o el Nav, <style> debe tener el @media
+        // :root { --SETEO: "Personal";}
+        //     @media (prefers-color-scheme: light ) {:root {--SETEO: "Light";}}
+        //     @media (prefers-color-scheme: dark ) {:root {--SETEO: "Dark";}}
+
+    // Si el OS o el Nav no tiene nada configurado, la variable --SETEO conserva su valor "Personal"
+        let page = getComputedStyle(document.documentElement);
+        let theme = normaliceStr(page.getPropertyValue('--SETEO'));
+        console.log("El modo configurado en el OS o en el Navegador es ->", theme)
+        return (theme);
+    };
+
+    function getThemes() {
+        // Obtiene la variable :root que tiene el array de modos definidos y retorna un array con dichos nombre de clases
+        let page = getComputedStyle(document.documentElement);
+        let themes = page.getPropertyValue('--themes').split(" ");
+        let clases = new Array()
+
+        for (let index = 0; index < themes.length; index++) {
+            const element = themes[index];
+            if (element) {
+                clases.push(normaliceStr(element))
+            }
+        }
+        console.log("estas son las clases definidas", clases)
+        return clases
+    }
+
+    function resetClass(identificador, clases) {
+    // Elimina las clase recibidas como parametro en un array, del elemento cuyo selector coincida con el identificador pasado
+        for (const iterator of clases) {
+            document.querySelector(identificador).classList.remove(iterator);
+        }
+        console.log("elimino del selector '", identificador, "' las clases ", clases)
+    }
+
+    function setColor(identificador, clase) {
+        // Agrego en el elemento pasado como identificador, la clase recibida
+        resetClass("body", getThemes())
+        document.querySelector(identificador).classList.add(clase);
+        console.log("Agrego en '", identificador, "' la clase ",clase);
+    } 
+
+theme = getPaletMode()
+setColor("body", theme)
+
+</script>
 
 
 </html>
