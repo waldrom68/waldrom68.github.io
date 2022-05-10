@@ -154,16 +154,16 @@
         .Dark { /* --primary-bg:RED; */
             --primary-bg: #34585c ; --primary-color: var(--gray-400); /* color 1 */
             --primary-disable-bg: transparent; --primary-disable: #072f33; /* color 2*/
-            --primary-link-bg: transparent; --primary-link: #a9b06a;
-            --primary-active-bg: transparent; --primary-active: #dbe299; /* color 4*/
-            --primary-hover-bg: transparent; --primary-hover: white;
+            --primary-link-bg: transparent; --primary-link: #79813e;
+            --primary-active-bg: transparent; --primary-active: var(--white); /* color 4*/
+            --primary-hover-bg: transparent; --primary-hover: #dbe299;
 
 
             --secondary-bg: var(--gray-900); --secondary-color: var(--gray-400);
             --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
             --secondary-link-bg: transparent; --secondary-link: #9bdbe2; /* color 3 */
-            --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
-            --secondary-hover-bg: transparent; --secondary-hover: white;
+            --secondary-active-bg: transparent; --secondary-active: var(--white);
+            --secondary-hover-bg: #072f33; --secondary-hover: white;
         }
 
         .Light {
@@ -176,8 +176,8 @@
             --secondary-bg: var(--gray-400); --secondary-color: var(--gray-900);
             --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
             --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
-            --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
-            --secondary-hover-bg: transparent; --secondary-hover: #3a7a81;
+            --secondary-active-bg: transparent; --secondary-active: var(--black);
+            --secondary-hover-bg: var(--gray-500) ; --secondary-hover: black;
 
         }
 
@@ -305,9 +305,13 @@
                 background-color: transparent;
             }
 
-            /* SOLUCION DE COMPROMISO */
+            /* AJUSTES SOBRE ESTILOS, SOBREESCRITURAS, SOLUCION DE COMPROMISO */
             .rtngIcoStar.checked svg {
                 fill:var(--acento);
+            }
+            .secondary .myList ~ ul li.expand:hover {
+                background-color: var(--secondary-active-bg);
+                color: var(--secondary-hover); 
             }
     </style>
 
@@ -521,9 +525,6 @@
         .tagCenter.slim {
             left: 0em;
         }
-
-
-
         /* Manejo de etiquetas ocultas o visibles*/
         /* Detalle de trabajos, o cursos. Verion resumida/extendida */
         .extended {display: none;}
@@ -535,6 +536,10 @@
             justify-content: center;
             width: 100%;
         }
+        #persona #datos {
+            padding-left: 2em;
+        }
+
 
         .nombre {display: flex;}
 
@@ -736,6 +741,7 @@
         .captionVertical.reset > {border:0 .125em solid lightgray; }
         .icon.dark, .icon.light { fill:black} */
         /* FIN MANEJO DEL COLOR EN LA IMPRESION */
+        
         html, body { height: 98%; }
         body, * {font-size: 12pt; line-height: 12pt;}
         
@@ -759,14 +765,14 @@
         #footer #datosContacto ul {display: inline-flex; width: auto;margin:0;}
         #footer #datosContacto ul li {width: auto; padding-left: 2.5em;}
 
-        .icon.dark, .icon.light { fill:black}
+        /* .icon.dark, .icon.light { fill:black} */
 
-        /* @page {
+        @page {
         size: 210mm 297mm;
         margin: 5mm 5mm 5mm 5mm;
         orphans: 1;
         widows: 0;
-        } */
+        }
         
         .salto { 
             page-break-inside: avoid !important;
@@ -776,6 +782,7 @@
     }
 
 </style>
+
 </head>
 
 <body class="Dark" >
@@ -884,7 +891,7 @@
         <div class="navbar">
             <div class="dropdown ">
                 <button class="dropbtn">
-                    <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon active"><use href="#ico-menu"/></svg></a>
+                    <a href="javascript:void(0);" onclick="myFunctionMenuNav()"> <svg id="menu" class="icon active"><use href="#ico-menu"/></svg></a>
                 </button>
                 <div class="invert">
                 <ul class="dropdown-content secondary">
@@ -898,22 +905,22 @@
             </div>
         </div>
 
-        <div class="centered callout">
+        <div class="callout">
             <div class="callout-header">Acerca de</div>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
             <div class="callout-container">
-                    <h3>Desarrollado sólo con CSS3, JS y HTML.</h3>
-                    <div class="special"><hr> </div>
-                    <p>Características de diseño y codificación:
-                    Modo responsivo y Modo Dark/Light.
-                    <b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.
-                    Estilo especifico para las salidas de impresora con @media print {...}.
-                    <b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>.
-                    Gracias a <b><em>w3s</em></b> no necesité dedicar mucho tiempo para el navBar, ni para el diseño de este "Acerca de".</p>
-                    <li class="special"><hr> </li>
-                    <b>Pendientes</b>
-                    <li>1. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) tomando los datos de una base de datos en MySQL para que genere este código (proyecto iniciado pero aún sin publicar).</li>
-                    <li> 2. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puestas en la línea del html, etc.</li>
+                <h3>Desarrollo frontend con HTML, CSS3 y JS.</h3>
+                <h4><em>Modo responsivo y modo Dark/Light.</em></h4>
+                <br>
+                    <h4>Características:</h4>
+                   
+                    <p><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.</p>
+                    <p>Estilo especifico para las salidas de impresora con @media print {...}.</p>
+                    
+                    <p><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, beatae ipsum similique ducimus totam porro velit architecto eaque blanditiis minima laborum repudiandae a! Saepe rerum cumque sapiente, ipsam in animi.</p>
+                    <br>
+                    <h4>Pendientes:</h4>
+                    <p>Limpiar y mejorar código de javascript, tanto en su estructura como en diseño.</p>
             </div>
         </div>
     </nav>
@@ -928,7 +935,7 @@
                 </div>
                 <div id="persona" class="detalle secondary">
                     <div id="foto" aria-label="se muestra foto de Walter sonriendo" ><img src="static/images/yo.png" alt=""></div>
-                    <div class="alingC">
+                    <div id="datos" class="alingC">
                         <h5>PYTHON Web Developer</h5>
                         <div class="nombre">
                             <h1>Walter</h1> <h1 class="comprimir">Romero</h1>
@@ -1106,7 +1113,7 @@
                 </div>
                 <div class="detalle">
                     <ul>
-                        <p class="fontSpecial-regular alingR smallCaps">Especializaciones</p> 
+                        <p class="fontSpecial-bold alingR smallCaps">Especializaciones</p> 
                         <p class="special"><hr></p>
                         <li class="fontSpecial-bold-italic extraEspace extended" >2022-2023 Min. de Desarrollo Productivo y CESSI</li>
                         <li  class="extended">Programador Web full stack JS</li>
@@ -1114,12 +1121,12 @@
                         <li class="fontSpecial-bold-italic extraEspace">2021–2022 EducaciónIT</li>
                         <li>Full stack Python developer</li>
                         
-                        <p class="fontSpecial-regular alingR extraEspace smallCaps">Posgrado</p> 
+                        <p class="fontSpecial-bold alingR extraEspace smallCaps">Posgrado</p> 
                         <p class="special"><hr></p>
                         <li class="fontSpecial-bold-italic extraEspace">2007–2012 UP</li>
                         <li>Maestría en Dirección de Empresas</li>
                         
-                        <p class="fontSpecial-regular alingR extraEspace smallCaps">Grado</p> 
+                        <p class="fontSpecial-bold alingR extraEspace smallCaps">Grado</p> 
                         <p class="special"><hr></p>
                         <li class="fontSpecial-bold-italic extraEspace">1996–2000 UCALP</li>
                         <li>Analista Universitario de Sistemas</li>
@@ -1569,10 +1576,10 @@
                     </div>
                 </div> <!-- Fin detalle -->
             </section>  <!-- Fin hobbies -->
-
+        
         </div>  <!-- Fin right -->
-
     </main>  <!-- Fin page -->
+
 
     <footer id="footer" class="salto secondary">
         <section id="contact">
@@ -1688,6 +1695,7 @@
 
 theme = getPaletMode()
 setColor("body", theme)
+
 
 </script>
 

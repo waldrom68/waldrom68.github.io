@@ -1,6 +1,6 @@
 {/* <script id="menuNav"> */}
     /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-    function myFunction() {
+    function myFunctionMenuNav() {
         var x = document.querySelector(".dropdown-content");
         if (x.style.display === "block") {
             x.style.display = "none";

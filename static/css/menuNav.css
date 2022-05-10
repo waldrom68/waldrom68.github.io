@@ -87,24 +87,23 @@
             font-family: 'Quinta-regular';
             width: 80%;
             height: 80%;
+            /* top: 2em; */
             max-width: 80%;
             max-height: 80%;
             text-align: left !important;
             display: none;
             background-color: inherit !important;
             box-shadow: .5em 0.5em .5em currentColor !important;
-            z-index: 1000;
+            z-index: 2000;
         }
 
         .callout-header {
             padding: 25px 15px 15px;
             font-size: 1.5em;
-            background-color: var(--gray-600);
-            color: unset !important;
-            /* background: var(--bg-70); */
-            /* color: var(--bg-100); */
-            /* background-color: var(--acento); */
-            /* color: #fff; */
+            background-color: var(--body-color);
+            color: var(--body-bg) !important;
+            border: 1px solid var(--body-bg);
+
         }
 
         .callout-container {
@@ -114,21 +113,16 @@
                 padding: 15px 10px;
                 background-color: unset !important;
                 color: inherit !important;
-                /* background-color: var(--bg-100); */
-                /* color: var(--color-text); */
+                padding-bottom: 2em;
                 overflow: auto;
                 
             }
-            .callout-container p { 
-                padding-bottom: 5px;
-                overflow: scroll;
-                }
-    
+
             .closebtn {
                 position: absolute;
-                top: 0;
-                right: 0;
-                /* color: inherit; */
+                top: 1px;
+                right: 1px;
+                color: var(--body-bg) !important;
                 width: 2em;
                 height: 2em;
                 line-height: 2em;
@@ -138,7 +132,6 @@
                 }
     
                 .closebtn:hover {
-                    /* color: lightgrey; */
                     background-color: var(--alert);
                 }
     /* </style> */

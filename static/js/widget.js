@@ -18,7 +18,6 @@
             } else {  
                 // Cierro todos y MUESTRO solo el elemento clickeado
                 initNone();
-
                 let list = el.parentElement.children
                 for (var i = 1; i < list.length; i++) {
                     // Muestro el elemento a expandir
