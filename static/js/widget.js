@@ -43,12 +43,13 @@
         el.querySelector(".rtngSide.rtngEnd span").innerText = valor
 
 
-        let icos = el.querySelectorAll(".star-container span");
+        let icos = el.querySelectorAll(".star-container svg");
 
         let index = 0
         icos.forEach( function(e) {
         if (index < parseInt(valor))  {
-            e.classList.toggle('checked')
+            e.classList.toggle('acento')
+            e.classList.toggle('disable')
         }
         index ++
         });
@@ -60,19 +61,20 @@
     function updateDonut(percent, element){
         /* obtengo valor de los colores desde JS: */
         let donutStyle = getComputedStyle(document.documentElement);
-        let noProgressColor = donutStyle.getPropertyValue('--progress-bg');
-        let progressColor = donutStyle.getPropertyValue('--progress-color');
-        
+        let noProgressColor = donutStyle.getPropertyValue('--acento-bg');
+        let progressColor = donutStyle.getPropertyValue('--acento');
+        // console.log(donutStyle)
         if (!progressColor) {
             progressColor = 'red';
-            
+            console.log("no encontre variable --acento");            
             [].forEach.call(document.querySelectorAll("#section1-chart .item-chart"), function(el) {
             el.style.setProperty('background-color', progressColor)
             });
         };
         
         if (!noProgressColor) {
-            noProgressColor = 'initial';
+            console.log("no encontre variable --acento-bg")
+            noProgressColor = 'blue';
             [].forEach.call(document.querySelectorAll("#section2-chart .item-chart"), function(el) 
             {
                 el.style.setProperty('background-color',noProgressColor)
@@ -88,7 +90,13 @@
         element.parentNode.querySelector("#section3-chart .item-chart").style.msTransform = "rotate(" + (180 - offset) + "deg)";
         element.parentNode.querySelector("#section3-chart").style.MozTransform = "rotate(" + offset + "deg)";
         element.parentNode.querySelector("#section3-chart .item-chart").style.MozTransform = "rotate(" + (180 - offset) + "deg)";
-        element.parentNode.querySelector("#section3-chart .item-chart").style.backgroundColor = noProgressColor;
+        // element.parentNode.querySelector("#section3-chart .item-chart").style.backgroundColor = noProgressColor;
+        // element.parentNode.querySelector("#section2-chart .item-chart").style.backgroundColor = noProgressColor;
+        // element.parentNode.querySelector("#section1-chart .item-chart").style.backgroundColor = progressColor;
+
+        element.parentNode.querySelector("#section1-chart .item-chart").style.borderColor = progressColor;
+        element.parentNode.querySelector("#section2-chart .item-chart").style.borderColor = noProgressColor;
+        element.parentNode.querySelector("#section3-chart .item-chart").style.borderColor = noProgressColor;
         
     } else { 
         offset = ((360 / 100) * percent) - 180;
@@ -98,8 +106,17 @@
         element.parentNode.querySelector("#section3-chart .item-chart").style.msTransform = "rotate(" +  offset + "deg)";
         element.parentNode.querySelector("#section3-chart").style.MozTransform = "rotate(180deg)";
         element.parentNode.querySelector("#section3-chart .item-chart").style.MozTransform = "rotate(" +  offset + "deg)";   
-        element.parentNode.querySelector("#section3-chart .item-chart").style.backgroundColor = progressColor;
+
+        
+        element.parentNode.querySelector("#section1-chart .item-chart").style.borderColor = progressColor;
+        
+        element.parentNode.querySelector("#section2-chart .item-chart").style.borderColor = noProgressColor;
+
+        element.parentNode.querySelector("#section3-chart .item-chart").style.borderColor = progressColor;
+        
     }
+    element.parentNode.querySelector(".donut-chart .center-chart").style.borderColor = noProgressColor;
+    
     element.parentNode.querySelector("span").innerHTML = percent + "%";
     }
     

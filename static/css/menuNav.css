@@ -1,35 +1,37 @@
 
     /* <style id="menu"> */
     /* Barra de navegación */
-    nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                text-align: left;
-                height: 2em;
-                line-height: 2em;
-                width: 100%;
-                background-color: var(--bg-70);
-                opacity: .9;
-                /* max-width: var(--anchoPage); */
-                color: var(--bg70);
-    
-                z-index: 1000;
-                }
-                nav svg:link, nav a:visited, nav a:active  {
-                    text-decoration: none;
-                }
-    
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        text-align: left;
+        height: 2em;
+        line-height: 2em;
+        width: 100%;
+        background-color: inherit !important;
+        /* background-color: var(--bg-70); */
+        opacity: .9;
+        /* max-width: var(--anchoPage); */
+        color: currentColor;
+
+        z-index: 2000;
+        }
+        .navbar svg:link, .navbar a:visited, .navbar a:active  {
+            text-decoration: none;
+        }
+
         /* Links inside the navbar */
     .navbar a {
       float: left;
       text-align: center;
-        text-decoration: none;
+      text-decoration: none;
     }
         /* The dropdown container */
     .dropdown {
       float: left;
       overflow: hidden;
+      background-color: inherit !important;
     }
     
     /* Dropdown button */
@@ -52,16 +54,16 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: var(--bg-100);
+      /* background-color: var(--bg-100); */
       min-width: 10em;
-      box-shadow: 0px .5em 1em 0px var(--color-text);
+      box-shadow: 0px .5em 1em 0px currentColor;
       z-index: 1;
     }
     
     /* Links inside the dropdown */
     .dropdown-content a {
       float: none;
-      color: var(--color-text);
+      /* color: var(--color-text); */
       padding: .75em 1em;
       text-decoration: none;
       display: block;
@@ -70,7 +72,7 @@
     
     /* Add a grey background color to dropdown links on hover */
     .dropdown-content a:hover {
-      background-color: var(--bg-70);
+      background-color: inherit;
     }
     
     /* Show the dropdown menu on hover */
@@ -78,9 +80,9 @@
       display: block;
     }
     /* </style> */
-    
+
     /* <style id="acercaDe"> */
-            .callout {
+        .callout {
             position: fixed;
             font-family: 'Quinta-regular';
             width: 80%;
@@ -89,26 +91,31 @@
             max-height: 80%;
             text-align: left !important;
             display: none;
+            background-color: inherit !important;
+            box-shadow: .5em 0.5em .5em currentColor !important;
             z-index: 1000;
         }
-        
+
         .callout-header {
             padding: 25px 15px 15px;
-            background: var(--bg-70);
             font-size: 1.5em;
-            color: var(--bg-100);
-            background-color: var(--acento);
-            color: #fff;
+            background-color: var(--gray-600);
+            color: unset !important;
+            /* background: var(--bg-70); */
+            /* color: var(--bg-100); */
+            /* background-color: var(--acento); */
+            /* color: #fff; */
         }
-        
+
         .callout-container {
             display: block;
-            box-shadow: 0px .5em 1em 0px var(--color-text);
                 height: 90%;
                 width: 100%;
                 padding: 15px 10px;
-                background-color: var(--bg-100);
-                color: var(--color-text);
+                background-color: unset !important;
+                color: inherit !important;
+                /* background-color: var(--bg-100); */
+                /* color: var(--color-text); */
                 overflow: auto;
                 
             }
@@ -121,7 +128,7 @@
                 position: absolute;
                 top: 0;
                 right: 0;
-                color: inherit;
+                /* color: inherit; */
                 width: 2em;
                 height: 2em;
                 line-height: 2em;
@@ -131,7 +138,7 @@
                 }
     
                 .closebtn:hover {
-                    color: lightgrey;
+                    /* color: lightgrey; */
                     background-color: var(--alert);
                 }
     /* </style> */

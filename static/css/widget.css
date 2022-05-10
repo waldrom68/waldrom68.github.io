@@ -48,8 +48,11 @@
         }
 
             .myList ~ li.expand ul:hover {
-                color: var(--acento);
-                background-color: var(--acento-bg);
+            /* ESTE COLOR DEBIERA CONFIGURARSE EN LAYOUT
+            O EN PALET COLOR */
+
+                /* color: var(--acento); */
+                /* background-color: var(--acento-bg); */
             }
 
             /* Character '+' to indicate that it can be expanded */
@@ -83,9 +86,9 @@
 
     /* Three column layout*/
     .rating {
-      background-color: (color /* browser's internal value */);
+      background-color: inherit !important;
       border-bottom : 2px groove transparent;
-      color: currentColor;
+      color: currentColor !important;
       display: flex;
       font-weight: bolder;
       width: 100%;
@@ -124,7 +127,8 @@
       }
 
       .rtngIcoStar {
-          fill:var(--progress-bg);
+        /* ESTO LO DEBE MANEJAR LA CLASE */
+          /* fill:var(--progress-bg); */
       }
     /* Place text to the right */
     .rtngEnd {
@@ -143,22 +147,6 @@
 /* </style> */
 
 /* <!-- Hard skill content --> */
-/* <style id="donuts"> */
-    /* Requiere tener declaradas las siguientes variables: 
-    --progress-color = progress line color, default: red color
-    --no-progress-color = no progress line color donuts, default: blue color
-
-    --lienzo-color = background donuts center, default: no progress line -pie chart
-    --grosor = progress line thickness, default: pie chart
-        Example:
-        :root {
-            --progress-color: #36e617;
-            --no-progress-color: gray;
-            --center-color: azure;
-            --grosor: 8%; (min: 1%,  max:50%) 
-          } 
-    /*
-
     /* Place title text for ratings */
     .donuttHeading {
       margin: auto;
@@ -169,11 +157,13 @@
     .container-chart {
       display: inline-flex;
       width: auto;
-      background: inherit;
+      /* background: inherit; */
+      /* background-color: transparent */
     }
     
     .block-chart {
-      background: inherit;
+      /* background: inherit; */
+      /* background-color: transparent; */
       float: left;
       height: 100px;
       margin: auto;
@@ -186,16 +176,16 @@
     
     /* The DONUT chart */
     .donut-chart {
-      height: 50%;
+      height: 60%;
       margin: 10px auto;
       position: relative;
-      width: 50%;
+      width: 60%;
       font-family: 'Quinta-regular' ;
       font-style: italic;
       font-size: 1em;
     }
       .donut-chart .center-chart {
-        background: var(--progress-bg);
+        /* background-color: transparent; */
         border-radius: 50%;
         height: calc(100% - (var(--grosor)*2));
         left: calc(100% - (100% - var(--grosor)));
@@ -205,7 +195,7 @@
       }
       /* hardskill label */
       .donut-chart .center-label {
-        color: currentColor;
+        /* color: currentColor; */
         display: block;
         left: 50%;
         position: absolute;
@@ -215,7 +205,7 @@
       }
       /*  hardskill % label */
       .center-chart span {
-      color: currentColor;
+      /* color: currentColor; */
       display: block;
       left: 50%;
       position: absolute;
@@ -225,10 +215,14 @@
 
     /* graph gear - shows the degree of progress- */
     .clip-chart, .item-chart {
-    border-radius: 50%;
-    height: 100%;
-    position: absolute;
-    width: 100%;
+      /* background-color: transparent; */
+      border-radius: 50%;
+      border-width: var(--grosor);
+      border-style: solid;
+      border-color: transparent;
+      height: 100%;
+      position: absolute;
+      width: 100%;
     }
     .clip-chart {
     clip-path: polygon(50% 0%, 50% 100%, 100% 100%, 100% 0%);
@@ -238,21 +232,11 @@
     clip-path: polygon(50% 0%, 50% 100%, 0% 100%, 0 0);
     }
 
-    #section1-chart {
-    transform: rotate(0deg);
-    }
+    #section1-chart {transform: rotate(0deg);}
 
-    #section1-chart .item-chart {
-    background-color: var(--progress-color);
-    transform: rotate(180deg);
-    }
+    #section1-chart .item-chart {transform: rotate(180deg);}
 
-    #section2-chart {
-    transform: rotate(180deg);
-    }
+    #section2-chart {transform: rotate(180deg);}
 
-    #section2-chart .item-chart {
-    background-color:transparent;
-    transform: rotate(180deg);
-    }
+    #section2-chart .item-chart {transform: rotate(180deg);}
 /* </style> */

@@ -53,395 +53,24 @@
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
         }
 
-    </style>
-
-    <!-- no existen declaraciones de color, ni de background-color -->
-    <style id="@media-prefers-color">
-        /* Ajusto preferencia de colores */
         :root {
             --body-font-family: 'Quinta-light','roboto', system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
             --body-font-size: 1rem;
             --body-font-weight: 100;
             --body-line-height: 1.5;
-            
-            --SETEO: "Personal";
         }
-        
-        @media (prefers-color-scheme: light ) {
-            :root {
-                --SETEO: "Light";
-                --bg-70-light: #6AA9B0;
-                --bg-70-dark: #6AA9B0;
-
-                --color-text-70:#1F1301;
-                --color-text-30:#F2F2E6;
-
-                --acento: black;
-                --acento-bg: rgba(255,255,255,.7);
-
-                --destacado: rgb(255, 0, 77);
-                --alert: rgba(231, 8, 8, 1);
-            }
-            .testin::before {content:  "Light: ";} 
-            
-        }
-        @media (prefers-color-scheme: dark ) {
-            :root {
-                --SETEO: "Dark";
-                --bg-70-light: #6AA9B0;
-                --bg-70-dark: #6AA9B0;
-                --bg-100: #1F1301;
-
-                --color-text-70:#F2F2E6;
-                --color-text-30:#1F1301;
-                --color-text:var(--color-text-70);
-
-                --acento: white;
-                --acento-bg: #34585c;
-
-                --destacado: #ff004d;
-                --alert: rgba(231, 8, 8, 1);
-            }
-            .testin::before {content:  "Dark: ";} 
-        }
-
     </style>
 
-    <!-- no existen declaraciones de color, ni de background-color -->
-    <style id="base">
-        html,
-        * { margin: 0; padding:0; box-sizing: border-box;
-        }
-        body {
-            font-family: 'Quinta-light','roboto', sans-serif;
-            font-style: normal;
-            overflow: scroll;
-            width: 100%;
-        }
-        .alingL {text-align: left;}
-        .alingR {text-align: right;}
-        .alingC {text-align: center;}
-        /* Centrando todo el contenido -ancho y alto */
-        .centered {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 100%;
-            height: auto;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1000;
-        }
-        
-        /* special text and fonts */
-        .extraEspace {margin-top: .5em;}
-        
-        /* SPECIAL STYLE's */
-        .special {color: currentColor; }
-            .special hr {
-                margin: 1em 0;
-                height: 2px; /* 5px */
-                background-color: currentColor;
-                opacity: .5;
-                width: 100%;
-            }
-            .special hr.p75 {width: 75%;}
-            .special hr.p33 {width: 33%;}
-        
-            /* Generales pero especiales */
-        .inline {display: inline-flex;}
-        .inlineBlock {display: inline-block;}
-        .None {display: none;}
-
-        /* fonts */
-        .BwQ-light {font-family: 'Quinta-light';font-style: normal;}
-        .BwQ-light-italic {font-family: 'Quinta-light'; font-style: italic;}
-        .BwQ-regular {font-family: 'Quinta-regular';font-style: normal;}
-        .BwQ-regular-italic {font-family: 'Quinta-regular'; font-style: italic;}
-        .BwQ-bold {font-family: 'Quinta-bold'; font-style: normal;}
-        .BwQ-bold-italic {font-family: 'Quinta-bold'; font-style: italic;}
-        
-        h1.comprimir {
-            padding-left: .3em;
-            letter-spacing: .1em;
-            overflow-block: visible;
-        }
-
-    </style>
-
-    <style id="root">
-        .test { 
-            color: #190207;
-            color: #9d0b28;
-            color: #5a082d;
-            color: #ff004d;
-            color: rgb(230, 230, 230);
-        }
-
+     <style id="paletColor">
+         /* General colors */
         :root {
-            /* DE LONGITUD */
-            /* layout general */
-            --altoPage: 1122.519685px;
-            --anchoPage:1224px; 
-
-            /* en Donuts */
-            --scale: 100%; /* min: 30%, max:100%*/
-            --grosor: 8%; /* min: 1%,  max:50% */
-
-            /* PALETA DE COLORES */
-            --alert: rgba(231, 8, 8, 1);
-            --color-light: Canvas;  /* white */
-            --color-dark: CanvasText;  /* black */ 
-            --bg-dark: GrayText;  /* Gris oscuro */
-            
-            /* sin usar */
-            --bg-light: ButtonFace; /* Gris claro */ 
-            /* fin sin usar */
-
-            /* Esto hay que seguir dandole vueltas para que tome el color BG que corresponda */
-            --progress-color: rgb(0, 255, 0);  /* Rating  y Donuts*/
-            --progress-bg: #6aa9b0;  /* Rating  y Donuts*/
-
-
-            /* SETEAR EN @MEDIA -> mismo Background que los margenes 
-            --canvasBG:red ; Background margenes*/
-            --OOcenter-color: var(--canvasBG);  /* Donuts*/
-
-            --bg-70-light: #6AA9B0;
-            --bg-70-dark: #6AA9B0;
-            --bg-100: #F2F2E6;
-            --color-text-100:#1F1301;
-            --color-text-70:#F2F2E6;
-            --color-text:var(--color-text-100);
-
-            --acento: #34585c;
-            --acento-bg: rgba(255,255,255,.7);
-
-            --destacado: #ff004d;
-            --alert: rgba(231, 8, 8, 1);
-        }
-    </style>
-
-    <style id="Layout">
-        :root {
-            /*  Dependiendo donde meta Rating y Donuts */
-            /* Rating  y Donuts*/
-            /* --progress-color: rgb(0, 255, 0);  
-            --progress-bg: rgba(246, 164, 82,1);  */
-        }
-
-        a {color: var(--bg-70);font-family: 'Quinta-bold'; font-style: italic;}
-        h1 {
-            font-weight: bold;
-            font-style: italic;
-        }
-        p {text-indent: 1.5em; margin-bottom: 0;}
-        p + p {margin-top: 1em;} 
-
-        section {
-            display: flex;
-            width: 100%;
-        }
-        ul, li {
-            list-style-type: none;
-            background-color: initial;
-            cursor: grab;
-        }
-
-        #foto img {
-            width: 6.25em;
-            height: 6.25em;
-            border-radius: 50%;
-            border: .35em double black;
-            clip-path: circle(100% at 50% 50%);
-        }
-        /* Contenedor principal */
-        /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
-            Las columnas 1, 3 y 4 usan el mismo background 
-            Hoja A4, en unidades: Total 1123px (leftA:172px, leftB:619px, rightA:88px:, rightB:255px)
-                Left: 70% (donde LeftA 21% de Left )
-                Right: 30% (donde RightA 25% de Right )*/
-        #page {
-            background-color: inherit;
-            display: inline-flex;
-            width: 100%;
-            max-width: 100%;
-            min-width: 100%;
-            height: auto;
-            max-height: 100%;
-            min-height: 100%;
-            font-size: 110%;
-            line-height: 110%;
-            padding: 2em 0em;
-        }
-
-        /* 791px */
-        #left, #right {display: grid;}
-        #left {
-            width: 70%;
-            max-width: 70%;
-            background-color: inherit;
-        }
-            /* 161px */
-            #left .captionVertical { 
-                width: 21%;
-                min-width: 6em;
-                max-width: 6em;
-                background-color: var(--bg-70);
-                color: var(--bg-100);
-            }
-            /* 619px */
-            #left .detalle {
-                background-color: var(--bg-100);
-            }
-        /* 343px */
-        #right {
-            width: 30%;
-            /* max-width: 30%; */
-            background-color: var(--bg-70);
-            color: var(--color-text-70);
-        }
-            /* 88px */
-            #right .captionVertical { 
-                width: 25%;
-                min-width: 4em;
-                max-width: 4em;
-                color: var(--bg-100);
-            }
-            /* 255px */
-            #right .detalle { 
-                background-color: var(--bg-70);
-                color: var(--bg-100);
-                display: flex;
-                /* padding-right: .5em; */
-            }
-            
-        .detalle {
-            display: block;
-            width: 100%;
-            min-width: 50%;
-            padding: 0em 0.25em;
-        }
-        /* Es el TAG, se muestra el texto en vertical */
-        .captionVertical {
-            font-family: 'Roboto';
-            font-weight: 900;
-            margin: initial;
-            writing-mode: vertical-rl;
-            transform: rotateZ(180deg);
-        } 
-        /* Es la funcionalidad para revertir el Texto del TAG en vertical */
-        .captionVertical.reset {
-            writing-mode: unset;
-            transform: initial;
-            
-        }
-        /* Ajustando el contenido del TAG -ancho y alto */
-        .tagCenter {
-            position: relative;
-            left: -1em;
-            text-align: end;
-            padding: 1em;
-            text-transform: capitalize;
-            font-variant: small-caps;
-        }
-        /* Ajustando el contenido del TAG, pero en formato slim */
-        .tagCenter.slim {
-            left: 0em;
-        }
-
-
-
-        /* Manejo de etiquetas ocultas o visibles*/
-        /* Detalle de trabajos, o cursos. Verion resumida/extendida */
-        .extended {
-            display: none;
-        }
-        .compact {
-            display: contents;
-        }
-
-        .nombre {display: flex;}
-        #persona {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        /* #objetive {
-            display: flex;
-            vertical-align: middle;
-        } */
-        .hardskill, .hobbies { display: block; }
-        #education1 .detalle, #contact {display: block;}
-
-        #education2.compact {display: flex; }
-        #contact {
-            padding: 1.25em 1em;
-            border-width: .19em ;
-            border-color: var(--bg-70);
-            border-style: solid;
-            height: auto;
-            width: 100%;
-            text-align: center;
-            font-family: 'Roboto';
-            font-weight: 400;
-            background-color: var(--bg-100);
-        }
-
-        #datosContacto ul {
-            font-size: initial;
-            display:flex;
-            justify-content: space-evenly;
-            vertical-align: middle;
-            margin: .625em 0px;
-            font-size: 110%;
-        }
-
-        #cursos ul {font-size: .83em;}
-
-        /* Manejo de imagenes, icos, media */
-        .icon {
-            width: 1.5em;
-            height: 1.5em;
-            line-height: 1.5em;
-        }
-            .icon.w16 {
-                width: 1em;
-                height: 1em;
-                line-height: 1em;
-            }
-            .icon.w50 {
-                width:3.15em;
-                height:3.15em;
-                line-height:3.15em;
-            }
-            .icon.light {fill: var(--bg-100)}
-            .icon.dark {fill: var(--color-text);}
-            .icon .link:hover {fill: var(--progress-color);}
-            
-            .icon.border {
-                margin: 0% .25em;
-                border-radius: 25%;
-                border: 0.125em solid var(--bg-100);
-            }
-            .rtngIcoStar.checked {
-                fill:var(--progress-color);
-            }
-    </style>
-
-<style id="paletColor">
-    :root {
-            --themes: 'Dark', 'Light', 'Personal', 'Personal2';
+            --themes: 'Dark', 'Light';
 
             --body-bg: #fff;
             --body-color: #212529;
 
-            --alert: rgba(231, 8, 8, 1);
-            --destacado: rgb(254, 225, 61);
-
             --white: rgba(230, 230, 230);
-            --gray: #6c757d;
-            
+
             --gray-100: #f8f9fa;
             --gray-200: #e9ecef;
             --gray-300: #dee2e6;
@@ -454,6 +83,13 @@
             
             --gray-dark: #343a40;
             --black: rgba( 50, 50, 50);
+
+            --destacado: rgb(255, 0, 77);
+            --alert: rgba(231, 8, 8, 1);
+            /* ATRIBUTO COMUN, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #00ff00;  /* --progress-color */
+            --acento-bg: var(--gray-600) !important;  /* 5 */
+            
         }
 
         .invert {
@@ -471,6 +107,8 @@
             stroke: var(--alert);
             background-color: transparent;
         }
+        .icon.link:hover, .icon .link:hover {fill: var(--acento);}
+
         .palettas {
             /* Paleta 1 - Dark */
             /* del mas oscuro al mas claro */
@@ -513,22 +151,19 @@
             color: #34585c; /* principal -el del cv COLOR 1 */
             color: #00ff00; /* principal -el del cv COLOR 1 */
         }
-        .Dark {
+        .Dark { /* --primary-bg:RED; */
             --primary-bg: #34585c ; --primary-color: var(--gray-400); /* color 1 */
             --primary-disable-bg: transparent; --primary-disable: #072f33; /* color 2*/
             --primary-link-bg: transparent; --primary-link: #a9b06a;
             --primary-active-bg: transparent; --primary-active: #dbe299; /* color 4*/
             --primary-hover-bg: transparent; --primary-hover: white;
 
-            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
-            --acento: #00ff00; --acento-bg: var(--primary-bg);  /* color 5 */
 
             --secondary-bg: var(--gray-900); --secondary-color: var(--gray-400);
-            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable-bg);
+            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
             --secondary-link-bg: transparent; --secondary-link: #9bdbe2; /* color 3 */
             --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
             --secondary-hover-bg: transparent; --secondary-hover: white;
-
         }
 
         .Light {
@@ -538,14 +173,12 @@
             --primary-active-bg: transparent; --primary-active: #85895e; /* color 4 */
             --primary-hover-bg: transparent; --primary-hover: #585c34;
 
-            /* ATRIBUTO COMUN A AMBAS, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
-            --acento: #00ff00; --acento-bg: var(--primary-bg);  /* 5 */
-
             --secondary-bg: var(--gray-400); --secondary-color: var(--gray-900);
             --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
             --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
             --secondary-active-bg: transparent; --secondary-active: var(--primary-active);
             --secondary-hover-bg: transparent; --secondary-hover: #3a7a81;
+
         }
 
         .primary {
@@ -591,21 +224,21 @@
                 color: var(--primary-hover);
             }
             /* SVG's */
-            .primary svg,  .primary svg {
+            .primary svg,  svg.primary {
                 fill: var(--primary-color);
-                stroke: var(--primary-color);
+                /* stroke: var(--primary-color); */
             }
             .primary svg.disable,  .primary.disable svg {
                 fill: var(--primary-disable);
-                stroke: var(--primary-disable);
+                stroke: none;
             }
-            .primary svg.active,  .primary.active svg {
+            .primary svg.active,  .primary.active svg, svg.icon.active {
                 fill: var(--primary-active);
-                stroke: var(--primary-active);
+                stroke: none;
             }
             .primary svg.acento,  .primary.acento svg {
                 fill: var(--acento);
-                stroke: var(--acento);
+                /* stroke: var(--acento); */
                 background-color: transparent;
             }
             /*  */
@@ -653,136 +286,440 @@
                 color: var(--secondary-hover);
             }
             /* SVG's */
-            .secondary svg,  .secondary svg {
+            .secondary svg,  svg.secondary {
                 fill: var(--secondary-color);
                 stroke: var(--secondary-color);
             }
-            .secondary svg.disable,  .secondary.disable svg {
+            .secondary svg.disable,  .secondary.disable svg, svg.icon.disable {
                 fill: var(--secondary-disable);
-                stroke: var(--secondary-disable);
+                stroke: none;
+                /* stroke: var(--secondary-disable); */
             }
-            .secondary svg.active,  .secondary.active svg {
+            .secondary svg.active,  .secondary.active svg, svg.icon.active {
                 fill: var(--secondary-active);
-                stroke: var(--secondary-active);
+                stroke: none;
             }
             .secondary svg.acento,  .secondary.acento svg {
                 fill: var(--acento);
-                stroke: var(--acento);
+                /* stroke: var(--acento); */
                 background-color: transparent;
             }
-            /*  */
+
+            /* SOLUCION DE COMPROMISO */
+            .rtngIcoStar.checked svg {
+                fill:var(--acento);
+            }
     </style>
 
-    <style id="media-screen-print">
-        /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
-        /* Pareto-regla que muestra datos para los breakpoint */
-        div.base {position: sticky; display: block; right: 0%; top: 0%;  height: auto; z-index: 1000;}
-
-        /* // Medium devices (tablets, vertical, less than 992px) */
-        /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
-        /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
-            NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
-            CITARLO. Por ejemplo: no es lo mismo poner #left #right {tal cosa}, que ponerlo como dos reglas 
-            diferentes una debajo de la otra -¡ es raro eso !-
-        */
-        /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo comporamiento que otras prestigiosas web */
-        @media screen  { 
-            @media (min-width: 1200.00px) { 
-                    .testin::after {content: "width: >=1200.00" }
-                    #pareto {background-color: pink}
-                    /* #left {width: 70%;max-width:none; min-width:auto} */
-                    /* #right {width: 30%;max-width:none; min-width:auto} */
-                    #right > .detalle {width: 100%;}
-                    /* .rtngEnd { display: none;} */
+    <!-- no existen declaraciones de color, ni de background-color -->
+    <style id="@media-prefers-color">
+        /* Ajusto preferencia de colores */
+        
+        @media (prefers-color-scheme: light ) {
+            :root {
+                --SETEO: "Light";
             }
-            @media (max-width: 1199.98px) { 
-                #pareto {background-color: azure}
-                .testin::after {content: "width: 991.98 a 1199.98" }
-                /* #left {width: 70%;max-width:none; min-width:auto}
-                #right {width: 30%;max-width:none; min-width:auto} */
-                .rtngEnd { display: none;}
+
+            .testin::before {content:  "Light: ";} 
+        }
+
+        @media (prefers-color-scheme: dark ) {
+            :root {
+                --SETEO: "Dark";
             }
-            @media (max-width: 991.98px) { 
-                #pareto {background-color: yellow}
-                .testin::after {content: "width: 767.98 a 991.98" }
 
-                #page, section {display: inline-flex }
+            .testin::before {content:  "Dark: ";} 
+        }
 
-                .captionVertical.reset { display: initial}
-                .container-chart {width: auto; display: inline-block;}
-                #left {width: 60%;}
-                #left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
-                #right {width: 40%;}
-                /* #right > .detalle {background-color: inherit} */
-                #right > .detalle {width: 100%;}
-                /* .special {display: none;} */
+    </style>
 
-                div.rating {display: block}
+    <!-- no existen declaraciones de color, ni de background-color -->
+    <style id="base">
+        html,
+        * { margin: 0; padding:0; box-sizing: border-box;
+        }
+        body {
+            /* variables definidas en "<style>fonts<style>" */
+            font-family: var(--body-font-family);
+            font-size: var(--body-font-size);
+            font-weight: var(--font-weight);
+            line-height: var(--body-line-height);
+            /* overflow: scroll; */
+            width: 100%;
+        }
+        .alingL {text-align: left;}
+        .alingR {text-align: right;}
+        .alingC {text-align: center;}
+
+        /* Centrando todo el contenido -ancho y alto */
+        .centered {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1000;
+        }
+        
+        /* special text and fonts */
+        .extraEspace {margin-top: .5em;}
+        
+        /* SPECIAL STYLE's */
+        .special {color: currentColor !important; }
+            .special hr {
+                margin: 1em 0;
+                height: 4px; /* 5px */
+                background-color: currentColor !important;
+                opacity: .5;
+                width: 100%;
             }
-            @media (max-width: 767.98px)  { 
-                #pareto {background-color: red}
-                .testin::after {content: "width: 767.98 y 991.98;"}
+            .special hr.p75 {width: 75%;}
+            .special hr.p33 {width: 33%;}
+        
+            /* Generales pero especiales */
+        .inline {display: inline-flex;}
+        .inlineBlock {display: inline-block;}
+        .None {display: none;}
 
-                #page, section {display: inline-flex }
+        /* fonts */
+        .fontSpecial-light {font-family: 'Quinta-light';font-style: normal;}
+        .fontSpecial-light-italic {font-family: 'Quinta-light'; font-style: italic;}
+        .fontSpecial-regular {font-family: 'Quinta-regular';font-style: normal;}
+        .fontSpecial-regular-italic {font-family: 'Quinta-regular'; font-style: italic;}
+        .fontSpecial-bold {font-family: 'Quinta-bold'; font-style: normal;}
+        .fontSpecial-bold-italic {font-family: 'Quinta-bold'; font-style: italic;}
+        
+        h1.comprimir {
+            padding-left: .3em;
+            letter-spacing: .1em;
+            overflow-block: visible;
+        }
 
-                .captionVertical.reset { display: initial}
-                .container-chart {width: auto; display: contents;}
-                #left {width: 60%; max-width:none; min-width:auto}
-                #left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
-                #right {width: 40%; max-width:none; min-width:auto}
-                /* #right > .detalle {background-color: inherit} */
-                .special {display: none;}
+    </style>
+
+    <style id="Layout">
+        :root {
+            /* DE LONGITUD */
+            /* layout general */
+            --altoPage: 1122.519685px;
+            --anchoPage:1224px; 
+
+            /* en Donuts */
+            --grosor: 5px; /* min: 1%,  max:50% */
+        }
+        a {color: currentColor !important;font-family: 'Quinta-bold'; font-style: italic;}
+        
+        body {
+            color: var(--body-color);
+            background-color: var(--body-bg);
+            /* abria que meter aqui las medidas del ancho de la pagina? */
+        }
+
+        h1 {
+            font-weight: bold;
+            font-style: italic;
+        }
+        p {text-indent: 1.5em; margin-bottom: 0;}
+        p + p {margin-top: 1em;} 
+
+        section {
+            /* background-color: red; */
+            display: flex;
+            width: 100%;
+        }
+
+        ul, li {
+            list-style-type: none;
+            /* background-color: initial; */
+            cursor: grab;
+        }
+
+        /* Contenedor principal */
+        /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
+            Las columnas 1, 3 y 4 usan el mismo background 
+            Hoja A4, en unidades: Total 1123px (leftA:172px, leftB:619px, rightA:88px:, rightB:255px)
+                Left: 70% (donde LeftA 21% de Left )
+                Right: 30% (donde RightA 25% de Right )*/
+        #page {
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            height: auto;
+            max-height: 100%;
+            min-height: 100%;
+            font-size: 110%;
+            line-height: 110%;
+            padding: 2em 0em;
+        }
+
+        /* 791px */
+        /* #left, #right {display: grid;} */
+        #left {
+            width: 70%;
+            max-width: 70%;
+            background-color: inherit;
+        }
+            /* 161px */
+            #left .captionVertical { 
+                width: 21%;
+                min-width: 6em;
+                max-width: 6em;
             }
-            @media (max-width: 575.98px) { 
-                #pareto {background-color: orange}
-                .testin::after {content: "width: 320.00 a 575.98" }
-                
-                #contacto > div { display:grid; margin: 0px;}
-                #education2.compact {display: block;}
-                #page, section {display: block; width: 100% }
-                #notes {display: none;}
-
-                .captionVertical.reset { display: none}
-                .container-chart {width: auto; display: inline-block;}
-                #left {width: 100%;max-width:none; min-width:auto}
-                #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
-                #right {width: 100%;max-width:none; min-width:auto}
-                /* #right > .detalle {background-color: var(--bg-100)} */
-                .rtngEnd { display: inherit;}
-                .special {display: none;}
-                
-                div.rating {display: flex}
+            /* 619px */
+            #left .detalle {
+                /* background-color: var(--bg-100); */
             }
-            @media (max-width: 319.98px) { 
-                .testin::after {content: "width: <=319.98" }
-                #pareto {background-color: green}
-                
-                #education2.compact {display: block;}
-                #page, section {display: block; width: 100% }
-                #notes {display: none;}
-                #footer {display: block;}
-
-                .container-chart {width: auto; display: inline-block;}
-                #left {width: 100%;max-width:none; min-width:auto}
-                #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: left; width: 100%; max-width:none; min-width:auto}
-                .captionVertical.reset { display: none}
-                #right {width: 100%;max-width:none; min-width:auto}
-                /* #right > .detalle {background-color: var(--bg-100)} */
-                .special {display: none;}
+        /* 343px */
+        #right {
+            width: 30%;
+            padding: auto;
+            margin: auto;
+        }
+            /* 88px */
+            #right .captionVertical { 
+                width: 25%;
+                min-width: 4em;
+                max-width: 4em;
             }
-            /* @media handheld and (orientation: landscape)  {
+            /* 255px */
+            #right .detalle { 
+                padding-right: 1em;
+            }
             
-                @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
-                }
-            }
-            @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
-            */
+        .detalle {
+            /* display: block; */
+            width: 100%;
+            /* min-width: 50%; */
+            padding: 0em 0.25em;
+        }
+        /* Es el TAG, se muestra el texto en vertical */
+        .captionVertical {
+            font-family: 'Roboto';
+            font-weight: 900;
+            text-transform: capitalize;
+            font-variant: small-caps;
+            margin: initial;
+            writing-mode: vertical-rl;
+            transform: rotateZ(180deg);
         } 
+        /* Es la funcionalidad para revertir el Texto del TAG en vertical */
+        .captionVertical.reset {
+            writing-mode: unset;
+            transform: initial;
+        }
+        /* Ajustando el contenido del TAG -ancho y alto */
+        .tagCenter {
+            position: relative;
+            left: -1em;
+            text-align: end;
+            padding: 1em;
+        }
+        /* Ajustando el contenido del TAG, pero en formato slim */
+        .tagCenter.slim {
+            left: 0em;
+        }
 
 
-      @media print  { 
+
+        /* Manejo de etiquetas ocultas o visibles*/
+        /* Detalle de trabajos, o cursos. Verion resumida/extendida */
+        .extended {display: none;}
+        .compact {display: contents;}
+
+        /* Left class and Id */
+        #persona {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .nombre {display: flex;}
+
+        /* Right class and Id */
+        #education1 .detalle {display: block;}
+        #education2.compact {display: flex; }
+        .hardskill { display: block; }
+        #cursos ul {font-size: .83em;}
+        .hobbies { display: block; }
+
+        /* Footer class and Id */
+        #contact {
+            display: block;
+            padding: 1.25em 1em;
+            border-width: .19em ;
+            border-color: currentColor !important;
+            border-style: solid;
+            height: auto;
+            width: 100%;
+            text-align: center;
+            font-family: 'Roboto';
+            font-weight: 400;
+        }
+            #datosContacto ul {
+                display:flex;
+                justify-content: space-evenly;
+                vertical-align: middle;
+                font-size: initial;
+                margin: .625em 0px;
+                font-size: 110%;
+            }
+
+        /* Manejo de tamaños y bordes en imagenes, icos, media */
+        #foto img {
+            width: 6.25em;
+            height: 6.25em;
+            border-radius: 50%;
+            border: .35em solid inherit !important;
+            clip-path: circle(100% at 50% 50%);
+        }
+
+        svg.icon {
+            width: 1.5em;
+            height: 1.5em;
+            line-height: 1.5em;
+        }
+            .icon.w16 {
+                width: 1em;
+                height: 1em;
+                line-height: 1em;
+            }
+            .icon.w50 {
+                width:3.15em;
+                height:3.15em;
+                line-height:3.15em;
+            }
+            .icon.border, .icon .border {
+                margin: .25em .25em;
+                border-radius: 15%;
+                border: 2px solid currentColor;
+            }
+
+    </style>
+
+<style id="media-screen-print">
+    /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
+    /* Pareto-regla que muestra datos para los breakpoint */
+    #pareto {position: sticky; display: block; right: 0%; top: 0%;  height: auto; margin-top: 2em; z-index: 1000;}
+
+    /* // Medium devices (tablets, vertical, less than 992px) */
+    /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
+    /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
+        NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
+        CITARLO. Por ejemplo: no es lo mismo poner #left #right {tal cosa}, que ponerlo como dos reglas 
+        diferentes una debajo de la otra -¡ es raro eso !-
+    */
+    /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo comporamiento que otras prestigiosas web */
+    @media screen  { 
+        @media (min-width: 1200.00px) { 
+            #pareto {background-color: pink !important}
+            .testin::after {content: "width: >=1200.00" }
+
+            .left {width: 65% !important; max-width: 65%;}
+            .right {width: 35% !important;}
+        }
+        @media (max-width: 1199.98px) { 
+            #pareto {background-color: azure}
+            .testin::after {content: "width: 991.98 a 1199.98" }
+
+            div.rating {display: block}
+            .left {width: 60% !important; max-width: 60%;}
+            .right {width: 40% !important;}
+            .rtngEnd { display: none;}
+        }
+        @media (max-width: 991.98px) { 
+            #pareto {background-color: yellow}
+            .testin::after {content: "width: 767.98 a 991.98" }
+
+            div.rating {display: block}
+            .left {width: 65% !important; max-width: 65%;}
+            .right {width: 35% !important;}
+            .rtngEnd { display: none;}
+
+            #left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
+        }
+        @media (max-width: 767.98px)  { 
+            #pareto {background-color: red}
+            .testin::after {content: "width: 767.98 y 991.98;"}
+
+            div.rating {display: block}
+            #left {width:63% !important; max-width:none; min-width:auto}
+            #left .captionVertical {width: 35% !important; min-width: 3em !important; max-width: 3em !important;}
+            #right .captionVertical {width: 15% !important; min-width: 3em !important; max-width: 3em !important;}
+            #right {width:37% !important; max-width:none; min-width:auto}
+            .container-chart {width: auto; display: inline-block;}
+            .hobbies { display: block; text-align: center;}
+
+            .rtngEnd { display: none;}
+
+
+        }
+        @media (max-width: 575.98px) { 
+            #pareto {background-color: orange}
+            .testin::after {content: "width: 320.00 a 575.98" }
+            
+            div.rating {display: block}
+            #contacto > div { display:grid; margin: 0px;}
+            #education2.compact {display: block;}
+            #left {width:100% !important; max-width:none; min-width:auto}
+            #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
+            #right {width:100% !important; max-width:none; min-width:auto}
+            #page, section {display: block; width: 100%; }
+            .captionVertical.reset { display: none !important;}
+            .container-chart {width: auto; display: inline-block;}
+            .hobbies { display: block; text-align: center;}
+            .rating {display: inline-flex !important;}
+            .rtngEnd { display: inherit !important;}
+            
+            .special {display: none;}
+        }
+        @media (max-width: 319.98px) { 
+            .testin::after {content: "width: <=319.98" }
+            #pareto {background-color: green}
+
+            div.rating {display: block}
+            #contacto > div { display:grid; margin: 0px;}
+            #education2.compact {display: block;}
+            #left {width:100% !important; max-width:none; min-width:auto}
+            #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
+            #right {width:100% !important; max-width:none; min-width:auto}
+            #page, section {display: block; width: 100%; }
+            .captionVertical.reset { display: none !important;}
+            .container-chart {width: auto; display: inline-block;}
+            .hobbies { display: block; text-align: center;}
+            .rating {display: inline-flex !important;}
+            .rtngEnd { display: inherit !important;}
+            
+            .special {display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+        /* @media handheld and (orientation: landscape)  {
+        
+            @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
+            }
+        }
+        @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
+        */
+    } 
+    
+
+    @media print  { 
         .testin::after {content: "SALIDA IMPRESION";} 
-        #pareto {font-size: 200%; text-align: center; background-color: black; color: azure;}
+        #pareto {display: none;}
         
         /* body, .page, .page div, .page section {background-color: azure;} */
         /* ESTE KILOMBO ES MANEJO DE COLOR EN LA IMPRESION */
@@ -836,13 +773,12 @@
             break-after: avoid-page !important;
         }
         
-        }
+    }
 
-    </style>
-
+</style>
 </head>
 
-<body>
+<body class="Dark" >
     <!-- Provisoriamente lo manejo así, debo investigar como poder tenelo fuera del html -->
     <svg class="icons-lib" xmlns="http://www.w3.org/2000/svg" style="display: none !important; ">
         <symbol id="ico-battery"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
@@ -939,66 +875,66 @@
         </symbol>
     </svg>
     <!-- Bloque que se utiliza en modo testing para evaluar manejo responsivo  -->
-    <div class="base" id="pareto" style="display: none !important; ">ESTO SERÍA LA MEDIDA DE UNA HOJA A4
+    <!-- style="display: none !important; " -->
+    <div id="pareto" style="display: none !important; ">ESTO SERÍA LA MEDIDA DE UNA HOJA A4
             <h4 class="testin">Testing :</h4>
     </div>
 
-
-    <nav>
+    <nav class="primary">
         <div class="navbar">
-            <div class="dropdown">
+            <div class="dropdown ">
                 <button class="dropbtn">
-                    <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon dark"><use href="#ico-menu"/></svg></a>
+                    <a href="javascript:void(0);" onclick="myFunction()"> <svg id="menu" class="icon active"><use href="#ico-menu"/></svg></a>
                 </button>
-                <ul class="dropdown-content">
+                <div class="invert">
+                <ul class="dropdown-content secondary">
                     <li><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
                     <li><a href="#" onclick='compactExtended("extended")'>CV Completo</a></li>
-                    <li><a href="#" value="selected" onclick='modeDarkLight("light")'>Modo claro</a></li>
-                    <li><a href="#" onclick='modeDarkLight("dark")'>Modo oscuro</a></li>
+                    <li><a href="#" value="selected" onclick='setColor("body","Light")'>Modo claro</a></li>
+                    <li><a href="#" onclick='setColor("body","Dark")'>Modo oscuro</a></li>
                     <li><a href="#" onclick="acercaDe()">Acerca de</a></li>
                 </ul>
+                </div>
             </div>
         </div>
 
-        <div id="AcercaDe" class="callout">
+        <div class="centered callout">
             <div class="callout-header">Acerca de</div>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
             <div class="callout-container">
-                <ul>
-                    <li><h3>Desarrollado sólo con CSS3, JS y HTML.</h3></li>
+                    <h3>Desarrollado sólo con CSS3, JS y HTML.</h3>
+                    <div class="special"><hr> </div>
+                    <p>Características de diseño y codificación:
+                    Modo responsivo y Modo Dark/Light.
+                    <b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.
+                    Estilo especifico para las salidas de impresora con @media print {...}.
+                    <b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>.
+                    Gracias a <b><em>w3s</em></b> no necesité dedicar mucho tiempo para el navBar, ni para el diseño de este "Acerca de".</p>
                     <li class="special"><hr> </li>
-                    <h4>Características de diseño y codificación:</h4>
-                    <li>Modo responsivo y Modo Dark/Light.</li>
-                    <li><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.</li>
-                    <li>Estilo especifico para las salidas de impresora con @media print {...}.</li>
-                    <li><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>.</li>
-                    <li>Gracias a <b><em>w3s</em></b> no necesité dedicar mucho tiempo para el navBar, ni para el diseño de este "Acerca de".</li>
-                    <li class="special"><hr> </li>
-                    <li class="BwQ-light-italic"><b>Pendientes</b></li>
-                    <li> 1. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) para tomar los datos de una base de datos en MySQL y así generar este código html (proyecto iniciado pero aún sin publicar).</li>
-                    <li> 2. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño singletón, eliminar instrucciones JS puesta en la línea del html, etc.</li>
-                </ul>
+                    <b>Pendientes</b>
+                    <li>1. Aprovechar el poder del sistema de maquetado incluido en Django (Backend de Python) tomando los datos de una base de datos en MySQL para que genere este código (proyecto iniciado pero aún sin publicar).</li>
+                    <li> 2. Limpiar y mejorar código de javascript, tanto en su estructura como en diseño, por ejemplo  agregar el patrón de diseño Singletón, eliminar instrucciones JS puestas en la línea del html, etc.</li>
             </div>
         </div>
     </nav>
 
-    <main id="page" onclick="menuClose()">
+    <main id="page" class="primary" onclick="menuClose()">
 
         <div id="left" class="left">
 
-            <section id="personalInfo">
+            <section id="personalInfo" class="">
                 <div class="captionVertical reset">
                     <p class="tagCenter"><span>WR</span></p>
                 </div>
-                <div id="persona" class="detalle">
-                    <div id="foto" aria-label="se muestra foto de Walter sonriendo" ><img src="static/images/yo.png" alt="" class="Walter sonriente"></div>
+                <div id="persona" class="detalle secondary">
+                    <div id="foto" aria-label="se muestra foto de Walter sonriendo" ><img src="static/images/yo.png" alt=""></div>
                     <div class="alingC">
                         <h5>PYTHON Web Developer</h5>
                         <div class="nombre">
                             <h1>Walter</h1> <h1 class="comprimir">Romero</h1>
                         </div>
                         <h4>(nacido en 1968)</h4>
-                        <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon dark"><use href="#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
+                        <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon secondary active link"><use href="#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
                         <div class="special"><hr></div>
                     </div>
                 </div>
@@ -1008,7 +944,7 @@
                 <div class="captionVertical">
                     <p class="tagCenter"><span>Perfil</span></p>
                 </div>
-                <div class="detalle">
+                <div class="detalle secondary">
                     <p>Ocupé cargos de RRHH y disfruté mejorar procesos, generar tableros de control para la toma de decisiones, y hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. <em>Ciertamente era un Analista Universitario de Sistemas</em> en un área de recursos humanos.</p>
                     <p>Sigo postergando mis estudios de inglés, por tal motivo sólo tengo la habilidad para leerlo.</p>
                     <p>Luego de 24 años trabajando en la universidad, ahora he vuelto a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
@@ -1022,8 +958,8 @@
                 <div class="captionVertical">
                     <p class="tagCenter"><span>objetivo</span></p>
                 </div>
-                <div class="detalle">
-                    <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, innovando, mejorando . . .</em></p>
+                <div class="detalle secondary">
+                    <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, innovando, mejorando ...</em></p>
                     <p>Si tenés alguna idea o propuesta, podés contactarme (será un plus si es divertida).</p>
                     <div class="special"><hr></div>
                 </div>
@@ -1033,7 +969,7 @@
                 <div class="captionVertical">
                     <p class="tagCenter"><span>Trayectoria Laboral</span></p>
                 </div>
-                <div class="detalle">
+                <div class="detalle secondary">
                     <ul>  <!-- ITBA -->
                         <li class="myList">1993-2018 (24 años) ITBA, Universidad Privada
                             <li class="Head">
@@ -1162,7 +1098,7 @@
 
         </div> <!-- Fin left -->
         
-        <div id="right" class="right">
+        <div id="right" class="right primary">
 
             <section id="education1" class="extraEspace">
                 <div class="captionVertical">
@@ -1170,22 +1106,22 @@
                 </div>
                 <div class="detalle">
                     <ul>
-                        <p class="BwQ-regular alingR smallCaps">Especializaciones</p> 
+                        <p class="fontSpecial-regular alingR smallCaps">Especializaciones</p> 
                         <p class="special"><hr></p>
-                        <li class="BwQ-bold-italic extraEspace extended" >2022-2023 Min. de Desarrollo Productivo y CESSI</li>
+                        <li class="fontSpecial-bold-italic extraEspace extended" >2022-2023 Min. de Desarrollo Productivo y CESSI</li>
                         <li  class="extended">Programador Web full stack JS</li>
                         
-                        <li class="BwQ-bold-italic extraEspace">2021–2022 EducaciónIT</li>
+                        <li class="fontSpecial-bold-italic extraEspace">2021–2022 EducaciónIT</li>
                         <li>Full stack Python developer</li>
                         
-                        <p class="BwQ-regular alingR extraEspace smallCaps">Posgrado</p> 
+                        <p class="fontSpecial-regular alingR extraEspace smallCaps">Posgrado</p> 
                         <p class="special"><hr></p>
-                        <li class="BwQ-bold-italic extraEspace">2007–2012 UP</li>
+                        <li class="fontSpecial-bold-italic extraEspace">2007–2012 UP</li>
                         <li>Maestría en Dirección de Empresas</li>
                         
-                        <p class="BwQ-regular alingR extraEspace smallCaps">Grado</p> 
+                        <p class="fontSpecial-regular alingR extraEspace smallCaps">Grado</p> 
                         <p class="special"><hr></p>
-                        <li class="BwQ-bold-italic extraEspace">1996–2000 UCALP</li>
+                        <li class="fontSpecial-bold-italic extraEspace">1996–2000 UCALP</li>
                         <li>Analista Universitario de Sistemas</li>
                     </ul> <!-- Fin formales -->
                 </div> <!-- Fin detalle -->
@@ -1195,8 +1131,8 @@
                 <div class="captionVertical">
                     <p class="tagCenter slim">Cursos y Seminarios</p>
                 </div>
-                <div class="detalle">
-                    <ul class="BwQ-regular-italic alingL">
+                <div id="cursos" class="detalle">
+                    <ul class="fontSpecial-regular-italic alingL">
                         <div class="special"><hr></div>
                             <li><b>sep-21</b>: Webinar Gestión de Proyectos con Scrum</li>
                             <li><b>ago-21</b>: Webinar Gnu/Linux</li>
@@ -1258,7 +1194,7 @@
                   
                         </div>  <!-- container-chart -->
         
-                        <div class="container-chart" id="django" aria-label="Django" aria-value="40">
+                        <div class="container-chart" id="django" aria-label="Django" aria-value="25">
                             
                             <div class="donut-chart-block block-chart">
                             <div class="donut-chart">
@@ -1440,19 +1376,19 @@
                             <div class="rtngMiddle">
                                 <div class="star-container">
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 </div>
                             </div>
@@ -1471,19 +1407,19 @@
                             <div class="rtngMiddle">
                                 <div class="star-container">
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 </div>
                             </div>
@@ -1501,19 +1437,19 @@
                         <div class="rtngMiddle">
                             <div class="star-container">
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             </div>
                         </div>
@@ -1531,19 +1467,19 @@
                             <div class="rtngMiddle">
                                 <div class="star-container">
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 <span class="rtngIcoStar" >
-                                    <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                    <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                                 </span>
                                 </div>
                             </div>
@@ -1561,19 +1497,19 @@
                         <div class="rtngMiddle">
                             <div class="star-container">
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             </div>
                         </div>
@@ -1591,19 +1527,19 @@
                         <div class="rtngMiddle">
                             <div class="star-container">
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             <span class="rtngIcoStar" >
-                                <svg class="icon w24"><use href="#ico-handshake"/> </svg>
+                                <svg class="icon w24 disable"><use href="#ico-handshake"/> </svg>
                             </span>
                             </div>
                         </div>
@@ -1613,6 +1549,7 @@
                         </div>
                         </div>  <!-- rating -->
 
+                        <div class="special"><hr></div>
                     </div> <!-- Fin softskill-->
 
                 </div> <!-- Fin detalle -->
@@ -1624,12 +1561,11 @@
                 </div>
                 <div class="detalle">
                     <div class="hobbies">
-                        <div class="special"><hr></div>
-                        <svg class="icon light w50 border" aria-label="Padel"> <use href="#ico-padel"></svg>
-                        <svg class="icon light w50 border" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
-                        <svg class="icon light w50 border" aria-label="viajar" > <use href="#ico-flight"></svg>
-                        <svg class="icon light w50 border" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
-                        <svg class="icon light w50 border" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
+                        <svg class="icon w50 border active" aria-label="Padel"> <use href="#ico-padel"></svg>
+                        <svg class="icon w50 border active" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
+                        <svg class="icon w50 border active" aria-label="viajar"> <use href="#ico-flight"></svg>
+                        <svg class="icon w50 border active" aria-label="ayudar, asistir, colaborar"> <use href="#ico-help"></svg>
+                        <svg class="icon w50 border active" aria-label="cocinar, agazajar"> <use href="#ico-grill"></svg>
                     </div>
                 </div> <!-- Fin detalle -->
             </section>  <!-- Fin hobbies -->
@@ -1638,23 +1574,23 @@
 
     </main>  <!-- Fin page -->
 
-    <footer id="footer" class="salto">
+    <footer id="footer" class="salto secondary">
         <section id="contact">
             <div id="title" class="alingC">
                 <h2>Contacto</h2>
                 <div class="special"><hr></div>
             </div>
 
-            <div id="datosContacto" class="BwQ-bold-italic extraEspace alingC">
+            <div id="datosContacto" class="fontSpecial-bold-italic extraEspace alingC">
                 <ul>
-                    <li><svg id="whatsapp" class="icon dark"><use href="#ico-whatsapp"/> </svg>
+                    <li><svg id="whatsapp" class="icon active"><use href="#ico-whatsapp"/> </svg>
                      054-11-xxxx-xxxx</li>
-                    <li><svg id="email" class="icon dark"><use href="#ico-email"/> </svg>
+                    <li><svg id="email" class="icon active"><use href="#ico-email"/> </svg>
                     waldrom68@gmail.com</li>
-                    </ul>
+                </ul>
                 <ul>
-                    <li><svg class="icon dark"><use href="#ico-linkedin"/></svg> /in/walter-romero1968</li> 
-                    <li><svg class="icon dark"><use href="#ico-github"/> </svg> waldrom68.github.io</li> 
+                    <li><svg class="icon active"><use href="#ico-linkedin"/></svg> /in/walter-romero1968</li> 
+                    <li><svg class="icon active"><use href="#ico-github"/> </svg> waldrom68.github.io</li> 
                 </ul>
             </div> <!-- Fin detalle -->
         </section> <!-- Fin contact -->
@@ -1667,64 +1603,6 @@
 <script src="static\js\widget.js"></script> 
 <!-- Obtengo el codigo para darle funcionalidad al menu y al acercaDe -->
 <script src="static\js\menuNav.js"></script> 
-
-<script id="darkLight_OLD">
-    // Estos colores deben ser definidos en el @media del style.id=darkLight //
-    function setcolor(theme) {
-        console.log(theme)
-        let BGStyle = getComputedStyle(document.documentElement);
-        if (theme=="dark") {
-            console.log("clikeo en dark")
-            
-            let bg = BGStyle.getPropertyValue('--bg-70-dark');
-            let fondo = BGStyle.getPropertyValue('--bg-100');
-            let text = BGStyle.getPropertyValue('--color-text');
-            let resaltado = BGStyle.getPropertyValue('--acento');
-            
-            document.body.style.setProperty("--bg-100", text);
-            document.body.style.setProperty("--color-text", fondo);
-            document.body.style.setProperty("--bg-70", bg);
-            
-            document.body.style.setProperty("--acento", resaltado);
-            
-        } 
-        else {
-            let bg = BGStyle.getPropertyValue('--bg-70-light');
-            document.body.style.setProperty("--bg-70", bg);
-
-            let text = BGStyle.getPropertyValue('--color-text');
-            document.body.style.setProperty("--color-text", text);
-
-            let fondo = BGStyle.getPropertyValue('--bg-100');
-            document.body.style.setProperty("--bg-100", fondo);
-            
-            let resaltado = BGStyle.getPropertyValue('--acento');
-            document.body.style.setProperty("--acento", resaltado);
-
-        }
-        menuClose();
-    }
-
-    function modeDarkLight(theme) {
-    const meta = document.querySelector('meta[name="prefers-color-scheme"]');
-    let colorScheme = theme;
-    
-    
-        document.documentElement.style.colorScheme = colorScheme; 
-        meta.content = colorScheme;
-
-        if (window.frames.length > 0) {
-            for (let index = 0; index < window.frames.length; index++) {
-                const root = window.frames[index].document.documentElement;;
-                root.style.colorScheme = colorScheme;
-            }
-        } else {
-            document.querySelector('meta[name="prefers-color-scheme"]').content = colorScheme;
-            }
-        setcolor(document.querySelector('meta[name="prefers-color-scheme"]').content);
-    }
-    setcolor(document.querySelector('meta[name="prefers-color-scheme"]').content);
-</script>  <!-- darkLight -->
 
 <script id="compactExtended">
         function initNone() {  
@@ -1758,7 +1636,7 @@
 </script>  <!-- compactExtended -->
 
 
-<script id="NEWdarkLight">
+<script id="darkLight">
 
     function normaliceStr(text) {
         return text.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '').trim()
@@ -1812,6 +1690,5 @@ theme = getPaletMode()
 setColor("body", theme)
 
 </script>
-
 
 </html>
