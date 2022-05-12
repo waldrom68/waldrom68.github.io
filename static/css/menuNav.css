@@ -1,27 +1,27 @@
 
-    /* <style id="menu"> */
-    /* Barra de navegación */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        text-align: left;
-        height: 2em;
-        line-height: 2em;
-        width: 100%;
-        background-color: inherit !important;
-        /* background-color: var(--bg-70); */
-        opacity: .9;
-        /* max-width: var(--anchoPage); */
-        color: currentColor;
+  /* <style id="menu"> */
+  /* Barra de navegación */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: left;
+    height: 2em;
+    line-height: 2em;
+    width: 100%;
+    background-color: inherit !important;
+    /* background-color: var(--bg-70); */
+    opacity: .9;
+    /* max-width: var(--anchoPage); */
+    color: currentColor;
 
-        z-index: 2000;
-        }
-        .navbar svg:link, .navbar a:visited, .navbar a:active  {
-            text-decoration: none;
-        }
+    z-index: 2000;
+    }
+    .navbar svg:link, .navbar a:visited, .navbar a:active  {
+        text-decoration: none;
+    }
 
-        /* Links inside the navbar */
+    /* Links inside the navbar */
     .navbar a {
       float: left;
       text-align: center;
@@ -85,15 +85,16 @@
         .callout {
             position: fixed;
             font-family: 'Quinta-regular';
-            width: 80%;
-            height: 80%;
-            /* top: 2em; */
+            width: 50%;
+            height: 70%;
+            top: 0;
             max-width: 80%;
-            max-height: 80%;
+            max-height: 70%;
             text-align: left !important;
             display: none;
             background-color: inherit !important;
             box-shadow: .5em 0.5em .5em currentColor !important;
+            overflow: auto;
             z-index: 2000;
         }
 
@@ -107,16 +108,16 @@
         }
 
         .callout-container {
-            display: block;
-                height: 90%;
-                width: 100%;
-                padding: 15px 10px;
-                background-color: unset !important;
-                color: inherit !important;
-                padding-bottom: 2em;
-                overflow: auto;
-                
-            }
+          display: block;
+          width: 90%;
+          height: 80%;
+          padding: 15px 10px;
+          background-color: unset !important;
+          color: inherit !important;
+          /* padding-bottom: 2em; */
+          margin: auto;
+            
+        }
 
             .closebtn {
                 position: absolute;

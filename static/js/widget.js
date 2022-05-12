@@ -1,37 +1,56 @@
 
+
 {/* <script id="myListAction"> */}
-    (function() {
 
-        function initNone() {  
-            // oculto el listado que inicialmente va colapsado
-
+function initNone(set) {  
+    // oculto el listado que inicialmente va colapsado
+    if (set == "compact") {
+        [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
+            e.classList.add("None");
+            // e.parentElement.textContent = "( ver mas )"
+        });
+    } else 
+        // muestro  el listado que estaba colapsado
+        if (set == "extended") {
             [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
-                e.classList.add("None");
-            }) };
+                e.classList.remove("None");
+            });
+        }
+};
 
-        function upLi(el) {
+(function() {
 
-            if (el.nextElementSibling.className == "") { 
-                // Hice click sobre uno visible, cierro todo
-                initNone();
+    function upLi(el) {
+    // Actualizo el estado del elemento de la lista, colapsado o visible
+        if (el.nextElementSibling.className == "") { 
+            // Hice click sobre uno visible, lo colapso
+            
+            el.querySelector("sub").textContent = " (ver mas)"
+            let list = el.parentElement.children
+            for (var i = 1; i < list.length; i++) {
+                // Muestro el elemento a expandir
+                list[i].classList.toggle("None");
+            }
 
-            } else {  
-                // Cierro todos y MUESTRO solo el elemento clickeado
-                initNone();
-                let list = el.parentElement.children
-                for (var i = 1; i < list.length; i++) {
-                    // Muestro el elemento a expandir
-                    list[i].classList.toggle("None");
-                }
+        } else {  
+            // Hice click sobre uno colapsado, lo muestro
+
+            el.querySelector("sub").textContent = " (ver menos)"
+            let list = el.parentElement.children
+            for (var i = 1; i < list.length; i++) {
+                // Muestro el elemento a expandir
+                list[i].classList.toggle("None");
             }
         }
-        initNone();
-        [].forEach.call(document.querySelectorAll(".myList ~ li.expand ul span"), function(e) {
-            e.addEventListener("click", function() {
-            upLi(e);
-            });
-        })
-    } ());
+    }
+    // initNone();
+    [].forEach.call(document.querySelectorAll(".myList ~ li.expand ul span"), function(e) {
+        e.addEventListener("click", function() {
+        upLi(e);
+        });
+    });
+    
+} ());
 // </script>  <!-- treeListAction -->
 
 {/* <script id="rating"> */}

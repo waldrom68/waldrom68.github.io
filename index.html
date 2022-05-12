@@ -89,14 +89,20 @@
             /* ATRIBUTO COMUN, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
             --acento: #00ff00;  /* --progress-color */
             --acento-bg: var(--gray-600) !important;  /* 5 */
-            
+            --atencion:rgb(199, 199, 45) ;
+            color:rgb(199, 199, 45)
         }
 
         .invert {
             background-color: var(--body-color);
             color: var(--body-bg);
         }
-
+        .atencion { 
+            color: inherit; 
+            filter: saturate(8);
+            font-size: 100%;
+        }
+        .atencion.click {content: "jeje";}
         svg.icon.destacado {
             fill: var(--destacado);
             stroke: var(--destacado);
@@ -173,7 +179,7 @@
             --primary-active-bg: transparent; --primary-active: #85895e; /* color 4 */
             --primary-hover-bg: transparent; --primary-hover: #585c34;
 
-            --secondary-bg: var(--gray-400); --secondary-color: var(--gray-900);
+            --secondary-bg: rgb(242, 242, 230); --secondary-color: var(--gray-900);
             --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
             --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
             --secondary-active-bg: transparent; --secondary-active: var(--black);
@@ -354,6 +360,7 @@
         .alingL {text-align: left;}
         .alingR {text-align: right;}
         .alingC {text-align: center;}
+        .smallCaps {font-variant: small-caps;}
 
         /* Centrando todo el contenido -ancho y alto */
         .centered {
@@ -456,7 +463,7 @@
             min-height: 100%;
             font-size: 110%;
             line-height: 110%;
-            padding: 2em 0em;
+            /* padding: 0em 0em 0em 1em; */
         }
 
         /* 791px */
@@ -475,6 +482,7 @@
             /* 619px */
             #left .detalle {
                 /* background-color: var(--bg-100); */
+                padding-left: .5em;
             }
         /* 343px */
         #right {
@@ -497,12 +505,14 @@
             /* display: block; */
             width: 100%;
             /* min-width: 50%; */
-            padding: 0em 0.25em;
+            /* margin: 0em 0.5em; */
+            /* padding-right: 0em 1em; */
         }
         /* Es el TAG, se muestra el texto en vertical */
         .captionVertical {
             font-family: 'Roboto';
             font-weight: 900;
+            font-size: 120%;
             text-transform: capitalize;
             font-variant: small-caps;
             margin: initial;
@@ -546,9 +556,9 @@
         /* Right class and Id */
         #education1 .detalle {display: block;}
         #education2.compact {display: flex; }
-        .hardskill { display: block; }
+        .hardskill { display: block; text-align: center;}
         #cursos ul {font-size: .83em;}
-        .hobbies { display: block; }
+        .hobbies { display: block; text-align: center;}
 
         /* Footer class and Id */
         #contact {
@@ -604,184 +614,333 @@
 
     </style>
 
-<style id="media-screen-print">
-    /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
-    /* Pareto-regla que muestra datos para los breakpoint */
-    #pareto {position: sticky; display: block; right: 0%; top: 0%;  height: auto; margin-top: 2em; z-index: 1000;}
-
-    /* // Medium devices (tablets, vertical, less than 992px) */
-    /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
-    /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
-        NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
-        CITARLO. Por ejemplo: no es lo mismo poner #left #right {tal cosa}, que ponerlo como dos reglas 
-        diferentes una debajo de la otra -¡ es raro eso !-
-    */
-    /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo comporamiento que otras prestigiosas web */
-    @media screen  { 
-        @media (min-width: 1200.00px) { 
-            #pareto {background-color: pink !important}
-            .testin::after {content: "width: >=1200.00" }
-
-            .left {width: 65% !important; max-width: 65%;}
-            .right {width: 35% !important;}
+    <style id="media-screen&print">
+        /* CONTENEDOR PROVISORIO, SOLO PARA TESTING */
+        /* Pareto-regla que muestra datos para los breakpoint */
+        #pareto {
+            display: block; 
+            height: auto; 
+            margin-top: 2em; 
+            position: sticky; 
+            right: 0%; 
+            top: 0%;  
+            z-index: 1000;
         }
-        @media (max-width: 1199.98px) { 
-            #pareto {background-color: azure}
-            .testin::after {content: "width: 991.98 a 1199.98" }
 
-            div.rating {display: block}
-            .left {width: 60% !important; max-width: 60%;}
-            .right {width: 40% !important;}
-            .rtngEnd { display: none;}
-        }
-        @media (max-width: 991.98px) { 
-            #pareto {background-color: yellow}
-            .testin::after {content: "width: 767.98 a 991.98" }
-
-            div.rating {display: block}
-            .left {width: 65% !important; max-width: 65%;}
-            .right {width: 35% !important;}
-            .rtngEnd { display: none;}
-
-            #left .captionVertical {width: 25%; min-width: 4em; max-width: 4em;}
-        }
-        @media (max-width: 767.98px)  { 
-            #pareto {background-color: red}
-            .testin::after {content: "width: 767.98 y 991.98;"}
-
-            div.rating {display: block}
-            #left {width:63% !important; max-width:none; min-width:auto}
-            #left .captionVertical {width: 35% !important; min-width: 3em !important; max-width: 3em !important;}
-            #right .captionVertical {width: 15% !important; min-width: 3em !important; max-width: 3em !important;}
-            #right {width:37% !important; max-width:none; min-width:auto}
-            .container-chart {width: auto; display: inline-block;}
-            .hobbies { display: block; text-align: center;}
-
-            .rtngEnd { display: none;}
-
-
-        }
-        @media (max-width: 575.98px) { 
-            #pareto {background-color: orange}
-            .testin::after {content: "width: 320.00 a 575.98" }
-            
-            div.rating {display: block}
-            #contacto > div { display:grid; margin: 0px;}
-            #education2.compact {display: block;}
-            #left {width:100% !important; max-width:none; min-width:auto}
-            #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
-            #right {width:100% !important; max-width:none; min-width:auto}
-            #page, section {display: block; width: 100%; }
-            .captionVertical.reset { display: none !important;}
-            .container-chart {width: auto; display: inline-block;}
-            .hobbies { display: block; text-align: center;}
-            .rating {display: inline-flex !important;}
-            .rtngEnd { display: inherit !important;}
-            
-            .special {display: none;}
-        }
-        @media (max-width: 319.98px) { 
-            .testin::after {content: "width: <=319.98" }
-            #pareto {background-color: green}
-
-            div.rating {display: block}
-            #contacto > div { display:grid; margin: 0px;}
-            #education2.compact {display: block;}
-            #left {width:100% !important; max-width:none; min-width:auto}
-            #left .captionVertical, #right .captionVertical {display: flex; writing-mode: unset; transform: initial; height: 2em; align-items: center; justify-content: center; width: 100%; max-width:none; min-width:auto}
-            #right {width:100% !important; max-width:none; min-width:auto}
-            #page, section {display: block; width: 100%; }
-            .captionVertical.reset { display: none !important;}
-            .container-chart {width: auto; display: inline-block;}
-            .hobbies { display: block; text-align: center;}
-            .rating {display: inline-flex !important;}
-            .rtngEnd { display: inherit !important;}
-            
-            .special {display: none;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-        /* @media handheld and (orientation: landscape)  {
-        
-            @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
-            }
-        }
-        @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
+        /* // SCREEN devices */
+        /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
+        /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
+            NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
+            CITARLO. Por ejemplo: no es lo mismo poner #left #right {tal cosa}, que ponerlo como dos reglas 
+            diferentes una debajo de la otra -¡ es raro eso !-
         */
-    } 
-    
+        /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo comporamiento que otras prestigiosas web */
+        @media screen  { 
+            @media (min-width: 1200.00px) { 
+                #pareto { background-color: pink !important}
+                .testin::after { content: "width: >=1200.00" }
 
-    @media print  { 
-        .testin::after {content: "SALIDA IMPRESION";} 
-        #pareto {display: none;}
-        
-        /* body, .page, .page div, .page section {background-color: azure;} */
-        /* ESTE KILOMBO ES MANEJO DE COLOR EN LA IMPRESION */
-        /* aqui hay un problema de base en los estilos de cada objeto -ver las variables */
-        /* html, body, * {background-color: white;color: black;}
-        #left .captionVertical , #right {background-color: white;color: black;}
-        #section1-chart .item-chart {background-color: rgba(246, 164, 82,1);}
-        #section2-chart .item-chart {background-color: white;}
-        .rtngIcoStar.checked {fill:rgba(246, 164, 82,1);}
-        #contact {border-color: black}
-        body {border: .125em solid lightgray;}
-        #left .captionVertical , #right {border-width: 0px .125em; border-color: lightgray; border-style: solid;}
-        .donut-chart .center-chart {background-color: white;color: black;}
-        .captionVertical.reset > {border:0 .125em solid lightgray; }
-        .icon.dark, .icon.light { fill:black} */
-        /* FIN MANEJO DEL COLOR EN LA IMPRESION */
-        
-        html, body { height: 98%; }
-        body, * {font-size: 12pt; line-height: 12pt;}
-        
-        body {
-            font-family: Arial, Helvetica, sans-serif; 
-            height: auto ;
-            max-width: 100%;
-            /* margin: 10.205px 6.803px 7.181px 6.803px; */
-            width: var(--anchoPage);
-            max-width: 1123px; 
+                #left {
+                    max-width: 70%;
+                    width: 70% !important; 
+                }
+                #right { width: 35% !important;}
+            }
+            @media (min-width: 992px) and (max-width: 1199.99px) { 
+                #pareto { background-color: azure}
+                .testin::after { content: "width: 992 a 1199.99" }
+
+                #left {
+                    width: 65% !important; 
+                    max-width: 65%;
+                }
+                #right { width: 35% !important;}
+                .icon.w50 {
+                    height: 3em; 
+                    line-height: 3em; 
+                    margin-top: 2em;
+                    width: 3em;
+                }
+                .rating { display: block}
+                .rtngEnd { display: none;}
+            }
+            @media (min-width: 768px) and (max-width: 991.99px) { 
+                #pareto { background-color: yellow}
+                .testin::after { content: "width: 768 a 991.99" }
+
+                #left {
+                    max-width: 65%;
+                    width: 65% !important; 
+                }
+                #left .captionVertical {
+                    max-width: 4em;
+                    min-width: 4em; 
+                    width: 25%; 
+                }
+                #right { width: 35% !important;}
+                .icon.w50 {
+                    height: 1.5em; 
+                    line-height: 1.5em; 
+                    margin-top: 0em;
+                    width: 1.5em;
+                }
+                .rating { display: block}
+                .rtngEnd { display: none;}
+
+            }
+            @media (min-width: 576px) and (max-width: 767.99px)  { 
+                #pareto { background-color: red}
+                .testin::after { content: "width: 576 y 767.99;"}
+
+                #left {
+                    max-width: none; 
+                    min-width: none;
+                    width: 65% !important; 
+                }
+                #left .captionVertical {
+                    max-width: 3em !important;
+                    min-width: 3em !important; 
+                    width: 10% !important; 
+                }
+                #persona #datos { padding-left: 0;}
+                #right {
+                    max-width: none; 
+                    min-width: none; 
+                    width: 35% !important; 
+                }
+                #right .captionVertical {
+                    max-width: 2em !important;
+                    min-width: 2em !important; 
+                    width: 10% !important; 
+                }
+                .callout { 
+                    width: 80%;
+                    height: 80%;
+                }
+                .container-chart {
+                    display: inline-block;
+                    width: auto; 
+                }
+                .hobbies { 
+                    display: block; 
+                    text-align: center;
+                }
+                .icon.w50 {
+                    height: 3em; 
+                    line-height: 3em; 
+                    margin-top: 1em;
+                    width: 3em;
+                }
+                .captionVertical {font-size: inherit !important;}
+                .icon.w50 {
+                    height: 2.5em; 
+                    line-height: 2.5em; 
+                    margin-top: 0em;
+                    width: 2.5em;
+                }
+                .nombre {display: block !important;}
+                .rating {display: block}
+                .rtngEnd { display: none;}
+
+
+            }
+            @media (min-width: 320px) and (max-width: 575.99px) { 
+                #pareto { background-color: orange}
+                .testin::after { content: "width: 320.00 a 575.99" }
+                
+                /* Estilos a modificar */
+                section {
+                    display: block; 
+                    width: 100%;
+                }
+                #datosContacto > ul { 
+                    display: block !important; 
+                    margin: 0px;
+                }
+                #education2.compact { display: block;}
+                #left {
+                    max-width: none; 
+                    min-width: auto;
+                    width: 100% !important; 
+                }
+                #left .captionVertical {
+                    align-items: center; 
+                    display: flex; 
+                    justify-content: center; 
+                    margin: auto !important;
+                    max-width: none; 
+                    min-width: auto; 
+                    transform: initial !important;
+                    width: 100%; 
+                    writing-mode: unset; 
+                }
+                #page {
+                    display: block; 
+                    width: 100%; 
+                }
+                #persona #datos { padding-left: 0;}
+                #right {width:100% !important; max-width:none; min-width:auto}
+                #right .captionVertical {
+                    align-items: center; 
+                    display: flex; 
+                    justify-content: center; 
+                    transform: initial !important; 
+                    margin: auto !important;
+                    max-width: none; 
+                    min-width: auto; 
+                    width: 100%; 
+                    writing-mode: unset; 
+                }
+                .callout { 
+                    width: 80%;
+                    height: 80%;
+                }
+                .captionVertical.reset { display: none !important;}
+                .container-chart {
+                    display: inline-block;
+                    width: auto; 
+                }
+                .hobbies { display: block; 
+                    text-align: center;
+                }
+                .icon.w50 {
+                    height: 3em; 
+                    line-height: 3em; 
+                    margin-top: 1em;
+                    width: 3em;
+                }
+                .rating { display: inline-flex !important;}
+                .rtngEnd { display: none !important;}
+                .special { display: none;}
+                .tagCenter { min-width: max-content;}
+            }
+            @media (min-width: 0px) and (max-width: 319.99px) { 
+                #pareto { background-color: green}
+                .testin::after { content: "width: <=319.99" }
+
+                /* Estilos a modificar */
+                section {
+                    display: block; 
+                    width: 100%;
+                }
+                #datosContacto > ul { 
+                    display: block !important; 
+                    margin: 0px;
+                }
+                #education2.compact { display: block;}
+                #left {
+                    max-width: none; 
+                    min-width: auto;
+                    width: 100% !important; 
+                }
+                #left .captionVertical {
+                    align-items: center; 
+                    display: flex; 
+                    justify-content: center; 
+                    margin: auto !important;
+                    max-width: none; 
+                    min-width: auto; 
+                    transform: initial !important;
+                    width: 100%; 
+                    writing-mode: unset; 
+                }
+                #page {
+                    display: block; 
+                    width: 100%; 
+                }
+                #persona #datos { padding-left: 0;}
+                #right {width:100% !important; max-width:none; min-width:auto}
+                #right .captionVertical {
+                    align-items: center; 
+                    display: flex; 
+                    justify-content: center; 
+                    transform: initial !important; 
+                    margin: auto !important;
+                    max-width: none; 
+                    min-width: auto; 
+                    width: 100%; 
+                    writing-mode: unset; 
+                }
+                .callout { 
+                    width: 80%;
+                    height: 80%;
+                }
+                .captionVertical.reset { display: none !important;}
+                .container-chart {
+                    display: inline-block;
+                    width: auto; 
+                }
+                .hobbies { display: block; 
+                    text-align: center;
+                }
+                .icon.w50 {
+                    height: 3em; 
+                    line-height: 3em; 
+                    margin-top: 1em;
+                    width: 3em;
+                }
+                .nombre {display: block !important;}
+                .rating { display: block !important;}
+                .rtngEnd { display: none !important;}
+                .special { display: none;}
+                .tagCenter { 
+                    font-size: initial;
+                    min-width: max-content;
+                }
+
+            }
+        } 
+
+        @media print  { 
+            #pareto { display: none;}
+            .testin::after { content: "SALIDA IMPRESION";} 
+
+            html, body { height: 98%; }
+            body, * { 
+                font-size: 12pt; 
+                line-height: 12pt;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif; 
+                height: auto ;
+                max-width: 1123px; 
+                width: var(--anchoPage);
+            }
+            nav { display: none;}
+            svg.icon.w50 {fill: black;}
+            #education2.compact { display: flex;}
+            #footer {display: inline-flex; width: 100%;}
+            #footer #contact { padding: 0;}
+            #footer #title { display: none;}
+            #footer #datosContacto ul {
+                display: inline-flex; 
+                margin:0;
+                width: auto;
+            }
+            #footer #datosContacto ul li {
+                padding-left: 2.5em;
+                width: auto; 
+            }
+            
+            .compact { display: block;}
+            .hardskill { display: block; }
+            .rating {margin-bottom: 0em; }
+
+            @page {
+                margin: 5mm 5mm 5mm 5mm;
+                orphans: 1;
+                size: 210mm 297mm;
+                widows: 0;
+            }
+            
+            .salto { 
+                break-after: avoid-page !important;
+                page-break-inside: avoid !important;
+            }
+            
         }
-        
-        /* #hobbies, , .captionVertical.reset { display: none} */
-        nav { display: none;}
-        .compact { display: block;}
-        .hardskill { display: block; }
-        #education2.compact {display: flex;}
-        #footer {display: inline-flex; width: 100%;}
-        #footer #title {display: none;}
-        #footer #contact {padding: 0;}
-        #footer #datosContacto ul {display: inline-flex; width: auto;margin:0;}
-        #footer #datosContacto ul li {width: auto; padding-left: 2.5em;}
 
-        /* .icon.dark, .icon.light { fill:black} */
-
-        @page {
-        size: 210mm 297mm;
-        margin: 5mm 5mm 5mm 5mm;
-        orphans: 1;
-        widows: 0;
-        }
-        
-        .salto { 
-            page-break-inside: avoid !important;
-            break-after: avoid-page !important;
-        }
-        
-    }
-
-</style>
+    </style>
 
 </head>
 
@@ -883,12 +1042,12 @@
     </svg>
     <!-- Bloque que se utiliza en modo testing para evaluar manejo responsivo  -->
     <!-- style="display: none !important; " -->
-    <div id="pareto" style="display: none !important; ">ESTO SERÍA LA MEDIDA DE UNA HOJA A4
-            <h4 class="testin">Testing :</h4>
+    <div id="pareto">
+            <h4 class="testin" style="display: none !important; ">Testing :</h4>
     </div>
 
     <nav class="primary">
-        <div class="navbar">
+        <div class="navbar primary">
             <div class="dropdown ">
                 <button class="dropbtn">
                     <a href="javascript:void(0);" onclick="myFunctionMenuNav()"> <svg id="menu" class="icon active"><use href="#ico-menu"/></svg></a>
@@ -897,8 +1056,8 @@
                 <ul class="dropdown-content secondary">
                     <li><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
                     <li><a href="#" onclick='compactExtended("extended")'>CV Completo</a></li>
-                    <li><a href="#" value="selected" onclick='setColor("body","Light")'>Modo claro</a></li>
-                    <li><a href="#" onclick='setColor("body","Dark")'>Modo oscuro</a></li>
+                    <li><a href="#" value="selected" onclick='setColor("body","Light");menuClose()'>Modo claro</a></li>
+                    <li><a href="#" onclick='setColor("body","Dark"); menuClose()'>Modo oscuro</a></li>
                     <li><a href="#" onclick="acercaDe()">Acerca de</a></li>
                 </ul>
                 </div>
@@ -909,18 +1068,22 @@
             <div class="callout-header">Acerca de</div>
             <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
             <div class="callout-container">
-                <h3>Desarrollo frontend con HTML, CSS3 y JS.</h3>
-                <h4><em>Modo responsivo y modo Dark/Light.</em></h4>
+                <h3><em>CV digital</em></h3>
+                <code>Versión:              2.00.1</code><br>
+                <code>Fecha actualización:  2022-Mayo</code><br>
+                <code>Lenguaje del código:  HTML, CSS3 y JS (frontend)</code>
+                
+                <div class="special"><hr></div>
+                <h3 class="alingC smallCaps" >Características</h3>
+                <h4 class="extraEspace">Curriculum Vitae: Resumido o completo, <em>modo full-responsivo y opción Claro/Oscuro.</em></h4>
                 <br>
-                    <h4>Características:</h4>
-                   
-                    <p><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incluyéndolos dentro del body como un <em>&ltsymbol&gt</em> para incrustar el código vectorial, e invocarlos usando su <b><em>Id</em></b>.</p>
-                    <p>Estilo especifico para las salidas de impresora con @media print {...}.</p>
+                    <p><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incrustando el código vectorial dentro de un <em>&ltsymbol&gt</em> e invocarlos usando su <b><em>Id</em></b>.</p>
                     
-                    <p><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, beatae ipsum similique ducimus totam porro velit architecto eaque blanditiis minima laborum repudiandae a! Saepe rerum cumque sapiente, ipsam in animi.</p>
-                    <br>
-                    <h4>Pendientes:</h4>
-                    <p>Limpiar y mejorar código de javascript, tanto en su estructura como en diseño.</p>
+                    <p><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>. </p>
+                    <div class="special extraEspace"><hr></div>
+                    <h3 class="fontSpecial-light-italic alingC">Autor: Walter R. (waldrom68@gmail.com)</h3>
+                    <div class="special"><hr></div>
+
             </div>
         </div>
     </nav>
@@ -988,7 +1151,7 @@
                                 </ul>
                             </li>
                             <li class="expand"> Resolución de problemas y relaciones humanas
-                                <ul><span>Creación de procedimientos, trabajo en equipo y negociación</span>
+                                <ul><span>Creación de procedimientos, trabajo en equipo y negociación<em class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>Procesos: Alta laboral - Licencias - Búsqueda y selección de Personal - Gestión de desvinculaciones.</li> 
                                     <li>Propuesta de mejora e implementación del proceso “Personal mayor de 59 años.”</li>
                                     <li>Participación activa en la implementación del control de acceso.</li>
@@ -996,19 +1159,19 @@
                                 </ul>
                             </li>
                             <li class="expand extraEspace">Otras funciones, relacionadas con IT
-                                <ul><span>Desarrollo de software con <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a></span>
+                                <ul><span>Desarrollo de software con <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a><em class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>Gestión y almacenamiento digital de datos históricos (salarios del personal entre 1959-1989).</li>
                                     <li>Facturación por Servicios.</li>
                                     <li>Confección de contratos laborales automáticos.</li>
                                 </ul>
-                                <ul><span>Elaboración de dashboard, reporting y fases iniciales de Data mining con aproximación a un modelo de minería (SQL, Excel o Power Bi)</span>
+                                <ul><span>Elaboración de dashboard, reporting y fases iniciales de Data mining con aproximación a un modelo de minería (SQL, Excel o Power Bi)<em class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>Indicadores de presentismo y presencialidad.</li>
                                     <li>Matriz salarial general y organigrama.</li>
                                     <li>Validación de consistencia en las liquidaciones antes de liberar pagos.</li>
                                     <li>Generación de tableros de control y reportes gerenciales.</li>
                                     <li>Análisis de evoluciones salariales desde el 2005-2017.</li>
                                 </ul>
-                                <ul><span>Implementaciones y testing de sistemas de terceros</span>
+                                <ul><span>Implementaciones y testing de sistemas de terceros<em class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>Sueldos UNITECH S.A., incluida la codificación de algoritmos para los conceptos.</li>
                                     <li>Adecuación de nuevas políticas salariales.</li>
                                     <li>Sueldos BEJERMAN.</li>
@@ -1027,12 +1190,12 @@
                                 </ul>
                             </li>
                             <li class="expand">Funciones y responsabilidades
-                                <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)</span>
+                                <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)<em class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>Gestión de Ventas y control de stock.</li>
                                     <li>Liquidación de Sueldos para gremios de UOCRA y UOYPE.</li>
                                     <li>Generador y Administrador de documentos para escribanías.</li>
                                 </ul>
-                                <ul><span>Algoritmos desafiantes y adaptación de Sistemas</span>
+                                <ul><span>Algoritmos desafiantes y adaptación de Sistemas<em class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>De búsqueda: separar en sílabas palabras en castellano.</li>
                                     <li>De simulación: toma de decisiones en tiempo real.</li>
                                     <li>Mantenimiento y adaptación de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
@@ -1053,12 +1216,12 @@
                                     </ul>
                                 </li>
                                 <li class="expand" >
-                                    <ul> <span>Sistemas de gestión</span>
+                                    <ul> <span>Sistemas de gestión<em class="atencion"><sub> (ver mas)</sub></em></span>
                                         <li>Gestión de Ventas</li>
                                         <li>Administración de historias clínicas en geriátricos.</li>
                                         <li>Generador y administrador de documentos notariales.</li>
                                     </ul>
-                                    <ul><span>Dictado de Cursos</span> 
+                                    <ul><span>Dictado de Cursos<em class="atencion"><sub> (ver mas)</sub></em></span> 
                                         <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3" target="_blank">Lotus 123 ,
                                             <a href="https://es.wikipedia.org/wiki/WordStar" target="_blank">WordStar</a> y otros</b>.</li>
                                     </ul>
@@ -1077,7 +1240,7 @@
                                     </ul>
                                 </li>
                                 <li class="expand">Comunicación y relaciones humanas
-                                    <ul><span>Sector cuenta corriente y sector Inversiones</span>
+                                    <ul><span>Sector cuenta corriente y sector Inversiones<em class="atencion"><sub> (ver mas)</sub></em></span>
                                         <li>Atención al público durante pleno Bonex '89</li>
                                         <li>Sector cuenta corriente y sector Inversiones</li>
                                     </ul>
@@ -1201,7 +1364,7 @@
                   
                         </div>  <!-- container-chart -->
         
-                        <div class="container-chart" id="django" aria-label="Django" aria-value="25">
+                        <div class="container-chart" id="django" aria-label="Django" aria-value="35">
                             
                             <div class="donut-chart-block block-chart">
                             <div class="donut-chart">
@@ -1328,7 +1491,37 @@
                             </div>  <!-- range-slider -->
                   
                         </div>  <!-- container-chart -->
-        
+                        <div id="microsoft" class="compact">
+                            <div class="container-chart" id="ofimática" aria-label="Ofimática" aria-value="75">
+                                <div class="donut-chart-block block-chart">
+                                <div class="donut-chart">
+                    
+                                    <div id="section1-chart" class="clip-chart">
+                                    <div class="item-chart"></div>
+                                    </div>
+                                    <div id="section2-chart" class="clip-chart">
+                                    <div class="item-chart"></div>
+                                    </div>
+                                    <div id="section3-chart" class="clip-chart">
+                                    <div class="item-chart"></div>
+                                    </div>
+                                    
+                                    <div class="center-chart">
+                                    <span>0%</span>
+                                    </div>
+                                    <div class="center-label">
+                                    <span>hability</span>
+                                    </div>  <!-- center-label-->
+                                </div>  <!-- donut chart-->
+                                </div>  <!-- donut-chart-block -->
+                    
+                                <div class="range-slider" style="display:None !important">
+                                <input type="range" orient="vertical" min="0" max="100"/>
+                                <div class="range-slider__bar"></div>
+                                <div class="range-slider__thumb"></div>
+                                </div>  <!-- range-slider -->
+                            </div>  <!-- container-chart -->
+                        </div>
                         <div class="container-chart" id="python" aria-label="Python" aria-value="80">
                             <div class="donut-chart-block block-chart">
                             <div class="donut-chart">
@@ -1556,7 +1749,7 @@
                         </div>
                         </div>  <!-- rating -->
 
-                        <div class="special"><hr></div>
+                        <!-- <div class="special"><hr></div> -->
                     </div> <!-- Fin softskill-->
 
                 </div> <!-- Fin detalle -->
@@ -1567,6 +1760,7 @@
                     <p class="tagCenter slim">Hobbies</p>
                 </div>
                 <div class="detalle">
+                    <div class="special"><hr></div>
                     <div class="hobbies">
                         <svg class="icon w50 border active" aria-label="Padel"> <use href="#ico-padel"></svg>
                         <svg class="icon w50 border active" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="#ico-construction"></svg>
@@ -1591,7 +1785,7 @@
             <div id="datosContacto" class="fontSpecial-bold-italic extraEspace alingC">
                 <ul>
                     <li><svg id="whatsapp" class="icon active"><use href="#ico-whatsapp"/> </svg>
-                     054-11-xxxx-xxxx</li>
+                     +54 9 11 pedí-melo</li>
                     <li><svg id="email" class="icon active"><use href="#ico-email"/> </svg>
                     waldrom68@gmail.com</li>
                 </ul>
@@ -1611,38 +1805,6 @@
 <!-- Obtengo el codigo para darle funcionalidad al menu y al acercaDe -->
 <script src="static\js\menuNav.js"></script> 
 
-<script id="compactExtended">
-        function initNone() {  
-        // oculto el listado que inicialmente va colapsado
-        [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
-            e.classList.add("None");
-        }) };
-        function delNone() {
-        [].forEach.call(document.querySelectorAll(".myList ~ li.expand > ul > li"), function (e) {
-            e.classList.remove("None");
-        }) 
-    };
-
-    function compactExtended(version) {
-        if (version=="extended") {
-            [].forEach.call(document.querySelectorAll(".extended"), function(e) {
-            e.classList.add("compact")
-            e.classList.remove("extended")
-            delNone()
-            
-        })
-    } else {
-        [].forEach.call(document.querySelectorAll(".compact"), function(e) {
-                e.classList.add("extended")
-                e.classList.remove("compact")
-                initNone()
-            })
-        };
-        menuClose();
-    }
-</script>  <!-- compactExtended -->
-
-
 <script id="darkLight">
 
     function normaliceStr(text) {
@@ -1658,7 +1820,6 @@
     // Si el OS o el Nav no tiene nada configurado, la variable --SETEO conserva su valor "Personal"
         let page = getComputedStyle(document.documentElement);
         let theme = normaliceStr(page.getPropertyValue('--SETEO'));
-        console.log("El modo configurado en el OS o en el Navegador es ->", theme)
         return (theme);
     };
 
@@ -1674,7 +1835,6 @@
                 clases.push(normaliceStr(element))
             }
         }
-        console.log("estas son las clases definidas", clases)
         return clases
     }
 
@@ -1683,20 +1843,29 @@
         for (const iterator of clases) {
             document.querySelector(identificador).classList.remove(iterator);
         }
-        console.log("elimino del selector '", identificador, "' las clases ", clases)
     }
 
     function setColor(identificador, clase) {
         // Agrego en el elemento pasado como identificador, la clase recibida
         resetClass("body", getThemes())
         document.querySelector(identificador).classList.add(clase);
-        console.log("Agrego en '", identificador, "' la clase ",clase);
     } 
-
-theme = getPaletMode()
-setColor("body", theme)
-
 
 </script>
 
+<script id="inicio">
+    // Inicia en modo RESUME y sin detalles de las funciones.
+    // Color Default del sistema de navegacion o Dark si no está definido.
+
+    (function() {
+        theme = getPaletMode() /* Busco si el OS o el Navegador tiene alguna preferencia en Claro-Oscuro*/
+        setColor("body", theme) /* Asigno la clase Claro/oscuro al elemento body */
+
+        compactExtended("compact"); /* Oculto section del modo detallado, en menuNav.js */
+        initNone("compact") /* oculto detalles de la lista, en widget.js */
+
+
+    } ());
+
+</script>
 </html>

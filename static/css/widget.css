@@ -93,6 +93,7 @@
       font-weight: bolder;
       width: 100%;
       height: auto;
+      margin-bottom: 1em;
     }
     
     /* Place title text for ratings */
@@ -201,7 +202,7 @@
         position: absolute;
         text-align: center;
         transform: translate(-50%,-50%);
-        top: 140%;
+        top: 120%;
       }
       /*  hardskill % label */
       .center-chart span {

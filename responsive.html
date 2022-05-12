@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="prefers-color-scheme" content=""> -->
+    <title>Manejo responsivo</title>
+    
+    <style id="layout">
+        html, * { margin: 0; padding: 0%; box-sizing: border-box;}
+        body {
+            width: 100%;
+            /* color: Canvas;
+            background-color: CanvasText; */
+        }
+
+        #base {
+            display: inline-flex;
+            width: 100%;
+            height: auto;
+            /* border: 1px solid; */
+            justify-content: center;
+            padding-top: 2em;
+            text-align: center;
+            }
+        #base div {width: 100%;}
+        #testigo {font-weight: bold; font-style: italic; font-variant: small-caps;}
+        div .semaforos { height: 1.5em; width: 170px; border: 1px solid; margin: 5px 5px; text-align: center; }
+    </style>
+
+    <style id="media-screen-print">
+        /* CONTENEDOR PROVISORIO, SOLO PARA TESTING */
+        /* Pareto-regla que muestra datos para los breakpoint */
+        #pareto {
+            position: sticky; 
+            display: block; 
+            right: 0%; 
+            top: 0%;  
+            height: 2em; 
+            line-height: 2em;
+            padding-right: 1em; 
+            text-align: center;}
+
+        /*  Se definen 6 breackpoint, y sin importar si es dispositivo de mano 
+        o compu/tv, cubre portrait y landscape*/
+        /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y 
+        tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso 
+        del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo 
+        comporamiento que otras prestigiosas web */
+
+
+        @media screen  { 
+
+            /* modificando estilos según su width */
+            @media (min-width: 1200px) { 
+                #pareto {background-color: pink !important}
+                .testin::after {content: "width: >=1200.00" }
+
+                /* testigo para evidenciar hipotesis */
+                #semaforo2-6::after {content: ">=1200.00" }
+                #semaforo2-6 {background-color: pink; }
+                
+                /* estilo sobre el que se realizará ajuste */
+                #semaforo6::after {content: ">=1200.00" }
+                #semaforo6 {background-color: pink; }
+
+            }
+            @media (min-width: 992px) and (max-width: 1199.99px) { 
+                #pareto {background-color: azure}
+                .testin::after {content: "width: 991.98 a 1199.98" }
+                /* testigo para evidenciar hipotesis */
+                #semaforo2-5::after {content: "991.98 a 1199.98" }
+                #semaforo2-5 {background-color: azure; }
+                
+                /* estilo sobre el que se realizará ajuste */
+                #semaforo5::after {content: "991.98 a 1199.98" }
+                #semaforo5 {background-color: azure; }
+
+                #base {display: block } /* Se desea aplicar aqui y en <320px */
+            }
+            @media (min-width: 768px) and (max-width: 991.99px) { 
+                #pareto {background-color: yellow}
+                .testin::after {content: "width: 767.98 a 991.98" }
+                /* testigo para evidenciar hipotesis */
+                #semaforo2-4::after {content: "767.98 y 991.98" }
+                #semaforo2-4 {background-color: yellow; }
+
+                /* estilo sobre el que se realizará ajuste */
+                #semaforo4::after {content: "767.98 y 991.98" }
+                #semaforo4 {background-color: yellow; }
+            }
+            @media (min-width: 576px) and (max-width: 767.99px) { 
+                #pareto {background-color: red}
+                .testin::after {content: "width: 575.98 y 767.98"}
+                /* testigo para evidenciar hipotesis */
+                #semaforo2-3::after {content: "575.98 y 767.98" }
+                #semaforo2-3 {background-color: red; }
+
+                /* estilo sobre el que se realizará ajuste */
+                #semaforo3::after {content: "575.98 y 767.98" }
+                #semaforo3 {background-color: red; }
+            }
+            @media (min-width: 320px) and (max-width: 575.99px) { 
+                #pareto {background-color: orange}
+                .testin::after {content: "width: 320.00 a 575.98" }
+                /* testigo para evidenciar hipotesis */
+                #semaforo2-2::after {content: "320.00 a 575.98" }
+                #semaforo2-2 {background-color: orange; }
+                
+                /* estilo sobre el que se realizará ajuste */
+                #semaforo2::after {content: "320.00 a 575.98" }
+                #semaforo2 {background-color: orange; }
+            }
+            @media (max-width: 319.99px) { 
+                .testin::after {content: "width: <=319.98" }
+                #pareto {background-color: green}
+                /* testigo para evidenciar hipotesis */
+                #semaforo2-1::after {content: "<=319.98" }
+                #semaforo2-1 {background-color: green; }
+
+                /* estilo sobre el que se realizará ajuste */
+                #semaforo1::after {content: "<=319.98" }
+                #semaforo1 {background-color: green; }
+                /* 
+                Regla para ajustar especificamente los DIV de esta prueba
+                pero a su vez sirvió como caso testigo.
+                */
+                #base {display: block } /* Se desea aplicar aqui y en: 992 a 1199.98 */
+            }
+
+            /* @media handheld and (orientation: landscape)  {
+            
+                @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
+            }
+            @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
+            */
+        } 
+    </style>
+
+</head>
+
+
+<body >
+    <!-- Bloque que se utiliza en modo testing para evaluar manejo responsivo  -->
+    <!-- style="display: none !important; " -->
+    <div id="pareto"> <h3 class="testin"></h3></div>
+    <main id="base">
+        <div class="semaforosContainer">
+            <h2>Hipotesis</h2>
+            <div id="semaforo1" class="semaforos"></div>
+            <div id="semaforo2" class="semaforos"></div>
+            <div id="semaforo3" class="semaforos"></div>
+            <div id="semaforo4" class="semaforos"></div>
+            <div id="semaforo5" class="semaforos"></div>
+            <div id="semaforo6" class="semaforos"></div>
+        </div>
+        <div id="testigo" class="semaforosContainer">
+            <h2>Testigo</h2>
+            <div id="semaforo2-1" class="semaforos"></div>
+            <div id="semaforo2-2" class="semaforos"></div>
+            <div id="semaforo2-3" class="semaforos"></div>
+            <div id="semaforo2-4" class="semaforos"></div>
+            <div id="semaforo2-5" class="semaforos"></div>
+            <div id="semaforo2-6" class="semaforos"></div>
+        </div>
+    </main>
+</body>
+
+
+</html>

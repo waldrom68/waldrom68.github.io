@@ -22,6 +22,7 @@
             z-index: 1100;
         }
     </style>
+
     <style id="base">
         html,
         * { margin: 0; box-sizing: border-box;
@@ -211,11 +212,11 @@
         /* Identifico si el usuario tiene un modo de preferencia en el OS o el navegador*/
         @media (prefers-color-scheme: light ) {
             :root {--SETEO: "Light";}
-            .testin::after {content:  "Light";} 
+            .MODE::after {content:  "Light";} 
         }
         @media (prefers-color-scheme: dark ) {
             :root {--SETEO: "Dark";}
-            .testin::after {content:  "Dark";} 
+            .MODE::after {content:  "Dark";} 
         }
     </style>
 
@@ -503,8 +504,176 @@
                 line-height: 1em;
             }
             h1 { text-align: right; color: #022011; opacity: 1;}
+            .MODE {text-align: center;}
+            .semaforosContainer {display: block; }
+            div .semaforos { height: 1.5em; width: 170px; border: 1px solid; margin: 5px 5px; text-align: center; }
     </style>
 
+<style id="media-screen-print">
+    /* CONTENEDORES PROVISORIOA, SOLO PARA TESTING */
+    /* Pareto-regla que muestra datos para los breakpoint */
+    #pareto {position: sticky; display: block; right: 0%; top: 0%;  height: auto; margin-top: 2em; padding-right: 1em; z-index: 1000;text-align: right;}
+
+    /* // Medium devices (tablets, vertical, less than 992px) */
+    /*  Se definen 6 breackpoint, y sin importar si es dispositivo de mano 
+    o compu/tv, cubre portrait y landscape*/
+    
+    /* !IMPORTANT
+    Hay que tener presente que, si uno parte del diseño a pantalla completa
+    en una computadora, por ej. un monitor de 1280px, al mismo ya se le ha 
+    dado un diseño especifico.
+    El modificar dicho diseño al entrar en alguna regla de estos breackpoints
+    se debe agregar el diseño original (el de pantalla completa) en todas 
+    aquellas reglas en las cuales no requerian dicha adaptacion. Esto es así
+    porque el @media al ingresar en la regla, no reestablece la configuracion
+    previa.
+    Entiendo que estas reglas deben ir ultimas, al cerrar los estilos del html,
+    para trabajar con el estilo final.
+    Importante:
+    Hay que copiar la regla original que pensamos ajustar en todos los breakpoints
+    tal cual está, y sólo modificar el diseño en los tamaños que queremos ajustar.
+    Esto nos asegura que al cambiar de tamño en un mismo dispositivo, el ajuste se
+    puede reestablecer y no aparecen efectos raros, es decir cambios no esperados
+    de nuestro diseño.
+
+    En esta plantilla de base, se podrá ver el comportamiento frente a los cambios
+    y siempre contendrá una sóla celda con color de fondo, la cual indicará el rango
+    del tamaño de la pantalla. Si eliminaramos lo que yo llamo normalizador de estilo
+    responsivo, se podrá ver que al cambiar tamaños (incluso cambiando posicion retrato
+    paisaje / o vertical horizontal) quedarán varias celdas con colores y medidas. Esto
+    significa que se podrían estar heredando estilos de diferentes tamaños, y ello 
+    causaría efectos no esperados.
+
+    Otro detalle importante es que si un unico elemento tiene ID y a su vez una clase,
+    si en las reglas de estilo original, la afectamos referenciandola por su ID, aqui
+    en @media tambien debemos hacer lo mismo, pues sino quedarán ambas reglas, la del
+    ID y la de la Class, y allí dependera del orden en la cascada, con lo cual otro
+    efecto no esperado para principantes como yo.
+
+    */
+    /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y 
+    tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso 
+    del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo 
+    comporamiento que otras prestigiosas web */
+    @media screen  { 
+        @media (min-width: 1200.00px) { 
+            #pareto {background-color: pink !important}
+            .testin::after {content: "width: >=1200.00" }
+            
+            #semaforo6::after {content: ">=1200.00" }
+            #semaforo6 {background-color: pink; }
+            
+            #semaforo5::after {content: "" }
+            #semaforo5 {background-color: inherit; }
+            #semaforo4::after {content: "" }
+            #semaforo4 {background-color: inherit; }
+            #semaforo3::after {content: "" }
+            #semaforo3 {background-color: inherit; }
+            #semaforo2::after {content: "" }
+            #semaforo2 {background-color: inherit; }
+            #semaforo1::after {content: "" }
+            #semaforo1 {background-color: inherit; }
+        }
+        @media (max-width: 1199.98px) { 
+            #pareto {background-color: azure}
+            .testin::after {content: "width: 991.98 a 1199.98" }
+            
+            #semaforo5::after {content: "991.98 a 1199.98" }
+            #semaforo5 {background-color: azure; }
+            
+            #semaforo6::after {content: "" }
+            #semaforo6 {background-color: inherit; }
+            #semaforo4::after {content: "" }
+            #semaforo4 {background-color: inherit; }
+            #semaforo3::after {content: "" }
+            #semaforo3 {background-color: inherit; }
+            #semaforo2::after {content: "" }
+            #semaforo2 {background-color: inherit; }
+            #semaforo1::after {content: "" }
+            #semaforo1 {background-color: inherit; }
+        }
+        @media (max-width: 991.98px) { 
+            #pareto {background-color: yellow}
+            .testin::after {content: "width: 767.98 a 991.98" }
+            
+            #semaforo4::after {content: "767.98 y 991.98" }
+            #semaforo4 {background-color: yellow; }
+
+            #semaforo6::after {content: "" }
+            #semaforo6 {background-color: inherit; }
+            #semaforo5::after {content: "" }
+            #semaforo5 {background-color: inherit; }
+            #semaforo3::after {content: "" }
+            #semaforo3 {background-color: inherit; }
+            #semaforo2::after {content: "" }
+            #semaforo2 {background-color: inherit; }
+            #semaforo1::after {content: "" }
+            #semaforo1 {background-color: inherit; }
+        }
+        @media (max-width: 767.98px)  { 
+            #pareto {background-color: red}
+            .testin::after {content: "width: 575.98 y 767.98"}
+
+            #semaforo3::after {content: "575.98 y 767.98" }
+            #semaforo3 {background-color: red; }
+
+            #semaforo6::after {content: "" }
+            #semaforo6 {background-color: inherit; }
+            #semaforo5::after {content: "" }
+            #semaforo5 {background-color: inherit; }
+            #semaforo4::after {content: "" }
+            #semaforo4 {background-color: inherit; }
+            #semaforo2::after {content: "" }
+            #semaforo2 {background-color: inherit; }
+            #semaforo1::after {content: "" }
+            #semaforo1 {background-color: inherit; }
+        }
+        @media (max-width: 575.98px) { 
+            #pareto {background-color: orange}
+            .testin::after {content: "width: 320.00 a 575.98" }
+            
+            #semaforo2::after {content: "320.00 a 575.98" }
+            #semaforo2 {background-color: orange; }
+
+            #semaforo6::after {content: "" }
+            #semaforo6 {background-color: inherit; }
+            #semaforo5::after {content: "" }
+            #semaforo5 {background-color: inherit; }
+            #semaforo4::after {content: "" }
+            #semaforo4 {background-color: inherit; }
+            #semaforo3::after {content: "" }
+            #semaforo3 {background-color: inherit; }
+            #semaforo1::after {content: "" }
+            #semaforo1 {background-color: inherit; }
+        }
+        
+        @media (max-width: 319.98px) { 
+            .testin::after {content: "width: <=319.98" }
+            #pareto {background-color: green}
+            
+            #semaforo1::after {content: "<=319.98" }
+            #semaforo1 {background-color: green; }
+            
+            #semaforo6::after {content: "" }
+            #semaforo6 {background-color: inherit; }
+            #semaforo5::after {content: "" }
+            #semaforo5 {background-color: inherit; }
+            #semaforo4::after {content: "" }
+            #semaforo4 {background-color: inherit; }
+            #semaforo3::after {content: "" }
+            #semaforo3 {background-color: inherit; }
+            #semaforo2::after {content: "" }
+            #semaforo2 {background-color: inherit; }
+        }
+        /* @media handheld and (orientation: landscape)  {
+        
+            @media (max-width: 767.98px) { .testin::after {content: "no movil - paisaje"; }
+            }
+        }
+        @media handheld and (orientation: landscape) {  .testin::after {content: " max-width: 1399.98px - } }
+        */
+    } 
+</style>
 </head>
 
 
@@ -519,6 +688,10 @@
         <path id="svg_2" fill="" d="m3,18l18,0l0,-2l-18,0l0,2zm0,-5l18,0l0,-2l-18,0l0,2zm0,-7l0,2l18,0l0,-2l-18,0z"/>
  </symbol>
     </svg>
+
+    <!-- Bloque que se utiliza en modo testing para evaluar manejo responsivo  -->
+    <!-- style="display: none !important; " -->
+    <div id="pareto"> <h4 class="testin">Testing :</h4></div>
 
     <nav class="primary">
         <div class="navbar secondary">
@@ -557,10 +730,17 @@
                 </ul>
             </div>
         </div>
-        <h1 class="testin">Configuración por default:</h1>
+        <h1 class="MODE">Configuración por default:</h1>
     </nav>
-
-    <div class="base" onclick="menuClose()">
+    <div class="semaforosContainer">
+        <div id="semaforo1" class="semaforos"></div>
+        <div id="semaforo2" class="semaforos"></div>
+        <div id="semaforo3" class="semaforos"></div>
+        <div id="semaforo4" class="semaforos"></div>
+        <div id="semaforo5" class="semaforos"></div>
+        <div id="semaforo6" class="semaforos"></div>
+    </div>
+        <div class="base" onclick="menuClose()">
         <div class="left primary">
             <section>
             <p class="invert">PRIMARY (en clase invert)</p>
