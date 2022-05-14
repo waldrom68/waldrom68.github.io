@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --grosor: 5px
+        }
+        /* <!-- Hard skill content --> */
+    /* Place title text for ratings */
+    .donuttHeading {
+      margin: auto;
+      word-wrap: break-word;
+    }
+
+    /* input-range, donut and labels content */
+    .container-chart {
+      display: inline-flex;
+      width: auto;
+      /* background: inherit; */
+      /* background-color: transparent */
+    }
+    
+    .block-chart {
+      /* background: inherit; */
+      /* background-color: transparent; */
+      float: left;
+      height: 100px;
+      margin: auto;
+      width: 100px;
+    }
+    
+    .donut-chart-block {
+      overflow: hidden;
+    }
+    
+    /* The DONUT chart */
+    .donut-chart {
+      height: 60%;
+      margin: 10px auto;
+      position: relative;
+      width: 60%;
+      font-family: 'Quinta-regular' ;
+      font-style: italic;
+      font-size: 1em;
+    }
+      .donut-chart .center-chart {
+        /* background-color: transparent; */
+        border-radius: 50%;
+        height: calc(100% - (var(--grosor)*2));
+        left: calc(100% - (100% - var(--grosor)));
+        position: absolute;
+        top: calc(100% - (100% - var(--grosor)));
+        width: calc(100% - (var(--grosor)*2));
+      }
+      /* hardskill label */
+      .donut-chart .center-label {
+        /* color: currentColor; */
+        display: block;
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        transform: translate(-50%,-50%);
+        top: 120%;
+      }
+      /*  hardskill % label */
+      .center-chart span {
+      /* color: currentColor; */
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      }
+
+    /* graph gear - shows the degree of progress- */
+    .clip-chart, .item-chart {
+      /* background-color: transparent; */
+      border-radius: 50%;
+      border-width: var(--grosor);
+      border-style: solid;
+      border-color: transparent;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+    .clip-chart {
+    clip-path: polygon(50% 0%, 50% 100%, 100% 100%, 100% 0%);
+    }
+
+    .item-chart {
+    clip-path: polygon(50% 0%, 50% 100%, 0% 100%, 0 0);
+    }
+
+    #section1-chart {transform: rotate(0deg);}
+
+    #section1-chart .item-chart {transform: rotate(180deg);}
+
+    #section2-chart {transform: rotate(180deg);}
+
+    #section2-chart .item-chart {transform: rotate(180deg);}
+    </style>
+</head>
+<body>
+    
+    <div class="container-chart" id="CSS" aria-label="CSS" aria-value="65">
+                              
+        <div class="donut-chart-block block-chart">
+        <div class="donut-chart">
+
+            <div id="section1-chart" class="clip-chart">
+            <div class="item-chart"></div>
+            </div>
+            <div id="section2-chart" class="clip-chart">
+            <div class="item-chart"></div>
+            </div>
+            <div id="section3-chart" class="clip-chart">
+            <div class="item-chart"></div>
+            </div>
+            
+            <div class="center-chart">
+            <span>0%</span>
+            </div>
+            <div class="center-label">
+            <span>hability</span>
+            </div>  <!-- center-label-->
+        </div>  <!-- donut chart-->
+        </div>  <!-- donut-chart-block -->
+
+        <div class="range-slider" style="display: none;" >
+        <input type="range" orient="vertical" min="0" max="100"/>
+        <div class="range-slider__bar"></div>
+        <div class="range-slider__thumb"></div>
+        </div>  <!-- range-slider -->
+
+    </div> 
+</body>
+</html>
