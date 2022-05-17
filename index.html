@@ -55,7 +55,7 @@
 
         :root {
             --body-font-family: 'Quinta-light','roboto', system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            --body-font-size: 1rem;
+            --body-font-size: 110%;
             --body-font-weight: 100;
             --body-line-height: 1.5;
         }
@@ -98,7 +98,7 @@
             color: var(--body-bg);
         }
         .atencion { 
-            color: blue; 
+            color: rgb(85, 143, 209); 
             filter: saturate(8);
             font-size: 100%;
         }
@@ -165,10 +165,10 @@
             --primary-hover-bg: transparent; --primary-hover: #dbe299;
 
 
-            --secondary-bg: var(--gray-900); --secondary-color: var(--gray-400);
+            --secondary-bg: var(--gray-900); --secondary-color: var(--gray-500);
             --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
-            --secondary-link-bg: transparent; --secondary-link: #9bdbe2; /* color 3 */
-            --secondary-active-bg: transparent; --secondary-active: var(--white);
+            --secondary-link-bg: transparent; --secondary-link: white; /* color 3 */
+            --secondary-active-bg: transparent; --secondary-active: white;
             --secondary-hover-bg: #072f33; --secondary-hover: white;
         }
 
@@ -179,11 +179,11 @@
             --primary-active-bg: transparent; --primary-active: #85895e; /* color 4 */
             --primary-hover-bg: transparent; --primary-hover: #585c34;
 
-            --secondary-bg: rgb(242, 242, 230); --secondary-color: var(--gray-900);
+            --secondary-bg: rgb(239, 239, 237); --secondary-color: var(--gray-700);
             --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
             --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
             --secondary-active-bg: transparent; --secondary-active: var(--black);
-            --secondary-hover-bg: var(--gray-500) ; --secondary-hover: black;
+            --secondary-hover-bg: var(--gray-300) ; --secondary-hover: black ;
 
         }
 
@@ -225,10 +225,10 @@
                 color:var(--primary-hover);
             }
             /* UL LI */
-            .primary li:hover {
+            /* .primary .expand li:hover {
                 background-color: var(--primary-hover-bg);
                 color: var(--primary-hover);
-            }
+            } */
             /* SVG's */
             .primary svg,  svg.primary {
                 fill: var(--primary-color);
@@ -287,10 +287,10 @@
                 color:var(--secondary-hover);
             }
             /* UL LI */
-            .secondary li:hover {
+            /* .secondary li:hover {
                 background-color: var(--secondary-hover-bg);
                 color: var(--secondary-hover);
-            }
+            } */
             /* SVG's */
             .secondary svg,  svg.secondary {
                 fill: var(--secondary-color);
@@ -315,10 +315,18 @@
             .rtngIcoStar.checked svg {
                 fill:var(--acento);
             }
-            .secondary .myList ~ ul li.expand:hover {
-                background-color: var(--secondary-active-bg);
+
+            .secondary .expand > ul > span:hover {
+                background-color: var(--secondary-hover-bg);
                 color: var(--secondary-hover); 
             }
+            .primary a > span:hover {
+                background-color: var(--secondary-hover-bg);
+                color: var(--secondary-hover); 
+            }
+
+
+
     </style>
 
     <!-- no existen declaraciones de color, ni de background-color -->
@@ -439,6 +447,7 @@
             /* background-color: red; */
             display: flex;
             width: 100%;
+            padding: 0% .5em;
         }
 
         ul, li {
@@ -498,16 +507,20 @@
             }
             /* 255px */
             #right .detalle { 
-                padding-right: .5em;
-                padding-left: .5em ;
+                /* padding-right: .5em;
+                padding-left: .5em ; */
             }
             
         .detalle {
             /* display: block; */
             width: 100%;
+            padding: 1em .5em;
             /* min-width: 50%; */
             /* margin: 0em 0.5em; */
             /* padding-right: 0em 1em; */
+            border: 1px solid;
+            border-radius: 1em;
+            margin: 0.5em;
         }
         /* Es el TAG, se muestra el texto en vertical */
         .captionVertical {
@@ -536,10 +549,7 @@
         .tagCenter.slim {
             left: 0em;
         }
-        /* Manejo de etiquetas ocultas o visibles*/
-        /* Detalle de trabajos, o cursos. Verion resumida/extendida */
-        .extended {display: none;}
-        .compact {display: contents;}
+
 
         /* Left class and Id */
         #persona {
@@ -557,14 +567,18 @@
         /* Right class and Id */
         #education1 .detalle {display: block;}
         #education2.compact {display: flex; }
+        #education2.compact li {padding-top: .5em; }
+
         .hardskill { display: block; text-align: center;}
         #cursos ul {font-size: .83em;}
         .hobbies { 
             display: flex; 
+            height: 100%;
             flex-wrap: wrap;
             justify-content: center;
             text-align: center;
             vertical-align: middle;
+            padding: 0.5em;
         }
 
         /* Footer class and Id */
@@ -608,6 +622,12 @@
                 height: 1em;
                 line-height: 1em;
             }
+            .icon.menu {
+                width: 2em;
+                height: 2em;
+                line-height: 2em;
+                margin: 0 1em;
+            }
             .icon.w50 {
                 width:3.15em;
                 height:3.15em;
@@ -619,6 +639,10 @@
                 border: 2px solid currentColor;
             }
 
+        /* Manejo de etiquetas ocultas o visibles*/
+        /* Detalle de trabajos, o cursos. Version resumida/extendida */
+        .extended {display: none;}
+        .compact {display: contents;}
     </style>
 
     <style id="media-screen&print">
@@ -892,7 +916,7 @@
             #pareto { display: none;}
             .testin::after { content: "SALIDA IMPRESION";} 
 
-            html, body { height: 98%; }
+            html, body { height: 98%;}
             body, * { 
                 font-size: 12pt; 
                 line-height: 12pt;
@@ -900,14 +924,26 @@
             body {
                 font-family: Arial, Helvetica, sans-serif; 
                 height: auto ;
-                max-width: 1123px; 
+                /* max-width: 1123px;  */
                 width: var(--anchoPage);
             }
             nav { display: none;}
             svg.icon.w50 {fill: black;}
+            .atencion sub {
+                display: none;
+            }
+            .captionVertical.reset .tagCenter{display: none;}
+            #contact {border: none;}
             #education2.compact { display: flex;}
-            #footer {display: inline-flex; width: 100%;}
-            #footer #contact { padding: 0;}
+            #left { width: 65%;}
+            #right {width: 35%;}
+            #footer {
+                display: inline-flex; 
+                width: 100%;
+                padding: 1em 0;
+                padding-top: 1em;
+            }
+            #footer #contact { padding: 1em;}
             #footer #title { display: none;}
             #footer #datosContacto ul {
                 display: inline-flex; 
@@ -918,17 +954,26 @@
                 padding-left: 2.5em;
                 width: auto; 
             }
-            
+            #datosContacto > ul > h4 { padding-right: 2em;}
+
             .compact { display: block;}
-            .hardskill { display: block; }
+
+            .detalle {
+                padding: 1em 1em;
+                border: none;
+            }
+            .hardskill { 
+                display: block; 
+                text-align: center; }
+            
             .rating {margin-bottom: 0em; }
 
-            @page {
+            /* @page {
                 margin: 5mm 5mm 5mm 5mm;
                 orphans: 1;
                 size: 210mm 297mm;
                 widows: 0;
-            }
+            } */
             
             .salto { 
                 break-after: avoid-page !important;
@@ -952,7 +997,7 @@
         <div class="navbar primary">
             <div class="dropdown ">
                 <button class="dropbtn">
-                    <a href="javascript:void(0);" onclick="myFunctionMenuNav()"> <svg id="menu" class="icon active"><use href="static/images/icons.svg#ico-menu"/></svg></a>
+                    <a href="javascript:void(0);" onclick="myFunctionMenuNav()"> <svg id="menu" class="icon active menu"><use href="static/images/icons.svg#ico-menu"/></svg></a>
                 </button>
                 <div class="invert">
                 <ul class="dropdown-content secondary">
@@ -1007,7 +1052,7 @@
                         </div>
                         <h4>(nacido en 1968)</h4>
                         <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon secondary active link"><use href="static/images/icons.svg#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
-                        <div class="special"><hr></div>
+                        <!-- <div class="special"><hr></div> -->
                     </div>
                 </div>
             </section>
@@ -1022,7 +1067,7 @@
                     <p>Luego de 24 años trabajando en la universidad, ahora he vuelto a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
                     <p>En resumen, además de contar con criterio empresarial tengo conocimientos y experiencia para sumar valor a cualquier proyecto, y quienes me conocen destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <br>
-                    <div class="special"><hr></div>
+                    <!-- <div class="special"><hr></div> -->
                 </div>
             </section>
 
@@ -1033,7 +1078,7 @@
                 <div class="detalle secondary">
                     <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, innovando, mejorando ...</em></p>
                     <p>Si tenés alguna idea o propuesta, podés contactarme (será un plus si es divertida).</p>
-                    <div class="special"><hr></div>
+                    <!-- <div class="special"><hr></div> -->
                 </div>
             </section>
 
@@ -1083,88 +1128,90 @@
 
                         </li>
                     </ul>  <!-- fin ITBA  -->
-                    <ul> <!-- Freelance -->
-            
-                        <li class="myList extraEspace">1991-1994 (3 años) Freelance
-                            <li class="Head">
-                                <ul class="carrera">
-                                    <li>Analista de sistemas y programador</li>
-                                </ul>
-                            </li>
-                            <li class="expand">Funciones y responsabilidades
-                                <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                    <li>Gestión de Ventas y control de stock.</li>
-                                    <li>Liquidación de Sueldos para gremios de UOCRA y UOYPE.</li>
-                                    <li>Generador y Administrador de documentos para escribanías.</li>
-                                </ul>
-                                <ul><span>Algoritmos desafiantes y adaptación de Sistemas<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                    <li>De búsqueda: separar en sílabas palabras en castellano.</li>
-                                    <li>De simulación: toma de decisiones en tiempo real.</li>
-                                    <li>Mantenimiento y adaptación de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
-                                </ul>
-                            </li>
-                        </li>  
-
-                    </ul>  <!-- fin Freelance -->
-        
-                    <ul>  <!-- Sistemax -->
-                            <li class="myList extraEspace">1990-1992 (2 años) Sistemax</b></i>
+                    <div class="salto">
+                        <ul> <!-- Freelance -->
+                
+                            <li class="myList extraEspace">1991-1994 (3 años) Freelance
                                 <li class="Head">
                                     <ul class="carrera">
-                                        <li>Desarrollo de software de gestión y dictado de cursos</li>
-                                        <!-- <li>Desarrollo de sistemas de informáticos</li>
-                                        <li>Instructor, profesor</li>
-                                        <li>Dictado de cursos</li> -->
+                                        <li>Analista de sistemas y programador</li>
                                     </ul>
                                 </li>
-                                <li class="expand" >
-                                    <ul> <span>Sistemas de gestión<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                        <li>Gestión de Ventas</li>
-                                        <li>Administración de historias clínicas en geriátricos.</li>
-                                        <li>Generador y administrador de documentos notariales.</li>
+                                <li class="expand">Funciones y responsabilidades
+                                    <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                        <li>Gestión de Ventas y control de stock.</li>
+                                        <li>Liquidación de Sueldos para gremios de UOCRA y UOYPE.</li>
+                                        <li>Generador y Administrador de documentos para escribanías.</li>
                                     </ul>
-                                    <ul><span>Dictado de Cursos<em class="atencion"><sub> (ver mas)</sub></em></span> 
-                                        <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3" target="_blank">Lotus 123 ,
-                                            <a href="https://es.wikipedia.org/wiki/WordStar" target="_blank">WordStar</a> y otros</b>.</li>
-                                    </ul>
-                                </li>
-                                    
-                                </li>
-                            </li>  
-                    </ul> <!-- fin SISTEMAX -->
-        
-                    <ul class="extended"> <!--Banco de la Nacion Argentina -->
-            
-                            <li class="myList extraEspace">1989-1990 (1 año) Banco de la Nación Argentina 
-                                <li class="Head">
-                                    <ul class="carrera">
-                                        <li>Auxiliar contable</li>
-                                    </ul>
-                                </li>
-                                <li class="expand">Comunicación y relaciones humanas
-                                    <ul><span>Sector cuenta corriente y sector Inversiones<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                        <li>Atención al público durante pleno Bonex '89</li>
-                                        <li>Sector cuenta corriente y sector Inversiones</li>
+                                    <ul><span>Algoritmos desafiantes y adaptación de Sistemas<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                        <li>De búsqueda: separar en sílabas palabras en castellano.</li>
+                                        <li>De simulación: toma de decisiones en tiempo real.</li>
+                                        <li>Mantenimiento y adaptación de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
                                     </ul>
                                 </li>
                             </li>  
-                    </ul> <!-- fin BNA -->
-                    
-                    <ul class="extended"> <!--Amato -->
 
-                        <li class="myList extraEspace">1987-1989 (2 años) Reguladores Amato
-                            <li class="Head">
-                                <ul class="carrera">
-                                    <li>Operario metalúrgico Junior</li>
-                                </ul>
-                            </li>
-                            <li class="None">Comunicación y relaciones humanas
-                                <ul>
-                                </ul>
-                            </li>
-                        </li>  
-                    </ul> <!-- fin Amato -->
-                    <div class="special"><hr></div>
+                        </ul>  <!-- fin Freelance -->
+            
+                        <ul>  <!-- Sistemax -->
+                                <li class="myList extraEspace">1990-1992 (2 años) Sistemax</b></i>
+                                    <li class="Head">
+                                        <ul class="carrera">
+                                            <li>Desarrollo de software de gestión y dictado de cursos</li>
+                                            <!-- <li>Desarrollo de sistemas de informáticos</li>
+                                            <li>Instructor, profesor</li>
+                                            <li>Dictado de cursos</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="expand" >
+                                        <ul> <span>Sistemas de gestión<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                            <li>Gestión de Ventas</li>
+                                            <li>Administración de historias clínicas en geriátricos.</li>
+                                            <li>Generador y administrador de documentos notariales.</li>
+                                        </ul>
+                                        <ul><span>Dictado de Cursos<em class="atencion"><sub> (ver mas)</sub></em></span> 
+                                            <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3" target="_blank">Lotus 123 ,
+                                                <a href="https://es.wikipedia.org/wiki/WordStar" target="_blank">WordStar</a> y otros</b>.</li>
+                                        </ul>
+                                    </li>
+                                        
+                                    </li>
+                                </li>  
+                        </ul> <!-- fin SISTEMAX -->
+            
+                        <ul class="extended"> <!--Banco de la Nacion Argentina -->
+                
+                                <li class="myList extraEspace">1989-1990 (1 año) Banco de la Nación Argentina 
+                                    <li class="Head">
+                                        <ul class="carrera">
+                                            <li>Auxiliar contable</li>
+                                        </ul>
+                                    </li>
+                                    <li class="expand">Comunicación y relaciones humanas
+                                        <ul><span>Sector cuenta corriente y sector Inversiones<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                            <li>Atención al público durante pleno Bonex '89</li>
+                                            <li>Sector cuenta corriente y sector Inversiones</li>
+                                        </ul>
+                                    </li>
+                                </li>  
+                        </ul> <!-- fin BNA -->
+                        
+                        <ul class="extended"> <!--Amato -->
+
+                            <li class="myList extraEspace">1987-1989 (2 años) Reguladores Amato
+                                <li class="Head">
+                                    <ul class="carrera">
+                                        <li>Operario metalúrgico Junior</li>
+                                    </ul>
+                                </li>
+                                <li class="None">Comunicación y relaciones humanas
+                                    <ul>
+                                    </ul>
+                                </li>
+                            </li>  
+                        </ul> <!-- fin Amato -->
+                        <!-- <div class="special"><hr></div> -->
+                    </div>
                 </div>
             </section> <!-- Fin workExperience -->
 
@@ -1205,7 +1252,7 @@
                 </div>
                 <div id="cursos" class="detalle">
                     <ul class="fontSpecial-regular-italic alingL">
-                        <div class="special"><hr></div>
+                        <!-- <div class="special"><hr></div> -->
                             <li><b>sep-21</b>: Webinar Gestión de Proyectos con Scrum</li>
                             <li><b>ago-21</b>: Webinar Gnu/Linux</li>
                             <li><b>ago-21</b>: Webinar Empleos 4.0. La economía del conocimiento</li>
@@ -1232,7 +1279,7 @@
                 </div>
                 <div class="detalle">
                     <div class="hardskill">
-                        <div class="special"><hr></div>
+                        <!-- <div class="special"><hr></div> -->
                     
                         <div class="container-chart" id="CSS" aria-label="CSS" aria-value="65">
                               
@@ -1393,37 +1440,7 @@
                             </div>  <!-- range-slider -->
                   
                         </div>  <!-- container-chart -->
-                        <div id="microsoft" class="compact">
-                            <div class="container-chart" id="ofimática" aria-label="Ofimática" aria-value="75">
-                                <div class="donut-chart-block block-chart">
-                                <div class="donut-chart">
-                    
-                                    <div id="section1-chart" class="clip-chart">
-                                    <div class="item-chart"></div>
-                                    </div>
-                                    <div id="section2-chart" class="clip-chart">
-                                    <div class="item-chart"></div>
-                                    </div>
-                                    <div id="section3-chart" class="clip-chart">
-                                    <div class="item-chart"></div>
-                                    </div>
-                                    
-                                    <div class="center-chart">
-                                    <span>0%</span>
-                                    </div>
-                                    <div class="center-label">
-                                    <span>hability</span>
-                                    </div>  <!-- center-label-->
-                                </div>  <!-- donut chart-->
-                                </div>  <!-- donut-chart-block -->
-                    
-                                <div class="range-slider" style="display:None !important">
-                                <input type="range" orient="vertical" min="0" max="100"/>
-                                <div class="range-slider__bar"></div>
-                                <div class="range-slider__thumb"></div>
-                                </div>  <!-- range-slider -->
-                            </div>  <!-- container-chart -->
-                        </div>
+
                         <div class="container-chart" id="python" aria-label="Python" aria-value="80">
                             <div class="donut-chart-block block-chart">
                             <div class="donut-chart">
@@ -1457,6 +1474,7 @@
                         
                         </div>  <!-- container-chart -->
         
+
                     </div> <!-- Fin hard Skills -->
                 </div> <!-- Fin detalle -->
             </section>  <!-- Fin hardskill -->
@@ -1468,7 +1486,7 @@
                 <div class="detalle">
                     
                     <div class="softskill">
-                        <div class="special"><hr></div>
+                        <!-- <div class="special"><hr></div> -->
 
                         <div class="rating" id="rtng1" mylabel="Adaptación al cambio" myvalue="3">
                             <div class="rtngSide">
@@ -1657,12 +1675,12 @@
                 </div> <!-- Fin detalle -->
             </section> <!-- Fin softskill -->
 
-            <section id="hobbies">
+            <section id="hobbies" class="salto">
                 <div class="captionVertical">
                     <p class="tagCenter slim">Hobbies</p>
                 </div>
                 <div class="detalle">
-                    <div class="special"><hr></div>
+                    <!-- <div class="special"><hr></div> -->
                     <div class="hobbies">
                         <svg class="icon w50 border active" aria-label="Padel"> <use href="static/images/icons.svg#ico-padel"></svg>
                         <svg class="icon w50 border active" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="static/images/icons.svg#ico-construction"></svg>
@@ -1677,7 +1695,7 @@
     </main>  <!-- Fin page -->
 
 
-    <footer id="footer" class="salto secondary">
+    <footer id="footer" class="secondary">
         <section id="contact">
             <div id="title" class="alingC">
                 <h2>Contacto</h2>
@@ -1771,3 +1789,10 @@
 
 </script>
 </html>
+
+<!-- Bueno, va mi devolución usando chrome.
+El menu desplegable de arriba a la izquierda está como escondido, no se destaca, deberia ser mas visible porque le usuario no va directo ahi.
+Hay algunas secciones que se ponen en highligh pero no reciben click, por ejemplo "2004-2018 Ejecutivo...." por usabilidad si uno ve un highlight espera que funcione el click, asi que eso lo sacaria.
+Trata de evitar los cuadrados y fijate si podes hacer puntas redondeadas, queda mas suave.
+Abajo en "Contacto" deberias hacer que todo sea link, es decir linkedin, wasap, github etc y te lleve a los sitios.
+Bueno eso por ahora, espero que sirva. Saludos! -->

@@ -7,14 +7,19 @@
     <title>Document</title>
     <style>
         :root {
-            --grosor: 5px
+            --grosor: 5px;
+            /* ATRIBUTO COMUN, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+            --acento: #00ff00;  /* --progress-color */
+            --acento-bg: grey !important;  /* 5 */
         }
         /* <!-- Hard skill content --> */
-    /* Place title text for ratings */
-    .donuttHeading {
+        .donuttHeading {
       margin: auto;
       word-wrap: break-word;
     }
+    html,
+        * { margin: 0; padding:0; box-sizing: border-box;
+        }
 
     /* input-range, donut and labels content */
     .container-chart {
@@ -28,9 +33,9 @@
       /* background: inherit; */
       /* background-color: transparent; */
       float: left;
-      height: 100px;
+      height: 200px;
       margin: auto;
-      width: 100px;
+      width: 200px;
     }
     
     .donut-chart-block {
@@ -39,6 +44,7 @@
     
     /* The DONUT chart */
     .donut-chart {
+      border: 2px solid red;
       height: 60%;
       margin: 10px auto;
       position: relative;
@@ -47,9 +53,12 @@
       font-style: italic;
       font-size: 1em;
     }
+    /* Area central donde va el % */
       .donut-chart .center-chart {
         /* background-color: transparent; */
         border-radius: 50%;
+        color: red;
+        background-color: aqua; 
         height: calc(100% - (var(--grosor)*2));
         left: calc(100% - (100% - var(--grosor)));
         position: absolute;
@@ -57,6 +66,7 @@
         width: calc(100% - (var(--grosor)*2));
       }
       /* hardskill label */
+      /* Texto al pie */
       .donut-chart .center-label {
         /* color: currentColor; */
         display: block;
@@ -66,6 +76,7 @@
         transform: translate(-50%,-50%);
         top: 120%;
       }
+      /* Porcentaje en e¡l centro */
       /*  hardskill % label */
       .center-chart span {
       /* color: currentColor; */
@@ -79,7 +90,7 @@
     /* graph gear - shows the degree of progress- */
     .clip-chart, .item-chart {
       /* background-color: transparent; */
-      border-radius: 50%;
+      border-radius: 0%; /* 50% */
       border-width: var(--grosor);
       border-style: solid;
       border-color: transparent;
@@ -102,6 +113,47 @@
     #section2-chart {transform: rotate(180deg);}
 
     #section2-chart .item-chart {transform: rotate(180deg);}
+    </style>
+    <style>
+      .midonut {
+        position: relative;
+        border: 2px dotted red;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+      .rueda, #rueda2 {
+        position: absolute;
+        border-color: transparent;
+        border-style: solid;
+        height: 100px;
+        width: 100px;
+        /* border-radius: 50%; */
+      }
+      .rueda {
+        transform: rotate(45deg);
+        border-width: 5px;
+      }
+
+      #rueda2 {
+        /* es la que gira */
+        transform: rotate(-45deg);
+        border-width: 5px;
+        z-index: -1000;
+      }
+      .rueda div {
+      /*  hardskill % label */
+      /* color: currentColor; */
+      /* display: block;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%,-50%); */
+      }
+
     </style>
 </head>
 <body>
@@ -130,12 +182,175 @@
         </div>  <!-- donut chart-->
         </div>  <!-- donut-chart-block -->
 
-        <div class="range-slider" style="display: none;" >
+        <div class="range-slider" >
         <input type="range" orient="vertical" min="0" max="100"/>
         <div class="range-slider__bar"></div>
         <div class="range-slider__thumb"></div>
         </div>  <!-- range-slider -->
 
     </div> 
-</body>
+
+    
+    <div class="midonut" aria-value="0">
+      <div class="rueda"></div>
+      <div id="rueda2"></div>
+      <div class="number">99</div>
+    </div>
+    <input id="range1" class="dona" type="range" min="0" max="100" value="15"/><span></span>
+    <h4 id="guia"></h4>
+  </body>
+
+<script id="donuts"> 
+  function updateDonut(percent, element){
+      /* obtengo valor de los colores desde JS: */
+      let donutStyle = getComputedStyle(document.documentElement);
+      let noProgressColor = donutStyle.getPropertyValue('--acento-bg');
+      let progressColor = donutStyle.getPropertyValue('--acento');
+      // console.log(donutStyle)
+      if (!progressColor) {
+          progressColor = 'red';
+          console.log("no encontre variable --acento");            
+          [].forEach.call(document.querySelectorAll("#section1-chart .item-chart"), function(el) {
+          el.style.setProperty('background-color', progressColor)
+          });
+      };
+      
+      if (!noProgressColor) {
+          console.log("no encontre variable --acento-bg")
+          noProgressColor = 'blue';
+          [].forEach.call(document.querySelectorAll("#section2-chart .item-chart"), function(el) 
+          {
+              el.style.setProperty('background-color',noProgressColor)
+          });
+      };
+      
+      //var percent = 45;
+      if (percent < 50){
+      offset = (360 / 100) * percent;
+      element.parentNode.querySelector("#section3-chart").style.webkitTransform = "rotate(" + offset + "deg)";
+      element.parentNode.querySelector("#section3-chart .item-chart").style.webkitTransform = "rotate(" + (180 - offset) + "deg)";
+      element.parentNode.querySelector("#section3-chart").style.msTransform = "rotate(" + offset + "deg)";
+      element.parentNode.querySelector("#section3-chart .item-chart").style.msTransform = "rotate(" + (180 - offset) + "deg)";
+      element.parentNode.querySelector("#section3-chart").style.MozTransform = "rotate(" + offset + "deg)";
+      element.parentNode.querySelector("#section3-chart .item-chart").style.MozTransform = "rotate(" + (180 - offset) + "deg)";
+      // element.parentNode.querySelector("#section3-chart .item-chart").style.backgroundColor = noProgressColor;
+      // element.parentNode.querySelector("#section2-chart .item-chart").style.backgroundColor = noProgressColor;
+      // element.parentNode.querySelector("#section1-chart .item-chart").style.backgroundColor = progressColor;
+
+      element.parentNode.querySelector("#section1-chart .item-chart").style.borderColor = progressColor;
+      element.parentNode.querySelector("#section2-chart .item-chart").style.borderColor = noProgressColor;
+      element.parentNode.querySelector("#section3-chart .item-chart").style.borderColor = noProgressColor;
+      
+  } else { 
+      offset = ((360 / 100) * percent) - 180;
+      element.parentNode.querySelector("#section3-chart").style.webkitTransform = "rotate(180deg)";
+      element.parentNode.querySelector("#section3-chart .item-chart").style.webkitTransform = "rotate(" +  offset + "deg)";
+      element.parentNode.querySelector("#section3-chart").style.msTransform = "rotate(180deg)";
+      element.parentNode.querySelector("#section3-chart .item-chart").style.msTransform = "rotate(" +  offset + "deg)";
+      element.parentNode.querySelector("#section3-chart").style.MozTransform = "rotate(180deg)";
+      element.parentNode.querySelector("#section3-chart .item-chart").style.MozTransform = "rotate(" +  offset + "deg)";   
+
+      
+      element.parentNode.querySelector("#section1-chart .item-chart").style.borderColor = progressColor;
+      
+      element.parentNode.querySelector("#section2-chart .item-chart").style.borderColor = noProgressColor;
+
+      element.parentNode.querySelector("#section3-chart .item-chart").style.borderColor = progressColor;
+      
+  }
+  element.parentNode.querySelector(".donut-chart .center-chart").style.borderColor = noProgressColor;
+  
+  element.parentNode.querySelector("span").innerHTML = percent + "%";
+  }
+  
+  function updateSlider(element) {
+      if (element) {
+      var parent = element.parentElement;
+      var thumb = parent.querySelector('.range-slider__thumb'),
+          bar = parent.querySelector('.range-slider__bar'),
+          pct = element.value * ((parent.clientHeight - thumb.clientHeight) / parent.clientHeight);
+      thumb.style.bottom = pct + '%';
+      bar.style.height = 'calc(' + pct + '% + ' + thumb.clientHeight / 2 + 'px)';
+      thumb.textContent = element.value + '%';
+      }
+      updateDonut(element.value, element.parentNode);
+      }
+      (function initAndSetupTheSliders() {
+  
+      [].forEach.call(document.querySelectorAll(".container-chart"), function(el) {
+      let inputs = [].slice.call(el.querySelectorAll('.range-slider input'));
+      let leyend = document.querySelector("#" + el.id + " .center-label span");
+  
+      leyend.innerHTML  = el.getAttribute("aria-label")
+      
+      inputs.forEach(function (input) {
+          input.setAttribute('value', el.getAttribute("aria-value"));
+          updateSlider(input);
+          input.addEventListener('input', function (element) {
+              updateSlider(input);
+          });
+          input.addEventListener('change', function (element) {
+              updateSlider(input);
+          });
+      });
+      });
+  }());
+
+// return true if in range, otherwise false
+  function inRange(x, min, max) {
+      return ((x-min)*(x-max) <= 0);
+  }
+  
+  let myColors = getComputedStyle(document.documentElement);
+  let noProgressColor = myColors.getPropertyValue('--acento-bg') + " " || "red ";
+  let progressColor = myColors.getPropertyValue('--acento') + " ";
+
+
+
+  let myDonut = document.querySelector("#range1");
+  let valorIni = myDonut.previousElementSibling.getAttribute("aria-value")
+  let base = myDonut.previousElementSibling.children[0]
+  let base2 = myDonut.previousElementSibling.children[1]
+  let label = myDonut.previousElementSibling.children[2]
+  base2.style.borderColor = noProgressColor
+  base2.style.borderTopColor = progressColor;
+  
+  base.style.borderColor = noProgressColor
+  
+  myDonut.value = valorIni
+  label.innerHTML = valorIni + "%"
+  
+  
+  // agrego al input el evento 
+  myDonut.addEventListener('input', function (e) {
+    let valor = e.target.value
+    let valorNum = parseFloat(valor)
+
+    myDonut.nextElementSibling.innerHTML = valor
+    myDonut.setAttribute("value", valor );
+
+    porcentaje = ((360/100) * valorNum) - 45
+    base2.style.webkitTransform = "rotate(" + porcentaje + "deg)";
+    
+    if (inRange(valorNum, 99.99, 75)) {
+      base.style.borderColor = progressColor + progressColor + progressColor + "transparent"
+
+    } else if (inRange(valorNum, 74.99, 50)) {
+      base.style.borderColor = progressColor + progressColor + "transparent transparent"
+
+    } else if (inRange(valorNum,49.99, 25)) {
+      base.style.borderColor = progressColor + "transparent transparent transparent"
+
+    } else if (inRange(valorNum,24.99, 0)){
+      
+      base.style.borderColor = "transparent transparent transparent " + noProgressColor
+
+    } else { 
+      base.style.borderColor = progressColor
+
+    }
+    label.innerHTML = valorNum + "%"
+  })
+
+</script>  <!-- ts -->
 </html>
