@@ -99,10 +99,9 @@
         }
         .atencion { 
             color: rgb(85, 143, 209); 
-            filter: saturate(8);
+            /* filter: saturate(8); */
             font-size: 100%;
         }
-        .atencion.click {content: "jeje";}
         svg.icon.destacado {
             fill: var(--destacado);
             stroke: var(--destacado);
@@ -179,7 +178,7 @@
             --primary-active-bg: transparent; --primary-active: #85895e; /* color 4 */
             --primary-hover-bg: transparent; --primary-hover: #585c34;
 
-            --secondary-bg: rgb(239, 239, 237); --secondary-color: var(--gray-700);
+            --secondary-bg: rgb(239, 239, 237); --secondary-color: var(--gray-900);
             --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
             --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
             --secondary-active-bg: transparent; --secondary-active: var(--black);
@@ -588,6 +587,7 @@
             border-width: .19em ;
             border-color: currentColor !important;
             border-style: solid;
+            border-radius: 0 0 10px 10px;
             height: auto;
             width: 100%;
             text-align: center;
@@ -927,6 +927,10 @@
                 /* max-width: 1123px;  */
                 width: var(--anchoPage);
             }
+            section {
+                padding-top: 2em;
+
+            }
             nav { display: none;}
             svg.icon.w50 {fill: black;}
             .atencion sub {
@@ -974,6 +978,7 @@
                 size: 210mm 297mm;
                 widows: 0;
             } */
+            ul {padding: .5em;}
             
             .salto { 
                 break-after: avoid-page !important;
@@ -1063,7 +1068,6 @@
                 </div>
                 <div class="detalle secondary">
                     <p>Ocupé cargos de RRHH y disfruté mejorar procesos, generar tableros de control para la toma de decisiones, y hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. <em>Ciertamente era un Analista Universitario de Sistemas</em> en un área de recursos humanos.</p>
-                    <p>Sigo postergando mis estudios de inglés, por tal motivo sólo tengo la habilidad para leerlo.</p>
                     <p>Luego de 24 años trabajando en la universidad, ahora he vuelto a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
                     <p>En resumen, además de contar con criterio empresarial tengo conocimientos y experiencia para sumar valor a cualquier proyecto, y quienes me conocen destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
                     <br>
@@ -1077,6 +1081,7 @@
                 </div>
                 <div class="detalle secondary">
                     <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, innovando, mejorando ...</em></p>
+                    <p>Quiero adquirir habilidades comunicativas en inglés.</p>
                     <p>Si tenés alguna idea o propuesta, podés contactarme (será un plus si es divertida).</p>
                     <!-- <div class="special"><hr></div> -->
                 </div>
@@ -1706,12 +1711,12 @@
                 <ul>
                     <h4><svg id="whatsapp" class="icon active"><use href="static/images/icons.svg#ico-whatsapp"/> </svg>
                      +54 9 11 pedí-melo</h4>
-                    <h4><svg id="email" class="icon active"><use href="static/images/icons.svg#ico-email"/> </svg>
-                    waldrom68@gmail.com</he>
+                    <a href="mailto:waldrom68@gmail.com"><svg id="email" class="icon active"><use href="static/images/icons.svg#ico-email"/> </svg>
+                    waldrom68@gmail.com</a>
                 </ul>
                 <ul>
-                    <h4><svg class="icon active"><use href="static/images/icons.svg#ico-linkedin"/></svg> /in/walter-romero1968</h4> 
-                    <h4><svg class="icon active"><use href="static/images/icons.svg#ico-github"/> </svg> waldrom68.github.io</h4> 
+                    <a href="https://www.linkedin.com/in/walter-romero1968" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-linkedin"/></svg> /in/walter-romero1968</a> 
+                    <a href="https://waldrom68.github.io" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-github"/> </svg> waldrom68.github.io</a> 
                 </ul>
             </div> <!-- Fin detalle -->
         </section> <!-- Fin contact -->
