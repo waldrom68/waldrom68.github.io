@@ -319,10 +319,11 @@
                 background-color: var(--secondary-hover-bg);
                 color: var(--secondary-hover); 
             }
-            .primary a > span:hover {
+            .primary a > span:hover, #datosContacto ul li:hover {
                 background-color: var(--secondary-hover-bg);
                 color: var(--secondary-hover); 
             }
+
 
 
 
@@ -675,7 +676,12 @@
                     max-width: 70%;
                     width: 70% !important; 
                 }
-                #right { width: 35% !important;}
+                #right { 
+                    width: 30% !important;
+                    max-width: 30%;
+                }
+                .rating { display: block}
+                .rtngEnd { display: none;}
             }
             @media (min-width: 992px) and (max-width: 1199.99px) { 
                 #pareto { background-color: azure}
@@ -704,11 +710,18 @@
                     width: 65% !important; 
                 }
                 #left .captionVertical {
-                    max-width: 4em;
-                    min-width: 4em; 
-                    width: 25%; 
+                    max-width: none;
+                    min-width: auto; 
+                    width: 15%; 
                 }
+                #right .captionVertical {
+                    max-width: none;
+                    min-width: auto; 
+                    width: 15%; 
+                }
+
                 #right { width: 35% !important;}
+
                 .icon.w50 {
                     height: 1.5em; 
                     line-height: 1.5em; 
@@ -723,31 +736,53 @@
                 #pareto { background-color: red}
                 .testin::after { content: "width: 576 y 767.99;"}
 
+                section {
+                    display: block; 
+                    width: 100%;
+                }
+                #datosContacto > ul { 
+                    display: block !important; 
+                    margin: 0px;
+                }
+                #education2.compact { display: block;}
                 #left {
                     max-width: none; 
-                    min-width: none;
-                    width: 65% !important; 
+                    min-width: auto;
+                    width: 100% !important; 
                 }
                 #left .captionVertical {
-                    max-width: 3em !important;
-                    min-width: 3em !important; 
-                    width: 10% !important; 
+                    align-items: center; 
+                    display: flex; 
+                    justify-content: center; 
+                    margin: auto !important;
+                    max-width: none; 
+                    min-width: auto; 
+                    transform: initial !important;
+                    width: 100%; 
+                    writing-mode: unset; 
+                }
+                #page {
+                    display: block; 
+                    width: 100%; 
                 }
                 #persona #datos { padding-left: 0;}
-                #right {
-                    max-width: none; 
-                    min-width: none; 
-                    width: 35% !important; 
-                }
+                #right {width:100% !important; max-width:none; min-width:auto}
                 #right .captionVertical {
-                    max-width: 2em !important;
-                    min-width: 2em !important; 
-                    width: 10% !important; 
+                    align-items: center; 
+                    display: flex; 
+                    justify-content: center; 
+                    transform: initial !important; 
+                    margin: auto !important;
+                    max-width: none; 
+                    min-width: auto; 
+                    width: 100%; 
+                    writing-mode: unset; 
                 }
                 .callout { 
                     width: 80%;
                     height: 80%;
                 }
+                .captionVertical.reset { display: none !important;}
                 .container-chart {
                     display: inline-block;
                     width: auto; 
@@ -758,16 +793,10 @@
                     margin-top: 1em;
                     width: 3em;
                 }
-                .captionVertical {font-size: inherit !important;}
-                .icon.w50 {
-                    height: 2.5em; 
-                    line-height: 2.5em; 
-                    margin-top: 0em;
-                    width: 2.5em;
-                }
-                .nombre {display: block !important;}
-                .rating {display: block}
-                .rtngEnd { display: none;}
+                .rating { display: inline-flex !important;}
+                .rtngEnd { display: none !important;}
+                .special { display: none;}
+                .tagCenter { min-width: max-content;}
 
 
             }
@@ -847,6 +876,7 @@
                     display: block; 
                     width: 100%;
                 }
+                #softskill > div {display: flex;}
                 #datosContacto > ul { 
                     display: block !important; 
                     margin: 0px;
@@ -927,10 +957,11 @@
                 /* max-width: 1123px;  */
                 width: var(--anchoPage);
             }
-            section {
+            /* habilitar para impresion modo resumido */
+            /* section {
                 padding-top: 2em;
 
-            }
+            } */
             nav { display: none;}
             svg.icon.w50 {fill: black;}
             .atencion sub {
@@ -978,7 +1009,9 @@
                 size: 210mm 297mm;
                 widows: 0;
             } */
-            ul {padding: .5em;}
+            
+            /* habilitar para impresion modo resumido */
+            /* ul {padding: .5em;} */
             
             .salto { 
                 break-after: avoid-page !important;
@@ -1709,14 +1742,12 @@
 
             <div id="datosContacto" class="fontSpecial-bold-italic extraEspace alingC">
                 <ul>
-                    <h4><svg id="whatsapp" class="icon active"><use href="static/images/icons.svg#ico-whatsapp"/> </svg>
-                     +54 9 11 pedí-melo</h4>
-                    <a href="mailto:waldrom68@gmail.com"><svg id="email" class="icon active"><use href="static/images/icons.svg#ico-email"/> </svg>
-                    waldrom68@gmail.com</a>
+                    <li><h4><svg id="whatsapp" class="icon active"><use href="static/images/icons.svg#ico-whatsapp"/> </svg>+54 9 11 pedí-melo</h4></li>
+                    <li><a href="mailto:waldrom68@gmail.com"><svg id="email" class="icon active"><use href="static/images/icons.svg#ico-email"/> </svg>waldrom68@gmail.com</a></li>
                 </ul>
                 <ul>
-                    <a href="https://www.linkedin.com/in/walter-romero1968" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-linkedin"/></svg> /in/walter-romero1968</a> 
-                    <a href="https://waldrom68.github.io" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-github"/> </svg> waldrom68.github.io</a> 
+                    <li><a href="https://www.linkedin.com/in/walter-romero1968" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-linkedin"/></svg>/in/walter-romero1968</a> </li>
+                    <li><a href="https://waldrom68.github.io" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-github"/> </svg>waldrom68.github.io</a> </li>
                 </ul>
             </div> <!-- Fin detalle -->
         </section> <!-- Fin contact -->
