@@ -82,6 +82,7 @@ function initNone(set) {
         let noProgressColor = donutStyle.getPropertyValue('--acento-bg');
         let progressColor = donutStyle.getPropertyValue('--acento');
         // console.log(donutStyle)
+        console.log("pasando por updateDonut()");
         if (!progressColor) {
             progressColor = 'red';
             console.log("no encontre variable --acento");            
@@ -139,6 +140,7 @@ function initNone(set) {
     }
     
     function updateSlider(element) {
+        console.log("pasando por updateSlider()");
         if (element) {
         var parent = element.parentElement;
         var thumb = parent.querySelector('.range-slider__thumb'),
@@ -151,7 +153,7 @@ function initNone(set) {
         updateDonut(element.value, element.parentNode);
         }
         (function initAndSetupTheSliders() {
-    
+        console.log("pasando por initAndSetupTheSliders()");
         [].forEach.call(document.querySelectorAll(".container-chart"), function(el) {
         let inputs = [].slice.call(el.querySelectorAll('.range-slider input'));
         let leyend = document.querySelector("#" + el.id + " .center-label span");

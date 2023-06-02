@@ -1,310 +1,435 @@
 <!DOCTYPE html>
 <html lang="es-ar">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="prefers-color-scheme" content="">
-    
-    <!-- <link rel="stylesheet" href="static\css\mediaScreen.css"> -->
-    <link rel="stylesheet" href="static\css\menuNav.css">
-    <link rel="stylesheet" href="static\css\widget.css">
-    <title>CV - WR</title>
 
-    <!-- no existen declaraciones de color, ni de background-color -->
-    <style id="fonts">
-        /* fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,700&display=swap');
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="prefers-color-scheme" content="">
 
-        @font-face {
-        font-family: 'Quinta-light';
-        font-style: normal;  /* light */
-        src: local('BwQuintaPro light'), local('BwQuintaPro-light'), url(static/fuentes/bw_quinta/BwQuintaPro-Light.woff2 )  format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
-        @font-face {
-        font-family: 'Quinta-light';
-        font-style: italic;  /* light */
-        src: local('BwQuintaPro light Italic'), local('BwQuintaPro-light-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-LightItalic.woff2)  format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
-        @font-face {
-        font-family: 'Quinta-regular';
-        font-style: normal;
-        src: local('BwQuintaPro Regular'), local('BwQuintaPro-Regular'), url(static/fuentes/bw_quinta/BwQuintaPro-Regular.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
-        @font-face {
-        font-family: 'Quinta-regular';
-        font-style: italic;
-        src: local('BwQuintaPro Regular Italic'), local('BwQuintaPro-Regular-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-RegularItalic.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
-        @font-face {
-        font-family: 'Quinta-bold';
-        font-style: normal;
-        src: local('BwQuintaPro Bold'), local('BwQuintaPro-Bold'), url(static/fuentes/bw_quinta/BwQuintaPro-Bold.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
-        @font-face {
-        font-family: 'Quinta-bold';
-        font-style: italic;
-        src: local('BwQuintaPro Bold Italic'), local('BwQuintaPro-Bold-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-BoldItalic.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
-        }
+        <!-- <link rel="stylesheet" href="static\css\mediaScreen.css"> -->
+        <link rel="stylesheet" href="static\css\menuNav.css">
+        <link rel="stylesheet" href="static\css\widget.css">
+        <title>CV - WR</title>
 
-        :root {
-            --body-font-family: 'Quinta-light','roboto', system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            --body-font-size: 110%;
-            --body-font-weight: 100;
-            --body-line-height: 1.5;
-        }
-    </style>
+        <!-- no existen declaraciones de color, ni de background-color -->
+        <style id="fonts">
+            /* fonts */
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,900;1,700&display=swap');
 
-     <style id="paletColor">
-         /* General colors */
-        :root {
-            --themes: 'Dark', 'Light';
+            @font-face {
+                font-family: 'Quinta-light';
+                font-style: normal;
+                /* light */
+                src: local('BwQuintaPro light'), local('BwQuintaPro-light'), url(static/fuentes/bw_quinta/BwQuintaPro-Light.woff2 ) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
 
-            --body-bg: #fff;
-            --body-color: #212529;
+            @font-face {
+                font-family: 'Quinta-light';
+                font-style: italic;
+                /* light */
+                src: local('BwQuintaPro light Italic'), local('BwQuintaPro-light-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-LightItalic.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
 
-            --white: rgba(230, 230, 230);
+            @font-face {
+                font-family: 'Quinta-regular';
+                font-style: normal;
+                src: local('BwQuintaPro Regular'), local('BwQuintaPro-Regular'), url(static/fuentes/bw_quinta/BwQuintaPro-Regular.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
 
-            --gray-100: #f8f9fa;
-            --gray-200: #e9ecef;
-            --gray-300: #dee2e6;
-            --gray-400: #ced4da;
-            --gray-500: #adb5bd;
-            --gray-600: #6c757d;
-            --gray-700: #495057;
-            --gray-800: #343a40;
-            --gray-900: #212529;
-            
-            --gray-dark: #343a40;
-            --black: rgba( 50, 50, 50);
+            @font-face {
+                font-family: 'Quinta-regular';
+                font-style: italic;
+                src: local('BwQuintaPro Regular Italic'), local('BwQuintaPro-Regular-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-RegularItalic.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
 
-            --destacado: rgb(255, 0, 77);
-            --alert: rgba(231, 8, 8, 1);
-            /* ATRIBUTO COMUN, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
-            --acento: #00ff00;  /* --progress-color */
-            --acento-bg: var(--gray-600) !important;  /* 5 */
-            --atencion:rgb(199, 199, 45) ;
-            color:rgb(199, 199, 45)
-        }
+            @font-face {
+                font-family: 'Quinta-bold';
+                font-style: normal;
+                src: local('BwQuintaPro Bold'), local('BwQuintaPro-Bold'), url(static/fuentes/bw_quinta/BwQuintaPro-Bold.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
 
-        .invert {
-            background-color: var(--body-color);
-            color: var(--body-bg);
-        }
-        .atencion { 
-            color: rgb(85, 143, 209); 
-            /* filter: saturate(8); */
-            font-size: 100%;
-        }
-        svg.icon.destacado {
-            fill: var(--destacado);
-            stroke: var(--destacado);
-            background-color: transparent;
-        }
-        svg.icon.alert {
-            fill: var(--alert);
-            stroke: var(--alert);
-            background-color: transparent;
-        }
-        .icon.link:hover, .icon .link:hover {fill: var(--acento);}
+            @font-face {
+                font-family: 'Quinta-bold';
+                font-style: italic;
+                src: local('BwQuintaPro Bold Italic'), local('BwQuintaPro-Bold-Italic'), url(static/fuentes/bw_quinta/BwQuintaPro-BoldItalic.woff2) format('woff2');
+                unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+            }
 
-        .palettas {
-            /* Paleta 1 - Dark */
-            /* del mas oscuro al mas claro */
-            color: #022011; /* 1  Fondo */ 
-            color: #3a5048; /* 2  Disable */
-            color: #236e23; /* 3 atnecion 1*/
-            /* del menos llamativo al mas llamativo */
-            color: #03faf6; /* 4 atencion 2*/
-            color: #00ff00; /* 5 Acento */
-            color: white; color: black;
+            :root {
+                --body-font-family: 'Quinta-light', 'roboto', system-ui, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                --body-font-size: 110%;
+                --body-font-weight: 100;
+                --body-line-height: 1.5;
+            }
+        </style>
 
-            /* Paleta 1 - Light */
-            /* del mas claro al mas oscuro */
-            color: #236e23; /* 1 */ 
-            color: #3a5048; /* 2 */
-            color: #022011; /* 3 */
-            /* del menos llamativo al mas llamativo */
-            color: #03faf6; /* 4 */
-            color: #00ff00; /* 5 Acento */
-            color: white; color: black;
+        <style id="paletColor">
+            /* General colors */
+            :root {
+                --themes: 'Dark', 'Light';
 
-            /* Paleta 2 Dark */
-            color: #072f33; /* dark */
-            color: #34585c; /* principal -el del cv COLOR 1 */
-            color: #608589; /* light */
-            color: #585c34; /* principal  */
-            color: #2e330d; /* dark */
-            color: #85895e; /* light * /
-            
-            /* Paleta 2 Light */
-            color: #9bdbe2; /* light */
-            color: #6aa9b0; /* principal -el del cv */
-            color: #3a7a81; /* dark */
-            color: #a9b06a; /* principal */
-            color: #79813e; /* dark */
-            color: #dbe299; /* light */
-            
-            color: rgb(242, 242, 230); /* principal -el del cv */ 
-            color: #6aa9b0; /* principal -el del cv */
-            color: #34585c; /* principal -el del cv COLOR 1 */
-            color: #00ff00; /* principal -el del cv COLOR 1 */
-        }
-        .Dark { /* --primary-bg:RED; */
-            --primary-bg: #34585c ; --primary-color: var(--gray-400); /* color 1 */
-            --primary-disable-bg: transparent; --primary-disable: #072f33; /* color 2*/
-            --primary-link-bg: transparent; --primary-link: #79813e;
-            --primary-active-bg: transparent; --primary-active: var(--white); /* color 4*/
-            --primary-hover-bg: transparent; --primary-hover: #dbe299;
+                --body-bg: #fff;
+                --body-color: #212529;
+
+                --white: rgba(230, 230, 230);
+
+                --gray-100: #f8f9fa;
+                --gray-200: #e9ecef;
+                --gray-300: #dee2e6;
+                --gray-400: #ced4da;
+                --gray-500: #adb5bd;
+                --gray-600: #6c757d;
+                --gray-700: #495057;
+                --gray-800: #343a40;
+                --gray-900: #212529;
+
+                --gray-dark: #343a40;
+                --black: rgba(50, 50, 50);
+
+                --destacado: rgb(255, 0, 77);
+                --alert: rgba(231, 8, 8, 1);
+                /* ATRIBUTO COMUN, SIRVE PARA RESALTAR ALGO BAJO UN TONO COMÚN, ej: Star */
+                --acento: #00ff00;
+                /* --progress-color */
+                --acento-bg: var(--gray-600) !important;
+                /* 5 */
+                --atencion: rgb(199, 199, 45);
+                color: rgb(199, 199, 45)
+            }
+
+            .invert {
+                background-color: var(--body-color);
+                color: var(--body-bg);
+            }
+
+            .atencion {
+                color: rgb(85, 143, 209);
+                /* filter: saturate(8); */
+                font-size: 100%;
+            }
+
+            svg.icon.destacado {
+                fill: var(--destacado);
+                stroke: var(--destacado);
+                background-color: transparent;
+            }
+
+            svg.icon.alert {
+                fill: var(--alert);
+                stroke: var(--alert);
+                background-color: transparent;
+            }
+
+            .icon.link:hover,
+            .icon .link:hover {
+                fill: var(--acento);
+            }
+
+            .palettas {
+                /* Paleta 1 - Dark */
+                /* del mas oscuro al mas claro */
+                color: #022011;
+                /* 1  Fondo */
+                color: #3a5048;
+                /* 2  Disable */
+                color: #236e23;
+                /* 3 atnecion 1*/
+                /* del menos llamativo al mas llamativo */
+                color: #03faf6;
+                /* 4 atencion 2*/
+                color: #00ff00;
+                /* 5 Acento */
+                color: white;
+                color: black;
+
+                /* Paleta 1 - Light */
+                /* del mas claro al mas oscuro */
+                color: #236e23;
+                /* 1 */
+                color: #3a5048;
+                /* 2 */
+                color: #022011;
+                /* 3 */
+                /* del menos llamativo al mas llamativo */
+                color: #03faf6;
+                /* 4 */
+                color: #00ff00;
+                /* 5 Acento */
+                color: white;
+                color: black;
+
+                /* Paleta 2 Dark */
+                color: #072f33;
+                /* dark */
+                color: #34585c;
+                /* principal -el del cv COLOR 1 */
+                color: #608589;
+                /* light */
+                color: #585c34;
+                /* principal  */
+                color: #2e330d;
+                /* dark */
+                color: #85895e;
+                /* light * /
+                    
+                    /* Paleta 2 Light */
+                color: #9bdbe2;
+                /* light */
+                color: #6aa9b0;
+                /* principal -el del cv */
+                color: #3a7a81;
+                /* dark */
+                color: #a9b06a;
+                /* principal */
+                color: #79813e;
+                /* dark */
+                color: #dbe299;
+                /* light */
+
+                color: rgb(242, 242, 230);
+                /* principal -el del cv */
+                color: #6aa9b0;
+                /* principal -el del cv */
+                color: #34585c;
+                /* principal -el del cv COLOR 1 */
+                color: #00ff00;
+                /* principal -el del cv COLOR 1 */
+            }
+
+            .Dark {
+                /* --primary-bg:RED; */
+                --primary-bg: #34585c;
+                --primary-color: var(--gray-400);
+                /* color 1 */
+                --primary-disable-bg: transparent;
+                --primary-disable: #072f33;
+                /* color 2*/
+                --primary-link-bg: transparent;
+                --primary-link: #79813e;
+                --primary-active-bg: transparent;
+                --primary-active: var(--white);
+                /* color 4*/
+                --primary-hover-bg: transparent;
+                --primary-hover: #dbe299;
 
 
-            --secondary-bg: var(--gray-900); --secondary-color: var(--gray-500);
-            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
-            --secondary-link-bg: transparent; --secondary-link: white; /* color 3 */
-            --secondary-active-bg: transparent; --secondary-active: white;
-            --secondary-hover-bg: #072f33; --secondary-hover: white;
-        }
+                --secondary-bg: var(--gray-900);
+                --secondary-color: var(--gray-500);
+                --secondary-disable-bg: transparent;
+                --secondary-disable: var(--primary-disable);
+                --secondary-link-bg: transparent;
+                --secondary-link: white;
+                /* color 3 */
+                --secondary-active-bg: transparent;
+                --secondary-active: white;
+                --secondary-hover-bg: #072f33;
+                --secondary-hover: white;
+            }
 
-        .Light {
-            --primary-bg: #6aa9b0 ; --primary-color: var(--gray-900); /* color 1 */
-            --primary-disable-bg: transparent; --primary-disable: #9bdbe2; /* color 2 */
-            --primary-link-bg: transparent; --primary-link: white;
-            --primary-active-bg: transparent; --primary-active: #85895e; /* color 4 */
-            --primary-hover-bg: transparent; --primary-hover: #585c34;
+            .Light {
+                --primary-bg: #6aa9b0;
+                --primary-color: var(--gray-900);
+                /* color 1 */
+                --primary-disable-bg: transparent;
+                --primary-disable: #9bdbe2;
+                /* color 2 */
+                --primary-link-bg: transparent;
+                --primary-link: white;
+                --primary-active-bg: transparent;
+                --primary-active: #85895e;
+                /* color 4 */
+                --primary-hover-bg: transparent;
+                --primary-hover: #585c34;
 
-            --secondary-bg: rgb(239, 239, 237); --secondary-color: var(--gray-900);
-            --secondary-disable-bg: transparent; --secondary-disable: var(--primary-disable);
-            --secondary-link-bg: transparent; --secondary-link: #072f33; /* color 3 */
-            --secondary-active-bg: transparent; --secondary-active: var(--black);
-            --secondary-hover-bg: var(--gray-300) ; --secondary-hover: black ;
+                --secondary-bg: rgb(239, 239, 237);
+                --secondary-color: var(--gray-900);
+                --secondary-disable-bg: transparent;
+                --secondary-disable: var(--primary-disable);
+                --secondary-link-bg: transparent;
+                --secondary-link: #072f33;
+                /* color 3 */
+                --secondary-active-bg: transparent;
+                --secondary-active: var(--black);
+                --secondary-hover-bg: var(--gray-300);
+                --secondary-hover: black;
 
-        }
+            }
 
-        .primary {
-            background-color: var(--primary-bg);
-            color: var(--primary-color);
-        }
-            .primary.invert,  .primary .invert {
+            .primary {
+                background-color: var(--primary-bg);
+                color: var(--primary-color);
+            }
+
+            .primary.invert,
+            .primary .invert {
                 background-color: var(--primary-color);
                 color: var(--primary-bg);
             }
-            .primary.active, .primary .active {
+
+            .primary.active,
+            .primary .active {
                 background-color: var(--primary-active-bg);
                 color: var(--primary-active);
             }
-            .primary.disable, .primary .disable {
+
+            .primary.disable,
+            .primary .disable {
                 background-color: var(--primary-disable-bg);
                 color: var(--primary-disable);
             }
-            .primary.hover, .primary .hover {
+
+            .primary.hover,
+            .primary .hover {
                 background-color: var(--primary-hover-bg);
                 color: var(--primary-hover);
             }
-            .primary.acento, .primary .acento {
+
+            .primary.acento,
+            .primary .acento {
                 background-color: var(--acento-bg);
                 color: var(--acento);
             }
-            .primary.destacado, .primary .destacado {
+
+            .primary.destacado,
+            .primary .destacado {
                 background-color: var(--destacado-bg);
                 color: var(--destacado);
             }
 
             /* LINK's y HOVER's */
-            a.primary, .primary a {
-                color:var(--primary-link);
+            a.primary,
+            .primary a {
+                color: var(--primary-link);
             }
-            a.primary:hover, .primary a:hover {
-                background-color: var(--primary-hover-bg);
-                color:var(--primary-hover);
-            }
-            /* UL LI */
-            /* .primary .expand li:hover {
+
+            a.primary:hover,
+            .primary a:hover {
                 background-color: var(--primary-hover-bg);
                 color: var(--primary-hover);
-            } */
+            }
+
+            /* UL LI */
+            /* .primary .expand li:hover {
+                        background-color: var(--primary-hover-bg);
+                        color: var(--primary-hover);
+                    } */
             /* SVG's */
-            .primary svg,  svg.primary {
+            .primary svg,
+            svg.primary {
                 fill: var(--primary-color);
                 /* stroke: var(--primary-color); */
             }
-            .primary svg.disable,  .primary.disable svg {
+
+            .primary svg.disable,
+            .primary.disable svg {
                 fill: var(--primary-disable);
                 stroke: none;
             }
-            .primary svg.active,  .primary.active svg, svg.icon.active {
+
+            .primary svg.active,
+            .primary.active svg,
+            svg.icon.active {
                 fill: var(--primary-active);
                 stroke: none;
             }
-            .primary svg.acento,  .primary.acento svg {
+
+            .primary svg.acento,
+            .primary.acento svg {
                 fill: var(--acento);
                 /* stroke: var(--acento); */
                 background-color: transparent;
             }
+
             /*  */
 
-        .secondary {
-            background-color: var(--secondary-bg);
-            color: var(--secondary-color);
-        }
-            .secondary.invert,  .secondary .invert {
+            .secondary {
+                background-color: var(--secondary-bg);
+                color: var(--secondary-color);
+            }
+            
+            .secondary.invert,
+            .secondary .invert {
                 background-color: var(--secondary-color);
                 color: var(--secondary-bg);
             }
-            .secondary.active,  .secondary .active {
+
+            .secondary.active,
+            .secondary .active {
                 background-color: var(--secondary-active-bg);
                 color: var(--secondary-active);
             }
-            .secondary.disable,  .secondary .disable {
+
+            .secondary.disable,
+            .secondary .disable {
                 background-color: var(--secondary-disable-bg);
                 color: var(--secondary-disable);
             }
-            .secondary.hover,  .secondary .hover {
+
+            .secondary.hover,
+            .secondary .hover {
                 background-color: var(--secondary-hover-bg);
                 color: var(--secondary-hover);
             }
-            .secondary.acento,  .secondary .acento {
+
+            .secondary.acento,
+            .secondary .acento {
                 background-color: var(--acento-bg);
                 color: var(--acento);
             }
-            .secondary.destacado,  .secondary .destacado {
+
+            .secondary.destacado,
+            .secondary .destacado {
                 background-color: var(--destacado-bg);
                 color: var(--destacado);
             }
 
             /* LINK's */
-            a.secondary, .secondary a {
-                color:var(--secondary-link);
+            a.secondary,
+            .secondary a {
+                color: var(--secondary-link);
             }
-            a.secondary:hover, .secondary a:hover {
-                background-color: var(--secondary-hover-bg);
-                color:var(--secondary-hover);
-            }
-            /* UL LI */
-            /* .secondary li:hover {
+
+            a.secondary:hover,
+            .secondary a:hover {
                 background-color: var(--secondary-hover-bg);
                 color: var(--secondary-hover);
-            } */
+            }
+
+            /* UL LI */
+            /* .secondary li:hover {
+                        background-color: var(--secondary-hover-bg);
+                        color: var(--secondary-hover);
+                    } */
             /* SVG's */
-            .secondary svg,  svg.secondary {
+            .secondary svg,
+            svg.secondary {
                 fill: var(--secondary-color);
                 stroke: var(--secondary-color);
             }
-            .secondary svg.disable,  .secondary.disable svg, svg.icon.disable {
+
+            .secondary svg.disable,
+            .secondary.disable svg,
+            svg.icon.disable {
                 fill: var(--secondary-disable);
                 stroke: none;
                 /* stroke: var(--secondary-disable); */
             }
-            .secondary svg.active,  .secondary.active svg, svg.icon.active {
+
+            .secondary svg.active,
+            .secondary.active svg,
+            svg.icon.active {
                 fill: var(--secondary-active);
                 stroke: none;
             }
-            .secondary svg.acento,  .secondary.acento svg {
+
+            .secondary svg.acento,
+            .secondary.acento svg {
                 fill: var(--acento);
                 /* stroke: var(--acento); */
                 background-color: transparent;
@@ -312,291 +437,398 @@
 
             /* AJUSTES SOBRE ESTILOS, SOBREESCRITURAS, SOLUCION DE COMPROMISO */
             .rtngIcoStar.checked svg {
-                fill:var(--acento);
+                fill: var(--acento);
             }
 
-            .secondary .expand > ul > span:hover {
+            .secondary .expand>ul>span:hover {
                 background-color: var(--secondary-hover-bg);
-                color: var(--secondary-hover); 
+                color: var(--secondary-hover);
             }
-            .primary a > span:hover, #datosContacto ul li:hover {
+
+            .primary a>span:hover,
+            #datosContacto ul li:hover {
                 background-color: var(--secondary-hover-bg);
-                color: var(--secondary-hover); 
+                color: var(--secondary-hover);
+            }
+        </style>
+
+        <!-- no existen declaraciones de color, ni de background-color -->
+        <style id="@media-prefers-color">
+            /* Ajusto preferencia de colores */
+
+            @media (prefers-color-scheme: light) {
+                :root {
+                    --SETEO: "Light";
+                }
+
+                .testin::before {
+                    content: "Light: ";
+                }
             }
 
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --SETEO: "Dark";
+                }
 
+                .testin::before {
+                    content: "Dark: ";
+                }
+            }
+        </style>
 
-
-    </style>
-
-    <!-- no existen declaraciones de color, ni de background-color -->
-    <style id="@media-prefers-color">
-        /* Ajusto preferencia de colores */
+        <!-- no existen declaraciones de color, ni de background-color -->
         
-        @media (prefers-color-scheme: light ) {
-            :root {
-                --SETEO: "Light";
+        <style id="base">
+            html,
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
-            .testin::before {content:  "Light: ";} 
-        }
-
-        @media (prefers-color-scheme: dark ) {
-            :root {
-                --SETEO: "Dark";
+            body {
+                /* variables definidas en "<style>fonts<style>" */
+                font-family: var(--body-font-family);
+                font-size: var(--body-font-size);
+                font-weight: var(--font-weight);
+                line-height: var(--body-line-height);
+                /* overflow: scroll; */
+                width: 100%;
             }
 
-            .testin::before {content:  "Dark: ";} 
-        }
+            .alingL {
+                text-align: left;
+            }
 
-    </style>
+            .alingR {
+                text-align: right;
+            }
 
-    <!-- no existen declaraciones de color, ni de background-color -->
-    <style id="base">
-        html,
-        * { margin: 0; padding:0; box-sizing: border-box;
-        }
-        body {
-            /* variables definidas en "<style>fonts<style>" */
-            font-family: var(--body-font-family);
-            font-size: var(--body-font-size);
-            font-weight: var(--font-weight);
-            line-height: var(--body-line-height);
-            /* overflow: scroll; */
-            width: 100%;
-        }
-        .alingL {text-align: left;}
-        .alingR {text-align: right;}
-        .alingC {text-align: center;}
-        .smallCaps {font-variant: small-caps;}
+            .alingC {
+                text-align: center;
+            }
 
-        /* Centrando todo el contenido -ancho y alto */
-        .centered {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 100%;
-            height: auto;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1000;
-        }
-        
-        /* special text and fonts */
-        .extraEspace {margin-top: .5em;}
-        
-        /* SPECIAL STYLE's */
-        .special {color: currentColor !important; }
+            .smallCaps {
+                font-variant: small-caps;
+            }
+
+            /* Centrando todo el contenido -ancho y alto */
+            .centered {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 100%;
+                height: auto;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                z-index: 1000;
+            }
+
+            /* special text and fonts */
+            .extraEspace {
+                margin-top: .5em;
+            }
+
+            /* SPECIAL STYLE's */
+            .special {
+                color: currentColor !important;
+            }
+
             .special hr {
                 margin: 1em 0;
-                height: 4px; /* 5px */
+                height: 4px;
+                /* 5px */
                 background-color: currentColor !important;
                 opacity: .5;
                 width: 100%;
             }
-            .special hr.p75 {width: 75%;}
-            .special hr.p33 {width: 33%;}
-        
+
+            .special hr.p75 {
+                width: 75%;
+            }
+
+            .special hr.p33 {
+                width: 33%;
+            }
+
             /* Generales pero especiales */
-        .inline {display: inline-flex;}
-        .inlineBlock {display: inline-block;}
-        .None {display: none;}
+            .inline {
+                display: inline-flex;
+            }
 
-        /* fonts */
-        .fontSpecial-light {font-family: 'Quinta-light';font-style: normal;}
-        .fontSpecial-light-italic {font-family: 'Quinta-light'; font-style: italic;}
-        .fontSpecial-regular {font-family: 'Quinta-regular';font-style: normal;}
-        .fontSpecial-regular-italic {font-family: 'Quinta-regular'; font-style: italic;}
-        .fontSpecial-bold {font-family: 'Quinta-bold'; font-style: normal;}
-        .fontSpecial-bold-italic {font-family: 'Quinta-bold'; font-style: italic;}
-        
-        h1.comprimir {
-            padding-left: .3em;
-            letter-spacing: .1em;
-            overflow-block: visible;
-        }
+            .inlineBlock {
+                display: inline-block;
+            }
 
-    </style>
+            .None {
+                display: none;
+            }
 
-    <style id="Layout">
-        :root {
-            /* DE LONGITUD */
-            /* layout general */
-            --altoPage: 1122.519685px;
-            --anchoPage:1224px; 
+            /* fonts */
+            .fontSpecial-light {
+                font-family: 'Quinta-light';
+                font-style: normal;
+            }
 
-            /* en Donuts */
-            --grosor: 5px; /* min: 1%,  max:50% */
-        }
-        a {color: currentColor !important;font-family: 'Quinta-bold'; font-style: italic;}
-        
-        body {
-            color: var(--body-color);
-            background-color: var(--body-bg);
-            /* abria que meter aqui las medidas del ancho de la pagina? */
-        }
+            .fontSpecial-light-italic {
+                font-family: 'Quinta-light';
+                font-style: italic;
+            }
 
-        h1 {
-            font-weight: bold;
-            font-style: italic;
-        }
-        p {text-indent: 1.5em; margin-bottom: 0;}
-        p + p {margin-top: 1em;} 
+            .fontSpecial-regular {
+                font-family: 'Quinta-regular';
+                font-style: normal;
+            }
 
-        section {
-            /* background-color: red; */
-            display: flex;
-            width: 100%;
-            padding: 0% .5em;
-        }
+            .fontSpecial-regular-italic {
+                font-family: 'Quinta-regular';
+                font-style: italic;
+            }
 
-        ul, li {
-            list-style-type: none;
-            /* background-color: initial; */
-            cursor: grab;
-        }
+            .fontSpecial-bold {
+                font-family: 'Quinta-bold';
+                font-style: normal;
+            }
 
-        /* Contenedor principal */
-        /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
-            Las columnas 1, 3 y 4 usan el mismo background 
-            Hoja A4, en unidades: Total 1123px (leftA:172px, leftB:619px, rightA:88px:, rightB:255px)
-                Left: 70% (donde LeftA 21% de Left )
-                Right: 30% (donde RightA 25% de Right )*/
-        #page {
-            display: flex;
-            width: 100%;
-            max-width: 100%;
-            min-width: 100%;
-            height: auto;
-            max-height: 100%;
-            min-height: 100%;
-            font-size: 110%;
-            line-height: 110%;
-            /* padding: 0em 0em 0em 1em; */
-        }
+            .fontSpecial-bold-italic {
+                font-family: 'Quinta-bold';
+                font-style: italic;
+            }
 
-        /* 791px */
-        /* #left, #right {display: grid;} */
-        #left {
-            width: 70%;
-            max-width: 70%;
-            background-color: inherit;
-        }
+            h1.comprimir {
+                padding-left: .3em;
+                letter-spacing: .1em;
+                overflow-block: visible;
+            }
+        </style>
+
+        <style id="Layout">
+            :root {
+                /* DE LONGITUD */
+                /* layout general */
+                --altoPage: 1122.519685px;
+                --anchoPage: 1224px;
+
+                /* en Donuts */
+                --grosor: 5px;
+                /* min: 1%,  max:50% */
+            }
+
+            a {
+                color: currentColor !important;
+                font-family: 'Quinta-bold';
+                font-style: italic;
+            }
+
+            body {
+                color: var(--body-color);
+                background-color: var(--body-bg);
+                /* abria que meter aqui las medidas del ancho de la pagina? */
+            }
+
+            h1 {
+                font-weight: bold;
+                font-style: italic;
+            }
+
+            p {
+                text-indent: 1.5em;
+                margin-bottom: 0;
+            }
+
+            p+p {
+                margin-top: 1em;
+            }
+
+            section {
+                /* background-color: red; */
+                display: flex;
+                width: 100%;
+                padding: 0% .5em;
+            }
+
+            ul,
+            li {
+                list-style-type: none;
+                /* background-color: initial; */
+                cursor: grab;
+            }
+
+            /* Contenedor principal */
+            /*  Layout de 4 columnas. La columna 1 y 2, deben estar hermanadas, igual la columna 3 y 4.
+                Las columnas 1, 3 y 4 usan el mismo background 
+                Hoja A4, en unidades: Total 1123px (leftA:172px, leftB:619px, rightA:88px:, rightB:255px)
+                    Left: 70% (donde LeftA 21% de Left )
+                    Right: 30% (donde RightA 25% de Right )*/
+            #page {
+                display: flex;
+                width: 100%;
+                max-width: 100%;
+                min-width: 100%;
+                height: auto;
+                max-height: 100%;
+                min-height: 100%;
+                font-size: 110%;
+                line-height: 110%;
+                /* padding: 0em 0em 0em 1em; */
+            }
+
+            /* 791px */
+            /* #left, #right {display: grid;} */
+            #left {
+                width: 70%;
+                max-width: 70%;
+                background-color: inherit;
+            }
+
             /* 161px */
-            #left .captionVertical { 
+            #left .captionVertical {
                 width: 21%;
                 min-width: 6em;
                 max-width: 6em;
             }
+
             /* 619px */
             #left .detalle {
                 /* background-color: var(--bg-100); */
                 padding-left: .5em;
             }
-        /* 343px */
-        #right {
-            width: 30%;
-            padding: auto;
-            /* margin: auto; */
-        }
+
+            /* 343px */
+            #right {
+                width: 30%;
+                padding: auto;
+                /* margin: auto; */
+            }
+
             /* 88px */
-            #right .captionVertical { 
+            #right .captionVertical {
                 width: 25%;
                 min-width: 4em;
                 max-width: 4em;
             }
+
             /* 255px */
-            #right .detalle { 
+            #right .detalle {
                 /* padding-right: .5em;
-                padding-left: .5em ; */
+                        padding-left: .5em ; */
             }
-            
-        .detalle {
-            /* display: block; */
-            width: 100%;
-            padding: 1em .5em;
-            /* min-width: 50%; */
-            /* margin: 0em 0.5em; */
-            /* padding-right: 0em 1em; */
-            border: 1px solid;
-            border-radius: 1em;
-            margin: 0.5em;
-        }
-        /* Es el TAG, se muestra el texto en vertical */
-        .captionVertical {
-            font-family: 'Roboto';
-            font-weight: 900;
-            font-size: 120%;
-            text-transform: capitalize;
-            font-variant: small-caps;
-            margin: initial;
-            writing-mode: vertical-rl;
-            transform: rotateZ(180deg);
-        } 
-        /* Es la funcionalidad para revertir el Texto del TAG en vertical */
-        .captionVertical.reset {
-            writing-mode: unset;
-            transform: initial;
-        }
-        /* Ajustando el contenido del TAG -ancho y alto */
-        .tagCenter {
-            position: relative;
-            left: -1em;
-            text-align: end;
-            padding: 1em;
-        }
-        /* Ajustando el contenido del TAG, pero en formato slim */
-        .tagCenter.slim {
-            left: 0em;
-        }
+
+            .detalle {
+                /* display: block; */
+                width: 100%;
+                padding: 1em .5em;
+                /* min-width: 50%; */
+                /* margin: 0em 0.5em; */
+                /* padding-right: 0em 1em; */
+                border: 1px solid;
+                border-radius: 1em;
+                margin: 0.5em;
+            }
+
+            /* Es el TAG, se muestra el texto en vertical */
+            .captionVertical {
+                font-family: 'Roboto';
+                font-weight: 900;
+                font-size: 120%;
+                text-transform: capitalize;
+                font-variant: small-caps;
+                margin: initial;
+                writing-mode: vertical-rl;
+                transform: rotateZ(180deg);
+            }
+
+            /* Es la funcionalidad para revertir el Texto del TAG en vertical */
+            .captionVertical.reset {
+                writing-mode: unset;
+                transform: initial;
+            }
+
+            /* Ajustando el contenido del TAG -ancho y alto */
+            .tagCenter {
+                position: relative;
+                left: -1em;
+                text-align: end;
+                padding: 1em;
+            }
+
+            /* Ajustando el contenido del TAG, pero en formato slim */
+            .tagCenter.slim {
+                left: 0em;
+            }
 
 
-        /* Left class and Id */
-        #persona {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-        #persona #datos {
-            padding-left: 2em;
-        }
+            /* Left class and Id */
+            #persona {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            #persona #datos {
+                padding-left: 2em;
+            }
 
 
-        .nombre {display: flex;}
+            .nombre {
+                display: flex;
+            }
 
-        /* Right class and Id */
-        #education1 .detalle {display: block;}
-        #education2.compact {display: flex; }
-        #education2.compact li {padding-top: .5em; }
+            /* Right class and Id */
+            #education1 .detalle {
+                display: block;
+            }
 
-        .hardskill { display: block; text-align: center;}
-        #cursos ul {font-size: .83em;}
-        .hobbies { 
-            display: flex; 
-            height: 100%;
-            flex-wrap: wrap;
-            justify-content: center;
-            text-align: center;
-            vertical-align: middle;
-            padding: 0.5em;
-        }
+            #education2.compact {
+                display: flex;
+            }
 
-        /* Footer class and Id */
-        #contact {
-            display: block;
-            padding: 1.25em 1em;
-            border-width: .19em ;
-            border-color: currentColor !important;
-            border-style: solid;
-            border-radius: 0 0 10px 10px;
-            height: auto;
-            width: 100%;
-            text-align: center;
-            font-family: 'Roboto';
-            font-weight: 400;
-        }
+            #education2.compact li {
+                padding-top: .5em;
+            }
+
+            .hardskill {
+                display: block;
+                text-align: center;
+            }
+
+            #cursos ul {
+                font-size: .83em;
+            }
+
+            .hobbies {
+                display: flex;
+                height: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                vertical-align: middle;
+                padding: 0.5em;
+            }
+
+            /* Footer class and Id */
+            #contact {
+                color: white;
+                display: block;
+                padding: 1.25em 1em;
+                border-width: .19em;
+                border-color: currentColor !important;
+                border-style: solid;
+                border-radius: 0 0 10px 10px;
+                height: auto;
+                width: 100%;
+                text-align: center;
+                font-family: 'Roboto';
+                font-weight: 400;
+                background-image:url("static/images/blue-tech-circuit-board.jpg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
             #datosContacto ul {
-                display:flex;
+                display: flex;
                 justify-content: space-evenly;
                 vertical-align: middle;
                 font-size: initial;
@@ -604,638 +836,906 @@
                 font-size: 110%;
             }
 
-        /* Manejo de tamaños y bordes en imagenes, icos, media */
-        #foto img {
-            width: 6.25em;
-            height: 6.25em;
-            border-radius: 50%;
-            border: .35em solid inherit !important;
-            clip-path: circle(100% at 50% 50%);
-        }
+            /* Manejo de tamaños y bordes en imagenes, icos, media */
+            #foto img {
+                width: 6.25em;
+                height: 6.25em;
+                border-radius: 50%;
+                border: .35em solid inherit !important;
+                clip-path: circle(100% at 50% 50%);
+            }
 
-        svg.icon {
-            width: 1.5em;
-            height: 1.5em;
-            line-height: 1.5em;
-        }
+            svg.icon {
+                width: 1.5em;
+                height: 1.5em;
+                line-height: 1.5em;
+            }
+
             .icon.w16 {
                 width: 1em;
                 height: 1em;
                 line-height: 1em;
             }
+
             .icon.menu {
                 width: 2em;
                 height: 2em;
                 line-height: 2em;
                 margin: 0 1em;
             }
+
             .icon.w50 {
-                width:3.15em;
-                height:3.15em;
-                line-height:3.15em;
+                width: 3.15em;
+                height: 3.15em;
+                line-height: 3.15em;
             }
-            .icon.border, .icon .border {
+
+            .icon.border,
+            .icon .border {
                 margin: .25em .25em;
                 border-radius: 15%;
                 border: 2px solid currentColor;
             }
 
-        /* Manejo de etiquetas ocultas o visibles*/
-        /* Detalle de trabajos, o cursos. Version resumida/extendida */
-        .extended {display: none;}
-        .compact {display: contents;}
-    </style>
-
-    <style id="media-screen&print">
-        /* CONTENEDOR PROVISORIO, SOLO PARA TESTING */
-        /* Pareto-regla que muestra datos para los breakpoint */
-        #pareto {
-            display: block; 
-            height: auto; 
-            margin-top: 2em; 
-            position: sticky; 
-            right: 0%; 
-            top: 0%;  
-            z-index: 1000;
-        }
-
-        /* // SCREEN devices */
-        /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
-        /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
-            NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
-            CITARLO. Por ejemplo: no es lo mismo poner #left #right {tal cosa}, que ponerlo como dos reglas 
-            diferentes una debajo de la otra -¡ es raro eso !-
-        */
-        /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero es el mismo comporamiento que otras prestigiosas web */
-        @media screen  { 
-            @media (min-width: 1200.00px) { 
-                #pareto { background-color: pink !important}
-                .testin::after { content: "width: >=1200.00" }
-
-                #left {
-                    max-width: 70%;
-                    width: 70% !important; 
-                }
-                #right { 
-                    width: 30% !important;
-                    max-width: 30%;
-                }
-                .rating { display: block}
-                .rtngEnd { display: none;}
-            }
-            @media (min-width: 992px) and (max-width: 1199.99px) { 
-                #pareto { background-color: azure}
-                .testin::after { content: "width: 992 a 1199.99" }
-
-                #left {
-                    width: 65% !important; 
-                    max-width: 65%;
-                }
-                #right { width: 35% !important;}
-                .icon.w50 {
-                    height: 3em; 
-                    line-height: 3em; 
-                    margin-top: 2em;
-                    width: 3em;
-                }
-                .rating { display: block}
-                .rtngEnd { display: none;}
-            }
-            @media (min-width: 768px) and (max-width: 991.99px) { 
-                #pareto { background-color: yellow}
-                .testin::after { content: "width: 768 a 991.99" }
-
-                #left {
-                    max-width: 65%;
-                    width: 65% !important; 
-                }
-                #left .captionVertical {
-                    max-width: none;
-                    min-width: auto; 
-                    width: 15%; 
-                }
-                #right .captionVertical {
-                    max-width: none;
-                    min-width: auto; 
-                    width: 15%; 
-                }
-
-                #right { width: 35% !important;}
-
-                .icon.w50 {
-                    height: 1.5em; 
-                    line-height: 1.5em; 
-                    margin-top: 0em;
-                    width: 1.5em;
-                }
-                .rating { display: block}
-                .rtngEnd { display: none;}
-
-            }
-            @media (min-width: 576px) and (max-width: 767.99px)  { 
-                #pareto { background-color: red}
-                .testin::after { content: "width: 576 y 767.99;"}
-
-                section {
-                    display: block; 
-                    width: 100%;
-                }
-                #datosContacto > ul { 
-                    display: block !important; 
-                    margin: 0px;
-                }
-                #education2.compact { display: block;}
-                #left {
-                    max-width: none; 
-                    min-width: auto;
-                    width: 100% !important; 
-                }
-                #left .captionVertical {
-                    align-items: center; 
-                    display: flex; 
-                    justify-content: center; 
-                    margin: auto !important;
-                    max-width: none; 
-                    min-width: auto; 
-                    transform: initial !important;
-                    width: 100%; 
-                    writing-mode: unset; 
-                }
-                #page {
-                    display: block; 
-                    width: 100%; 
-                }
-                #persona #datos { padding-left: 0;}
-                #right {width:100% !important; max-width:none; min-width:auto}
-                #right .captionVertical {
-                    align-items: center; 
-                    display: flex; 
-                    justify-content: center; 
-                    transform: initial !important; 
-                    margin: auto !important;
-                    max-width: none; 
-                    min-width: auto; 
-                    width: 100%; 
-                    writing-mode: unset; 
-                }
-                .callout { 
-                    width: 80%;
-                    height: 80%;
-                }
-                .captionVertical.reset { display: none !important;}
-                .container-chart {
-                    display: inline-block;
-                    width: auto; 
-                }
-                .icon.w50 {
-                    height: 3em; 
-                    line-height: 3em; 
-                    margin-top: 1em;
-                    width: 3em;
-                }
-                .rating { display: inline-flex !important;}
-                .rtngEnd { display: none !important;}
-                .special { display: none;}
-                .tagCenter { min-width: max-content;}
-
-
-            }
-            @media (min-width: 320px) and (max-width: 575.99px) { 
-                #pareto { background-color: orange}
-                .testin::after { content: "width: 320.00 a 575.99" }
-                
-                /* Estilos a modificar */
-                section {
-                    display: block; 
-                    width: 100%;
-                }
-                #datosContacto > ul { 
-                    display: block !important; 
-                    margin: 0px;
-                }
-                #education2.compact { display: block;}
-                #left {
-                    max-width: none; 
-                    min-width: auto;
-                    width: 100% !important; 
-                }
-                #left .captionVertical {
-                    align-items: center; 
-                    display: flex; 
-                    justify-content: center; 
-                    margin: auto !important;
-                    max-width: none; 
-                    min-width: auto; 
-                    transform: initial !important;
-                    width: 100%; 
-                    writing-mode: unset; 
-                }
-                #page {
-                    display: block; 
-                    width: 100%; 
-                }
-                #persona #datos { padding-left: 0;}
-                #right {width:100% !important; max-width:none; min-width:auto}
-                #right .captionVertical {
-                    align-items: center; 
-                    display: flex; 
-                    justify-content: center; 
-                    transform: initial !important; 
-                    margin: auto !important;
-                    max-width: none; 
-                    min-width: auto; 
-                    width: 100%; 
-                    writing-mode: unset; 
-                }
-                .callout { 
-                    width: 80%;
-                    height: 80%;
-                }
-                .captionVertical.reset { display: none !important;}
-                .container-chart {
-                    display: inline-block;
-                    width: auto; 
-                }
-                .icon.w50 {
-                    height: 3em; 
-                    line-height: 3em; 
-                    margin-top: 1em;
-                    width: 3em;
-                }
-                .rating { display: inline-flex !important;}
-                .rtngEnd { display: none !important;}
-                .special { display: none;}
-                .tagCenter { min-width: max-content;}
-            }
-            @media (min-width: 0px) and (max-width: 319.99px) { 
-                #pareto { background-color: green}
-                .testin::after { content: "width: <=319.99" }
-
-                /* Estilos a modificar */
-                section {
-                    display: block; 
-                    width: 100%;
-                }
-                #softskill > div {display: flex;}
-                #datosContacto > ul { 
-                    display: block !important; 
-                    margin: 0px;
-                }
-                #education2.compact { display: block;}
-                #left {
-                    max-width: none; 
-                    min-width: auto;
-                    width: 100% !important; 
-                }
-                #left .captionVertical {
-                    align-items: center; 
-                    display: flex; 
-                    justify-content: center; 
-                    margin: auto !important;
-                    max-width: none; 
-                    min-width: auto; 
-                    transform: initial !important;
-                    width: 100%; 
-                    writing-mode: unset; 
-                }
-                #page {
-                    display: block; 
-                    width: 100%; 
-                }
-                #persona #datos { padding-left: 0;}
-                #right {width:100% !important; max-width:none; min-width:auto}
-                #right .captionVertical {
-                    align-items: center; 
-                    display: flex; 
-                    justify-content: center; 
-                    transform: initial !important; 
-                    margin: auto !important;
-                    max-width: none; 
-                    min-width: auto; 
-                    width: 100%; 
-                    writing-mode: unset; 
-                }
-                .callout { 
-                    width: 80%;
-                    height: 80%;
-                }
-                .captionVertical.reset { display: none !important;}
-                .container-chart {
-                    display: inline-block;
-                    width: auto; 
-                }
-                .icon.w50 {
-                    height: 3em; 
-                    line-height: 3em; 
-                    margin-top: 1em;
-                    width: 3em;
-                }
-                .nombre {display: block !important;}
-                .rating { display: block !important;}
-                .rtngEnd { display: none !important;}
-                .special { display: none;}
-                .tagCenter { 
-                    font-size: initial;
-                    min-width: max-content;
-                }
-
-            }
-        } 
-
-        @media print  { 
-            #pareto { display: none;}
-            .testin::after { content: "SALIDA IMPRESION";} 
-
-            html, body { height: 98%;}
-            body, * { 
-                font-size: 12pt; 
-                line-height: 12pt;
-            }
-            body {
-                font-family: Arial, Helvetica, sans-serif; 
-                height: auto ;
-                /* max-width: 1123px;  */
-                width: var(--anchoPage);
-            }
-            /* habilitar para impresion modo resumido */
-            /* section {
-                padding-top: 2em;
-
-            } */
-            nav { display: none;}
-            svg.icon.w50 {fill: black;}
-            .atencion sub {
+            /* Manejo de etiquetas ocultas o visibles*/
+            /* Detalle de trabajos, o cursos. Version resumida/extendida */
+            .extended {
                 display: none;
             }
-            .captionVertical.reset .tagCenter{display: none;}
-            #contact {border: none;}
-            #education2.compact { display: flex;}
-            #left { width: 65%;}
-            #right {width: 35%;}
-            #footer {
-                display: inline-flex; 
-                width: 100%;
-                padding: 1em 0;
-                padding-top: 1em;
+
+            .compact {
+                display: contents;
             }
-            #footer #contact { padding: 1em;}
-            #footer #title { display: none;}
-            #footer #datosContacto ul {
-                display: inline-flex; 
-                margin:0;
-                width: auto;
+        </style>
+
+        <style id="media-screen&print">
+            /* CONTENEDOR PROVISORIO, SOLO PARA TESTING */
+            /* Pareto-regla que muestra datos para los breakpoint */
+            #pareto {
+                display: block;
+                height: auto;
+                margin-top: 2em;
+                position: sticky;
+                right: 0%;
+                top: 0%;
+                z-index: 1000;
             }
-            #footer #datosContacto ul li {
-                padding-left: 2.5em;
-                width: auto; 
+
+            /* // SCREEN devices */
+            /*  Se definen 4 breackpoint, y sin importar si es dispositivo de mano o compu/tv, cubre portrait y landscape*/
+            /*  POR LO QUE ENTIENDO SE DEBEN TENER LAS MISMAS REGLAS PARA CADA @MEDIA, LLEVEN EL MISMO O DIFERENTE VALOR
+                    NO SE PUDE ASUMIR QUE TOMA EL VALOR, POR MAS QUE EN LAS REGLAS GENERALES TENGA UNA FORMA DIFERENTE DE 
+                    CITARLO. Por ejemplo: no es lo mismo poner #left #right {tal cosa}, que ponerlo como dos reglas 
+                    diferentes una debajo de la otra -¡ es raro eso !-
+                */
+            /* Pasó la prueba de los simuladores de todos los modelos de dispositivos, y tambien modo desktop se acomoda 
+                con zoom desde 30% hasta 500%, para el caso del 30% mantiene layout pero no cambia el tamaño de fuentes, pero 
+                es el mismo comporamiento que otras prestigiosas web */
+            @media screen {
+                @media (min-width: 1200.00px) {
+                    #pareto {
+                        background-color: pink !important
+                    }
+
+                    .testin::after {
+                        content: "width: >=1200.00"
+                    }
+
+                    #left {
+                        max-width: 70%;
+                        width: 70% !important;
+                    }
+
+                    #right {
+                        width: 30% !important;
+                        max-width: 30%;
+                    }
+
+                    .rating {
+                        display: block
+                    }
+
+                    .rtngEnd {
+                        display: none;
+                    }
+                }
+
+                @media (min-width: 992px) and (max-width: 1199.99px) {
+                    #pareto {
+                        background-color: azure
+                    }
+
+                    .testin::after {
+                        content: "width: 992 a 1199.99"
+                    }
+
+                    #left {
+                        width: 65% !important;
+                        max-width: 65%;
+                    }
+
+                    #right {
+                        width: 35% !important;
+                    }
+
+                    .icon.w50 {
+                        height: 3em;
+                        line-height: 3em;
+                        margin-top: 2em;
+                        width: 3em;
+                    }
+
+                    .rating {
+                        display: block
+                    }
+
+                    .rtngEnd {
+                        display: none;
+                    }
+                }
+
+                @media (min-width: 768px) and (max-width: 991.99px) {
+                    #pareto {
+                        background-color: yellow
+                    }
+
+                    .testin::after {
+                        content: "width: 768 a 991.99"
+                    }
+
+                    #left {
+                        max-width: 65%;
+                        width: 65% !important;
+                    }
+
+                    #left .captionVertical {
+                        max-width: none;
+                        min-width: auto;
+                        width: 15%;
+                    }
+
+                    #right .captionVertical {
+                        max-width: none;
+                        min-width: auto;
+                        width: 15%;
+                    }
+
+                    #right {
+                        width: 35% !important;
+                    }
+
+                    .icon.w50 {
+                        height: 1.5em;
+                        line-height: 1.5em;
+                        margin-top: 0em;
+                        width: 1.5em;
+                    }
+
+                    .rating {
+                        display: block
+                    }
+
+                    .rtngEnd {
+                        display: none;
+                    }
+
+                }
+
+                @media (min-width: 576px) and (max-width: 767.99px) {
+                    #pareto {
+                        background-color: red
+                    }
+
+                    .testin::after {
+                        content: "width: 576 y 767.99;"
+                    }
+
+                    section {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    #datosContacto>ul {
+                        display: block !important;
+                        margin: 0px;
+                    }
+
+                    #education2.compact {
+                        display: block;
+                    }
+
+                    #left {
+                        max-width: none;
+                        min-width: auto;
+                        width: 100% !important;
+                    }
+
+                    #left .captionVertical {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        margin: auto !important;
+                        max-width: none;
+                        min-width: auto;
+                        transform: initial !important;
+                        width: 100%;
+                        writing-mode: unset;
+                    }
+
+                    #page {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    #persona #datos {
+                        padding-left: 0;
+                    }
+
+                    #right {
+                        width: 100% !important;
+                        max-width: none;
+                        min-width: auto
+                    }
+
+                    #right .captionVertical {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        transform: initial !important;
+                        margin: auto !important;
+                        max-width: none;
+                        min-width: auto;
+                        width: 100%;
+                        writing-mode: unset;
+                    }
+
+                    .callout {
+                        width: 80%;
+                        height: 80%;
+                    }
+
+                    .captionVertical.reset {
+                        display: none !important;
+                    }
+
+                    .container-chart {
+                        display: inline-block;
+                        width: auto;
+                    }
+
+                    .icon.w50 {
+                        height: 3em;
+                        line-height: 3em;
+                        margin-top: 1em;
+                        width: 3em;
+                    }
+
+                    .rating {
+                        display: inline-flex !important;
+                    }
+
+                    .rtngEnd {
+                        display: none !important;
+                    }
+
+                    .special {
+                        display: none;
+                    }
+
+                    .tagCenter {
+                        min-width: max-content;
+                    }
+
+
+                }
+
+                @media (min-width: 320px) and (max-width: 575.99px) {
+                    #pareto {
+                        background-color: orange
+                    }
+
+                    .testin::after {
+                        content: "width: 320.00 a 575.99"
+                    }
+
+                    /* Estilos a modificar */
+                    section {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    #datosContacto>ul {
+                        display: block !important;
+                        margin: 0px;
+                    }
+
+                    #education2.compact {
+                        display: block;
+                    }
+
+                    #left {
+                        max-width: none;
+                        min-width: auto;
+                        width: 100% !important;
+                    }
+
+                    #left .captionVertical {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        margin: auto !important;
+                        max-width: none;
+                        min-width: auto;
+                        transform: initial !important;
+                        width: 100%;
+                        writing-mode: unset;
+                    }
+
+                    #page {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    #persona #datos {
+                        padding-left: 0;
+                    }
+
+                    #right {
+                        width: 100% !important;
+                        max-width: none;
+                        min-width: auto
+                    }
+
+                    #right .captionVertical {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        transform: initial !important;
+                        margin: auto !important;
+                        max-width: none;
+                        min-width: auto;
+                        width: 100%;
+                        writing-mode: unset;
+                    }
+
+                    .callout {
+                        width: 80%;
+                        height: 80%;
+                    }
+
+                    .captionVertical.reset {
+                        display: none !important;
+                    }
+
+                    .container-chart {
+                        display: inline-block;
+                        width: auto;
+                    }
+
+                    .icon.w50 {
+                        height: 3em;
+                        line-height: 3em;
+                        margin-top: 1em;
+                        width: 3em;
+                    }
+
+                    .rating {
+                        display: inline-flex !important;
+                    }
+
+                    .rtngEnd {
+                        display: none !important;
+                    }
+
+                    .special {
+                        display: none;
+                    }
+
+                    .tagCenter {
+                        min-width: max-content;
+                    }
+                }
+
+                @media (min-width: 0px) and (max-width: 319.99px) {
+                    #pareto {
+                        background-color: green
+                    }
+
+                    .testin::after {
+                        content: "width: <=319.99"
+                    }
+
+                    /* Estilos a modificar */
+                    section {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    #softskill>div {
+                        display: flex;
+                    }
+
+                    #datosContacto>ul {
+                        display: block !important;
+                        margin: 0px;
+                    }
+
+                    #education2.compact {
+                        display: block;
+                    }
+
+                    #left {
+                        max-width: none;
+                        min-width: auto;
+                        width: 100% !important;
+                    }
+
+                    #left .captionVertical {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        margin: auto !important;
+                        max-width: none;
+                        min-width: auto;
+                        transform: initial !important;
+                        width: 100%;
+                        writing-mode: unset;
+                    }
+
+                    #page {
+                        display: block;
+                        width: 100%;
+                    }
+
+                    #persona #datos {
+                        padding-left: 0;
+                    }
+
+                    #right {
+                        width: 100% !important;
+                        max-width: none;
+                        min-width: auto
+                    }
+
+                    #right .captionVertical {
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                        transform: initial !important;
+                        margin: auto !important;
+                        max-width: none;
+                        min-width: auto;
+                        width: 100%;
+                        writing-mode: unset;
+                    }
+
+                    .callout {
+                        width: 80%;
+                        height: 80%;
+                    }
+
+                    .captionVertical.reset {
+                        display: none !important;
+                    }
+
+                    .container-chart {
+                        display: inline-block;
+                        width: auto;
+                    }
+
+                    .icon.w50 {
+                        height: 3em;
+                        line-height: 3em;
+                        margin-top: 1em;
+                        width: 3em;
+                    }
+
+                    .nombre {
+                        display: block !important;
+                    }
+
+                    .rating {
+                        display: block !important;
+                    }
+
+                    .rtngEnd {
+                        display: none !important;
+                    }
+
+                    .special {
+                        display: none;
+                    }
+
+                    .tagCenter {
+                        font-size: initial;
+                        min-width: max-content;
+                    }
+
+                }
             }
-            #datosContacto > ul > h4 { padding-right: 2em;}
 
-            .compact { display: block;}
+            @media print {
+                #pareto {
+                    display: none;
+                }
 
-            .detalle {
-                padding: 1em 1em;
-                border: none;
+                .testin::after {
+                    content: "SALIDA IMPRESION";
+                }
+
+                html,
+                body {
+                    height: 98%;
+                }
+
+                body,
+                * {
+                    font-size: 14pt;
+                    line-height: 12pt;
+                }
+
+                body {
+                    font-family: Arial, Helvetica, sans-serif;
+                    height: auto;
+                    /* max-width: 1123px;  */
+                    width: var(--anchoPage);
+                }
+
+                /* habilitar para impresion modo resumido */
+                /* section {
+                        padding-top: 2em;
+
+                    } */
+                nav {
+                    display: none;
+                }
+
+                svg.icon.w50 {
+                    fill: black;
+                }
+
+                .atencion sub {
+                    display: none;
+                }
+
+                .captionVertical.reset .tagCenter {
+                    display: none;
+                }
+
+                #contact {
+                    border: none;
+                }
+
+                #education2.compact {
+                    display: flex;
+                }
+
+                #left {
+                    width: 65%;
+                }
+
+                #right {
+                    width: 35%;
+                }
+
+                #footer {
+                    display: inline-flex;
+                    width: 100%;
+                    padding: 1em 0;
+                    padding-top: 1em;
+                }
+
+                #footer #contact {
+                    padding: 1em;
+                }
+
+                #footer #title {
+                    display: none;
+                }
+
+                #footer #datosContacto ul {
+                    display: inline-flex;
+                    margin: 0;
+                    width: auto;
+                }
+
+                #footer #datosContacto ul li {
+                    padding-left: 2.5em;
+                    width: auto;
+                }
+
+                #datosContacto>ul>h4 {
+                    padding-right: 2em;
+                }
+
+                .compact {
+                    display: block;
+                }
+
+                .detalle {
+                    padding: 1em 1em;
+                    border: none;
+                }
+
+                .hardskill {
+                    display: block;
+                    text-align: center;
+                }
+
+                .rating {
+                    margin-bottom: 0em;
+                }
+
+                /* @page {
+                        margin: 5mm 5mm 5mm 5mm;
+                        orphans: 1;
+                        size: 210mm 297mm;
+                        widows: 0;
+                    } */
+
+                /* habilitar para impresion modo resumido */
+                /* ul {padding: .5em;} */
+
+                .salto {
+                    break-after: avoid-page !important;
+                    page-break-inside: avoid !important;
+                }
+
             }
-            .hardskill { 
-                display: block; 
-                text-align: center; }
-            
-            .rating {margin-bottom: 0em; }
+        </style>
 
-            /* @page {
-                margin: 5mm 5mm 5mm 5mm;
-                orphans: 1;
-                size: 210mm 297mm;
-                widows: 0;
-            } */
-            
-            /* habilitar para impresion modo resumido */
-            /* ul {padding: .5em;} */
-            
-            .salto { 
-                break-after: avoid-page !important;
-                page-break-inside: avoid !important;
-            }
-            
-        }
+    </head>
 
-    </style>
-
-</head>
-
-<body class="Dark" >
-    <!-- Bloque que se utiliza en modo testing para evaluar manejo responsivo  -->
-    <!-- style="display: none !important; " -->
-    <div id="pareto">
+    <body class="Dark"
+        >
+        <!-- Bloque que se utiliza en modo testing para evaluar manejo responsivo  -->
+        <!-- style="display: none !important; " -->
+        <div id="pareto">
             <h4 class="testin" style="display: none !important; ">Testing :</h4>
-    </div>
-
-    <nav class="primary">
-        <div class="navbar primary">
-            <div class="dropdown ">
-                <button class="dropbtn">
-                    <a href="javascript:void(0);" onclick="myFunctionMenuNav()"> <svg id="menu" class="icon active menu"><use href="static/images/icons.svg#ico-menu"/></svg></a>
-                </button>
-                <div class="invert">
-                <ul class="dropdown-content secondary">
-                    <li><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
-                    <li><a href="#" onclick='compactExtended("extended")'>CV Completo</a></li>
-                    <li><a href="#" value="selected" onclick='setColor("body","Light");menuClose()'>Modo claro</a></li>
-                    <li><a href="#" onclick='setColor("body","Dark"); menuClose()'>Modo oscuro</a></li>
-                    <li><a href="#" onclick="acercaDe()">Acerca de</a></li>
-                </ul>
-                </div>
-            </div>
         </div>
 
-        <div class="callout">
-            <div class="callout-header">Acerca de</div>
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
-            <div class="callout-container">
-                <h3><em>CV digital</em></h3>
-                <code>Versión:              2.00.1</code><br>
-                <code>Fecha actualización:  2022-Mayo</code><br>
-                <code>Lenguaje del código:  HTML, CSS3 y JS (frontend)</code>
-                
-                <div class="special"><hr></div>
-                <h3 class="alingC smallCaps" >Características</h3>
-                <h4 class="extraEspace">Curriculum Vitae: Resumido o completo, <em>modo full-responsivo y opción Claro/Oscuro.</em></h4>
-                <br>
-                    <p><b>Icons-SVG:</b> algunos usando la etiqueta <em>&ltimage&gt</em> de HTML y otros incrustando el código vectorial dentro de un <em>&ltsymbol&gt</em> e invocándolo usando su <b><em>Id</em></b>.</p>
-                    
-                    <p><b>Fuentes:</b> también se emplearon dos metodologías, una mediante <em>@import url(....)</em> y la otra con <em>@font-face {....}</em>. </p>
-                    <div class="special extraEspace"><hr></div>
-                    <h3 class="fontSpecial-light-italic alingC">Autor: Walter R. (waldrom68@gmail.com)</h3>
-                    <div class="special"><hr></div>
-
-            </div>
-        </div>
-    </nav>
-
-    <main id="page" class="primary" onclick="menuClose()">
-
-        <div id="left" class="left">
-
-            <section id="personalInfo" class="">
-                <div class="captionVertical reset">
-                    <p class="tagCenter"><span>WR</span></p>
-                </div>
-                <div id="persona" class="detalle secondary">
-                    <div id="foto" aria-label="se muestra foto de Walter sonriendo" ><img src="static/images/yo.png" alt=""></div>
-                    <div id="datos" class="alingC">
-                        <h5>PYTHON Web Developer</h5>
-                        <div class="nombre">
-                            <h1>Walter</h1> <h1 class="comprimir">Romero</h1>
-                        </div>
-                        <h4>(nacido en 1968)</h4>
-                        <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place" class="icon secondary active link"><use href="static/images/icons.svg#ico-place"/></svg><span>Argentina, BsAs., Bernal</span></a>
-                        <!-- <div class="special"><hr></div> -->
+        <nav class="primary">
+            <div class="navbar primary">
+                <div class="dropdown ">
+                    <button class="dropbtn">
+                        <a href="javascript:void(0);" onclick="myFunctionMenuNav()"> <svg id="menu"
+                                class="icon active menu">
+                                <use href="static/images/icons.svg#ico-menu" />
+                            </svg></a>
+                    </button>
+                    <div class="invert">
+                        <ul class="dropdown-content secondary">
+                            <li><a href="#" value="selected" onclick='compactExtended("compact")'>CV Resumen</a></li>
+                            <li><a href="#" onclick='compactExtended("extended")'>CV Completo</a></li>
+                            <li><a href="#" value="selected" onclick='setColor("body","Light");menuClose()'>Modo claro</a>
+                            </li>
+                            <li><a href="#" onclick='setColor("body","Dark"); menuClose()'>Modo oscuro</a></li>
+                            <li><a href="#" onclick="acercaDe()">Acerca de</a></li>
+                        </ul>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <section id="profile">
-                <div class="captionVertical">
-                    <p class="tagCenter"><span>Perfil</span></p>
-                </div>
-                <div class="detalle secondary">
-                    <p>Ocupé cargos de RRHH y disfruté mejorar procesos, generar tableros de control para la toma de decisiones, y hacer de <em>"una especie de analista funcional"</em> para servir de enlace entre áreas de negocio y de tecnología. <em>Ciertamente era un Analista Universitario de Sistemas</em> en un área de recursos humanos.</p>
-                    <p>Luego de 24 años trabajando en la universidad, ahora he vuelto a mi esencia: <em> “creatividad, innovación, sistemas y tecnología”</em>. </p>
-                    <p>En resumen, además de contar con criterio empresarial tengo conocimientos y experiencia para sumar valor a cualquier proyecto, y quienes me conocen destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
-                    <br>
-                    <!-- <div class="special"><hr></div> -->
-                </div>
-            </section>
+            <div class="callout">
+                <div class="callout-header">Acerca de</div>
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">×</span>
+                <div class="callout-container">
+                    <h3><em>CV digital</em></h3>
+                    <code>Versión:              2.01.1</code><br>
+                    <code>Fecha actualización:  2023-Mayo</code><br>
+                    <code>Código:  HTML, CSS3 y JS</code>
 
-            <section id="objetive">
-                <div class="captionVertical">
-                    <p class="tagCenter"><span>objetivo</span></p>
-                </div>
-                <div class="detalle secondary">
-                    <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>ayudando, creando, innovando, mejorando ...</em></p>
-                    <p>Podés contactarme si tenés alguna idea o propuesta y será un plus si es divertida.</p>
-                    <!-- <div class="special"><hr></div> -->
-                </div>
-            </section>
+                    <div class="special">
+                        <hr>
+                    </div>
+                    <h3 class="alingC smallCaps">Características</h3>
+                    <h4 class="extraEspace"><em>modo full-responsivo y opción
+                            Claro/Oscuro sin el uso de frameworks.</em></h4>
+                    <div class="special extraEspace">
+                        <hr>
+                    </div>
+                    <h3 class="fontSpecial-light-italic alingC">Autor: Walter R. (waldrom68@gmail.com)</h3>
+                    <div class="special">
+                        <hr>
+                    </div>
 
-            <section id="workExperience">
-                <div class="captionVertical">
-                    <p class="tagCenter"><span>Trayectoria Laboral</span></p>
                 </div>
-                <div class="detalle secondary">
-                    <ul>  <!-- ITBA -->
-                        <li class="myList">1993-2018 (24 años) ITBA, Universidad Privada
+            </div>
+        </nav>
+
+        <main id="page" class="primary" onclick="menuClose()">
+
+            <div id="left" class="left">
+
+                <section id="personalInfo" class="">
+                    <div class="captionVertical reset">
+                        <p class="tagCenter"><span>WR</span></p>
+                    </div>
+                    <div id="persona" class="detalle secondary">
+                        <div id="foto" aria-label="se muestra foto de Walter sonriendo"><img src="static/images/yo.png"
+                                alt=""></div>
+                        <div id="datos" class="alingC">
+                            <h5>Web Full Stack Python - Java</h5>
+                            <div class="nombre">
+                                <h1>Walter</h1>
+                                <h1 class="comprimir">Romero</h1>
+                            </div>
+                            <h5>(nacido en 1968)</h5>
+                            <a href="https://goo.gl/maps/UQ7BXznhcFSfKd7b8" target="_blank"><svg id="place"
+                                    class="icon secondary active link">
+                                    <use href="static/images/icons.svg#ico-place" />
+                                </svg><span>Argentina, BsAs., Bernal</span></a>
+                            <!-- <div class="special"><hr></div> -->
+                        </div>
+                    </div>
+                </section>
+
+                <section id="profile">
+                    <div class="captionVertical">
+                        <p class="tagCenter"><span>Perfil</span></p>
+                    </div>
+                    <div class="detalle secondary">
+                        <p class="invert alingC"><i>Experiencia soft y formación hard</i></p> 
+                        <p >Además de contar con criterio empresarial, tengo conocimientos y experiencia para sumar valor a cualquier proyecto.</p>
+                        <p>Ocupé cargos de RRHH y disfruté mejorar procesos, generar tableros de control y servir de enlace entre áreas de negocio y de tecnología. Ciertamente era un Analista Universitario de Sistemas en un área de recursos humanos.</p>
+                        <p>Quienes me conocen destacarán mi compromiso para alcanzar objetivos, mi lealtad, integridad y disciplina.</p>
+                        <br>
+                        <!-- <div class="special"><hr></div> -->
+                    </div>
+                </section>
+                
+                <section id="objetive">
+                    <div class="captionVertical">
+                        <p class="tagCenter"><span>objetivo</span></p>
+                    </div>
+                    <!-- invert active hover acento -->
+                    <div class="detalle secondary">
+                        <p class="invert alingC"><i>Proyectos ambiciosos con personas positivas</i></p> 
+                        <p>Luego de 24 años he vuelto a <em>sistemas y tecnología</em>.</p>
+                        <p>Me atraen los desafíos y aventuras en donde pueda seguir <em>creando, innovando, creciendo ...</em></p>
+                        <p class="alingC">¡ Hagamos algo especial !</p>
+                        <!-- <div class="special"><hr></div> -->
+                    </div>
+                </section>
+
+                <section id="workExperience">
+                    <div class="captionVertical">
+                        <p class="tagCenter"><span>Trayectoria Laboral</span></p>
+                    </div>
+                    <div class="detalle secondary">
+                        <p class="invert alingC"><i>Ex-Directivo, desarrollador, capacitador</i></p>
+                        <br>
+                        <ul> <!-- ITBA -->
+                            <li class="myList">1993-2018 (24 años) ITBA, Universidad Privada
                             <li class="Head">
                                 <ul class="carrera">
                                     <li>2004-2018: Ejecutivo de RR.HH</li>
-                                    <li>Compensaciones, Gestión de nóminas y Relaciones laborales</li>
+                                    <li>Compensaciones, Gestión de nóminas y Relaciones laborales</li><br>
+                                </ul>
+                                <ul class="carrera">
                                     <li>1993-2004: Analista Senior, Secretaría Administrativa</li>
                                     <li>Liquidación de sueldos, facturación de servicios</li>
                                 </ul>
-                            </li>
+                                
+                            </li><br>
                             <li class="expand"> Resolución de problemas y relaciones humanas
-                                <ul><span>Creación de procedimientos, trabajo en equipo y negociación<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                    <li>Procesos: Alta laboral - Licencias - Búsqueda y selección de Personal - Gestión de desvinculaciones.</li> 
+                                <ul><span>Creación de procedimientos, trabajo en equipo y negociación.<em class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>Propuesta de mejora e implementación del proceso “Personal mayor de 59 años.”</li>
                                     <li>Participación activa en la implementación del control de acceso.</li>
                                     <li>Gestión exitosa en acuerdos y entrevistas de desvinculaciones.</li>
                                 </ul>
                             </li>
                             <li class="expand extraEspace">Otras funciones, relacionadas con IT
-                                <ul><span>Desarrollo de software con <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a><em class="atencion"><sub> (ver mas)</sub></em></span>
-                                    <li>Gestión y almacenamiento digital de datos históricos (salarios del personal entre 1959-1989).</li>
+                                <ul><span>Desarrollo de software con <a
+                                            href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)"
+                                            target="_blank">CA Clipper</a><em class="atencion"><sub> (ver
+                                                mas)</sub></em></span>
+                                    <li>Gestión y almacenamiento digital de datos históricos (salarios del personal entre
+                                        1959-1989).</li>
                                     <li>Facturación por Servicios.</li>
                                     <li>Confección de contratos laborales automáticos.</li>
                                 </ul>
-                                <ul><span>Elaboración de dashboard, reporting y fases iniciales de Data mining con aproximación a un modelo de minería (SQL, Excel o Power Bi)<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                <ul><span>Elaboración de dashboard, reporting y fases iniciales de Data mining con
+                                        aproximación a un modelo de minería (SQL, Excel o Power Bi)<em
+                                            class="atencion"><sub> (ver mas)</sub></em></span>
                                     <li>Indicadores de presentismo y presencialidad.</li>
                                     <li>Matriz salarial general y organigrama.</li>
                                     <li>Validación de consistencia en las liquidaciones antes de liberar pagos.</li>
                                     <li>Generación de tableros de control y reportes gerenciales.</li>
                                     <li>Análisis de evoluciones salariales desde el 2005-2017.</li>
                                 </ul>
-                                <ul><span>Implementaciones y testing de sistemas de terceros<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                    <li>Sueldos UNITECH S.A., incluida la codificación de algoritmos para los conceptos.</li>
+                                <ul><span>Implementaciones y testing de sistemas de terceros<em class="atencion"><sub> (ver
+                                                mas)</sub></em></span>
+                                    <li>Sueldos UNITECH S.A., incluida la codificación de algoritmos para los conceptos.
+                                    </li>
                                     <li>Adecuación de nuevas políticas salariales.</li>
                                     <li>Sueldos BEJERMAN.</li>
                                     <li>Estructuras salariales según "Evaluación de puestos con Mercer".</li>
                                 </ul>
                             </li>
 
-                        </li>
-                    </ul>  <!-- fin ITBA  -->
-                    <div class="salto">
-                        <ul> <!-- Freelance -->
-                
-                            <li class="myList extraEspace">1991-1994 (3 años) Freelance
+                            </li>
+                        </ul> <!-- fin ITBA  -->
+                        <div class="salto">
+                            <ul> <!-- Freelance -->
+
+                                <li class="myList extraEspace">1991-1994 (3 años) Freelance
                                 <li class="Head">
                                     <ul class="carrera">
                                         <li>Analista de sistemas y programador</li>
                                     </ul>
                                 </li>
                                 <li class="expand">Funciones y responsabilidades
-                                    <ul><span>Desarrollo y mantenimiento de sistemas (<a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a>)<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                    <ul><span>Desarrollo y mantenimiento de sistemas (<a
+                                                href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)"
+                                                target="_blank">CA Clipper</a>)<em class="atencion"><sub> (ver
+                                                    mas)</sub></em></span>
                                         <li>Gestión de Ventas y control de stock.</li>
                                         <li>Liquidación de Sueldos para gremios de UOCRA y UOYPE.</li>
-                                        <li>Generador y Administrador de documentos para escribanías.</li>
+                                        <li>Editor y administrador de documentos notariales. Manejo de plantillas base y control ortográfico para escribanías.</li>
+                                        <li>Mantenimiento y adaptación de desarrollos en <a
+                                            href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)"
+                                            target="_blank">CA Clipper</a> o <a
+                                            href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.
+                                    </li>
                                     </ul>
                                     <ul><span>Algoritmos desafiantes y adaptación de Sistemas<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                        <li>De búsqueda: separar en sílabas palabras en castellano.</li>
+                                        <li>De búsqueda: control ortográfico y separar en sílabas palabras en castellano.</li>
                                         <li>De simulación: toma de decisiones en tiempo real.</li>
-                                        <li>Mantenimiento y adaptación de desarrollos en <a href="http://es.wikipedia.org/wiki/Clipper_(lenguaje_de_programación)" target="_blank">CA Clipper</a> o <a href="https://es.wikipedia.org/wiki/FoxPro_2" target="_blank">FoxPro</a>.</li>
                                     </ul>
                                 </li>
-                            </li>  
+                                </li>
 
-                        </ul>  <!-- fin Freelance -->
-            
-                        <ul>  <!-- Sistemax -->
+                            </ul> <!-- fin Freelance -->
+
+                            <ul> <!-- Sistemax -->
                                 <li class="myList extraEspace">1990-1992 (2 años) Sistemax</b></i>
-                                    <li class="Head">
-                                        <ul class="carrera">
-                                            <li>Desarrollo de software de gestión y dictado de cursos</li>
-                                            <!-- <li>Desarrollo de sistemas de informáticos</li>
-                                            <li>Instructor, profesor</li>
-                                            <li>Dictado de cursos</li> -->
-                                        </ul>
-                                    </li>
-                                    <li class="expand" >
-                                        <ul> <span>Sistemas de gestión<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                            <li>Gestión de Ventas</li>
-                                            <li>Administración de historias clínicas en geriátricos.</li>
-                                            <li>Generador y administrador de documentos notariales.</li>
-                                        </ul>
-                                        <ul><span>Dictado de Cursos<em class="atencion"><sub> (ver mas)</sub></em></span> 
-                                            <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3" target="_blank">Lotus 123 ,
-                                                <a href="https://es.wikipedia.org/wiki/WordStar" target="_blank">WordStar</a> y otros</b>.</li>
-                                        </ul>
-                                    </li>
-                                        
-                                    </li>
-                                </li>  
-                        </ul> <!-- fin SISTEMAX -->
-            
-                        <ul class="extended"> <!--Banco de la Nacion Argentina -->
-                
-                                <li class="myList extraEspace">1989-1990 (1 año) Banco de la Nación Argentina 
-                                    <li class="Head">
-                                        <ul class="carrera">
-                                            <li>Auxiliar contable</li>
-                                        </ul>
-                                    </li>
-                                    <li class="expand">Comunicación y relaciones humanas
-                                        <ul><span>Sector cuenta corriente y sector Inversiones<em class="atencion"><sub> (ver mas)</sub></em></span>
-                                            <li>Atención al público durante pleno Bonex '89</li>
-                                            <li>Sector cuenta corriente y sector Inversiones</li>
-                                        </ul>
-                                    </li>
-                                </li>  
-                        </ul> <!-- fin BNA -->
-                        
-                        <ul class="extended"> <!--Amato -->
+                                <li class="Head">
+                                    <ul class="carrera">
+                                        <li>Desarrollo de software de gestión y dictado de cursos</li>
+                                        <!-- <li>Desarrollo de sistemas de informáticos</li>
+                                                    <li>Instructor, profesor</li>
+                                                    <li>Dictado de cursos</li> -->
+                                    </ul>
+                                </li>
+                                <li class="expand">
+                                    <ul> <span>Sistemas de gestión<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                        <li>Gestión de Ventas y control de stock</li>
+                                        <li>Administración de historias clínicas en geriátricos.</li>
+                                    </ul>
+                                    <ul><span>Dictado de Cursos<em class="atencion"><sub> (ver mas)</sub></em></span>
+                                        <li>Lógica de Programación, <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3"
+                                                target="_blank">Lotus 123 ,
+                                                <a href="https://es.wikipedia.org/wiki/WordStar"
+                                                    target="_blank">WordStar</a> y otros</b>.</li>
+                                    </ul>
+                                </li>
 
-                            <li class="myList extraEspace">1987-1989 (2 años) Reguladores Amato
+                                <!-- </li>
+                                </li> -->
+                            </ul> <!-- fin SISTEMAX -->
+
+                            <ul class="extended"> <!--Banco de la Nacion Argentina -->
+
+                                <li class="myList extraEspace">1989-1990 (1 año) Banco de la Nación Argentina
+                                <li class="Head">
+                                    <ul class="carrera">
+                                        <li>Auxiliar contable</li>
+                                    </ul>
+                                </li>
+                                <li class="expand">Comunicación y relaciones humanas
+                                    <ul><span>Sector cuenta corriente y sector Inversiones<em class="atencion"><sub> (ver
+                                                    mas)</sub></em></span>
+                                        <li>Atención al público durante pleno Bonex '89</li>
+                                        <li>Sector cuenta corriente y sector Inversiones</li>
+                                    </ul>
+                                </li>
+                                </li>
+                            </ul> <!-- fin BNA -->
+
+                            <ul class="extended None"> <!--Amato -->
+
+                                <li class="myList extraEspace">1987-1989 (2 años) Reguladores Amato
                                 <li class="Head">
                                     <ul class="carrera">
                                         <li>Operario metalúrgico Junior</li>
@@ -1245,51 +1745,57 @@
                                     <ul>
                                     </ul>
                                 </li>
-                            </li>  
-                        </ul> <!-- fin Amato -->
-                        <!-- <div class="special"><hr></div> -->
+                                </li>
+                            </ul> <!-- fin Amato -->
+
+                            <!-- <div class="special"><hr></div> -->
+                        </div>
                     </div>
-                </div>
-            </section> <!-- Fin workExperience -->
+                </section> <!-- Fin workExperience -->
 
-        </div> <!-- Fin left -->
-        
-        <div id="right" class="right primary">
+            </div> <!-- Fin left -->
 
-            <section id="education1" class="extraEspace">
-                <div class="captionVertical">
-                    <p class="tagCenter slim">Formación Académica</p>
-                </div>
-                <div class="detalle">
-                    <ul>
-                        <p class="fontSpecial-bold alingR smallCaps">Especializaciones</p> 
-                        <p class="special"><hr></p>
-                        <li class="fontSpecial-bold-italic extraEspace extended" >2022-2023 Min. de Desarrollo Productivo y CESSI</li>
-                        <li  class="extended">Programador Web full stack JS</li>
-                        
-                        <li class="fontSpecial-bold-italic extraEspace">2021–2022 EducaciónIT</li>
-                        <li>Full stack Python developer</li>
-                        
-                        <p class="fontSpecial-bold alingR extraEspace smallCaps">Posgrado</p> 
-                        <p class="special"><hr></p>
-                        <li class="fontSpecial-bold-italic extraEspace">2007–2012 UP</li>
-                        <li>Maestría en Dirección de Empresas</li>
-                        
-                        <p class="fontSpecial-bold alingR extraEspace smallCaps">Grado</p> 
-                        <p class="special"><hr></p>
-                        <li class="fontSpecial-bold-italic extraEspace">1996–2000 UCALP</li>
-                        <li>Analista Universitario de Sistemas</li>
-                    </ul> <!-- Fin formales -->
-                </div> <!-- Fin detalle -->
-            </section>  <!-- Fin educacion1 -->
-            
-            <section id="education2" class="extended">
-                <div class="captionVertical">
-                    <p class="tagCenter slim">Cursos y Seminarios</p>
-                </div>
-                <div id="cursos" class="detalle">
-                    <ul class="fontSpecial-regular-italic alingL">
-                        <!-- <div class="special"><hr></div> -->
+            <div id="right" class="right primary">
+                <section id="education1" class="extraEspace">
+                    <div class="captionVertical">
+                        <p class="tagCenter slim">Formación Académica</p>
+                    </div>
+                    <div class="detalle">
+                        <ul>
+                            <p class="fontSpecial-bold alingR smallCaps">Especializaciones</p>
+                            <p class="special">
+                                <hr>
+                            </p>
+                            <li class="fontSpecial-bold-italic extraEspace">2022-2023 MEcon, Secretaría de Economía del Conocimiento</li>
+                            <li>Web full stack JAVA</li>
+
+                            <li class="fontSpecial-bold-italic extraEspace">2021–2022 EducaciónIT</li>
+                            <li>Full stack Python developer</li>
+
+                            <p class="fontSpecial-bold alingR extraEspace smallCaps">Posgrado</p>
+                            <p class="special">
+                                <hr>
+                            </p>
+                            <li class="fontSpecial-bold-italic extraEspace">2007–2012 UP</li>
+                            <li>Maestría en Dirección de Empresas</li>
+
+                            <p class="fontSpecial-bold alingR extraEspace smallCaps">Grado</p>
+                            <p class="special">
+                                <hr>
+                            </p>
+                            <li class="fontSpecial-bold-italic extraEspace">1996–2000 UCALP</li>
+                            <li>Analista Universitario de Sistemas</li>
+                        </ul> <!-- Fin formales -->
+                    </div> <!-- Fin detalle -->
+                </section> <!-- Fin educacion1 -->
+
+                <section id="education2" class="extended">
+                    <div class="captionVertical">
+                        <p class="tagCenter slim">Cursos y Seminarios</p>
+                    </div>
+                    <div id="cursos" class="detalle">
+                        <ul class="fontSpecial-regular-italic alingL">
+                            <!-- <div class="special"><hr></div> -->
                             <li><b>sep-21</b>: Webinar Gestión de Proyectos con Scrum</li>
                             <li><b>ago-21</b>: Webinar Gnu/Linux</li>
                             <li><b>ago-21</b>: Webinar Empleos 4.0. La economía del conocimiento</li>
@@ -1300,534 +1806,606 @@
                             <li><b>feb-13</b>: La gestión del conocimiento desde una mirada clínica de la organización</li>
                             <li><b>sep-12</b>: Negociación orientada a la búsqueda de empleo</li>
                             <li><b>sep-11</b>: Indicadores de gestión para el área de RRHH.</li>
-                            <li><b>nov-09</b>: II Foro de Benchmarking y Mejores Prácticas en Monitoreo y Gestión del Área de RRHH</li>
+                            <li><b>nov-09</b>: II Foro de Benchmarking y Mejores Prácticas en Monitoreo y Gestión del Área
+                                de RRHH</li>
                             <li><b>sep-09</b>: Competencias clave en las crisis</li>
                             <li><b>feb-08</b>: Protocolo ejecutivo y marketing personal</li>
                             <li><b>oct-07</b>: Equilibrio personal en entornos corporativos - Manejo del estrés</li>
-                    </ul> <!-- Fin cursos -->
+                        </ul> <!-- Fin detalle cursos -->
 
 
-                </div> <!-- Fin detalle -->
-            </section>  <!-- Fin educacion2 -->
+                    </div> <!-- Fin detalle -->
+                </section> <!-- Fin educacion2 -->
 
-            <section id="hardskill">
-                <div class="captionVertical">
-                    <p class="tagCenter slim">Habilidades Técnicas</p>
-                </div>
-                <div class="detalle">
-                    <div class="hardskill">
-                        <!-- <div class="special"><hr></div> -->
-                    
-                        <div class="container-chart" id="CSS" aria-label="CSS" aria-value="65">
-                              
-                            <div class="donut-chart-block block-chart">
-                            <div class="donut-chart">
-                  
-                                <div id="section1-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section2-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section3-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                
-                                <div class="center-chart">
-                                <span>0%</span>
-                                </div>
-                                <div class="center-label">
-                                <span>hability</span>
-                                </div>  <!-- center-label-->
-                            </div>  <!-- donut chart-->
-                            </div>  <!-- donut-chart-block -->
-                  
-                            <div class="range-slider" style="display: none;" >
-                            <input type="range" orient="vertical" min="0" max="100"/>
-                            <div class="range-slider__bar"></div>
-                            <div class="range-slider__thumb"></div>
-                            </div>  <!-- range-slider -->
-                  
-                        </div>  <!-- container-chart -->
-        
-                        <div class="container-chart" id="django" aria-label="Django" aria-value="35">
-                            
-                            <div class="donut-chart-block block-chart">
-                            <div class="donut-chart">
-                  
-                                <div id="section1-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section2-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section3-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                
-                                <div class="center-chart">
-                                <span>0%</span>
-                                </div>
-                                <div class="center-label">
-                                <span>hability</span>
-                                </div>  <!-- center-label-->
-                            </div>  <!-- donut chart-->
-                            </div>  <!-- donut-chart-block -->
-                  
-                            <div class="range-slider" style="display:None !important">
-                            <input type="range" orient="vertical" min="0" max="100"/>
-                            <div class="range-slider__bar"></div>
-                            <div class="range-slider__thumb"></div>
-                            </div>  <!-- range-slider -->
-                  
-                        </div>  <!-- container-chart -->
-        
-                        <div class="container-chart" id="HTML" aria-label="HTML" aria-value="70">
-                            
-                            <div class="donut-chart-block block-chart">
-                            <div class="donut-chart">
-                  
-                                <div id="section1-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section2-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section3-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                
-                                <div class="center-chart">
-                                <span>0%</span>
-                                </div>
-                                <div class="center-label">
-                                <span>hability</span>
-                                </div>  <!-- center-label-->
-                            </div>  <!-- donut chart-->
-                            </div>  <!-- donut-chart-block -->
-                  
-                            <div class="range-slider" style="display: none;" >
-                            <input type="range" orient="vertical" min="0" max="100"/>
-                            <div class="range-slider__bar"></div>
-                            <div class="range-slider__thumb"></div>
-                            </div>  <!-- range-slider -->
-                  
-                        </div>  <!-- container-chart -->
-        
-                        <div class="container-chart" id="JS" aria-label="Javascript" aria-value="60">
-                            
-                            <div class="donut-chart-block block-chart">
-                            <div class="donut-chart">
-                  
-                                <div id="section1-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section2-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section3-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                
-                                <div class="center-chart">
-                                <span>0%</span>
-                                </div>
-                                <div class="center-label">
-                                <span>hability</span>
-                                </div>  <!-- center-label-->
-                            </div>  <!-- donut chart-->
-                            </div>  <!-- donut-chart-block -->
-                  
-                            <div class="range-slider" style="display: none;" >
-                            <input type="range" orient="vertical" min="0" max="100"/>
-                            <div class="range-slider__bar"></div>
-                            <div class="range-slider__thumb"></div>
-                            </div>  <!-- range-slider -->
-                  
-                        </div>  <!-- container-chart -->
-        
-                        <div class="container-chart" id="MySQL" aria-label="MySQL" aria-value="50">
-                            
-                            <div class="donut-chart-block block-chart">
-                            <div class="donut-chart">
-                  
-                                <div id="section1-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section2-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section3-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                
-                                <div class="center-chart">
-                                <span>0%</span>
-                                </div>
-                                <div class="center-label">
-                                <span>hability</span>
-                                </div>  <!-- center-label-->
-                            </div>  <!-- donut chart-->
-                            </div>  <!-- donut-chart-block -->
-                  
-                            <div class="range-slider" style="display:None !important">
-                            <input type="range" orient="vertical" min="0" max="100"/>
-                            <div class="range-slider__bar"></div>
-                            <div class="range-slider__thumb"></div>
-                            </div>  <!-- range-slider -->
-                  
-                        </div>  <!-- container-chart -->
-
-                        <div class="container-chart" id="python" aria-label="Python" aria-value="80">
-                            <div class="donut-chart-block block-chart">
-                            <div class="donut-chart">
-                  
-                                <div id="section1-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section2-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                <div id="section3-chart" class="clip-chart">
-                                <div class="item-chart"></div>
-                                </div>
-                                
-                                <div class="center-chart">
-                                <span>0%</span>
-                                </div>
-                                <div class="center-label">
-                                <span>hability</span>
-                                </div>  <!-- center-label-->
-                            </div>  <!-- donut chart-->
-                            </div>  <!-- donut-chart-block -->
-                  
-                            <div class="range-slider" style="display:None !important">
-                            <input type="range" orient="vertical" min="0" max="100"/>
-                            <div class="range-slider__bar"></div>
-                            <div class="range-slider__thumb"></div>
-                            </div>  <!-- range-slider -->
-                  
-                        
-                        
-                        </div>  <!-- container-chart -->
-        
-
-                    </div> <!-- Fin hard Skills -->
-                </div> <!-- Fin detalle -->
-            </section>  <!-- Fin hardskill -->
-            
-            <section id="softskill">
-                <div class="captionVertical">
-                    <p class="tagCenter slim">Habilidades Personales</p>
-                </div>
-                <div class="detalle">
-                    
-                    <div class="softskill">
-                        <!-- <div class="special"><hr></div> -->
-
-                        <div class="rating" id="rtng1" mylabel="Adaptación al cambio" myvalue="3">
-                            <div class="rtngSide">
-                                <span>hability</span>
-                            </div>
-                            
-                            <div class="rtngMiddle">
-                                <div class="star-container">
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                </div>
-                            </div>
-                            
-                            
-                            <div class="rtngSide rtngEnd">
-                                <span>0</span>
-                            </div>
-                        </div>  <!-- rating -->
-                                            
-                        <div class="rating" id="rtng2" mylabel="Capacidad analítica" myvalue="4">
-                            <div class="rtngSide">
-                                <span>hability</span>
-                            </div>
-                        
-                            <div class="rtngMiddle">
-                                <div class="star-container">
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                </div>
-                            </div>
-                        
-                            <div class="rtngSide rtngEnd">
-                                <span>0</span>
-                            </div>
-                        </div>  <!-- rating -->
-                        
-                        <div class="rating" id="rtng3" mylabel="Gestión del tiempo" myvalue="4">
-                        <div class="rtngSide">
-                            <span>hability</span>
-                        </div>
-
-                        <div class="rtngMiddle">
-                            <div class="star-container">
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            </div>
-                        </div>
-
-                        <div class="rtngSide rtngEnd">
-                            <span>0</span>
-                        </div>
-                        </div>  <!-- rating -->
-                        
-                        <div class="rating" id="rtng4" mylabel="Inteligencia emocional y social" myvalue="4">
-                            <div class="rtngSide">
-                                <span>hability</span>
-                            </div>
-                        
-                            <div class="rtngMiddle">
-                                <div class="star-container">
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                <span class="rtngIcoStar" >
-                                    <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                                </span>
-                                </div>
-                            </div>
-                        
-                            <div class="rtngSide rtngEnd">
-                                <span>0</span>
-                            </div>
-                        </div>  <!-- rating -->
-
-                        <div class="rating" id="rtng5" mylabel="Seguridad personal" myvalue="3">
-                        <div class="rtngSide">
-                            <span>hability</span>
-                        </div>
-
-                        <div class="rtngMiddle">
-                            <div class="star-container">
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            </div>
-                        </div>
-
-                        <div class="rtngSide rtngEnd">
-                            <span>0</span>
-                        </div>
-                        </div>  <!-- rating -->
-
-                        <div class="rating" id="rtng6" mylabel="Trabajo en equipo" myvalue="3">
-                        <div class="rtngSide">
-                            <span>hability</span>
-                        </div>
-                    
-                        <div class="rtngMiddle">
-                            <div class="star-container">
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            <span class="rtngIcoStar" >
-                                <svg class="icon w24 disable"><use href="static/images/icons.svg#ico-handshake"/> </svg>
-                            </span>
-                            </div>
-                        </div>
-                    
-                        <div class="rtngSide rtngEnd">
-                            <span>0</span>
-                        </div>
-                        </div>  <!-- rating -->
-
-                        <!-- <div class="special"><hr></div> -->
-                    </div> <!-- Fin softskill-->
-
-                </div> <!-- Fin detalle -->
-            </section> <!-- Fin softskill -->
-
-            <section id="hobbies" class="salto">
-                <div class="captionVertical">
-                    <p class="tagCenter slim">Hobbies</p>
-                </div>
-                <div class="detalle">
-                    <!-- <div class="special"><hr></div> -->
-                    <div class="hobbies">
-                        <svg class="icon w50 border active" aria-label="Padel"> <use href="static/images/icons.svg#ico-padel"></svg>
-                        <svg class="icon w50 border active" aria-label="reparaciones, contruccion, electrónica, restauraciones" > <use href="static/images/icons.svg#ico-construction"></svg>
-                        <svg class="icon w50 border active" aria-label="viajar"> <use href="static/images/icons.svg#ico-flight"></svg>
-                        <svg class="icon w50 border active" aria-label="ayudar, asistir, colaborar"> <use href="static/images/icons.svg#ico-help"></svg>
-                        <svg class="icon w50 border active" aria-label="cocinar, agazajar"> <use href="static/images/icons.svg#ico-grill"></svg>
+                <section id="hardskill">
+                    <div class="captionVertical">
+                        <p class="tagCenter slim">Habilidades Técnicas</p>
                     </div>
+                    <div class="detalle">
+                        <div class="hardskill">
+                            <!-- <div class="special"><hr></div> -->
+                            <div class="container-chart" id="python" aria-label="Python" aria-value="80">
+                                <div class="donut-chart-block block-chart">
+                                    <div class="donut-chart">
+
+                                        <div id="section1-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section2-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section3-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+
+                                        <div class="center-chart">
+                                            <span>0%</span>
+                                        </div>
+                                        <div class="center-label">
+                                            <span>hability</span>
+                                        </div> <!-- center-label-->
+                                    </div> <!-- donut chart-->
+                                </div> <!-- donut-chart-block -->
+
+                                <div class="range-slider" style="display:None !important">
+                                    <input type="range" orient="vertical" min="0" max="100" />
+                                    <div class="range-slider__bar"></div>
+                                    <div class="range-slider__thumb"></div>
+                                </div> <!-- range-slider -->
+
+                            </div> <!-- container-chart Python-->
+
+                            <div class="container-chart" id="django" aria-label="Django" aria-value="45">
+
+                                <div class="donut-chart-block block-chart">
+                                    <div class="donut-chart">
+
+                                        <div id="section1-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section2-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section3-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+
+                                        <div class="center-chart">
+                                            <span>0%</span>
+                                        </div>
+                                        <div class="center-label">
+                                            <span>hability</span>
+                                        </div> <!-- center-label-->
+                                    </div> <!-- donut chart-->
+                                </div> <!-- donut-chart-block -->
+
+                                <div class="range-slider" style="display:None !important">
+                                    <input type="range" orient="vertical" min="0" max="100" />
+                                    <div class="range-slider__bar"></div>
+                                    <div class="range-slider__thumb"></div>
+                                </div> <!-- range-slider -->
+
+                            </div> <!-- container-chart Django-->
+
+                            <div class="container-chart" id="Springboot" aria-label="Spring Boot" aria-value="50">
+
+                                <div class="donut-chart-block block-chart">
+                                    <div class="donut-chart">
+
+                                        <div id="section1-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section2-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section3-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+
+                                        <div class="center-chart">
+                                            <span>0%</span>
+                                        </div>
+                                        <div class="center-label">
+                                            <span>hability</span>
+                                        </div> <!-- center-label-->
+                                    </div> <!-- donut chart-->
+                                </div> <!-- donut-chart-block -->
+
+                                <div class="range-slider" style="display: none;">
+                                    <input type="range" orient="vertical" min="0" max="100" />
+                                    <div class="range-slider__bar"></div>
+                                    <div class="range-slider__thumb"></div>
+                                </div> <!-- range-slider -->
+
+                            </div> <!-- container-chart HTML -->
+
+                            <div class="container-chart" id="Angular" aria-label="Angular" aria-value="60">
+
+                                <div class="donut-chart-block block-chart">
+                                    <div class="donut-chart">
+
+                                        <div id="section1-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section2-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section3-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+
+                                        <div class="center-chart">
+                                            <span>0%</span>
+                                        </div>
+                                        <div class="center-label">
+                                            <span>hability</span>
+                                        </div> <!-- center-label-->
+
+                                    </div> <!-- donut chart-->
+                                </div> <!-- donut-chart-block -->
+
+                                <div class="range-slider" style="display: none;">
+                                    <input type="range" orient="vertical" min="0" max="100" />
+                                    <div class="range-slider__bar"></div>
+                                    <div class="range-slider__thumb"></div>
+                                </div> <!-- range-slider -->
+
+                            </div> <!-- container-chart JS -->
+
+                            <div class="container-chart" id="MySQL" aria-label="MySQL" aria-value="60">
+
+                                <div class="donut-chart-block block-chart">
+                                    <div class="donut-chart">
+
+                                        <div id="section1-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section2-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section3-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+
+                                        <div class="center-chart">
+                                            <span>0%</span>
+                                        </div>
+                                        <div class="center-label">
+                                            <span>hability</span>
+                                        </div> <!-- center-label-->
+                                    </div> <!-- donut chart-->
+                                </div> <!-- donut-chart-block -->
+
+                                <div class="range-slider" style="display:None !important">
+                                    <input type="range" orient="vertical" min="0" max="100" />
+                                    <div class="range-slider__bar"></div>
+                                    <div class="range-slider__thumb"></div>
+                                </div> <!-- range-slider -->
+
+                            </div> <!-- container-chart MySQL-->
+
+                            <div class="container-chart" id="HTMLCSS" aria-label="Html-Css" aria-value="70">
+
+                                <div class="donut-chart-block block-chart">
+                                    <div class="donut-chart">
+
+                                        <div id="section1-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section2-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+                                        <div id="section3-chart" class="clip-chart">
+                                            <div class="item-chart"></div>
+                                        </div>
+
+                                        <div class="center-chart">
+                                            <span>0%</span>
+                                        </div>
+                                        <div class="center-label">
+                                            <span>hability</span>
+                                        </div> <!-- center-label-->
+                                    </div> <!-- donut chart-->
+                                </div> <!-- donut-chart-block -->
+
+                                <div class="range-slider" style="display: none;">
+                                    <input type="range" orient="vertical" min="0" max="100" />
+                                    <div class="range-slider__bar"></div>
+                                    <div class="range-slider__thumb"></div>
+                                </div> <!-- range-slider -->
+
+                            </div> <!-- container-chart CSS -->
+
+
+                        </div> <!-- Fin hard Skills -->
+                    </div> <!-- Fin detalle -->
+                </section> <!-- Fin hardskill -->
+
+
+                <section id="softskill">
+                    <div class="captionVertical">
+                        <p class="tagCenter slim">Habilidades Personales</p>
+                    </div>
+                    <div class="detalle">
+
+                        <div class="softskill">
+                            <!-- <div class="special"><hr></div> -->
+
+                            <div class="rating" id="rtng1" mylabel="Adaptación al cambio" myvalue="3">
+                                <div class="rtngSide">
+                                    <span>hability</span>
+                                </div>
+
+                                <div class="rtngMiddle">
+                                    <div class="star-container">
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                <div class="rtngSide rtngEnd">
+                                    <span>0</span>
+                                </div>
+                            </div> <!-- rating -->
+
+                            <div class="rating" id="rtng2" mylabel="Capacidad analítica" myvalue="4">
+                                <div class="rtngSide">
+                                    <span>hability</span>
+                                </div>
+
+                                <div class="rtngMiddle">
+                                    <div class="star-container">
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rtngSide rtngEnd">
+                                    <span>0</span>
+                                </div>
+                            </div> <!-- rating -->
+
+                            <div class="rating" id="rtng3" mylabel="Gestión del tiempo" myvalue="4">
+                                <div class="rtngSide">
+                                    <span>hability</span>
+                                </div>
+
+                                <div class="rtngMiddle">
+                                    <div class="star-container">
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rtngSide rtngEnd">
+                                    <span>0</span>
+                                </div>
+                            </div> <!-- rating -->
+
+                            <div class="rating" id="rtng4" mylabel="Inteligencia emocional y social" myvalue="4">
+                                <div class="rtngSide">
+                                    <span>hability</span>
+                                </div>
+
+                                <div class="rtngMiddle">
+                                    <div class="star-container">
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rtngSide rtngEnd">
+                                    <span>0</span>
+                                </div>
+                            </div> <!-- rating -->
+
+                            <div class="rating" id="rtng5" mylabel="Seguridad personal" myvalue="3">
+                                <div class="rtngSide">
+                                    <span>hability</span>
+                                </div>
+
+                                <div class="rtngMiddle">
+                                    <div class="star-container">
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rtngSide rtngEnd">
+                                    <span>0</span>
+                                </div>
+                            </div> <!-- rating -->
+
+                            <div class="rating" id="rtng6" mylabel="Trabajo en equipo" myvalue="3">
+                                <div class="rtngSide">
+                                    <span>hability</span>
+                                </div>
+
+                                <div class="rtngMiddle">
+                                    <div class="star-container">
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                        <span class="rtngIcoStar">
+                                            <svg class="icon w24 disable">
+                                                <use href="static/images/icons.svg#ico-handshake" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rtngSide rtngEnd">
+                                    <span>0</span>
+                                </div>
+                            </div> <!-- rating -->
+
+                            <!-- <div class="special"><hr></div> -->
+                        </div> <!-- Fin softskill-->
+
+                    </div> <!-- Fin detalle -->
+                </section> <!-- Fin softskill -->
+
+                <section id="hobbies" class="salto">
+                    <div class="captionVertical">
+                        <p class="tagCenter slim">Hobbies</p>
+                    </div>
+                    <div class="detalle">
+                        <!-- <div class="special"><hr></div> -->
+                        <div class="hobbies">
+                            <svg class="icon w50 border active" aria-label="Padel">
+                                <use href="static/images/icons.svg#ico-padel">
+                            </svg>
+                            <svg class="icon w50 border active"
+                                aria-label="reparaciones, contruccion, electrónica, restauraciones">
+                                <use href="static/images/icons.svg#ico-construction">
+                            </svg>
+                            <svg class="icon w50 border active" aria-label="viajar">
+                                <use href="static/images/icons.svg#ico-flight">
+                            </svg>
+                            <svg class="icon w50 border active" aria-label="ayudar, asistir, colaborar">
+                                <use href="static/images/icons.svg#ico-help">
+                            </svg>
+                            <svg class="icon w50 border active" aria-label="cocinar, agazajar">
+                                <use href="static/images/icons.svg#ico-grill">
+                            </svg>
+                        </div>
+                    </div> <!-- Fin detalle -->
+                </section> <!-- Fin hobbies -->
+
+            </div> <!-- Fin right -->
+        </main> <!-- Fin page -->
+
+        <footer id="footer" class="secondary">
+            <section id="contact">
+                <div id="title" class="alingC">
+                    <h2>Contacto</h2>
+                    <div class="special">
+                        <hr>
+                    </div>
+                </div>
+
+                <div id="datosContacto" class="fontSpecial-bold-italic extraEspace alingC">
+                    <ul>
+                        <li><a href="mailto:waldrom68@gmail.com"><svg id="email" class="icon active">
+                                    <use href="static/images/icons.svg#ico-email" />
+                                </svg>waldrom68@gmail.com</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/walter-romero1968" target="_blank"><svg
+                                    class="icon active">
+                                    <use href="static/images/icons.svg#ico-linkedin" />
+                                </svg>/in/walter-romero1968</a> </li>
+                        <li><a href="https://waldrom68.github.io" target="_blank"><svg class="icon active">
+                                    <use href="static/images/icons.svg#ico-github" />
+                                </svg>waldrom68.github.io</a> </li>
+                    </ul>
                 </div> <!-- Fin detalle -->
-            </section>  <!-- Fin hobbies -->
-        
-        </div>  <!-- Fin right -->
-    </main>  <!-- Fin page -->
+            </section> <!-- Fin contact -->
 
+        </footer>
 
-    <footer id="footer" class="secondary">
-        <section id="contact">
-            <div id="title" class="alingC">
-                <h2>Contacto</h2>
-                <div class="special"><hr></div>
-            </div>
+    </body>
 
-            <div id="datosContacto" class="fontSpecial-bold-italic extraEspace alingC">
-                <ul>
-                    <li><h4><svg id="whatsapp" class="icon active"><use href="static/images/icons.svg#ico-whatsapp"/> </svg>+54 9 11 pedí-melo</h4></li>
-                    <li><a href="mailto:waldrom68@gmail.com"><svg id="email" class="icon active"><use href="static/images/icons.svg#ico-email"/> </svg>waldrom68@gmail.com</a></li>
-                </ul>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/walter-romero1968" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-linkedin"/></svg>/in/walter-romero1968</a> </li>
-                    <li><a href="https://waldrom68.github.io" target="_blank"><svg class="icon active"><use href="static/images/icons.svg#ico-github"/> </svg>waldrom68.github.io</a> </li>
-                </ul>
-            </div> <!-- Fin detalle -->
-        </section> <!-- Fin contact -->
+    <!-- Obtengo el codigo para representar a los widget myList, Donuts y rating -->
+    <script src="static\js\widget.js"></script>
+    <!-- Obtengo el codigo para darle funcionalidad al menu y al acercaDe -->
+    <script src="static\js\menuNav.js"></script>
 
-    </footer>
+    <script id="darkLight">
 
-</body>
+        function normaliceStr(text) {
+            return text.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '').trim()
+        }
 
-<!-- Obtengo el codigo para representar a los widget myList, Donuts y rating -->
-<script src="static\js\widget.js"></script> 
-<!-- Obtengo el codigo para darle funcionalidad al menu y al acercaDe -->
-<script src="static\js\menuNav.js"></script> 
+        function getPaletMode() {
+            // Toma el valor que tenga por default el OS o el Nav, <style> debe tener el @media
+            // :root { --SETEO: "Personal";}
+            //     @media (prefers-color-scheme: light ) {:root {--SETEO: "Light";}}
+            //     @media (prefers-color-scheme: dark ) {:root {--SETEO: "Dark";}}
 
-<script id="darkLight">
+            // Si el OS o el Nav no tiene nada configurado, la variable --SETEO conserva su valor "Personal"
+            let page = getComputedStyle(document.documentElement);
+            let theme = normaliceStr(page.getPropertyValue('--SETEO'));
+            return (theme);
+        };
 
-    function normaliceStr(text) {
-        return text.replace(/[&\/\\#,+()$~%.'":*?<>{} ]/g, '').trim()
-    }
+        function getThemes() {
+            // Obtiene la variable :root que tiene el array de modos definidos y retorna un array con dichos nombre de clases
+            let page = getComputedStyle(document.documentElement);
+            let themes = page.getPropertyValue('--themes').split(" ");
+            let clases = new Array()
 
-    function getPaletMode() {
-    // Toma el valor que tenga por default el OS o el Nav, <style> debe tener el @media
-        // :root { --SETEO: "Personal";}
-        //     @media (prefers-color-scheme: light ) {:root {--SETEO: "Light";}}
-        //     @media (prefers-color-scheme: dark ) {:root {--SETEO: "Dark";}}
+            for (let index = 0; index < themes.length; index++) {
+                const element = themes[index];
+                if (element) {
+                    clases.push(normaliceStr(element))
+                }
+            }
+            return clases
+        }
 
-    // Si el OS o el Nav no tiene nada configurado, la variable --SETEO conserva su valor "Personal"
-        let page = getComputedStyle(document.documentElement);
-        let theme = normaliceStr(page.getPropertyValue('--SETEO'));
-        return (theme);
-    };
-
-    function getThemes() {
-        // Obtiene la variable :root que tiene el array de modos definidos y retorna un array con dichos nombre de clases
-        let page = getComputedStyle(document.documentElement);
-        let themes = page.getPropertyValue('--themes').split(" ");
-        let clases = new Array()
-
-        for (let index = 0; index < themes.length; index++) {
-            const element = themes[index];
-            if (element) {
-                clases.push(normaliceStr(element))
+        function resetClass(identificador, clases) {
+            // Elimina las clase recibidas como parametro en un array, del elemento cuyo selector coincida con el identificador pasado
+            for (const iterator of clases) {
+                document.querySelector(identificador).classList.remove(iterator);
             }
         }
-        return clases
-    }
 
-    function resetClass(identificador, clases) {
-    // Elimina las clase recibidas como parametro en un array, del elemento cuyo selector coincida con el identificador pasado
-        for (const iterator of clases) {
-            document.querySelector(identificador).classList.remove(iterator);
+        function setColor(identificador, clase) {
+            // Agrego en el elemento pasado como identificador, la clase recibida
+            resetClass("body", getThemes())
+            document.querySelector(identificador).classList.add(clase);
         }
-    }
 
-    function setColor(identificador, clase) {
-        // Agrego en el elemento pasado como identificador, la clase recibida
-        resetClass("body", getThemes())
-        document.querySelector(identificador).classList.add(clase);
-    } 
+    </script>
 
-</script>
+    <script id="inicio">
+        // Inicia en modo RESUME y sin detalles de las funciones.
+        // Color Default del sistema de navegacion o Dark si no está definido.
 
-<script id="inicio">
-    // Inicia en modo RESUME y sin detalles de las funciones.
-    // Color Default del sistema de navegacion o Dark si no está definido.
+        (function () {
+            theme = getPaletMode() /* Busco si el OS o el Navegador tiene alguna preferencia en Claro-Oscuro*/
+            setColor("body", theme) /* Asigno la clase Claro/oscuro al elemento body */
 
-    (function() {
-        theme = getPaletMode() /* Busco si el OS o el Navegador tiene alguna preferencia en Claro-Oscuro*/
-        setColor("body", theme) /* Asigno la clase Claro/oscuro al elemento body */
-
-        compactExtended("compact"); /* Oculto section del modo detallado, en menuNav.js */
-        initNone("compact") /* oculto detalles de la lista, en widget.js */
+            compactExtended("compact"); /* Oculto section del modo detallado, en menuNav.js */
+            initNone("compact") /* oculto detalles de la lista, en widget.js */
 
 
-    } ());
+        }());
 
-</script>
+    </script>
+
 </html>
-
-<!-- Bueno, va mi devolución usando chrome.
-El menu desplegable de arriba a la izquierda está como escondido, no se destaca, deberia ser mas visible porque le usuario no va directo ahi.
-Hay algunas secciones que se ponen en highligh pero no reciben click, por ejemplo "2004-2018 Ejecutivo...." por usabilidad si uno ve un highlight espera que funcione el click, asi que eso lo sacaria.
-Trata de evitar los cuadrados y fijate si podes hacer puntas redondeadas, queda mas suave.
-Abajo en "Contacto" deberias hacer que todo sea link, es decir linkedin, wasap, github etc y te lleve a los sitios.
-Bueno eso por ahora, espero que sirva. Saludos! -->
