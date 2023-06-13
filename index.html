@@ -1375,7 +1375,7 @@
                 }
 
                 body {
-                    font-family: Arial, Helvetica, sans-serif;
+                    /* font-family: Arial, Helvetica, sans-serif; */
                     height: auto;
                     /* max-width: 1123px;  */
                     width: var(--anchoPage);
@@ -1394,7 +1394,7 @@
                     fill: black;
                 }
 
-                .atencion sub {
+                .atencion sub, .no-print {
                     display: none;
                 }
 
@@ -1412,10 +1412,12 @@
 
                 #left {
                     width: 65%;
+                    height: auto;
                 }
 
                 #right {
                     width: 35%;
+                    height: auto;
                 }
 
                 #footer {
@@ -1584,7 +1586,7 @@
                     </div>
                 </section>
                 
-                <section id="objetive">
+                <section id="objetive" >
                     <div class="captionVertical">
                         <p class="tagCenter"><span>objetivo</span></p>
                     </div>
@@ -1597,6 +1599,62 @@
                         <!-- <div class="special"><hr></div> -->
                     </div>
                 </section>
+<!--  -->
+            <section id="project">
+                <div class="captionVertical">
+                    <p class="tagCenter"><span>proyectos</span></p>
+                </div>
+                <!-- invert active hover acento -->
+                <div class="detalle secondary">
+                    <p class="invert alingC"><i></i></p> 
+                   
+                    <ul> <!-- ITBA -->
+                        <li class="myList">2021- &nbsp;&nbsp;&nbsp;&nbsp; Full Stack Training
+                            <!-- <li class="Head">
+                                <ul class="carrera">
+                                    <li>Desarrollos</li>
+                                </ul>
+                            </li> -->
+                            <li class="expand">2023: PortFolio Web<br>(JAVA | Spring Boot | Angular | MySQL)
+                                <ul><span>Front End SPA + Back End API REST que muestre y permita gestionar los datos de un Currículum Vitae.
+                                    <li class="no-print"><span><a href="portfolio-gallery.html" target="_blank">Ver capturas de pantalla</a></span></li>
+                                    
+                                    <em class="atencion"><sub> (ver mas)</sub></em></span>
+                                    <li>Securitizado con Spring Security JWT.</li>
+                                    <li>Layout simple y limpio separando los diferentes grupos de datos en secciones con acceso directo.</li>
+                                    <li>Diseño responsivo con Bootstrap y componentes basados en Material Design.</li>
+                                    <li>Visualización gráfica de las habilidades, administración de imágenes y archivos multimedia alojados en Google Cloud.</li>
+                                    <li>Teniendo las credenciales se activa el modo "edición" permitiendo administrar todo el contenido con formularios reactivos, validación de datos, control de excepciones e interacción con el usuario, generalmente con ventanas modal.</li>
+                                    <li>Otra funcionalidad interesante, es que permite cambiar el orden de los elementos de cada sección tanto alfabética, numéricamente, por fecha o personalizarlo a gusto usando Drag and Drop.</li>
+
+                                </ul>
+                            </li><br> <!-- fin PortFolio Web -->
+                            <li class="expand">2022: Guía áudica con recorrido independiente<br>(PYTHON | Django | JavaScript | SQLite)
+                                <ul><span>Progressive Web Apps (PWA) multilenguaje (español, ingles, portugués) para promover y divulgar productos, servicios, bienes o ideas de empresas u organizaciones de las ciencias, artes y culturas.
+                                    <li class="no-print"><span><a href="guia-gallery.html" target="_blank">Ver capturas de pantalla</a></span></li>
+                                    
+                                    <em class="atencion"><sub> (ver mas)</sub></em></span>
+                                    <li>Experiencia simple, ordenada y ágil para recorrer un catálogo con poco texto, algunas imágenes y mucho audio.</li>
+                                    <li>Libertad en el recorrido: directamente por medio de códigos de referencia/QR exhibidos, o autoguiado, similar a un guía en un museo o a un vendedor especializado, se propone un próximo elemento.</li>
+                                    <li>Layout simple, limpio e intuitivo con diseño responsivo.</li>
+                                    <li>Permanente acceso directo para alternar entre sus diferentes idiomas y vínculo a videos externos.</li>
+                                    <li>Visualización de información adicional, como pueden ser: datos de interés, enlaces a tiendas virtuales, publicidad de 3ros y vínculos a páginas web.</li>
+                                </ul>
+                            </li><br> <!-- fin Guía Áudica -->
+                            <li class="expand">2021:  Curriculum Vitae <br>(sólo con HTML | CSS | JavaScript)
+                                <ul><span>Página web estática -sin uso de framework- con los datos de mi Currículum Vitae</span>
+                                    <!-- <span><a href="https://waldrom68.github.io" target="_blank">( visitar )</a></span> -->
+                                </ul>
+                            </li><br> <!-- fin PortFolio Web -->
+
+                        </li> <!-- fin Full Stack Training-->
+                    </ul> <!-- fin aplicaciones Web  -->
+
+
+                </div>
+            </section> <!-- fin Proyectos  -->
+
+
 
                 <section id="workExperience">
                     <div class="captionVertical">
@@ -1656,7 +1714,8 @@
 
                             </li>
                         </ul> <!-- fin ITBA  -->
-                        <div class="salto">
+                        
+
                             <ul> <!-- Freelance -->
 
                                 <li class="myList extraEspace">1991-1994 (3 años) Freelance
@@ -2022,7 +2081,7 @@
                 </section> <!-- Fin hardskill -->
 
 
-                <section id="softskill">
+                <section id="softskill"  class="">
                     <div class="captionVertical">
                         <p class="tagCenter slim">Habilidades Personales</p>
                     </div>
@@ -2278,7 +2337,7 @@
                     </div> <!-- Fin detalle -->
                 </section> <!-- Fin softskill -->
 
-                <section id="hobbies" class="salto">
+                <section id="hobbies">
                     <div class="captionVertical">
                         <p class="tagCenter slim">Hobbies</p>
                     </div>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            /* background-color: #262626; */
+            box-sizing: border-box;
+        }
+
+        .carousel {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        ul.slides {
+            display: block;
+            position: relative;
+            height: 600px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            list-style: none;
+        }
+
+        .slides * {
+            user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        ul.slides input {
+            display: none;
+        }
+
+
+        .slide-container {
+            display: block;
+        }
+
+        .slide-image {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            opacity: 0;
+            transition: all .7s ease-in-out;
+        }
+
+        .slide-image img {
+            width: auto;
+            min-width: 100%;
+            /* height: 100%; */
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            font-size: 100px;
+            line-height: 600px;
+            color: rgba(0, 255, 0, 1);
+        }
+
+        .carousel-controls label {
+            display: none;
+            position: absolute;
+            padding: 0 20px;
+            opacity: 0;
+            transition: opacity .2s;
+            cursor: pointer;
+        }
+
+        .slide-image:hover+.carousel-controls label {
+            opacity: 0.5;
+        }
+
+        .carousel-controls label:hover {
+            opacity: 1;
+        }
+
+        .carousel-controls .prev-slide {
+            width: 49%;
+            text-align: left;
+            left: 0;
+        }
+
+        .carousel-controls .next-slide {
+            width: 49%;
+            text-align: right;
+            right: 0;
+        }
+
+        .carousel-dots {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 20px;
+            z-index: 999;
+            text-align: center;
+        }
+
+        .carousel-dots .carousel-dot {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: rgba(0, 255, 0, 1);
+            opacity: 0.5;
+            margin: 10px;
+        }
+
+        input:checked+.slide-container .slide-image {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 1s ease-in-out;
+        }
+
+        input:checked+.slide-container .carousel-controls label {
+            display: block;
+        }
+
+        input#img-1:checked~.carousel-dots label#img-dot-1,
+        input#img-2:checked~.carousel-dots label#img-dot-2,
+        input#img-3:checked~.carousel-dots label#img-dot-3,
+        input#img-4:checked~.carousel-dots label#img-dot-4,
+        input#img-5:checked~.carousel-dots label#img-dot-5,
+        input#img-6:checked~.carousel-dots label#img-dot-6 {
+            opacity: 1;
+        }
+
+
+        input:checked+.slide-container .nav label {
+            display: block;
+        }
+
+        .parent {
+            width: 100%;
+            /* 1 */
+            position: relative;
+            /* 1 */
+            border: 2px solid silver;
+            border-radius: 25px;
+        }
+
+        .child {
+            width: 100%;
+            /* Or whatever */
+            height: 650px;
+            /* Or whatever */
+            margin: auto;
+            /* Magic! */
+        }
+
+        /**
+ * Making figure frame always squared 
+ * Keeping 1:1 ratio with padding hack
+ */
+        .parent:before {
+            content: '';
+            display: block;
+            padding-top: 10px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            /* 1 */
+            left: 0;
+            /* 1 */
+            right: 0;
+            /* 1 */
+            bottom: 0;
+            /* 1 */
+            margin: auto;
+            /* 2 */
+            max-width: 350px;
+            /* 3 */
+            height: auto;
+            /* 3 */
+        }
+    </style>
+
+
+</head>
+
+<body style="background: linear-gradient(70deg, #bd93f9 0%, 
+#6272a4 71%, #44475a 85%);">
+    <div class="parent">
+        <div class="carousel child">
+            <ul class="slides">
+                <input type="radio" name="radio-buttons" id="img-1" checked />
+                <li class="slide-container">
+                    <div class="slide-image">
+                        <img
+                            src="../../../../Downloads/freetour.png">
+                    </div>
+                    <div class="carousel-controls">
+                        <label for="img-3" class="prev-slide">
+                            <span>&lsaquo;</span>
+                        </label>
+                        <label for="img-2" class="next-slide">
+                            <span>&rsaquo;</span>
+                        </label>
+                    </div>
+                </li>
+                <input type="radio" name="radio-buttons" id="img-2" />
+                <li class="slide-container">
+                    <div class="slide-image">
+                        <img
+                            src="../../../../Downloads/freetour11.png">
+                    </div>
+                    <div class="carousel-controls">
+                        <label for="img-1" class="prev-slide">
+                            <span>&lsaquo;</span>
+                        </label>
+                        <label for="img-3" class="next-slide">
+                            <span>&rsaquo;</span>
+                        </label>
+                    </div>
+                </li>
+                <input type="radio" name="radio-buttons" id="img-3" />
+                <li class="slide-container">
+                    <div class="slide-image">
+                        <img src="../../../../Downloads/freetour22.png">
+                    </div>
+                    <div class="carousel-controls">
+                        <label for="img-2" class="prev-slide">
+                            <span>&lsaquo;</span>
+                        </label>
+                        <label for="img-1" class="next-slide">
+                            <span>&rsaquo;</span>
+                        </label>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="carousel-dots">
+            <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+            <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+            <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+</script>
+
+
+</html>
